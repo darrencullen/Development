@@ -1,0 +1,299 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49FBB2B616AE042E0022FBE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBB2B516AE042E0022FBE4 /* UIKit.framework */; };
+		49FBB2B816AE042E0022FBE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBB2B716AE042E0022FBE4 /* Foundation.framework */; };
+		49FBB2BA16AE042E0022FBE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBB2B916AE042E0022FBE4 /* CoreGraphics.framework */; };
+		49FBB2C016AE042F0022FBE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49FBB2BE16AE042F0022FBE4 /* InfoPlist.strings */; };
+		49FBB2C216AE042F0022FBE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBB2C116AE042F0022FBE4 /* main.m */; };
+		49FBB2C616AE042F0022FBE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBB2C516AE042F0022FBE4 /* AppDelegate.m */; };
+		49FBB2C816AE042F0022FBE4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FBB2C716AE042F0022FBE4 /* Default.png */; };
+		49FBB2CA16AE042F0022FBE4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FBB2C916AE042F0022FBE4 /* Default@2x.png */; };
+		49FBB2CC16AE042F0022FBE4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FBB2CB16AE042F0022FBE4 /* Default-568h@2x.png */; };
+		49FBB2CF16AE042F0022FBE4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FBB2CD16AE042F0022FBE4 /* MainStoryboard.storyboard */; };
+		49FBB2D216AE042F0022FBE4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBB2D116AE042F0022FBE4 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		49FBB2B116AE042E0022FBE4 /* HelloPollyTVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPollyTVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FBB2B516AE042E0022FBE4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		49FBB2B716AE042E0022FBE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		49FBB2B916AE042E0022FBE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		49FBB2BD16AE042F0022FBE4 /* HelloPollyTVC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloPollyTVC-Info.plist"; sourceTree = "<group>"; };
+		49FBB2BF16AE042F0022FBE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49FBB2C116AE042F0022FBE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49FBB2C316AE042F0022FBE4 /* HelloPollyTVC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloPollyTVC-Prefix.pch"; sourceTree = "<group>"; };
+		49FBB2C416AE042F0022FBE4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		49FBB2C516AE042F0022FBE4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		49FBB2C716AE042F0022FBE4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		49FBB2C916AE042F0022FBE4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		49FBB2CB16AE042F0022FBE4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		49FBB2CE16AE042F0022FBE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		49FBB2D016AE042F0022FBE4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		49FBB2D116AE042F0022FBE4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49FBB2AE16AE042E0022FBE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FBB2B616AE042E0022FBE4 /* UIKit.framework in Frameworks */,
+				49FBB2B816AE042E0022FBE4 /* Foundation.framework in Frameworks */,
+				49FBB2BA16AE042E0022FBE4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49FBB2A616AE042E0022FBE4 = {
+			isa = PBXGroup;
+			children = (
+				49FBB2BB16AE042F0022FBE4 /* HelloPollyTVC */,
+				49FBB2B416AE042E0022FBE4 /* Frameworks */,
+				49FBB2B216AE042E0022FBE4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49FBB2B216AE042E0022FBE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49FBB2B116AE042E0022FBE4 /* HelloPollyTVC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49FBB2B416AE042E0022FBE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49FBB2B516AE042E0022FBE4 /* UIKit.framework */,
+				49FBB2B716AE042E0022FBE4 /* Foundation.framework */,
+				49FBB2B916AE042E0022FBE4 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49FBB2BB16AE042F0022FBE4 /* HelloPollyTVC */ = {
+			isa = PBXGroup;
+			children = (
+				49FBB2C416AE042F0022FBE4 /* AppDelegate.h */,
+				49FBB2C516AE042F0022FBE4 /* AppDelegate.m */,
+				49FBB2CD16AE042F0022FBE4 /* MainStoryboard.storyboard */,
+				49FBB2D016AE042F0022FBE4 /* ViewController.h */,
+				49FBB2D116AE042F0022FBE4 /* ViewController.m */,
+				49FBB2BC16AE042F0022FBE4 /* Supporting Files */,
+			);
+			path = HelloPollyTVC;
+			sourceTree = "<group>";
+		};
+		49FBB2BC16AE042F0022FBE4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49FBB2BD16AE042F0022FBE4 /* HelloPollyTVC-Info.plist */,
+				49FBB2BE16AE042F0022FBE4 /* InfoPlist.strings */,
+				49FBB2C116AE042F0022FBE4 /* main.m */,
+				49FBB2C316AE042F0022FBE4 /* HelloPollyTVC-Prefix.pch */,
+				49FBB2C716AE042F0022FBE4 /* Default.png */,
+				49FBB2C916AE042F0022FBE4 /* Default@2x.png */,
+				49FBB2CB16AE042F0022FBE4 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49FBB2B016AE042E0022FBE4 /* HelloPollyTVC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49FBB2D516AE042F0022FBE4 /* Build configuration list for PBXNativeTarget "HelloPollyTVC" */;
+			buildPhases = (
+				49FBB2AD16AE042E0022FBE4 /* Sources */,
+				49FBB2AE16AE042E0022FBE4 /* Frameworks */,
+				49FBB2AF16AE042E0022FBE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloPollyTVC;
+			productName = HelloPollyTVC;
+			productReference = 49FBB2B116AE042E0022FBE4 /* HelloPollyTVC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49FBB2A816AE042E0022FBE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "DC Development Studios";
+			};
+			buildConfigurationList = 49FBB2AB16AE042E0022FBE4 /* Build configuration list for PBXProject "HelloPollyTVC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 49FBB2A616AE042E0022FBE4;
+			productRefGroup = 49FBB2B216AE042E0022FBE4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49FBB2B016AE042E0022FBE4 /* HelloPollyTVC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49FBB2AF16AE042E0022FBE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FBB2C016AE042F0022FBE4 /* InfoPlist.strings in Resources */,
+				49FBB2C816AE042F0022FBE4 /* Default.png in Resources */,
+				49FBB2CA16AE042F0022FBE4 /* Default@2x.png in Resources */,
+				49FBB2CC16AE042F0022FBE4 /* Default-568h@2x.png in Resources */,
+				49FBB2CF16AE042F0022FBE4 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49FBB2AD16AE042E0022FBE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FBB2C216AE042F0022FBE4 /* main.m in Sources */,
+				49FBB2C616AE042F0022FBE4 /* AppDelegate.m in Sources */,
+				49FBB2D216AE042F0022FBE4 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		49FBB2BE16AE042F0022FBE4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49FBB2BF16AE042F0022FBE4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		49FBB2CD16AE042F0022FBE4 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49FBB2CE16AE042F0022FBE4 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49FBB2D316AE042F0022FBE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		49FBB2D416AE042F0022FBE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49FBB2D616AE042F0022FBE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloPollyTVC/HelloPollyTVC-Prefix.pch";
+				INFOPLIST_FILE = "HelloPollyTVC/HelloPollyTVC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		49FBB2D716AE042F0022FBE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloPollyTVC/HelloPollyTVC-Prefix.pch";
+				INFOPLIST_FILE = "HelloPollyTVC/HelloPollyTVC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49FBB2AB16AE042E0022FBE4 /* Build configuration list for PBXProject "HelloPollyTVC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FBB2D316AE042F0022FBE4 /* Debug */,
+				49FBB2D416AE042F0022FBE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49FBB2D516AE042F0022FBE4 /* Build configuration list for PBXNativeTarget "HelloPollyTVC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FBB2D616AE042F0022FBE4 /* Debug */,
+				49FBB2D716AE042F0022FBE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49FBB2A816AE042E0022FBE4 /* Project object */;
+}
