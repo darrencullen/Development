@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4993B6B516D11FAF00455231 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4993B6B416D11FAF00455231 /* AboutViewController.m */; };
+		4993B6B816D1209100455231 /* about.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4993B6B616D1209100455231 /* about.jpg */; };
+		4993B6B916D1209100455231 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 4993B6B716D1209100455231 /* about.html */; };
 		49F40B4D16CFDAAF00CDD141 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F40B4C16CFDAAF00CDD141 /* UIKit.framework */; };
 		49F40B4F16CFDAAF00CDD141 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F40B4E16CFDAAF00CDD141 /* Foundation.framework */; };
 		49F40B5116CFDAAF00CDD141 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F40B5016CFDAAF00CDD141 /* CoreGraphics.framework */; };
@@ -22,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4993B6B316D11FAF00455231 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		4993B6B416D11FAF00455231 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		4993B6B616D1209100455231 /* about.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = about.jpg; sourceTree = "<group>"; };
+		4993B6B716D1209100455231 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		49F40B4916CFDAAF00CDD141 /* RecipeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F40B4C16CFDAAF00CDD141 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49F40B4E16CFDAAF00CDD141 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +96,8 @@
 				49F40B5B16CFDAAF00CDD141 /* AppDelegate.h */,
 				49F40B5C16CFDAAF00CDD141 /* AppDelegate.m */,
 				49F40B6416CFDAAF00CDD141 /* MainStoryboard.storyboard */,
+				4993B6B316D11FAF00455231 /* AboutViewController.h */,
+				4993B6B416D11FAF00455231 /* AboutViewController.m */,
 				49F40B6F16CFE62700CDD141 /* RecipeDetailViewController.h */,
 				49F40B7016CFE62700CDD141 /* RecipeDetailViewController.m */,
 				49F40B6716CFDAAF00CDD141 /* ViewController.h */,
@@ -101,6 +110,8 @@
 		49F40B5316CFDAAF00CDD141 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4993B6B616D1209100455231 /* about.jpg */,
+				4993B6B716D1209100455231 /* about.html */,
 				49F40B5416CFDAAF00CDD141 /* RecipeBook-Info.plist */,
 				49F40B5516CFDAAF00CDD141 /* InfoPlist.strings */,
 				49F40B5816CFDAAF00CDD141 /* main.m */,
@@ -168,6 +179,8 @@
 				49F40B6116CFDAAF00CDD141 /* Default@2x.png in Resources */,
 				49F40B6316CFDAAF00CDD141 /* Default-568h@2x.png in Resources */,
 				49F40B6616CFDAAF00CDD141 /* MainStoryboard.storyboard in Resources */,
+				4993B6B816D1209100455231 /* about.jpg in Resources */,
+				4993B6B916D1209100455231 /* about.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +195,7 @@
 				49F40B5D16CFDAAF00CDD141 /* AppDelegate.m in Sources */,
 				49F40B6916CFDAAF00CDD141 /* ViewController.m in Sources */,
 				49F40B7116CFE62700CDD141 /* RecipeDetailViewController.m in Sources */,
+				4993B6B516D11FAF00455231 /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +318,7 @@
 				49F40B6E16CFDAAF00CDD141 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
