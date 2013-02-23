@@ -22,6 +22,14 @@
 		49F40B6616CFDAAF00CDD141 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F40B6416CFDAAF00CDD141 /* MainStoryboard.storyboard */; };
 		49F40B6916CFDAAF00CDD141 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F40B6816CFDAAF00CDD141 /* ViewController.m */; };
 		49F40B7116CFE62700CDD141 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F40B7016CFE62700CDD141 /* RecipeDetailViewController.m */; };
+		49FA41D816D18A0900F7258B /* button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FA41D116D18A0900F7258B /* button_back.png */; };
+		49FA41D916D18A0900F7258B /* button_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FA41D216D18A0900F7258B /* button_normal.png */; };
+		49FA41DA16D18A0900F7258B /* common_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FA41D316D18A0900F7258B /* common_bg.png */; };
+		49FA41DB16D18A0900F7258B /* common_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FA41D416D18A0900F7258B /* common_bg@2x.png */; };
+		49FA41DC16D18A0900F7258B /* mushroom_risotto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49FA41D516D18A0900F7258B /* mushroom_risotto.jpg */; };
+		49FA41DD16D18A0900F7258B /* navbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FA41D616D18A0900F7258B /* navbar_bg.png */; };
+		49FA41DE16D18A0900F7258B /* navbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49FA41D716D18A0900F7258B /* navbar_bg@2x.png */; };
+		49FA41E116D1A0DE00F7258B /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FA41E016D1A0DE00F7258B /* Recipe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +55,15 @@
 		49F40B6816CFDAAF00CDD141 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		49F40B6F16CFE62700CDD141 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
 		49F40B7016CFE62700CDD141 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
+		49FA41D116D18A0900F7258B /* button_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back.png; sourceTree = "<group>"; };
+		49FA41D216D18A0900F7258B /* button_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_normal.png; sourceTree = "<group>"; };
+		49FA41D316D18A0900F7258B /* common_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = common_bg.png; sourceTree = "<group>"; };
+		49FA41D416D18A0900F7258B /* common_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "common_bg@2x.png"; sourceTree = "<group>"; };
+		49FA41D516D18A0900F7258B /* mushroom_risotto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mushroom_risotto.jpg; sourceTree = "<group>"; };
+		49FA41D616D18A0900F7258B /* navbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_bg.png; sourceTree = "<group>"; };
+		49FA41D716D18A0900F7258B /* navbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_bg@2x.png"; sourceTree = "<group>"; };
+		49FA41DF16D1A03500F7258B /* Recipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		49FA41E016D1A0DE00F7258B /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +110,8 @@
 		49F40B5216CFDAAF00CDD141 /* RecipeBook */ = {
 			isa = PBXGroup;
 			children = (
+				49FA41E016D1A0DE00F7258B /* Recipe.m */,
+				49FA41DF16D1A03500F7258B /* Recipe.h */,
 				49F40B5B16CFDAAF00CDD141 /* AppDelegate.h */,
 				49F40B5C16CFDAAF00CDD141 /* AppDelegate.m */,
 				49F40B6416CFDAAF00CDD141 /* MainStoryboard.storyboard */,
@@ -110,6 +129,13 @@
 		49F40B5316CFDAAF00CDD141 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49FA41D116D18A0900F7258B /* button_back.png */,
+				49FA41D216D18A0900F7258B /* button_normal.png */,
+				49FA41D316D18A0900F7258B /* common_bg.png */,
+				49FA41D416D18A0900F7258B /* common_bg@2x.png */,
+				49FA41D516D18A0900F7258B /* mushroom_risotto.jpg */,
+				49FA41D616D18A0900F7258B /* navbar_bg.png */,
+				49FA41D716D18A0900F7258B /* navbar_bg@2x.png */,
 				4993B6B616D1209100455231 /* about.jpg */,
 				4993B6B716D1209100455231 /* about.html */,
 				49F40B5416CFDAAF00CDD141 /* RecipeBook-Info.plist */,
@@ -181,6 +207,13 @@
 				49F40B6616CFDAAF00CDD141 /* MainStoryboard.storyboard in Resources */,
 				4993B6B816D1209100455231 /* about.jpg in Resources */,
 				4993B6B916D1209100455231 /* about.html in Resources */,
+				49FA41D816D18A0900F7258B /* button_back.png in Resources */,
+				49FA41D916D18A0900F7258B /* button_normal.png in Resources */,
+				49FA41DA16D18A0900F7258B /* common_bg.png in Resources */,
+				49FA41DB16D18A0900F7258B /* common_bg@2x.png in Resources */,
+				49FA41DC16D18A0900F7258B /* mushroom_risotto.jpg in Resources */,
+				49FA41DD16D18A0900F7258B /* navbar_bg.png in Resources */,
+				49FA41DE16D18A0900F7258B /* navbar_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +229,7 @@
 				49F40B6916CFDAAF00CDD141 /* ViewController.m in Sources */,
 				49F40B7116CFE62700CDD141 /* RecipeDetailViewController.m in Sources */,
 				4993B6B516D11FAF00455231 /* AboutViewController.m in Sources */,
+				49FA41E116D1A0DE00F7258B /* Recipe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

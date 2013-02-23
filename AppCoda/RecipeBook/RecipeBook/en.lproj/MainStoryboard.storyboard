@@ -15,14 +15,48 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="FCF-xt-Qij">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeCell" id="jJc-BM-tP4">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeCell" rowHeight="71" id="jJc-BM-tP4">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="280" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uju-vF-KGz">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="58" id="7Pe-ap-ppg"/>
+                                                        <constraint firstAttribute="height" constant="58" id="k1V-GB-MSB"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Recipe Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHH-BW-A97">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="186" id="Uj6-cV-ZP9"/>
+                                                        <constraint firstAttribute="height" constant="21" id="YjR-ay-zJf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="21"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORm-fz-Yhg">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="n7n-dQ-OLJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="ORm-fz-Yhg" firstAttribute="trailing" secondItem="LHH-BW-A97" secondAttribute="trailing" type="default" id="5Ls-Bd-kBx"/>
+                                            <constraint firstItem="ORm-fz-Yhg" firstAttribute="leading" secondItem="LHH-BW-A97" secondAttribute="leading" type="default" id="RWj-zU-HxI"/>
+                                            <constraint firstItem="LHH-BW-A97" firstAttribute="leading" secondItem="jJc-BM-tP4" secondAttribute="leading" constant="102" id="UjJ-U3-0Ey"/>
+                                            <constraint firstItem="uju-vF-KGz" firstAttribute="leading" secondItem="jJc-BM-tP4" secondAttribute="leading" constant="30" id="lJH-B1-hsv"/>
+                                            <constraint firstItem="ORm-fz-Yhg" firstAttribute="bottom" secondItem="uju-vF-KGz" secondAttribute="bottom" type="default" id="qHZ-Ct-yWP"/>
+                                            <constraint firstItem="LHH-BW-A97" firstAttribute="top" secondItem="uju-vF-KGz" secondAttribute="top" type="default" id="r7g-MP-UKW"/>
+                                            <constraint firstItem="uju-vF-KGz" firstAttribute="top" secondItem="jJc-BM-tP4" secondAttribute="top" constant="8" id="wLJ-YP-9ka"/>
+                                        </constraints>
                                         <connections>
                                             <segue destination="0JC-oq-t5w" kind="push" identifier="showRecipeDetail" id="LOi-ZI-hxV"/>
                                         </connections>
