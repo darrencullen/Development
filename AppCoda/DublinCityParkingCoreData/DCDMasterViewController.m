@@ -8,12 +8,15 @@
 
 #import "DCDMasterViewController.h"
 #import "CarparkInfo.h"
+#import "XMLParser.h"
 
 @interface DCDMasterViewController ()
 
 @end
 
-@implementation DCDMasterViewController
+@implementation DCDMasterViewController{
+    XMLParser *xmlParser;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,16 +30,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.dublincity.ie/dublintraffic/cpdata.xml"];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
+    
+    
     [fetchRequest setEntity:entity];
     NSError *error;
     self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -49,18 +54,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.carparkInfos count];
 }
@@ -73,8 +74,15 @@
     
     // Configure the cell...
     CarparkInfo *info = [self.carparkInfos objectAtIndex:indexPath.row];
-    cell.textLabel.text = info.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", info.address];
+    
+    UILabel *carparkNameLabel = (UILabel *)[cell viewWithTag:100];
+    carparkNameLabel.text = info.name;
+    
+    UILabel *carparkAddressLabel = (UILabel *)[cell viewWithTag:101];
+    carparkAddressLabel.text = [NSString stringWithFormat:@"%@", info.address];
+    
+    UILabel *availableSpacesLabel = (UILabel *)[cell viewWithTag:102];
+    availableSpacesLabel.text = info.availableSpaces;
     
     return cell;
 }

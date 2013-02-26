@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[XMLParser parser:foundCharacters:]:XMLParser.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[XMLParser parser:didEndElement:namespaceURI:qualifiedName:]:XMLParser.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.carparks">
+            </PersistentString>
+            <PersistentString
+               value = "currentTweet.content">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

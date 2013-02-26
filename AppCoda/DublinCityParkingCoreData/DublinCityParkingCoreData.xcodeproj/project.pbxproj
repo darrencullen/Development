@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491A0DCD16DC2AA20017DEFE /* Carpark.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A0DCA16DC2AA20017DEFE /* Carpark.m */; };
+		491A0DCE16DC2AA20017DEFE /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A0DCC16DC2AA20017DEFE /* XMLParser.m */; };
 		49F888DB16D6D18700AB3377 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DA16D6D18700AB3377 /* UIKit.framework */; };
 		49F888DD16D6D18700AB3377 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DC16D6D18700AB3377 /* Foundation.framework */; };
 		49F888DF16D6D18700AB3377 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DE16D6D18700AB3377 /* CoreGraphics.framework */; };
@@ -26,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		491A0DC916DC2AA20017DEFE /* Carpark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Carpark.h; sourceTree = "<group>"; };
+		491A0DCA16DC2AA20017DEFE /* Carpark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Carpark.m; sourceTree = "<group>"; };
+		491A0DCB16DC2AA20017DEFE /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		491A0DCC16DC2AA20017DEFE /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		49F888D716D6D18700AB3377 /* DublinCityParkingCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DublinCityParkingCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F888DA16D6D18700AB3377 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49F888DC16D6D18700AB3377 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,6 +108,10 @@
 				49F888EB16D6D18700AB3377 /* AppDelegate.h */,
 				49F888EC16D6D18700AB3377 /* AppDelegate.m */,
 				49F888F416D6D18700AB3377 /* MainStoryboard.storyboard */,
+				491A0DC916DC2AA20017DEFE /* Carpark.h */,
+				491A0DCA16DC2AA20017DEFE /* Carpark.m */,
+				491A0DCB16DC2AA20017DEFE /* XMLParser.h */,
+				491A0DCC16DC2AA20017DEFE /* XMLParser.m */,
 				49F888F716D6D18700AB3377 /* DublinCityParkingCoreData.xcdatamodeld */,
 				49F8890E16D6DD9000AB3377 /* CarparkInfo.h */,
 				49F8890F16D6DD9000AB3377 /* CarparkInfo.m */,
@@ -201,6 +211,8 @@
 				49F8890716D6D3B700AB3377 /* DCDMasterViewController.m in Sources */,
 				49F8890D16D6DD5300AB3377 /* CarparkDetails.m in Sources */,
 				49F8891016D6DD9000AB3377 /* CarparkInfo.m in Sources */,
+				491A0DCD16DC2AA20017DEFE /* Carpark.m in Sources */,
+				491A0DCE16DC2AA20017DEFE /* XMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +335,7 @@
 				49F8890416D6D18700AB3377 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
