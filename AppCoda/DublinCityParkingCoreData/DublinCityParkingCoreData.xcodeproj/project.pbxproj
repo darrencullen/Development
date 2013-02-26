@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		491A0DCD16DC2AA20017DEFE /* Carpark.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A0DCA16DC2AA20017DEFE /* Carpark.m */; };
 		491A0DCE16DC2AA20017DEFE /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A0DCC16DC2AA20017DEFE /* XMLParser.m */; };
-		491A0DD016DC40B60017DEFE /* parking57.png in Resources */ = {isa = PBXBuildFile; fileRef = 491A0DCF16DC40B60017DEFE /* parking57.png */; };
-		491A0DD216DC42430017DEFE /* bluematte.png in Resources */ = {isa = PBXBuildFile; fileRef = 491A0DD116DC42430017DEFE /* bluematte.png */; };
+		496776E816DD624A009E7E22 /* strip.png in Resources */ = {isa = PBXBuildFile; fileRef = 496776E016DD624A009E7E22 /* strip.png */; };
+		496776EF16DD6D00009E7E22 /* parking30.ico in Resources */ = {isa = PBXBuildFile; fileRef = 496776EE16DD6D00009E7E22 /* parking30.ico */; };
 		49F888DB16D6D18700AB3377 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DA16D6D18700AB3377 /* UIKit.framework */; };
 		49F888DD16D6D18700AB3377 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DC16D6D18700AB3377 /* Foundation.framework */; };
 		49F888DF16D6D18700AB3377 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DE16D6D18700AB3377 /* CoreGraphics.framework */; };
@@ -34,9 +34,9 @@
 		491A0DCA16DC2AA20017DEFE /* Carpark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Carpark.m; sourceTree = "<group>"; };
 		491A0DCB16DC2AA20017DEFE /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		491A0DCC16DC2AA20017DEFE /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
-		491A0DCF16DC40B60017DEFE /* parking57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parking57.png; path = ../parking57.png; sourceTree = "<group>"; };
-		491A0DD116DC42430017DEFE /* bluematte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluematte.png; sourceTree = "<group>"; };
-		49F888D716D6D18700AB3377 /* DublinCityParkingCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DublinCityParkingCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		496776E016DD624A009E7E22 /* strip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip.png; sourceTree = "<group>"; };
+		496776EE16DD6D00009E7E22 /* parking30.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = parking30.ico; sourceTree = "<group>"; };
+		49F888D716D6D18700AB3377 /* DubPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F888DA16D6D18700AB3377 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49F888DC16D6D18700AB3377 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		49F888DE16D6D18700AB3377 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		496776EB16DD6251009E7E22 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				496776EE16DD6D00009E7E22 /* parking30.ico */,
+				496776E016DD624A009E7E22 /* strip.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		49F888CE16D6D18700AB3377 = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +97,7 @@
 		49F888D816D6D18700AB3377 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49F888D716D6D18700AB3377 /* DublinCityParkingCoreData.app */,
+				49F888D716D6D18700AB3377 /* DubPark.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,8 +138,7 @@
 		49F888E316D6D18700AB3377 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				491A0DD116DC42430017DEFE /* bluematte.png */,
-				491A0DCF16DC40B60017DEFE /* parking57.png */,
+				496776EB16DD6251009E7E22 /* Resources */,
 				49F8894516D6F09800AB3377 /* DublinCityParkingCoreDataImport.sqlite */,
 				49F888E416D6D18700AB3377 /* DublinCityParkingCoreData-Info.plist */,
 				49F888E516D6D18700AB3377 /* InfoPlist.strings */,
@@ -160,7 +168,7 @@
 			);
 			name = DubPark;
 			productName = DublinCityParkingCoreData;
-			productReference = 49F888D716D6D18700AB3377 /* DublinCityParkingCoreData.app */;
+			productReference = 49F888D716D6D18700AB3377 /* DubPark.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -201,8 +209,8 @@
 				49F888F316D6D18700AB3377 /* Default-568h@2x.png in Resources */,
 				49F888F616D6D18700AB3377 /* MainStoryboard.storyboard in Resources */,
 				49F8894616D6F09800AB3377 /* DublinCityParkingCoreDataImport.sqlite in Resources */,
-				491A0DD016DC40B60017DEFE /* parking57.png in Resources */,
-				491A0DD216DC42430017DEFE /* bluematte.png in Resources */,
+				496776E816DD624A009E7E22 /* strip.png in Resources */,
+				496776EF16DD6D00009E7E22 /* parking30.ico in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

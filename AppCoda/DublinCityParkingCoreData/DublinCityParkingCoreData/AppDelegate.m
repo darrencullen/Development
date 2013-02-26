@@ -52,9 +52,21 @@
     }
     
     // Override point for customization after application launch.
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    DCDMasterViewController *controller = (DCDMasterViewController *)navigationController.topViewController;
+//    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+//    DCDMasterViewController *controller = (DCDMasterViewController *)navigationController.topViewController;
+//    controller.managedObjectContext = self.managedObjectContext;
+    
+    // set the tab controller as the root controller and allow it to use managed objects
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:0];
+    DCDMasterViewController *controller = [[navigationController viewControllers] objectAtIndex:0];
     controller.managedObjectContext = self.managedObjectContext;
+    
+    // customise the navigation bar
+    UIImage *navBackgroundImage = [UIImage imageNamed:@"strip1.png"];
+    [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
+
+    
     return YES;
 }
 							

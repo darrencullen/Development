@@ -84,7 +84,7 @@
     UILabel *availableSpacesLabel = (UILabel *)[cell viewWithTag:102];
     availableSpacesLabel.text = info.availableSpaces;
     
-//    cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"bluematte.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];  
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"strip1.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];  
     
     return cell;
 }
