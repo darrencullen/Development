@@ -72,6 +72,10 @@
     
     cgCarpark = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] lastObject];
     
+    if ([spaces isEqualToString:@" "]){
+        spaces = @"N/A";
+    }
+
     cgCarpark.availableSpaces = spaces;
     error = nil;
     if (![self.managedObjectContext save:&error]) {
