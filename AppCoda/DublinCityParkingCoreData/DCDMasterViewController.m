@@ -45,7 +45,7 @@
     [fetchRequest setEntity:entity];
     NSError *error;
     self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    self.title = @"Carparks";
+    self.title = @"Carpark Spaces";
 }
 
 - (void)didReceiveMemoryWarning

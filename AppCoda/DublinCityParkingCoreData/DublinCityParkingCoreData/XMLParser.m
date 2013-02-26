@@ -7,6 +7,7 @@
 //
 
 #import "XMLParser.h"
+//#import "AppDelegate.h"
 
 @implementation XMLParser{
 //    NSMutableString *currentNodeContent;
@@ -49,14 +50,23 @@
     [self.carparks addObject:currentCarpark];
     currentCarpark = nil; 
     
-    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+//    context = [appDelegate managedObjectContext];
+    
+    
+    // set up the managedObjectContext to read data from CoreData
+    id delegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = [delegate managedObjectContext];
+    
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
     
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"Name=%@",name]];
-    
     [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"code=%@",name]];
+    
+
     NSError *error;
     CarparkInfo *cgCarpark;
     
