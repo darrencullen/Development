@@ -1,5 +1,5 @@
 //
-//  DCDMasterViewController.h
+//  CarparkListViewController.h
 //  DublinCityParkingCoreData
 //
 //  Created by darren cullen on 21/02/2013.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DCDMasterViewController : UITableViewController
+@interface CarparkListViewController : UITableViewController
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *carparkInfos;

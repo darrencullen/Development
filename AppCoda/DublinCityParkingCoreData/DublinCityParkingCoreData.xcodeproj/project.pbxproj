@@ -25,7 +25,7 @@
 		49F888F316D6D18700AB3377 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F888F216D6D18700AB3377 /* Default-568h@2x.png */; };
 		49F888F616D6D18700AB3377 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F888F416D6D18700AB3377 /* MainStoryboard.storyboard */; };
 		49F888F916D6D18700AB3377 /* DublinCityParkingCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49F888F716D6D18700AB3377 /* DublinCityParkingCoreData.xcdatamodeld */; };
-		49F8890716D6D3B700AB3377 /* DCDMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890616D6D3B700AB3377 /* DCDMasterViewController.m */; };
+		49F8890716D6D3B700AB3377 /* CarparkListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890616D6D3B700AB3377 /* CarparkListViewController.m */; };
 		49F8890D16D6DD5300AB3377 /* CarparkDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890C16D6DD5300AB3377 /* CarparkDetails.m */; };
 		49F8891016D6DD9000AB3377 /* CarparkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890F16D6DD9000AB3377 /* CarparkInfo.m */; };
 		49F8894616D6F09800AB3377 /* DublinCityParkingCoreDataImport.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 49F8894516D6F09800AB3377 /* DublinCityParkingCoreDataImport.sqlite */; };
@@ -58,8 +58,8 @@
 		49F888F216D6D18700AB3377 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		49F888F516D6D18700AB3377 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		49F888F816D6D18700AB3377 /* DublinCityParkingCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DublinCityParkingCoreData.xcdatamodel; sourceTree = "<group>"; };
-		49F8890516D6D3B700AB3377 /* DCDMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCDMasterViewController.h; path = ../DCDMasterViewController.h; sourceTree = "<group>"; };
-		49F8890616D6D3B700AB3377 /* DCDMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDMasterViewController.m; path = ../DCDMasterViewController.m; sourceTree = "<group>"; };
+		49F8890516D6D3B700AB3377 /* CarparkListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarparkListViewController.h; path = ../CarparkListViewController.h; sourceTree = "<group>"; };
+		49F8890616D6D3B700AB3377 /* CarparkListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarparkListViewController.m; path = ../CarparkListViewController.m; sourceTree = "<group>"; };
 		49F8890B16D6DD5300AB3377 /* CarparkDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkDetails.h; sourceTree = "<group>"; };
 		49F8890C16D6DD5300AB3377 /* CarparkDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkDetails.m; sourceTree = "<group>"; };
 		49F8890E16D6DD9000AB3377 /* CarparkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkInfo.h; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 			children = (
 				496776F716DD968A009E7E22 /* CarparkDetailsViewController.h */,
 				496776F816DD968A009E7E22 /* CarparkDetailsViewController.m */,
-				49F8890516D6D3B700AB3377 /* DCDMasterViewController.h */,
-				49F8890616D6D3B700AB3377 /* DCDMasterViewController.m */,
+				49F8890516D6D3B700AB3377 /* CarparkListViewController.h */,
+				49F8890616D6D3B700AB3377 /* CarparkListViewController.m */,
 				496776F016DD81D5009E7E22 /* CarparkMapViewController.h */,
 				496776F116DD81D5009E7E22 /* CarparkMapViewController.m */,
 			);
@@ -242,7 +242,7 @@
 				49F888E916D6D18700AB3377 /* main.m in Sources */,
 				49F888ED16D6D18700AB3377 /* AppDelegate.m in Sources */,
 				49F888F916D6D18700AB3377 /* DublinCityParkingCoreData.xcdatamodeld in Sources */,
-				49F8890716D6D3B700AB3377 /* DCDMasterViewController.m in Sources */,
+				49F8890716D6D3B700AB3377 /* CarparkListViewController.m in Sources */,
 				49F8890D16D6DD5300AB3377 /* CarparkDetails.m in Sources */,
 				49F8891016D6DD9000AB3377 /* CarparkInfo.m in Sources */,
 				491A0DCD16DC2AA20017DEFE /* Carpark.m in Sources */,

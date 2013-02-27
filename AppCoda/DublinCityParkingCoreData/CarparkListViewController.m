@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 dcdevstudios. All rights reserved.
 //
 
-#import "DCDMasterViewController.h"
+#import "CarparkListViewController.h"
 #import "CarparkInfo.h"
 #import "XMLParser.h"
 #import "CarparkMapViewController.h"
 
-@interface DCDMasterViewController ()
+@interface CarparkListViewController ()
 
 @end
 
-@implementation DCDMasterViewController{
+@implementation CarparkListViewController{
     XMLParser *xmlParser;
     NSIndexPath *selectedRow;
 }
