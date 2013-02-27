@@ -12,6 +12,7 @@
 		496776E816DD624A009E7E22 /* strip.png in Resources */ = {isa = PBXBuildFile; fileRef = 496776E016DD624A009E7E22 /* strip.png */; };
 		496776EF16DD6D00009E7E22 /* parking30.ico in Resources */ = {isa = PBXBuildFile; fileRef = 496776EE16DD6D00009E7E22 /* parking30.ico */; };
 		496776F216DD81D5009E7E22 /* CarparkMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496776F116DD81D5009E7E22 /* CarparkMapViewController.m */; };
+		496776F916DD968A009E7E22 /* CarparkDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496776F816DD968A009E7E22 /* CarparkDetailsViewController.m */; };
 		49F888DB16D6D18700AB3377 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DA16D6D18700AB3377 /* UIKit.framework */; };
 		49F888DD16D6D18700AB3377 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DC16D6D18700AB3377 /* Foundation.framework */; };
 		49F888DF16D6D18700AB3377 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DE16D6D18700AB3377 /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 		496776EE16DD6D00009E7E22 /* parking30.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = parking30.ico; sourceTree = "<group>"; };
 		496776F016DD81D5009E7E22 /* CarparkMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkMapViewController.h; sourceTree = "<group>"; };
 		496776F116DD81D5009E7E22 /* CarparkMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkMapViewController.m; sourceTree = "<group>"; };
+		496776F716DD968A009E7E22 /* CarparkDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarparkDetailsViewController.h; path = ../CarparkDetailsViewController.h; sourceTree = "<group>"; };
+		496776F816DD968A009E7E22 /* CarparkDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarparkDetailsViewController.m; path = ../CarparkDetailsViewController.m; sourceTree = "<group>"; };
 		49F888D716D6D18700AB3377 /* DubPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F888DA16D6D18700AB3377 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49F888DC16D6D18700AB3377 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +91,19 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		496776F616DD9648009E7E22 /* Carparks Tab */ = {
+			isa = PBXGroup;
+			children = (
+				496776F716DD968A009E7E22 /* CarparkDetailsViewController.h */,
+				496776F816DD968A009E7E22 /* CarparkDetailsViewController.m */,
+				49F8890516D6D3B700AB3377 /* DCDMasterViewController.h */,
+				49F8890616D6D3B700AB3377 /* DCDMasterViewController.m */,
+				496776F016DD81D5009E7E22 /* CarparkMapViewController.h */,
+				496776F116DD81D5009E7E22 /* CarparkMapViewController.m */,
+			);
+			name = "Carparks Tab";
+			sourceTree = "<group>";
+		};
 		49F888CE16D6D18700AB3377 = {
 			isa = PBXGroup;
 			children = (
@@ -119,13 +135,10 @@
 		49F888E216D6D18700AB3377 /* DublinCityParkingCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				49F8890516D6D3B700AB3377 /* DCDMasterViewController.h */,
-				49F8890616D6D3B700AB3377 /* DCDMasterViewController.m */,
+				496776F616DD9648009E7E22 /* Carparks Tab */,
 				49F888EB16D6D18700AB3377 /* AppDelegate.h */,
 				49F888EC16D6D18700AB3377 /* AppDelegate.m */,
 				49F888F416D6D18700AB3377 /* MainStoryboard.storyboard */,
-				496776F016DD81D5009E7E22 /* CarparkMapViewController.h */,
-				496776F116DD81D5009E7E22 /* CarparkMapViewController.m */,
 				491A0DC916DC2AA20017DEFE /* Carpark.h */,
 				491A0DCA16DC2AA20017DEFE /* Carpark.m */,
 				491A0DCB16DC2AA20017DEFE /* XMLParser.h */,
@@ -235,6 +248,7 @@
 				491A0DCD16DC2AA20017DEFE /* Carpark.m in Sources */,
 				491A0DCE16DC2AA20017DEFE /* XMLParser.m in Sources */,
 				496776F216DD81D5009E7E22 /* CarparkMapViewController.m in Sources */,
+				496776F916DD968A009E7E22 /* CarparkDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

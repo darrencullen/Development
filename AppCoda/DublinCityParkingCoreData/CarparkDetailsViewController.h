@@ -1,16 +1,15 @@
 //
-//  CarparkMapViewController.h
+//  CarparkDetailsViewController.h
 //  DublinCityParkingCoreData
 //
-//  Created by darren cullen on 26/02/2013.
+//  Created by darren cullen on 27/02/2013.
 //  Copyright (c) 2013 dcdevstudios. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface CarparkMapViewController : UIViewController
+@interface CarparkDetailsViewController : UIViewController
 
 @property (nonatomic, strong) NSString *selectedCarparkCode;
-- (IBAction)showCarparkDetails:(id)sender;
 
 @end

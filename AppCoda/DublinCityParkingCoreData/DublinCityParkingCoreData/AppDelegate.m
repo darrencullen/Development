@@ -20,26 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSManagedObjectContext *context = [self managedObjectContext];
-//    CarparkInfo *failedBankInfo = [NSEntityDescription
-//                                       insertNewObjectForEntityForName:@"FailedBankInfo"
-//                                       inManagedObjectContext:context];
-//    [failedBankInfo setValue:@"Test Bank" forKey:@"name"];
-//    [failedBankInfo setValue:@"Testville" forKey:@"city"];
-//    [failedBankInfo setValue:@"Testland" forKey:@"state"];
-//    CarparkDetails *failedBankDetails = [NSEntityDescription
-//                                          insertNewObjectForEntityForName:@"FailedBankDetails"
-//                                          inManagedObjectContext:context];
-//    [failedBankDetails setValue:[NSDate date] forKey:@"closeDate"];
-//    [failedBankDetails setValue:[NSDate date] forKey:@"updateDate"];
-//    [failedBankDetails setValue:[NSNumber numberWithInt:12345] forKey:@"zip"];
-//    [failedBankDetails setValue:failedBankInfo forKey:@"info"];
-//    [failedBankInfo setValue:failedBankDetails forKey:@"details"];
+    
     NSError *error;
-//    if (![context save:&error]) {
-//        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-//    }
-    
-    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"CarparkInfo" inManagedObjectContext:context];

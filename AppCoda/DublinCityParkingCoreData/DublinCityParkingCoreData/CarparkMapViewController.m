@@ -7,6 +7,7 @@
 //
 
 #import "CarparkMapViewController.h"
+#import "CarparkDetailsViewController.h"
 
 @interface CarparkMapViewController ()
 
@@ -37,4 +38,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)showCarparkDetails:(id)sender {
+    [self performSegueWithIdentifier:@"showCarparkDetails" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if([segue.identifier isEqualToString:@"showCarparkDetails"]){
+        
+        CarparkDetailsViewController *destViewController = segue.destinationViewController;
+        destViewController.selectedCarparkCode = self.selectedCarparkCode;
+        
+        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Map" style: UIBarButtonItemStyleBordered target: nil action: nil];
+        
+        [[self navigationItem] setBackBarButtonItem: newBackButton];
+    }
+}
 @end
