@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DCDMasterViewController.m"
-         timestampString = "383530015.929907"
+         timestampString = "383618999.58163"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
+         startingLineNumber = "44"
+         endingLineNumber = "44"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DCDMasterViewController.m"
-         timestampString = "383530018.22158"
+         timestampString = "383618999.58163"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -79,19 +79,6 @@
          startingLineNumber = "51"
          endingLineNumber = "51"
          landmarkName = "-parser:didStartElement:namespaceURI:qualifiedName:attributes:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "DCDMasterViewController.m"
-         timestampString = "383533663.391711"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "85"
-         endingLineNumber = "85"
-         landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -144,6 +131,19 @@
          startingLineNumber = "75"
          endingLineNumber = "75"
          landmarkName = "-parser:didStartElement:namespaceURI:qualifiedName:attributes:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DCDMasterViewController.m"
+         timestampString = "383618999.58163"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "166"
+         endingLineNumber = "166"
+         landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

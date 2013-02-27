@@ -4,11 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller - Parking-->
+        <!--Navigation Controller - Carparks-->
         <scene sceneID="11">
             <objects>
                 <navigationController id="3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Parking" id="KsF-Or-ZgS"/>
+                    <tabBarItem key="tabBarItem" title="Carparks" id="KsF-Or-ZgS"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -24,49 +24,49 @@
         <scene sceneID="18">
             <objects>
                 <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="DCDMasterViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="13">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="13">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="ab7-DP-plN">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="46" id="ab7-DP-plN">
+                                <rect key="frame" x="0.0" y="46" width="320" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="267" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="267" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Carpark Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVa-qK-uyS">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="Aag-ax-q7e"/>
-                                                <constraint firstAttribute="width" constant="197" id="oCv-Gb-zSh"/>
+                                                <constraint firstAttribute="width" constant="197" id="CW5-mV-Vv2"/>
+                                                <constraint firstAttribute="height" constant="21" id="JHs-Dk-zez"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Carpark Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erM-sh-X5i">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="f5O-oz-279"/>
+                                                <constraint firstAttribute="height" constant="21" id="bhE-f1-LEj"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Spaces" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqi-Jf-8ch">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Spaces" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqi-Jf-8ch">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="fwc-7w-5WB"/>
-                                                <constraint firstAttribute="height" constant="21" id="pVT-u3-ucz"/>
+                                                <constraint firstAttribute="width" constant="50" id="9h3-gG-Vtr"/>
+                                                <constraint firstAttribute="height" constant="21" id="vet-zE-YEc"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTf-xc-LWa">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="nPk-5S-0Ey"/>
+                                                <constraint firstAttribute="height" constant="21" id="lZn-ID-hUg"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -75,16 +75,16 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="erM-sh-X5i" secondAttribute="bottom" constant="2" id="6o7-Xd-wX2"/>
-                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="21" id="7Sd-88-F8q"/>
-                                    <constraint firstItem="LVa-qK-uyS" firstAttribute="leading" secondItem="erM-sh-X5i" secondAttribute="leading" type="default" id="AiI-KE-CVo"/>
-                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="trailing" secondItem="gqi-Jf-8ch" secondAttribute="trailing" type="default" id="PFm-MC-ON0"/>
-                                    <constraint firstItem="gqi-Jf-8ch" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="1" id="Tvc-3n-cXe"/>
-                                    <constraint firstItem="gqi-Jf-8ch" firstAttribute="baseline" secondItem="LVa-qK-uyS" secondAttribute="baseline" type="default" id="XWR-GG-Wav"/>
-                                    <constraint firstItem="gqi-Jf-8ch" firstAttribute="leading" secondItem="LVa-qK-uyS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ZYv-dG-a59"/>
-                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="leading" secondItem="LVa-qK-uyS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="fSt-Xo-pN6"/>
-                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="leading" secondItem="erM-sh-X5i" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="vUc-aN-eqE"/>
-                                    <constraint firstItem="erM-sh-X5i" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="15" id="zAX-ZV-aTW"/>
+                                    <constraint firstItem="gqi-Jf-8ch" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="-1" id="0IK-5d-dRx"/>
+                                    <constraint firstItem="gqi-Jf-8ch" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="215" id="6kg-Id-1bf"/>
+                                    <constraint firstItem="gqi-Jf-8ch" firstAttribute="leading" secondItem="zTf-xc-LWa" secondAttribute="leading" type="default" id="DSx-QZ-Vm4"/>
+                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="trailing" secondItem="gqi-Jf-8ch" secondAttribute="trailing" type="default" id="LNL-wX-cvz"/>
+                                    <constraint firstItem="erM-sh-X5i" firstAttribute="leading" secondItem="LVa-qK-uyS" secondAttribute="leading" type="default" id="NK9-rm-cQ2"/>
+                                    <constraint firstItem="erM-sh-X5i" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="23" id="aa0-j0-IC2"/>
+                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="21" id="d4z-VG-YM2"/>
+                                    <constraint firstItem="LVa-qK-uyS" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="3" id="hRp-dt-3pb"/>
+                                    <constraint firstItem="LVa-qK-uyS" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="15" id="hbE-lK-Zmd"/>
+                                    <constraint firstItem="erM-sh-X5i" firstAttribute="trailing" secondItem="LVa-qK-uyS" secondAttribute="trailing" type="default" id="qiT-Yg-2gC"/>
                                 </constraints>
                             </tableViewCell>
                         </prototypes>
@@ -95,17 +95,49 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Carparks" id="36"/>
+                    <connections>
+                        <segue destination="Y7Y-5T-hS6" kind="push" identifier="showCarparkMap" id="Ap5-BQ-nc6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="-572"/>
+            <point key="canvasLocation" x="304" y="-572"/>
+        </scene>
+        <!--Carpark Map View Controller - Carpark Map-->
+        <scene sceneID="R6O-ll-ZuE">
+            <objects>
+                <viewController id="Y7Y-5T-hS6" customClass="CarparkMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fMC-VS-7Ba">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Carpark Map" id="LfY-ap-e7C"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAA-da-rbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="-567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Zc0-aR-Ear">
+            <objects>
+                <viewController id="PDM-0K-awj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l1m-UO-mef">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9p-LR-5QU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1115" y="-567"/>
         </scene>
         <!--Table View Controller - Traffic Cameras-->
         <scene sceneID="Pvl-bs-Uev">
             <objects>
                 <tableViewController id="xZk-i3-915" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2YP-Tt-Idd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -147,7 +179,7 @@
             <objects>
                 <tableViewController id="Hl6-DW-6N7" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="90v-62-T6d">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -173,7 +205,7 @@
             <objects>
                 <tableViewController id="EjC-Gw-ChR" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EAr-aa-mfy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -199,7 +231,7 @@
             <objects>
                 <tableViewController id="5ef-65-b6o" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KjA-8F-LVx">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -280,9 +312,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="qPe-jf-xYQ"/>
-                        <segue destination="uAF-Wo-LHI" kind="relationship" relationship="viewControllers" id="t16-6A-PtF"/>
-                        <segue destination="pzh-Dv-q7K" kind="relationship" relationship="viewControllers" id="Lkt-hq-JMo"/>
                         <segue destination="Txy-Qp-YjA" kind="relationship" relationship="viewControllers" id="3U9-Zz-ub2"/>
+                        <segue destination="pzh-Dv-q7K" kind="relationship" relationship="viewControllers" id="Lkt-hq-JMo"/>
+                        <segue destination="uAF-Wo-LHI" kind="relationship" relationship="viewControllers" id="t16-6A-PtF"/>
                         <segue destination="maZ-4Y-Jij" kind="relationship" relationship="viewControllers" id="7kb-am-ISf"/>
                     </connections>
                 </tabBarController>
@@ -292,6 +324,9 @@
         </scene>
     </scenes>
     <classes>
+        <class className="CarparkMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkMapViewController.h"/>
+        </class>
         <class className="DCDMasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DCDMasterViewController.h"/>
         </class>
@@ -302,6 +337,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

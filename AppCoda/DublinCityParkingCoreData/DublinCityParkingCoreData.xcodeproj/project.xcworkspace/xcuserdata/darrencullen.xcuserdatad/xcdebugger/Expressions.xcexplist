@@ -19,5 +19,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[DCDMasterViewController prepareForSegue:sender:]:DCDMasterViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "getTextView.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

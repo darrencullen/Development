@@ -9,6 +9,7 @@
 #import "DCDMasterViewController.h"
 #import "CarparkInfo.h"
 #import "XMLParser.h"
+#import "CarparkMapViewController.h"
 
 @interface DCDMasterViewController ()
 
@@ -16,6 +17,7 @@
 
 @implementation DCDMasterViewController{
     XMLParser *xmlParser;
+    NSIndexPath *selectedRow;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -130,6 +132,14 @@
 
 #pragma mark - Table view delegate
 
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    selectedRow = indexPath;
+    // do a segue based on the indexPath or do any setup later in prepareForSegue
+    [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
@@ -139,6 +149,24 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if([segue.identifier isEqualToString:@"showCarparkMap"]){
+        
+       // NSIndexPath *indexPath =  selectedRow;
+        // do some prep based on indexPath, if needed
+        
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedRow];
+        UITextField *getTextView = (UITextField*)[cell.contentView viewWithTag:100];
+        
+        CarparkMapViewController *destViewController = segue.destinationViewController;
+        destViewController.selectedCarparkCode = getTextView.text;
+
+        
+    }
 }
 
 @end
