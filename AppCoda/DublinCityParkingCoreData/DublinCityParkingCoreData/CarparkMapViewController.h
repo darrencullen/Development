@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-#define METERS_PER_MILE 1609.344
-
 @interface CarparkMapViewController : UIViewController <MKMapViewDelegate>
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+
 @property (nonatomic, strong) NSString *selectedCarparkCode;
+
 - (IBAction)showCarparkDetails:(id)sender;
 
 @end

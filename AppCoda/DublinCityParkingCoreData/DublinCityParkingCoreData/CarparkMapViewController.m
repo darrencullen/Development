@@ -9,6 +9,7 @@
 #import "CarparkMapViewController.h"
 #import "CarparkDetailsViewController.h"
 #import "CarparkMapOverlay.h"
+#import "CarparkInfo.h"
 
 @interface CarparkMapViewController ()
 
@@ -31,19 +32,37 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.title = self.selectedCarparkCode;
-}
-
-
-- (void)viewWillAppear:(BOOL)animated {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"code == %@", self.selectedCarparkCode];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
+    
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *carparks = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    CarparkInfo *carparkToMap = carparks[0];
+    
     // default to dublin city centre
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 53.34401;
     zoomLocation.longitude= -6.26433;
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-    MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
-    [_mapView setRegion:adjustedRegion animated:YES];
+    MKCoordinateRegion region;
+    region.center=zoomLocation;   // location
+    MKCoordinateSpan span;
+    span.latitudeDelta=0.008;               //  0.001 to 120
+    span.longitudeDelta=0.008;
+    region.span=span;
+    [self.mapView setRegion:region animated:YES];
+    self.title = self.selectedCarparkCode;
+    
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
     
     [self plotCarparkPosition];
 }

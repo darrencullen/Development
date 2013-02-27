@@ -10,6 +10,7 @@
 #import "CarparkDetails.h"
 #import "CarparkInfo.h"
 #import "CarparkListViewController.h"
+#import "CarparkMapViewController.h"
 
 @implementation AppDelegate
 
@@ -41,8 +42,10 @@
     // set the tab controller as the root controller and allow it to use managed objects
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:0];
-    CarparkListViewController *controller = [[navigationController viewControllers] objectAtIndex:0];
-    controller.managedObjectContext = self.managedObjectContext;
+    CarparkListViewController *carparkListController = [[navigationController viewControllers] objectAtIndex:0];
+    CarparkMapViewController *carparkMapController = [[navigationController viewControllers] objectAtIndex:0];
+    carparkListController.managedObjectContext = self.managedObjectContext;
+    carparkMapController.managedObjectContext = self.managedObjectContext;
     
     // customise the navigation bar
     UIImage *navBackgroundImage = [UIImage imageNamed:@"strip1.png"];
