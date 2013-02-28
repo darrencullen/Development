@@ -27,5 +27,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[CarparkMapViewController viewDidLoad]:CarparkMapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedCarparkCode">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

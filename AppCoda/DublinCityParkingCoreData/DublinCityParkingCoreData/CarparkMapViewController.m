@@ -15,7 +15,9 @@
 
 @end
 
-@implementation CarparkMapViewController
+@implementation CarparkMapViewController{
+    CarparkInfo *selectedCarpark;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +35,7 @@
 	// Do any additional setup after loading the view.
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"code == %@", self.selectedCarparkCode];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", self.selectedCarparkCode];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
     
@@ -43,7 +45,7 @@
     NSError *error;
     NSArray *carparks = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
-    CarparkInfo *carparkToMap = carparks[0];
+    selectedCarpark = carparks[0];
     
     // default to dublin city centre
     CLLocationCoordinate2D zoomLocation;
@@ -84,7 +86,7 @@
     CLLocationCoordinate2D coordinate;
     coordinate.latitude = 53.34401;
     coordinate.longitude = -6.26433;
-    CarparkMapOverlay *annotation = [[CarparkMapOverlay alloc] initWithName:@"testname" spaces:@"999" address:@"testaddress@" coordinate:coordinate];
+    CarparkMapOverlay *annotation = [[CarparkMapOverlay alloc] initWithName:selectedCarpark.name spaces:selectedCarpark.availableSpaces address:selectedCarpark.address coordinate:coordinate];
     [_mapView addAnnotation:annotation];
 }
 
@@ -123,7 +125,7 @@
         CarparkDetailsViewController *destViewController = segue.destinationViewController;
         destViewController.selectedCarparkCode = self.selectedCarparkCode;
         
-        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Map" style: UIBarButtonItemStyleBordered target: nil action: nil];
+        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style: UIBarButtonItemStyleBordered target: nil action: nil];
         
         [[self navigationItem] setBackBarButtonItem: newBackButton];
     }

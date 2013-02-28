@@ -26,9 +26,9 @@
 
 - (NSString *)title {
     if ([_name isKindOfClass:[NSNull class]])
-        return @"Unknown charge";
+        return @"Unknown carpark";
     else
-        return _name;
+        return [NSString stringWithFormat:@"%@ (Spaces: %@)", _name, _availableSpaces];
 }
 
 - (NSString *)subtitle {
