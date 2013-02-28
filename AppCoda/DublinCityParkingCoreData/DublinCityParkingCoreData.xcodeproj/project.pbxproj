@@ -97,6 +97,8 @@
 		4907CAD516E00C8A00C6BA03 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				4907CAD816E0114300C6BA03 /* DublinCityParkingCoreDataImport.sqlite */,
+				4907CAD916E0114300C6BA03 /* DublinCityParkingCoreData.xcdatamodeld */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -167,8 +169,6 @@
 				491A0DC916DC2AA20017DEFE /* Carpark.h */,
 				491A0DCA16DC2AA20017DEFE /* Carpark.m */,
 				491A0DCB16DC2AA20017DEFE /* XMLParser.h */,
-				4907CAD816E0114300C6BA03 /* DublinCityParkingCoreDataImport.sqlite */,
-				4907CAD916E0114300C6BA03 /* DublinCityParkingCoreData.xcdatamodeld */,
 				491A0DCC16DC2AA20017DEFE /* XMLParser.m */,
 				49F8890E16D6DD9000AB3377 /* CarparkInfo.h */,
 				49F8890F16D6DD9000AB3377 /* CarparkInfo.m */,
