@@ -5,8 +5,8 @@
         <attribute name="disabledSpaces" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="heightRestrictions" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hourlyRate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="openingHours" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="otherRate1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="otherRate2" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,7 +24,7 @@
         <relationship name="details" optional="YES" minCount="1" maxCount="1" deletionRule="Deny" destinationEntity="CarparkDetails" inverseName="info" inverseEntity="CarparkDetails" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CarparkDetails" positionX="160" positionY="192" width="128" height="253"/>
+        <element name="CarparkDetails" positionX="160" positionY="192" width="128" height="255"/>
         <element name="CarparkInfo" positionX="-182" positionY="189" width="128" height="118"/>
     </elements>
 </model>

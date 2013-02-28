@@ -52,8 +52,8 @@
     
     // default to dublin city centre
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 53.34401;
-    zoomLocation.longitude= -6.26433;
+    zoomLocation.latitude = selectedCarparkDetails.latitude;
+    zoomLocation.longitude= selectedCarparkDetails.longitude;
     
     MKCoordinateRegion region;
     region.center=zoomLocation;   // location
