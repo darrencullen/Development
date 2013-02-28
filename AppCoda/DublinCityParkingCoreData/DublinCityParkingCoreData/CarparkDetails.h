@@ -20,8 +20,8 @@
 @property (nonatomic, retain) NSString * phoneNumber;
 @property (nonatomic, retain) NSString * directions;
 @property (nonatomic, retain) NSString * services;
-@property (nonatomic, retain) NSNumber * latitude;
-@property (nonatomic, retain) NSNumber * longitude;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
 @property (nonatomic, retain) NSString * openingHours;
 @property (nonatomic, retain) NSString * hourlyRate;
 @property (nonatomic, retain) NSString * otherRate1;

@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[DCDMasterViewController prepareForSegue:sender:]:DCDMasterViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "getTextView.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[DCDMasterViewController tableView:cellForRowAtIndexPath:]:DCDMasterViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -20,18 +28,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[DCDMasterViewController prepareForSegue:sender:]:DCDMasterViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "getTextView.text">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[CarparkMapViewController viewDidLoad]:CarparkMapViewController.m">
          <PersistentStrings>
             <PersistentString
                value = "self.selectedCarparkCode">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CarparkMapViewController plotCarparkPosition]:CarparkMapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedCarparkDetails.latitude">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

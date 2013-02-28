@@ -38,25 +38,6 @@
   "otherrate2":""
   },
   {
-  "code":"MARLBORO" ,
-  "name":"Marlborough" ,
-  "address":"Sean Macdermott Street Upper, Dublin 1",
-  "region":"Northeast" ,
-  "spaces":"612" ,
-  "disabledspaces":"",
-  "availablespaces":"",
-  "heightrestrictions":"1.9m" ,
-  "phone":"" ,
-  "directions":"Marlborough Street onto Sean Macdermot Street Upper." ,
-  "services":"24 Hours. Disabled Spaces, Toilets, Car Wash, Lift, Bike Racks",
-  "latitude":53.352457,
-  "longitude":-6.258297,
-  "openinghours":"Mon-Sun 24 hours a day",
-  "hourlyrate":"€3.60" ,
-  "otherrate1":"Maximum Charge for Saturday: €10.00&#xA;Maximum Charge for Sunday: €5.00&#xA;Evening Charge (17:30 – 00:00): €5.00" ,
-  "otherrate2":"Evening/overnight (4pm to 9am next day): €5.00&#xA;Day parking (9am to 7pm): €10.00&#xA;24 hours: €12.00"
-  },
-  {
   "code":"ARNOTTS" ,
   "name":"Arnotts" ,
   "address":"Prince's Street North, Dublin 1" ,

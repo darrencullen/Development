@@ -10,13 +10,15 @@
 #import "CarparkDetailsViewController.h"
 #import "CarparkMapOverlay.h"
 #import "CarparkInfo.h"
+#import "CarparkDetails.h"
 
 @interface CarparkMapViewController ()
 
 @end
 
 @implementation CarparkMapViewController{
-    CarparkInfo *selectedCarpark;
+    CarparkInfo *selectedCarparkInfo;
+    CarparkDetails *selectedCarparkDetails;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -45,7 +47,8 @@
     NSError *error;
     NSArray *carparks = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
-    selectedCarpark = carparks[0];
+    selectedCarparkInfo = carparks[0];
+    selectedCarparkDetails = selectedCarparkInfo.details;
     
     // default to dublin city centre
     CLLocationCoordinate2D zoomLocation;
@@ -84,9 +87,9 @@
     }
         
     CLLocationCoordinate2D coordinate;
-    coordinate.latitude = 53.34401;
-    coordinate.longitude = -6.26433;
-    CarparkMapOverlay *annotation = [[CarparkMapOverlay alloc] initWithName:selectedCarpark.name spaces:selectedCarpark.availableSpaces address:selectedCarpark.address coordinate:coordinate];
+    coordinate.latitude = selectedCarparkDetails.latitude;
+    coordinate.longitude = selectedCarparkDetails.longitude;
+    CarparkMapOverlay *annotation = [[CarparkMapOverlay alloc] initWithName:selectedCarparkInfo.name spaces:selectedCarparkInfo.availableSpaces address:selectedCarparkInfo.address coordinate:coordinate];
     [_mapView addAnnotation:annotation];
 }
 

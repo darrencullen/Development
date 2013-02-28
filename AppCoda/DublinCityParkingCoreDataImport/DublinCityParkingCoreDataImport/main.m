@@ -57,6 +57,7 @@ static NSManagedObjectContext *managedObjectContext()
                                                          options:kNilOptions
                                                            error:&err];
         NSLog(@"Imported Carparks: %@", Carparks);
+        NSLog(@"SQL Database location: %@", url);
         
         [Carparks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             CarparkInfo *carparkInfo = [NSEntityDescription
@@ -76,8 +77,8 @@ static NSManagedObjectContext *managedObjectContext()
             carparkDetails.disabledSpaces = [obj objectForKey:@"disabledSpaces"];
             carparkDetails.heightRestrictions = [obj objectForKey:@"heightRestrictions"];
             carparkDetails.hourlyRate = [obj objectForKey:@"hourlyRate"];
-            carparkDetails.latitude = [obj objectForKey:@"latitude"];
-            carparkDetails.longitude = [obj objectForKey:@"longitude"];
+            carparkDetails.latitude = [[obj objectForKey:@"latitude"] doubleValue];
+            carparkDetails.longitude = [[obj objectForKey:@"longitude"] doubleValue];
             carparkDetails.openingHours = [obj objectForKey:@"openingHours"];
             carparkDetails.otherRate1 = [obj objectForKey:@"otherRate1"];
             carparkDetails.otherRate2 = [obj objectForKey:@"otherRate2"];
