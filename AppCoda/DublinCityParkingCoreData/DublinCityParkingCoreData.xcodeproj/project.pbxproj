@@ -94,13 +94,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4907CAD516E00C8A00C6BA03 /* Core Data */ = {
+		4907CAD516E00C8A00C6BA03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				491A0DC916DC2AA20017DEFE /* Carpark.h */,
+				491A0DCA16DC2AA20017DEFE /* Carpark.m */,
+				49F8890E16D6DD9000AB3377 /* CarparkInfo.h */,
+				49F8890F16D6DD9000AB3377 /* CarparkInfo.m */,
+				49F8890B16D6DD5300AB3377 /* CarparkDetails.h */,
+				49F8890C16D6DD5300AB3377 /* CarparkDetails.m */,
 				4907CAD816E0114300C6BA03 /* DublinCityParkingCoreDataImport.sqlite */,
 				4907CAD916E0114300C6BA03 /* DublinCityParkingCoreData.xcdatamodeld */,
 			);
-			name = "Core Data";
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4907CB3816E14ECE00C6BA03 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				49F888EB16D6D18700AB3377 /* AppDelegate.h */,
+				49F888EC16D6D18700AB3377 /* AppDelegate.m */,
+				491A0DCC16DC2AA20017DEFE /* XMLParser.m */,
+				491A0DCB16DC2AA20017DEFE /* XMLParser.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		4907CB3916E14F6100C6BA03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49F888F416D6D18700AB3377 /* MainStoryboard.storyboard */,
+				49A9E6CF16DEADF700F54513 /* CarparkMapOverlay.h */,
+				49A9E6D016DEADF700F54513 /* CarparkMapOverlay.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		496776EB16DD6251009E7E22 /* Resources */ = {
@@ -114,7 +141,7 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		496776F616DD9648009E7E22 /* Carparks Tab */ = {
+		496776F616DD9648009E7E22 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				496776F716DD968A009E7E22 /* CarparkDetailsViewController.h */,
@@ -124,7 +151,7 @@
 				496776F016DD81D5009E7E22 /* CarparkMapViewController.h */,
 				496776F116DD81D5009E7E22 /* CarparkMapViewController.m */,
 			);
-			name = "Carparks Tab";
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		49F888CE16D6D18700AB3377 = {
@@ -160,20 +187,10 @@
 		49F888E216D6D18700AB3377 /* DublinCityParkingCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				49A9E6CF16DEADF700F54513 /* CarparkMapOverlay.h */,
-				49A9E6D016DEADF700F54513 /* CarparkMapOverlay.m */,
-				496776F616DD9648009E7E22 /* Carparks Tab */,
-				49F888EB16D6D18700AB3377 /* AppDelegate.h */,
-				49F888EC16D6D18700AB3377 /* AppDelegate.m */,
-				49F888F416D6D18700AB3377 /* MainStoryboard.storyboard */,
-				491A0DC916DC2AA20017DEFE /* Carpark.h */,
-				491A0DCA16DC2AA20017DEFE /* Carpark.m */,
-				491A0DCB16DC2AA20017DEFE /* XMLParser.h */,
-				491A0DCC16DC2AA20017DEFE /* XMLParser.m */,
-				49F8890E16D6DD9000AB3377 /* CarparkInfo.h */,
-				49F8890F16D6DD9000AB3377 /* CarparkInfo.m */,
-				49F8890B16D6DD5300AB3377 /* CarparkDetails.h */,
-				49F8890C16D6DD5300AB3377 /* CarparkDetails.m */,
+				4907CAD516E00C8A00C6BA03 /* Model */,
+				4907CB3916E14F6100C6BA03 /* View */,
+				496776F616DD9648009E7E22 /* Controller */,
+				4907CB3816E14ECE00C6BA03 /* Classes */,
 				49F888E316D6D18700AB3377 /* Supporting Files */,
 			);
 			path = DublinCityParkingCoreData;
@@ -182,7 +199,6 @@
 		49F888E316D6D18700AB3377 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4907CAD516E00C8A00C6BA03 /* Core Data */,
 				496776EB16DD6251009E7E22 /* Resources */,
 				49F888E416D6D18700AB3377 /* DublinCityParkingCoreData-Info.plist */,
 				49F888E516D6D18700AB3377 /* InfoPlist.strings */,
