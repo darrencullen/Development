@@ -1,0 +1,198 @@
+//
+//  DCDMasterViewController.m
+//  DublinCityParkingCoreData
+//
+//  Created by darren cullen on 21/02/2013.
+//  Copyright (c) 2013 dcdevstudios. All rights reserved.
+//
+
+#import "CarparkListViewController.h"
+#import "CarparkInfo.h"
+#import "XMLParser.h"
+#import "CarparkMapViewController.h"
+
+@interface CarparkListViewController ()
+
+@end
+
+@implementation CarparkListViewController{
+    XMLParser *xmlParser;
+    NSIndexPath *selectedRow;
+}
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+   // xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.dublincity.ie/dublintraffic/cpdata.xml"];
+
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
+    
+    
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    self.title = @"Carparks";
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [self loadXMLData];
+}
+
+
+- (void) loadXMLData {
+	
+	NSOperationQueue *queue = [NSOperationQueue new];
+	
+	NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self
+																			selector:@selector(loadXMLDataWithOperation)
+																			  object:nil];
+	[queue addOperation:operation];
+}
+
+- (void) loadXMLDataWithOperation {
+    xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.dublincity.ie/dublintraffic/cpdata.xml"];
+	
+	[self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [self.carparkInfos count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // maybe use region as a cell identifier
+    static NSString *CellIdentifier = @"CarparkCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    CarparkInfo *info = [self.carparkInfos objectAtIndex:indexPath.row];
+    
+    UILabel *carparkNameLabel = (UILabel *)[cell viewWithTag:100];
+    carparkNameLabel.text = info.name;
+    
+    UILabel *carparkAddressLabel = (UILabel *)[cell viewWithTag:101];
+    carparkAddressLabel.text = [NSString stringWithFormat:@"%@", info.address];
+    
+    UILabel *availableSpacesLabel = (UILabel *)[cell viewWithTag:102];
+    availableSpacesLabel.text = info.availableSpaces;
+    
+    cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"strip1.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];  
+    
+    return cell;
+}
+
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+/*
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
+
+#pragma mark - Table view delegate
+
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    selectedRow = indexPath;
+    // do a segue based on the indexPath or do any setup later in prepareForSegue
+    [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if([segue.identifier isEqualToString:@"showCarparkMap"]){
+        
+       // NSIndexPath *indexPath =  selectedRow;
+        // do some prep based on indexPath, if needed
+        
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedRow];
+        UITextField *getTextView = (UITextField*)[cell.contentView viewWithTag:100];
+                
+        CarparkMapViewController *destViewController = segue.destinationViewController;
+        destViewController.selectedCarparkCode = getTextView.text;
+        destViewController.managedObjectContext = self.managedObjectContext;
+        
+        
+        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"List" style: UIBarButtonItemStyleBordered target: nil action: nil];
+        
+        [[self navigationItem] setBackBarButtonItem: newBackButton];
+    }
+}
+
+@end
