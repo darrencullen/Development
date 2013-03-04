@@ -15,22 +15,59 @@
 
 @end
 
-@implementation CarparkListViewController{
+@implementation CarparkListViewController
+{
     XMLParser *xmlParser;
     NSIndexPath *selectedRow;
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//- (void)encodeWithCoder:(NSCoder *)enCoder {
+//    [super encodeWithCoder:enCoder];
+//    
+//    [enCoder encodeObject:xmlParser forKey:@"kXMLParser"];
+//    [enCoder encodeObject:selectedRow forKey:@"kSelectedRow"];
+//}
+//
+//- (id)initWithCoder:(NSCoder *)decoder
+//{
+//    self = [super init];
+//    
+//    NSLog(@"initWithCoder");
+//    
+//    if( self != nil )
+//    {
+//        //decode properties, other class vars
+//        xmlParser = [decoder decodeObjectForKey:@"kXMLParser"];
+//        selectedRow = [decoder decodeObjectForKey:@"kSelectedRow"];
+//        
+//        NSLog(@"initWithCoder2");
+//    }
+//    return self;
+//}
+
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+////        [[NSNotificationCenter defaultCenter] addObserver:self
+////                                                 selector:@selector(loadXMLData)
+////                                                     name:@"appDidBecomeActive"
+////                                                   object:nil];
+//        NSLog(@"initWithNibName");
+//    }
+//    return self;
+//}
+
+//- (id)initWithCoder:(NSCoder *)decoder
+//{
+//    NSLog(@"initWithCoder");
+//    
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
+    NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
    // xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.dublincity.ie/dublintraffic/cpdata.xml"];
@@ -48,16 +85,23 @@
     NSError *error;
     self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     self.title = @"Carparks";
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadXMLData)
+                                                 name:@"appDidBecomeActive"
+                                               object:nil];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
     [self loadXMLData];
+    NSLog(@"viewDidAppear");
 }
 
 
 - (void) loadXMLData {
-	
+	NSLog(@"loadXMLData");
+    
 	NSOperationQueue *queue = [NSOperationQueue new];
 	
 	NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self
