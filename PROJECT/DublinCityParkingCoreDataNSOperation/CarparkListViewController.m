@@ -119,9 +119,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    NSArray *sectionContents = [carparkLocations objectAtIndex:[indexPath section]];
-    selectedCarpark = [sectionContents objectAtIndex:[indexPath row]];
+    NSArray *selectedSection = carparkLocations[indexPath.section];
+    selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
     //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
+    
+    NSLog(@"%ld;%ld;%@", (long)indexPath.section, (long)indexPath.row, selectedCarpark.name);
     
     UILabel *carparkNameLabel = (UILabel *)[cell viewWithTag:100];
     carparkNameLabel.text = selectedCarpark.name;
@@ -218,7 +220,10 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
+    NSArray *selectedSection = carparkLocations[indexPath.section];
+    selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
+    
+    //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
     // do a segue based on the indexPath or do any setup later in prepareForSegue
     [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
 }
