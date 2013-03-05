@@ -27,7 +27,8 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="13">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.31210813700000001" green="0.31092929470000003" blue="0.62601902170000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.31210813700000001" green="0.31092929470000003" blue="0.62601902170000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarparkCell" rowHeight="46" id="ab7-DP-plN">
                                 <rect key="frame" x="0.0" y="46" width="320" height="48"/>
@@ -41,34 +42,23 @@
                                                 <constraint firstAttribute="width" constant="197" id="CW5-mV-Vv2"/>
                                                 <constraint firstAttribute="height" constant="21" id="JHs-Dk-zez"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Carpark Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erM-sh-X5i">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="bhE-f1-LEj"/>
+                                                <constraint firstAttribute="width" constant="197" id="q5S-XX-GFg"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Spaces" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqi-Jf-8ch">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="9h3-gG-Vtr"/>
-                                                <constraint firstAttribute="height" constant="21" id="vet-zE-YEc"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTf-xc-LWa">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="71" id="WIC-SP-rnS"/>
+                                                <constraint firstAttribute="width" constant="61" id="NT2-X0-x91"/>
                                                 <constraint firstAttribute="height" constant="21" id="lZn-ID-hUg"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
@@ -76,15 +66,12 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="gqi-Jf-8ch" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="-1" id="0IK-5d-dRx"/>
-                                    <constraint firstItem="gqi-Jf-8ch" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="215" id="6kg-Id-1bf"/>
-                                    <constraint firstAttribute="trailing" secondItem="zTf-xc-LWa" secondAttribute="trailing" constant="43" id="6tk-Lt-CpW"/>
-                                    <constraint firstItem="erM-sh-X5i" firstAttribute="leading" secondItem="LVa-qK-uyS" secondAttribute="leading" type="default" id="NK9-rm-cQ2"/>
-                                    <constraint firstItem="erM-sh-X5i" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="23" id="aa0-j0-IC2"/>
-                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="21" id="d4z-VG-YM2"/>
-                                    <constraint firstItem="LVa-qK-uyS" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="3" id="hRp-dt-3pb"/>
+                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="16" id="0m1-ha-d8d"/>
+                                    <constraint firstAttribute="bottom" secondItem="LVa-qK-uyS" secondAttribute="bottom" constant="20" type="default" id="5gn-Ig-7EO"/>
+                                    <constraint firstAttribute="bottom" secondItem="erM-sh-X5i" secondAttribute="bottom" constant="3" id="RGL-ng-1nP"/>
+                                    <constraint firstAttribute="trailing" secondItem="zTf-xc-LWa" secondAttribute="trailing" constant="47" id="a6P-Ya-n1F"/>
                                     <constraint firstItem="LVa-qK-uyS" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="15" id="hbE-lK-Zmd"/>
-                                    <constraint firstItem="erM-sh-X5i" firstAttribute="trailing" secondItem="LVa-qK-uyS" secondAttribute="trailing" type="default" id="qiT-Yg-2gC"/>
+                                    <constraint firstItem="erM-sh-X5i" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="16" id="oPb-zJ-PoC"/>
                                 </constraints>
                             </tableViewCell>
                         </prototypes>
@@ -94,7 +81,7 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Carparks" id="36"/>
+                    <navigationItem key="navigationItem" title="Carpark Spaces" id="36"/>
                     <connections>
                         <segue destination="Y7Y-5T-hS6" kind="push" identifier="showCarparkMap" id="Ap5-BQ-nc6"/>
                     </connections>

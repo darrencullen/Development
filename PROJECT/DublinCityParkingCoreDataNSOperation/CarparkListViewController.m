@@ -18,63 +18,20 @@
 @implementation CarparkListViewController
 {
     XMLParser *xmlParser;
-    NSIndexPath *selectedRow;
+    //NSIndexPath *selectedRow;
+    CarparkInfo *selectedCarpark;
 }
-
-//- (void)encodeWithCoder:(NSCoder *)enCoder {
-//    [super encodeWithCoder:enCoder];
-//    
-//    [enCoder encodeObject:xmlParser forKey:@"kXMLParser"];
-//    [enCoder encodeObject:selectedRow forKey:@"kSelectedRow"];
-//}
-//
-//- (id)initWithCoder:(NSCoder *)decoder
-//{
-//    self = [super init];
-//    
-//    NSLog(@"initWithCoder");
-//    
-//    if( self != nil )
-//    {
-//        //decode properties, other class vars
-//        xmlParser = [decoder decodeObjectForKey:@"kXMLParser"];
-//        selectedRow = [decoder decodeObjectForKey:@"kSelectedRow"];
-//        
-//        NSLog(@"initWithCoder2");
-//    }
-//    return self;
-//}
-
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-////        [[NSNotificationCenter defaultCenter] addObserver:self
-////                                                 selector:@selector(loadXMLData)
-////                                                     name:@"appDidBecomeActive"
-////                                                   object:nil];
-//        NSLog(@"initWithNibName");
-//    }
-//    return self;
-//}
-
-//- (id)initWithCoder:(NSCoder *)decoder
-//{
-//    NSLog(@"initWithCoder");
-//    
-//    return self;
-//}
 
 - (void)viewDidLoad
 {
     NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
-   // xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.dublincity.ie/dublintraffic/cpdata.xml"];
-
+    // xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.dublincity.ie/dublintraffic/cpdata.xml"];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
@@ -84,7 +41,6 @@
     [fetchRequest setEntity:entity];
     NSError *error;
     self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    self.title = @"Carparks";
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadXMLData)
@@ -125,7 +81,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -141,67 +97,104 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    CarparkInfo *info = [self.carparkInfos objectAtIndex:indexPath.row];
+    selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
     
     UILabel *carparkNameLabel = (UILabel *)[cell viewWithTag:100];
-    carparkNameLabel.text = info.name;
+    carparkNameLabel.text = selectedCarpark.name;
     
     UILabel *carparkAddressLabel = (UILabel *)[cell viewWithTag:101];
-    carparkAddressLabel.text = [NSString stringWithFormat:@"%@", info.address];
+    carparkAddressLabel.text = [NSString stringWithFormat:@"%@", selectedCarpark.address];
     
     UILabel *availableSpacesLabel = (UILabel *)[cell viewWithTag:102];
-    availableSpacesLabel.text = info.availableSpaces;
-    
-    cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"strip1.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];  
+    availableSpacesLabel.text = selectedCarpark.availableSpaces;
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, tableView.frame.size.width, 30)];
+    
+//    headerLabel.textAlignment = UITextAlignmentRight;
+//    headerLabel.text = [titleArray objectAtIndex:section];
+//    headerLabel.backgroundColor = [UIColor clearColor];
+//    
+//    [headerView addSubview:headerLabel];
+//    
+//    UILabel *label = [[UILabel alloc] init];
+//    label.frame = CGRectMake(200,5.0f, label.frame.size.width, label.frame.size.height);
+    
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.shadowColor = [UIColor grayColor];
+    headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+    headerLabel.font = [UIFont boldSystemFontOfSize:18];
+    
+    if(section == 0)
+        headerLabel.text = @"Southwest";
+    else if(section == 1)
+        headerLabel.text = @"Southeast";
+    else if(section == 2)
+        headerLabel.text = @"Northeast";
+    else
+        headerLabel.text = @"Northwest";
+    
+    [headerView addSubview:headerLabel];
+    return headerLabel;
+    
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44.0f;
+}
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
+
+/*
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 #pragma mark - Table view delegate
 
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    selectedRow = indexPath;
+    selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
     // do a segue based on the indexPath or do any setup later in prepareForSegue
     [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
 }
@@ -222,14 +215,15 @@
     
     if([segue.identifier isEqualToString:@"showCarparkMap"]){
         
-       // NSIndexPath *indexPath =  selectedRow;
+        // NSIndexPath *indexPath =  selectedRow;
         // do some prep based on indexPath, if needed
         
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedRow];
-        UITextField *getTextView = (UITextField*)[cell.contentView viewWithTag:100];
-                
+//        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedRow];
+//        UITextField *getTextView = (UITextField*)[cell.contentView viewWithTag:100];
+        
         CarparkMapViewController *destViewController = segue.destinationViewController;
-        destViewController.selectedCarparkCode = getTextView.text;
+        destViewController.selectedCarparkInfo = selectedCarpark;
+        destViewController.selectedCarparkDetails = selectedCarpark.details;
         destViewController.managedObjectContext = self.managedObjectContext;
         
         

@@ -54,7 +54,7 @@
 		49A9E6D016DEADF700F54513 /* CarparkMapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarparkMapOverlay.m; path = ../CarparkMapOverlay.m; sourceTree = "<group>"; };
 		49A9E6D216DEB9F700F54513 /* mappointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mappointer.png; sourceTree = "<group>"; };
 		49A9E6D416DED5F500F54513 /* strip1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip1.png; sourceTree = "<group>"; };
-		49A9E6D616DED6B700F54513 /* parking57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parking57.png; sourceTree = "<group>"; };
+		49A9E6D616DED6B700F54513 /* parking57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parking57.png; path = ../parking57.png; sourceTree = "<group>"; };
 		49F888D716D6D18700AB3377 /* DubPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F888DA16D6D18700AB3377 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49F888DC16D6D18700AB3377 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,6 +133,7 @@
 		496776EB16DD6251009E7E22 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49A9E6D616DED6B700F54513 /* parking57.png */,
 				49A9E6D416DED5F500F54513 /* strip1.png */,
 				49A9E6D216DEB9F700F54513 /* mappointer.png */,
 				496776EE16DD6D00009E7E22 /* parking30.ico */,
@@ -157,8 +158,6 @@
 		49F888CE16D6D18700AB3377 = {
 			isa = PBXGroup;
 			children = (
-				49A9E6D616DED6B700F54513 /* parking57.png */,
-				49A9E6C716DEA1BE00F54513 /* MapKit.framework */,
 				49F888E216D6D18700AB3377 /* DublinCityParkingCoreDataNSOperation */,
 				49F888D916D6D18700AB3377 /* Frameworks */,
 				49F888D816D6D18700AB3377 /* Products */,
@@ -176,6 +175,7 @@
 		49F888D916D6D18700AB3377 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49A9E6C716DEA1BE00F54513 /* MapKit.framework */,
 				49F888DA16D6D18700AB3377 /* UIKit.framework */,
 				49F888DC16D6D18700AB3377 /* Foundation.framework */,
 				49F888DE16D6D18700AB3377 /* CoreGraphics.framework */,

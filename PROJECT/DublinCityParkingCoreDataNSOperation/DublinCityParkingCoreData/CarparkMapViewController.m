@@ -16,10 +16,7 @@
 
 @end
 
-@implementation CarparkMapViewController{
-    CarparkInfo *selectedCarparkInfo;
-    CarparkDetails *selectedCarparkDetails;
-}
+@implementation CarparkMapViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,24 +33,45 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", self.selectedCarparkCode];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    
+//    // set up the managedObjectContext to read data from CoreData
+//    id delegate = [[UIApplication sharedApplication] delegate];
+//    self.managedObjectContext = [delegate managedObjectContext];
+//    
+//    NSEntityDescription *entity = [NSEntityDescription
+//                                   entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
+//    
+//    [fetchRequest setEntity:entity];
+//    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"code=%@",self.selectedCarparkCode]];
+//    
+//    
+//    NSError *error;
+//   // CarparkInfo *cgCarpark;
+//    
+//    selectedCarparkInfo = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] lastObject];
     
-    [fetchRequest setEntity:entity];
-    [fetchRequest setPredicate:predicate];
     
-    NSError *error;
-    NSArray *carparks = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
-    selectedCarparkInfo = carparks[0];
-    selectedCarparkDetails = selectedCarparkInfo.details;
+    
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", self.selectedCarparkCode];
+//    NSEntityDescription *entity = [NSEntityDescription
+//                                   entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
+//    
+//    [fetchRequest setEntity:entity];
+//    [fetchRequest setPredicate:predicate];
+//    
+//    NSError *error;
+//    NSArray *carparks = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    //selectedCarparkInfo = carparks[0];
+    //selectedCarparkDetails = selectedCarparkInfo.details;
     
     // default to dublin city centre
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = selectedCarparkDetails.latitude;
-    zoomLocation.longitude= selectedCarparkDetails.longitude;
+    zoomLocation.latitude = self.selectedCarparkDetails.latitude;
+    zoomLocation.longitude= self.selectedCarparkDetails.longitude;
     
     MKCoordinateRegion region;
     region.center=zoomLocation;   // location
@@ -62,7 +80,7 @@
     span.longitudeDelta=0.008;
     region.span=span;
     [self.mapView setRegion:region animated:YES];
-    self.title = self.selectedCarparkCode;
+    self.title = self.selectedCarparkInfo.code;
     
 }
 
@@ -87,9 +105,9 @@
     }
         
     CLLocationCoordinate2D coordinate;
-    coordinate.latitude = selectedCarparkDetails.latitude;
-    coordinate.longitude = selectedCarparkDetails.longitude;
-    CarparkMapOverlay *annotation = [[CarparkMapOverlay alloc] initWithName:selectedCarparkInfo.name spaces:selectedCarparkInfo.availableSpaces address:selectedCarparkInfo.address coordinate:coordinate];
+    coordinate.latitude = self.selectedCarparkDetails.latitude;
+    coordinate.longitude = self.selectedCarparkDetails.longitude;
+    CarparkMapOverlay *annotation = [[CarparkMapOverlay alloc] initWithName:self.selectedCarparkInfo.name spaces:self.selectedCarparkInfo.availableSpaces address:self.selectedCarparkInfo.address coordinate:coordinate];
     [_mapView addAnnotation:annotation];
 }
 
@@ -126,7 +144,7 @@
     if([segue.identifier isEqualToString:@"showCarparkDetails"]){
         
         CarparkDetailsViewController *destViewController = segue.destinationViewController;
-        destViewController.selectedCarparkCode = self.selectedCarparkCode;
+        destViewController.selectedCarparkCode = self.selectedCarparkInfo.code;
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style: UIBarButtonItemStyleBordered target: nil action: nil];
         

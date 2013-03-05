@@ -31,6 +31,9 @@
          contextName = "-[CarparkMapViewController viewDidLoad]:CarparkMapViewController.m">
          <PersistentStrings>
             <PersistentString
+               value = "selectedCarparkInfo.code">
+            </PersistentString>
+            <PersistentString
                value = "self.selectedCarparkCode">
             </PersistentString>
          </PersistentStrings>
