@@ -18,8 +18,12 @@
 @implementation CarparkListViewController
 {
     XMLParser *xmlParser;
-    //NSIndexPath *selectedRow;
     CarparkInfo *selectedCarpark;
+    NSMutableArray *southeastCarparks;
+    NSMutableArray *southwestCarparks;
+    NSMutableArray *northeastCarparks;
+    NSMutableArray *northwestCarparks;
+    NSMutableArray *carparkLocations;
 }
 
 - (void)viewDidLoad
@@ -27,10 +31,11 @@
     NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
-    // xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.dublincity.ie/dublintraffic/cpdata.xml"];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    southeastCarparks = [[NSMutableArray alloc] init];
+    southwestCarparks = [[NSMutableArray alloc] init];
+    northeastCarparks = [[NSMutableArray alloc] init];
+    northwestCarparks = [[NSMutableArray alloc] init];
+    carparkLocations = [[NSMutableArray alloc] initWithObjects:southeastCarparks, southwestCarparks, northeastCarparks, northwestCarparks, nil];
     
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -41,6 +46,18 @@
     [fetchRequest setEntity:entity];
     NSError *error;
     self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (CarparkInfo *carpark in self.carparkInfos){
+        if ([carpark.details.region isEqualToString:@"Southeast"]){
+            [southeastCarparks addObject:carpark];
+        } else if ([carpark.details.region isEqualToString:@"Southwest"]){
+            [southwestCarparks addObject:carpark];
+        } else if ([carpark.details.region isEqualToString:@"Northeast"]){
+            [northeastCarparks addObject:carpark];
+        } else if ([carpark.details.region isEqualToString:@"Northwest"]){
+            [northwestCarparks addObject:carpark];
+        }
+    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadXMLData)
@@ -81,23 +98,30 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 4;
+    return carparkLocations.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.carparkInfos count];
+    //return [self.carparkInfos count];
+    
+    NSArray *sectionContents = [carparkLocations objectAtIndex:section];
+    NSInteger rows = [sectionContents count];
+    
+    return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{   
     // maybe use region as a cell identifier
     static NSString *CellIdentifier = @"CarparkCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
+    NSArray *sectionContents = [carparkLocations objectAtIndex:[indexPath section]];
+    selectedCarpark = [sectionContents objectAtIndex:[indexPath row]];
+    //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
     
     UILabel *carparkNameLabel = (UILabel *)[cell viewWithTag:100];
     carparkNameLabel.text = selectedCarpark.name;
