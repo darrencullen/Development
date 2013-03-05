@@ -65,6 +65,11 @@
                                                object:nil];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+  //  [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
 - (void) viewDidAppear:(BOOL)animated
 {
     [self loadXMLData];
@@ -140,16 +145,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, tableView.frame.size.width, 30)];
-    
-//    headerLabel.textAlignment = UITextAlignmentRight;
-//    headerLabel.text = [titleArray objectAtIndex:section];
-//    headerLabel.backgroundColor = [UIColor clearColor];
-//    
-//    [headerView addSubview:headerLabel];
-//    
-//    UILabel *label = [[UILabel alloc] init];
-//    label.frame = CGRectMake(200,5.0f, label.frame.size.width, label.frame.size.height);
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
     
     headerLabel.backgroundColor = [UIColor clearColor];
     headerLabel.textColor = [UIColor whiteColor];
@@ -167,7 +163,7 @@
         headerLabel.text = @"Northwest";
     
     [headerView addSubview:headerLabel];
-    return headerLabel;
+    return headerView;
     
 }
 

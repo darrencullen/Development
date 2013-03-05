@@ -20,6 +20,7 @@
 		49A9E6D316DEB9F700F54513 /* mappointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A9E6D216DEB9F700F54513 /* mappointer.png */; };
 		49A9E6D516DED5F500F54513 /* strip1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A9E6D416DED5F500F54513 /* strip1.png */; };
 		49A9E6D716DED6B700F54513 /* parking57.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A9E6D616DED6B700F54513 /* parking57.png */; };
+		49F7E27916E6BB1E004CA8B5 /* NavigationBarStrip.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F7E27816E6BB1E004CA8B5 /* NavigationBarStrip.png */; };
 		49F888DB16D6D18700AB3377 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DA16D6D18700AB3377 /* UIKit.framework */; };
 		49F888DD16D6D18700AB3377 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DC16D6D18700AB3377 /* Foundation.framework */; };
 		49F888DF16D6D18700AB3377 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DE16D6D18700AB3377 /* CoreGraphics.framework */; };
@@ -55,6 +56,7 @@
 		49A9E6D216DEB9F700F54513 /* mappointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mappointer.png; sourceTree = "<group>"; };
 		49A9E6D416DED5F500F54513 /* strip1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip1.png; sourceTree = "<group>"; };
 		49A9E6D616DED6B700F54513 /* parking57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parking57.png; path = ../parking57.png; sourceTree = "<group>"; };
+		49F7E27816E6BB1E004CA8B5 /* NavigationBarStrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBarStrip.png; sourceTree = "<group>"; };
 		49F888D716D6D18700AB3377 /* DubPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F888DA16D6D18700AB3377 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49F888DC16D6D18700AB3377 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,6 +135,7 @@
 		496776EB16DD6251009E7E22 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49F7E27816E6BB1E004CA8B5 /* NavigationBarStrip.png */,
 				49A9E6D616DED6B700F54513 /* parking57.png */,
 				49A9E6D416DED5F500F54513 /* strip1.png */,
 				49A9E6D216DEB9F700F54513 /* mappointer.png */,
@@ -275,6 +278,7 @@
 				49A9E6D516DED5F500F54513 /* strip1.png in Resources */,
 				49A9E6D716DED6B700F54513 /* parking57.png in Resources */,
 				4907CADB16E0114400C6BA03 /* DublinCityParkingCoreDataImport.sqlite in Resources */,
+				49F7E27916E6BB1E004CA8B5 /* NavigationBarStrip.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

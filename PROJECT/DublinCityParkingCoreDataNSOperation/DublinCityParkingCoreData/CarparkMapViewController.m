@@ -27,7 +27,6 @@
     return self;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -86,7 +85,7 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self plotCarparkPosition];
 }
 
