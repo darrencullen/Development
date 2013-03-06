@@ -48,6 +48,7 @@
     self.services.text = selectedCarparkDetails.services;
     self.directions.text = selectedCarparkDetails.directions;
     
+    [self.view setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning

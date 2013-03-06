@@ -45,6 +45,8 @@
     UIImage *navBackgroundImage = [UIImage imageNamed:@"strip5.png"];
     [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
 
+    UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
+    [[UIBarButtonItem appearance] setTintColor:backgroundColour];
     
     return YES;
 }

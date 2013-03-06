@@ -28,6 +28,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[CarparkDetailsViewController viewDidLoad]:CarparkDetailsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedCarparkDetails.totalSpaces">
+            </PersistentString>
+            <PersistentString
+               value = "selectedCarparkDetails.region">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[CarparkMapViewController viewDidLoad]:CarparkMapViewController.m">
          <PersistentStrings>
             <PersistentString
