@@ -34,6 +34,20 @@
     
     self.title = self.selectedCarparkInfo.name;
     selectedCarparkDetails = self.selectedCarparkInfo.details;
+    
+    self.region.text = selectedCarparkDetails.region;
+    self.address.text = self.selectedCarparkInfo.address;
+    self.totalSpaces.text = selectedCarparkDetails.totalSpaces;
+    self.availableSpaces.text = self.selectedCarparkInfo.availableSpaces;
+    self.disabledSpaces.text = selectedCarparkDetails.disabledSpaces;
+    self.openingHours.text = selectedCarparkDetails.openingHours;
+    self.hourlyRate.text = selectedCarparkDetails.hourlyRate;
+    self.otherRate.text = selectedCarparkDetails.otherRate1;
+    self.maxHeight.text = selectedCarparkDetails.heightRestrictions;
+    self.phone.text = selectedCarparkDetails.phoneNumber;
+    self.services.text = selectedCarparkDetails.services;
+    self.directions.text = selectedCarparkDetails.directions;
+    
 }
 
 - (void)didReceiveMemoryWarning
