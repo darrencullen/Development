@@ -42,7 +42,7 @@
     carparkListController.managedObjectContext = self.managedObjectContext;
     
     // customise the navigation bar
-    UIImage *navBackgroundImage = [UIImage imageNamed:@"NavigationBarStrip.png"];
+    UIImage *navBackgroundImage = [UIImage imageNamed:@"strip5.png"];
     [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
 
     

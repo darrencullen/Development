@@ -1,24 +1,18 @@
 //
-//  CarparkDetailsViewController.m
+//  MoreViewController.m
 //  DublinCityParkingCoreData
 //
 //  Created by darren cullen on 27/02/2013.
 //  Copyright (c) 2013 dcdevstudios. All rights reserved.
 //
 
-#import "CarparkDetailsViewController.h"
-#import "CarparkInfo.h"
-#import "CarparkDetails.h"
+#import "MoreViewController.h"
 
-@interface CarparkDetailsViewController ()
+@interface MoreViewController ()
 
 @end
 
-@implementation CarparkDetailsViewController{
-    CarparkDetails *selectedCarparkDetails;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+@implementation MoreViewController- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -31,29 +25,39 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    self.title = self.selectedCarparkInfo.name;
-    selectedCarparkDetails = self.selectedCarparkInfo.details;
-    
-    self.region.text = selectedCarparkDetails.region;
-    self.address.text = self.selectedCarparkInfo.address;
-    self.totalSpaces.text = selectedCarparkDetails.totalSpaces;
-    self.availableSpaces.text = self.selectedCarparkInfo.availableSpaces;
-    self.disabledSpaces.text = selectedCarparkDetails.disabledSpaces;
-    self.openingHours.text = selectedCarparkDetails.openingHours;
-    self.hourlyRate.text = selectedCarparkDetails.hourlyRate;
-    self.otherRate.text = selectedCarparkDetails.otherRate1;
-    self.maxHeight.text = selectedCarparkDetails.heightRestrictions;
-    self.phone.text = selectedCarparkDetails.phoneNumber;
-    self.services.text = selectedCarparkDetails.services;
-    self.directions.text = selectedCarparkDetails.directions;
-    
+       
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
+    
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.shadowColor = [UIColor grayColor];
+    headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+    headerLabel.font = [UIFont boldSystemFontOfSize:18];
+    
+    if(section == 0)
+        headerLabel.text = @"Additional Information";
+    else if(section == 1)
+        headerLabel.text = @"App Details";
+    
+    [headerView addSubview:headerLabel];
+    return headerView;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44.0f;
 }
 
 @end

@@ -253,6 +253,12 @@
         
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"List" style: UIBarButtonItemStyleBordered target: nil action: nil];
+
+//        UIImage *barBackBtnImg = [[UIImage imageNamed:@"button.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 30, 0, 0)];
+//        
+//        [newBackButton setBackButtonBackgroundImage:barBackBtnImg
+//                                                          forState:UIControlStateNormal
+//                                                        barMetrics:UIBarMetricsDefault];
         
         [[self navigationItem] setBackBarButtonItem: newBackButton];
     }
