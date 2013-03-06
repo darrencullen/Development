@@ -16,7 +16,9 @@
 
 @end
 
-@implementation CarparkMapViewController
+@implementation CarparkMapViewController{
+    CarparkDetails *selectedCarparkDetails;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -67,10 +69,12 @@
     //selectedCarparkInfo = carparks[0];
     //selectedCarparkDetails = selectedCarparkInfo.details;
     
+    selectedCarparkDetails = self.selectedCarparkInfo.details;
+    
     // default to dublin city centre
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = self.selectedCarparkDetails.latitude;
-    zoomLocation.longitude= self.selectedCarparkDetails.longitude;
+    zoomLocation.latitude = selectedCarparkDetails.latitude;
+    zoomLocation.longitude= selectedCarparkDetails.longitude;
     
     MKCoordinateRegion region;
     region.center=zoomLocation;   // location
@@ -79,7 +83,7 @@
     span.longitudeDelta=0.008;
     region.span=span;
     [self.mapView setRegion:region animated:YES];
-    self.title = self.selectedCarparkInfo.code;
+    self.title = self.selectedCarparkInfo.name;
     
 }
 
@@ -104,8 +108,8 @@
     }
         
     CLLocationCoordinate2D coordinate;
-    coordinate.latitude = self.selectedCarparkDetails.latitude;
-    coordinate.longitude = self.selectedCarparkDetails.longitude;
+    coordinate.latitude = selectedCarparkDetails.latitude;
+    coordinate.longitude = selectedCarparkDetails.longitude;
     CarparkMapOverlay *annotation = [[CarparkMapOverlay alloc] initWithName:self.selectedCarparkInfo.name spaces:self.selectedCarparkInfo.availableSpaces address:self.selectedCarparkInfo.address coordinate:coordinate];
     [_mapView addAnnotation:annotation];
 }
@@ -143,7 +147,9 @@
     if([segue.identifier isEqualToString:@"showCarparkDetails"]){
         
         CarparkDetailsViewController *destViewController = segue.destinationViewController;
-        destViewController.selectedCarparkCode = self.selectedCarparkInfo.code;
+        destViewController.selectedCarparkInfo = self.selectedCarparkInfo;
+//        destViewController.selectedCarparkDetails = self.selectedCarparkInfo.details;
+//        destViewController.managedObjectContext = self.managedObjectContext;
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style: UIBarButtonItemStyleBordered target: nil action: nil];
         

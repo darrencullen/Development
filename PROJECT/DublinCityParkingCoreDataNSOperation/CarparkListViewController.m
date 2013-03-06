@@ -248,8 +248,8 @@
         
         CarparkMapViewController *destViewController = segue.destinationViewController;
         destViewController.selectedCarparkInfo = selectedCarpark;
-        destViewController.selectedCarparkDetails = selectedCarpark.details;
-        destViewController.managedObjectContext = self.managedObjectContext;
+//        destViewController.selectedCarparkDetails = selectedCarpark.details;
+//        destViewController.managedObjectContext = self.managedObjectContext;
         
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"List" style: UIBarButtonItemStyleBordered target: nil action: nil];

@@ -7,12 +7,16 @@
 //
 
 #import "CarparkDetailsViewController.h"
+#import "CarparkInfo.h"
+#import "CarparkDetails.h"
 
 @interface CarparkDetailsViewController ()
 
 @end
 
-@implementation CarparkDetailsViewController
+@implementation CarparkDetailsViewController{
+    CarparkDetails *selectedCarparkDetails;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +32,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.title = self.selectedCarparkCode;
+    self.title = self.selectedCarparkInfo.name;
+    selectedCarparkDetails = self.selectedCarparkInfo.details;
 }
 
 - (void)didReceiveMemoryWarning
