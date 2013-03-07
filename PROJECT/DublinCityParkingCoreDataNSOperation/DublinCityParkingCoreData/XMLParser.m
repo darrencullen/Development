@@ -58,10 +58,13 @@
     
     // set up the managedObjectContext to read data from CoreData
     id delegate = [[UIApplication sharedApplication] delegate];
-    self.managedObjectContext = [delegate managedObjectContext];
+    //self.managedObjectContext = [delegate managedObjectContext];
+    
+    NSManagedObjectContext *tmpContext = [[NSManagedObjectContext alloc] init];
+    tmpContext.persistentStoreCoordinator = [delegate persistentStoreCoordinator];
     
     NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
+                                   entityForName:@"CarparkInfo" inManagedObjectContext:tmpContext];
     
     [fetchRequest setEntity:entity];
     [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"code=%@",name]];
@@ -70,7 +73,7 @@ NSLog(@"Name: %@", name);
     NSError *error;
     CarparkInfo *cgCarpark;
     
-    cgCarpark = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] lastObject];
+    cgCarpark = [[tmpContext executeFetchRequest:fetchRequest error:&error] lastObject];
 NSLog(@"HERE1");    
     if ([spaces isEqualToString:@" "]){
         spaces = @"N/A";
@@ -78,8 +81,9 @@ NSLog(@"HERE1");
 
     cgCarpark.availableSpaces = spaces;
     error = nil;
-    if (![self.managedObjectContext save:&error]) {
+    if (![tmpContext save:&error]) {
         //Handle any error with the saving of the context
+        NSLog(@"Error saving");
     }
     NSLog(@"Code: %@", cgCarpark.code);
     NSLog(@"Spaces: %@", cgCarpark.availableSpaces);

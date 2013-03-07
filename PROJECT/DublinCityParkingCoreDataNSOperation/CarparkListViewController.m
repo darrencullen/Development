@@ -60,10 +60,27 @@
         }
     }
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(loadXMLData)
-//                                                 name:@"appDidBecomeActive"
-//                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadXMLData)
+                                                 name:@"appDidBecomeActive"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(contextChanged:)
+                                                 name:NSManagedObjectContextDidSaveNotification
+                                               object:nil];
+}
+
+- (void)contextChanged:(NSNotification*)notification
+{
+    if ([notification object] == [self managedObjectContext]) return;
+    
+    if (![NSThread isMainThread]) {
+        [self performSelectorOnMainThread:@selector(contextChanged:) withObject:notification waitUntilDone:YES];
+        return;
+    }
+    
+    [[self managedObjectContext] mergeChangesFromContextDidSaveNotification:notification];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -100,9 +117,36 @@
 
 - (void) reloadUpdatedData
 {
+  //  [self updateSpaces];
     [self.carparkList reloadData];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
+
+//- (void) updateSpaces
+//{
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entity = [NSEntityDescription
+//                                   entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
+//    
+//    
+//    [fetchRequest setEntity:entity];
+//    NSError *error;
+//    self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+//    
+//    for (CarparkInfo *carpark in self.carparkInfos){
+////        if ([carpark.details.region isEqualToString:@"Southeast"]){
+////            [southeastCarparks addObject:carpark];
+////        } else if ([carpark.details.region isEqualToString:@"Southwest"]){
+////            [southwestCarparks addObject:carpark];
+////        } else if ([carpark.details.region isEqualToString:@"Northeast"]){
+////            [northeastCarparks addObject:carpark];
+////        } else if ([carpark.details.region isEqualToString:@"Northwest"]){
+////            [northwestCarparks addObject:carpark];
+////        }
+//        NSLog(@"Code: %@", carpark.code);
+//        NSLog(@"Spaces: %@", carpark.availableSpaces);
+//    }
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -285,6 +329,12 @@
         
         [[self navigationItem] setBackBarButtonItem: newBackButton];
     }
+}
+
+- (void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    self.managedObjectContext = nil;
 }
 
 @end

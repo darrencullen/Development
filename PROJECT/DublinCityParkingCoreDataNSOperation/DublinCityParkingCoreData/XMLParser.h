@@ -12,7 +12,7 @@
 
 @interface XMLParser : NSObject <NSXMLParserDelegate>
 
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+//@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (strong, readonly) NSMutableArray *carparks;
 
 -(id) loadXMLByURL:(NSString *)urlString;
