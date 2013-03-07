@@ -106,6 +106,9 @@ static NSManagedObjectContext *managedObjectContext()
             NSLog(@"Name: %@", info.name);
             CarparkDetails *details = info.details;
             NSLog(@"Region: %@", details.region);
+            NSLog(@"Rate: %@", details.otherRate1);
+            NSLog(@"Hours: %@", details.openingHours);
+            NSLog(@"TotalSpaces: %@", details.totalSpaces);
         }
     }
     return context;

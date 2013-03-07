@@ -8,6 +8,7 @@
 
 #import "CarparkListViewController.h"
 #import "CarparkInfo.h"
+#import "CarparkDetails.h"
 #import "XMLParser.h"
 #import "CarparkMapViewController.h"
 
@@ -128,7 +129,7 @@
     selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
     //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
     
-    NSLog(@"%ld;%ld;%@", (long)indexPath.section, (long)indexPath.row, selectedCarpark.name);
+   // NSLog(@"%ld;%ld;%@", (long)indexPath.section, (long)indexPath.row, selectedCarpark.name);
     
     UILabel *carparkNameLabel = (UILabel *)[cell viewWithTag:100];
     carparkNameLabel.text = selectedCarpark.name;
@@ -138,6 +139,15 @@
     
     UILabel *availableSpacesLabel = (UILabel *)[cell viewWithTag:102];
     availableSpacesLabel.text = selectedCarpark.availableSpaces;
+    
+//    CarparkDetails *details;
+//    details = selectedCarpark.details;
+//    NSLog(@"Code: %@", [selectedCarpark valueForKey:@"code"]);
+//    NSLog(@"Region: %@", [details valueForKey:@"region"]);
+//    NSLog(@"Rate1: %@", [details valueForKey:@"otherRate1"]);
+//    NSLog(@"Directions: %@", [details valueForKey:@"directions"]);
+//    NSLog(@"Services: %@", [details valueForKey:@"services"]);
+//    NSLog(@"TotalSpaces: %@", [details valueForKey:@"totalSpaces"]);
     
     return cell;
 }
@@ -248,6 +258,10 @@
         
         CarparkMapViewController *destViewController = segue.destinationViewController;
         destViewController.selectedCarparkInfo = selectedCarpark;
+        
+//        NSLog(@"Code: %@", selectedCarpark.code);
+//        NSLog(@"AvailableSpaces: %@", selectedCarpark.availableSpaces);
+        
 //        destViewController.selectedCarparkDetails = selectedCarpark.details;
 //        destViewController.managedObjectContext = self.managedObjectContext;
         

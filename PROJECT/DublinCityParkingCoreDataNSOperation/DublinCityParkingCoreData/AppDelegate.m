@@ -30,8 +30,17 @@
 //    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
 //    for (CarparkInfo *info in fetchedObjects) {
 //        NSLog(@"Code: %@", [info valueForKey:@"code"]);
+//        NSLog(@"AvailableSpaces: %@", [info valueForKey:@"availableSpaces"]);
 //        CarparkDetails *details = [info valueForKey:@"details"];
 //        NSLog(@"Region: %@", [details valueForKey:@"region"]);
+//        NSLog(@"HourlyRate: %@", [details valueForKey:@"hourlyRate"]);
+//        
+//        CarparkDetails *details2;
+//        details2 = info.details;
+//        NSLog(@"Rate1: %@", [details2 valueForKey:@"otherRate1"]);
+//        NSLog(@"Rate2: %@", details2.otherRate2);
+//        NSLog(@"TotalSpaces: %@", details2.totalSpaces);
+//        
 //    }
     
     // set the tab controller as the root controller and allow it to use managed objects
@@ -138,11 +147,11 @@
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"DublinCityParkingCoreData.sqlite"];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
-        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"DublinCityParkingCoreDataImport" ofType:@"sqlite"]];
+        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"DublinCityParkingCoreData" ofType:@"sqlite"]];
         NSError* err = nil;
         
         if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&err]) {
-            NSLog(@"Oops, could copy preloaded data");
+            NSLog(@"Could not copy preloaded data");
         }
     }
     
