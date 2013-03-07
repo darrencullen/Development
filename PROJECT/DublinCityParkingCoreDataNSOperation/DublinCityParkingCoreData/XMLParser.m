@@ -66,12 +66,12 @@
     [fetchRequest setEntity:entity];
     [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"code=%@",name]];
     
-
+NSLog(@"Name: %@", name);
     NSError *error;
     CarparkInfo *cgCarpark;
     
     cgCarpark = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] lastObject];
-    
+NSLog(@"HERE1");    
     if ([spaces isEqualToString:@" "]){
         spaces = @"N/A";
     }
@@ -81,7 +81,8 @@
     if (![self.managedObjectContext save:&error]) {
         //Handle any error with the saving of the context
     }
-  
+    NSLog(@"Code: %@", cgCarpark.code);
+    NSLog(@"Spaces: %@", cgCarpark.availableSpaces);
 }
 
 //-(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName

@@ -60,10 +60,10 @@
         }
     }
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(loadXMLData)
-                                                 name:@"appDidBecomeActive"
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(loadXMLData)
+//                                                 name:@"appDidBecomeActive"
+//                                               object:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -81,8 +81,9 @@
 - (void) loadXMLData {
 	NSLog(@"loadXMLData");
     
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
 	NSOperationQueue *queue = [NSOperationQueue new];
-	
 	NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self
 																			selector:@selector(loadXMLDataWithOperation)
 																			  object:nil];
@@ -92,7 +93,15 @@
 - (void) loadXMLDataWithOperation {
     xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.dublincity.ie/dublintraffic/cpdata.xml"];
 	
-	[self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+    [self performSelectorOnMainThread:@selector(reloadUpdatedData) withObject:nil waitUntilDone:YES];
+    
+	//[self.tableView performSelectorOnMainThread:@selector(reloadUpdatedData) withObject:nil waitUntilDone:YES];
+}
+
+- (void) reloadUpdatedData
+{
+    [self.carparkList reloadData];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 - (void)didReceiveMemoryWarning

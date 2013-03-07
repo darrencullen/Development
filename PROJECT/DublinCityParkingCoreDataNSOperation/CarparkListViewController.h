@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *carparkInfos;
+@property (strong, nonatomic) IBOutlet UITableView *carparkList;
 
 @end

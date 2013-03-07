@@ -83,6 +83,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Carpark Spaces" id="36"/>
                     <connections>
+                        <outlet property="carparkList" destination="13" id="HcR-i9-b1p"/>
                         <segue destination="Y7Y-5T-hS6" kind="push" identifier="showCarparkMap" id="Ap5-BQ-nc6"/>
                     </connections>
                 </tableViewController>
@@ -687,38 +688,6 @@
         <image name="testicon1.png" width="25" height="25"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
-    <classes>
-        <class className="CarparkDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="address" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="availableSpaces" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="directions" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="disabledSpaces" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hourlyRate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="maxHeight" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="openingHours" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="otherRate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="phone" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="region" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="services" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalSpaces" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CarparkListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkListViewController.h"/>
-        </class>
-        <class className="CarparkMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showCarparkDetails:"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
