@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0JF-BV-gyP">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="93j-uG-wD3">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="Dtu-3q-TTp"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="93j-uG-wD3" secondAttribute="trailing" constant="3" id="DeO-Cg-cnn"/>
+                                    <constraint firstItem="93j-uG-wD3" firstAttribute="bottom" secondItem="0JF-BV-gyP" secondAttribute="bottom" type="default" id="LtU-Zc-K80"/>
+                                    <constraint firstItem="93j-uG-wD3" firstAttribute="centerX" secondItem="0JF-BV-gyP" secondAttribute="centerX" type="default" id="RyF-xs-yjr"/>
+                                    <constraint firstItem="93j-uG-wD3" firstAttribute="top" secondItem="0JF-BV-gyP" secondAttribute="top" type="default" id="T3f-hT-RqQ"/>
+                                    <constraint firstItem="93j-uG-wD3" firstAttribute="centerY" secondItem="0JF-BV-gyP" secondAttribute="centerY" type="default" id="qGF-JE-odB"/>
+                                </constraints>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="pHC-bB-9au">
+                                <items>
+                                    <barButtonItem systemItem="add" id="H7q-Yc-sfZ">
+                                        <connections>
+                                            <action selector="pickPhoto:" destination="2" id="VHn-Ue-nAf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" id="J7H-rD-3h3"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pHC-bB-9au" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="3LW-JO-vwf"/>
+                            <constraint firstItem="0JF-BV-gyP" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="-2" id="B2f-Li-wzA"/>
+                            <constraint firstItem="pHC-bB-9au" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="R25-LU-eeH"/>
+                            <constraint firstItem="pHC-bB-9au" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="YnS-oC-XVx"/>
+                            <constraint firstItem="0JF-BV-gyP" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="a82-bf-1b0"/>
+                            <constraint firstItem="0JF-BV-gyP" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="fRA-Pr-g6L"/>
+                            <constraint firstItem="0JF-BV-gyP" firstAttribute="centerX" secondItem="pHC-bB-9au" secondAttribute="centerX" type="default" id="i4X-Tr-ir3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="93j-uG-wD3" id="LlZ-Ja-o5M"/>
+                        <outlet property="scrollView" destination="0JF-BV-gyP" id="i9V-PK-Odb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-478" y="-3"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pickPhoto:"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

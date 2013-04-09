@@ -13,7 +13,7 @@
 #import "CarparkMapViewController.h"
 
 @implementation AppDelegate
-
+// TODO: HANDLE ERROR CASES
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;

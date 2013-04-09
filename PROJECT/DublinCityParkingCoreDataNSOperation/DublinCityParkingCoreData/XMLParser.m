@@ -52,6 +52,8 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     
+    
+    // TODO: LOOK AT HOW GB GETS APPDELEGATE.MANAGEDOBJECTCONTEXT
 //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
 //    context = [appDelegate managedObjectContext];
     
@@ -82,7 +84,7 @@ NSLog(@"HERE1");
     cgCarpark.availableSpaces = spaces;
     error = nil;
     if (![tmpContext save:&error]) {
-        //Handle any error with the saving of the context
+        // TODO: Handle any error with the saving of the context
         NSLog(@"Error saving");
     }
     NSLog(@"Code: %@", cgCarpark.code);

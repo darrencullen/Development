@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49EB6AC416E9742D00D3F22F /* DisabledParkingSpaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EB6AC316E9742D00D3F22F /* DisabledParkingSpaceInfo.m */; };
 		49F8891E16D6E6AC00AB3377 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F8891D16D6E6AC00AB3377 /* CoreData.framework */; };
 		49F8892016D6E6AC00AB3377 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F8891F16D6E6AC00AB3377 /* Foundation.framework */; };
 		49F8892316D6E6AC00AB3377 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8892216D6E6AC00AB3377 /* main.m */; };
@@ -15,6 +16,7 @@
 		49F8894016D6E7D900AB3377 /* CarparkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8893C16D6E7D900AB3377 /* CarparkInfo.m */; };
 		49F8894116D6E7D900AB3377 /* DublinCityParkingCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49F8893D16D6E7D900AB3377 /* DublinCityParkingCoreData.xcdatamodeld */; };
 		49F8894416D6E95B00AB3377 /* CarparksImport.json in Copy Files */ = {isa = PBXBuildFile; fileRef = 49F8894216D6E8A800AB3377 /* CarparksImport.json */; };
+		49F982EF1714DA1400630BD3 /* DisabledSpacesImport.json in Copy Files */ = {isa = PBXBuildFile; fileRef = 49F982EE1714D9AD00630BD3 /* DisabledSpacesImport.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +37,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				49F8894416D6E95B00AB3377 /* CarparksImport.json in Copy Files */,
+				49F982EF1714DA1400630BD3 /* DisabledSpacesImport.json in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		49EB6AC216E9742D00D3F22F /* DisabledParkingSpaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisabledParkingSpaceInfo.h; sourceTree = "<group>"; };
+		49EB6AC316E9742D00D3F22F /* DisabledParkingSpaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisabledParkingSpaceInfo.m; sourceTree = "<group>"; };
 		49F8891A16D6E6AC00AB3377 /* DublinCityParkingCoreDataImport */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DublinCityParkingCoreDataImport; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F8891D16D6E6AC00AB3377 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		49F8891F16D6E6AC00AB3377 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,6 +59,11 @@
 		49F8893C16D6E7D900AB3377 /* CarparkInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarparkInfo.m; path = DublinCityParkingCoreDataImport/CarparkInfo.m; sourceTree = "<group>"; };
 		49F8893E16D6E7D900AB3377 /* DublinCityParkingCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DublinCityParkingCoreData.xcdatamodel; sourceTree = "<group>"; };
 		49F8894216D6E8A800AB3377 /* CarparksImport.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CarparksImport.json; sourceTree = "<group>"; };
+		49F982E81714D57C00630BD3 /* disabled_spaces.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = disabled_spaces.xml; sourceTree = "<group>"; };
+		49F982E91714D57C00630BD3 /* traffic_cameras.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = traffic_cameras.xml; sourceTree = "<group>"; };
+		49F982EA1714D58600630BD3 /* carparks.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = carparks.xml; sourceTree = "<group>"; };
+		49F982EB1714D5EA00630BD3 /* DisabledSpacesImport.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DisabledSpacesImport.json; sourceTree = "<group>"; };
+		49F982EE1714D9AD00630BD3 /* DisabledSpacesImport.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = DisabledSpacesImport.json; path = ../DisabledSpacesImport.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,8 @@
 		49F8891116D6E6AC00AB3377 = {
 			isa = PBXGroup;
 			children = (
+				49EB6AC216E9742D00D3F22F /* DisabledParkingSpaceInfo.h */,
+				49EB6AC316E9742D00D3F22F /* DisabledParkingSpaceInfo.m */,
 				49F8893916D6E7D900AB3377 /* CarparkDetails.h */,
 				49F8893A16D6E7D900AB3377 /* CarparkDetails.m */,
 				49F8893B16D6E7D900AB3377 /* CarparkInfo.h */,
@@ -104,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				49F8892216D6E6AC00AB3377 /* main.m */,
-				49F8894216D6E8A800AB3377 /* CarparksImport.json */,
 				49F8892916D6E6AC00AB3377 /* DublinCityParkingCoreDataImport.1 */,
 				49F8892416D6E6AC00AB3377 /* Supporting Files */,
 			);
@@ -114,6 +125,12 @@
 		49F8892416D6E6AC00AB3377 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49F8894216D6E8A800AB3377 /* CarparksImport.json */,
+				49F982EE1714D9AD00630BD3 /* DisabledSpacesImport.json */,
+				49F982E81714D57C00630BD3 /* disabled_spaces.xml */,
+				49F982EB1714D5EA00630BD3 /* DisabledSpacesImport.json */,
+				49F982E91714D57C00630BD3 /* traffic_cameras.xml */,
+				49F982EA1714D58600630BD3 /* carparks.xml */,
 				49F8892516D6E6AC00AB3377 /* DublinCityParkingCoreDataImport-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -175,6 +192,7 @@
 				49F8893F16D6E7D900AB3377 /* CarparkDetails.m in Sources */,
 				49F8894016D6E7D900AB3377 /* CarparkInfo.m in Sources */,
 				49F8894116D6E7D900AB3377 /* DublinCityParkingCoreData.xcdatamodeld in Sources */,
+				49EB6AC416E9742D00D3F22F /* DisabledParkingSpaceInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +295,7 @@
 				49F8892F16D6E6AC00AB3377 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

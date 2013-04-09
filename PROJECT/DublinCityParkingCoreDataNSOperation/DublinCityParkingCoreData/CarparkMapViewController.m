@@ -134,7 +134,6 @@
         
         annotationView.enabled = YES;
         annotationView.canShowCallout = YES;
-        annotationView.image=[UIImage imageNamed:@"mappointer.png"];
         return annotationView;
     }
     

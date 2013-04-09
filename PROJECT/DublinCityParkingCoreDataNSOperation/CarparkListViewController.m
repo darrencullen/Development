@@ -13,18 +13,33 @@
 #import "CarparkMapViewController.h"
 
 @interface CarparkListViewController ()
+// @property (nonatomic, strong) CarParkLots *carParkLots;
+// TODO: construct arrays in separate nsobject 
+@property (nonatomic, strong) XMLParser *xmlParser;
+@property (nonatomic, strong) CarparkInfo *selectedCarpark;
+@property (nonatomic, strong) NSMutableArray *southeastCarparks;
+@property (nonatomic, strong) NSMutableArray *southwestCarparks;
+@property (nonatomic, strong) NSMutableArray *northeastCarparks;
+@property (nonatomic, strong) NSMutableArray *northwestCarparks;
+@property (nonatomic, strong) NSMutableArray *carparkLocations;
 
 @end
 
 @implementation CarparkListViewController
+
+
+// TODO: optimisation on initialisation required????
+- (void) setCarparkInfos:(NSArray *)carparkInfos
 {
-    XMLParser *xmlParser;
-    CarparkInfo *selectedCarpark;
-    NSMutableArray *southeastCarparks;
-    NSMutableArray *southwestCarparks;
-    NSMutableArray *northeastCarparks;
-    NSMutableArray *northwestCarparks;
-    NSMutableArray *carparkLocations;
+    if (_carparkInfos != carparkInfos)
+        _carparkInfos = carparkInfos;
+}
+
+- (NSMutableArray *)southeastCarparks
+{
+    if (!_southeastCarparks) {
+        _southeastCarparks = [[NSMutableArray alloc] init];
+    } return _southeastCarparks;
 }
 
 - (void)viewDidLoad
@@ -32,16 +47,16 @@
     NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
-    southeastCarparks = [[NSMutableArray alloc] init];
-    southwestCarparks = [[NSMutableArray alloc] init];
-    northeastCarparks = [[NSMutableArray alloc] init];
-    northwestCarparks = [[NSMutableArray alloc] init];
-    carparkLocations = [[NSMutableArray alloc] initWithObjects:southeastCarparks, southwestCarparks, northeastCarparks, northwestCarparks, nil];
+    // TODO: MOVE ARRAYS TO MODEL NSOBJECT
+    self.southwestCarparks = [[NSMutableArray alloc] init];
+    self.northeastCarparks = [[NSMutableArray alloc] init];
+    self.northwestCarparks = [[NSMutableArray alloc] init];
+    self.carparkLocations = [[NSMutableArray alloc] initWithObjects:self.southeastCarparks, self.southwestCarparks, self.northeastCarparks, self.northwestCarparks, nil];
     
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CarparkInfo"
+                                              inManagedObjectContext:self.managedObjectContext];
     
     
     [fetchRequest setEntity:entity];
@@ -50,13 +65,13 @@
     
     for (CarparkInfo *carpark in self.carparkInfos){
         if ([carpark.details.region isEqualToString:@"Southeast"]){
-            [southeastCarparks addObject:carpark];
+            [self.southeastCarparks addObject:carpark];
         } else if ([carpark.details.region isEqualToString:@"Southwest"]){
-            [southwestCarparks addObject:carpark];
+            [self.southwestCarparks addObject:carpark];
         } else if ([carpark.details.region isEqualToString:@"Northeast"]){
-            [northeastCarparks addObject:carpark];
+            [self.northeastCarparks addObject:carpark];
         } else if ([carpark.details.region isEqualToString:@"Northwest"]){
-            [northwestCarparks addObject:carpark];
+            [self.northwestCarparks addObject:carpark];
         }
     }
     
@@ -73,6 +88,7 @@
 
 - (void)contextChanged:(NSNotification*)notification
 {
+    // update managed object on main thread when edited on background thread
     if ([notification object] == [self managedObjectContext]) return;
     
     if (![NSThread isMainThread]) {
@@ -108,7 +124,7 @@
 }
 
 - (void) loadXMLDataWithOperation {
-    xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.dublincity.ie/dublintraffic/cpdata.xml"];
+    self.xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.dublincity.ie/dublintraffic/cpdata.xml"];
 	
     [self performSelectorOnMainThread:@selector(reloadUpdatedData) withObject:nil waitUntilDone:YES];
     
@@ -157,7 +173,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return carparkLocations.count;
+    return self.carparkLocations.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -165,7 +181,7 @@
     // Return the number of rows in the section.
     //return [self.carparkInfos count];
     
-    NSArray *sectionContents = [carparkLocations objectAtIndex:section];
+    NSArray *sectionContents = [self.carparkLocations objectAtIndex:section];
     NSInteger rows = [sectionContents count];
     
     return rows;
@@ -173,25 +189,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {   
-    // maybe use region as a cell identifier
+    // TODO: maybe use region as a cell identifier
     static NSString *CellIdentifier = @"CarparkCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    NSArray *selectedSection = carparkLocations[indexPath.section];
-    selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
+    NSArray *selectedSection = self.carparkLocations[indexPath.section];
+    self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
     //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
     
    // NSLog(@"%ld;%ld;%@", (long)indexPath.section, (long)indexPath.row, selectedCarpark.name);
     
     UILabel *carparkNameLabel = (UILabel *)[cell viewWithTag:100];
-    carparkNameLabel.text = selectedCarpark.name;
+    carparkNameLabel.text = self.selectedCarpark.name;
     
     UILabel *carparkAddressLabel = (UILabel *)[cell viewWithTag:101];
-    carparkAddressLabel.text = [NSString stringWithFormat:@"%@", selectedCarpark.address];
+    carparkAddressLabel.text = [NSString stringWithFormat:@"%@", self.selectedCarpark.address];
     
     UILabel *availableSpacesLabel = (UILabel *)[cell viewWithTag:102];
-    availableSpacesLabel.text = selectedCarpark.availableSpaces;
+    availableSpacesLabel.text = self.selectedCarpark.availableSpaces;
     
 //    CarparkDetails *details;
 //    details = selectedCarpark.details;
@@ -217,9 +233,9 @@
     headerLabel.font = [UIFont boldSystemFontOfSize:18];
     
     if(section == 0)
-        headerLabel.text = @"Southwest";
-    else if(section == 1)
         headerLabel.text = @"Southeast";
+    else if(section == 1)
+        headerLabel.text = @"Southwest";
     else if(section == 2)
         headerLabel.text = @"Northeast";
     else
@@ -279,8 +295,8 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *selectedSection = carparkLocations[indexPath.section];
-    selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
+    NSArray *selectedSection = self.carparkLocations[indexPath.section];
+    self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
     
     //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
     // do a segue based on the indexPath or do any setup later in prepareForSegue
@@ -310,7 +326,7 @@
 //        UITextField *getTextView = (UITextField*)[cell.contentView viewWithTag:100];
         
         CarparkMapViewController *destViewController = segue.destinationViewController;
-        destViewController.selectedCarparkInfo = selectedCarpark;
+        destViewController.selectedCarparkInfo = self.selectedCarpark;
         
 //        NSLog(@"Code: %@", selectedCarpark.code);
 //        NSLog(@"AvailableSpaces: %@", selectedCarpark.availableSpaces);

@@ -51,6 +51,31 @@
     [self.view setNeedsDisplay];
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
+    
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.shadowColor = [UIColor grayColor];
+    headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+    headerLabel.font = [UIFont boldSystemFontOfSize:18];
+    
+    if(section == 0)
+        headerLabel.text = @"Southwest";
+    else if(section == 1)
+        headerLabel.text = @"Southeast";
+    else if(section == 2)
+        headerLabel.text = @"Northeast";
+    else
+        headerLabel.text = @"Northwest";
+    
+    [headerView addSubview:headerLabel];
+    return headerView;
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
