@@ -3,43 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[DCDMasterViewController prepareForSegue:sender:]:DCDMasterViewController.m">
+         contextName = "__managedObjectContext_block_invoke:main.m">
          <PersistentStrings>
             <PersistentString
-               value = "getTextView.text">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[DCDMasterViewController tableView:cellForRowAtIndexPath:]:DCDMasterViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "availableSpacesLabel.text">
+               value = "carparkInfo.code">
             </PersistentString>
             <PersistentString
-               value = "info.availableSpaces">
-            </PersistentString>
-            <PersistentString
-               value = "info.address">
-            </PersistentString>
-            <PersistentString
-               value = "carparkAddressLabel.text">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[CarparkMapViewController viewDidLoad]:CarparkMapViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.selectedCarparkCode">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[CarparkMapViewController plotCarparkPosition]:CarparkMapViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "selectedCarparkDetails.latitude">
+               value = "carparkDetails.region">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

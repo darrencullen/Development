@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "GLOBAL">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.disabledSpaceLocations">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CarparkListViewController tableView:cellForRowAtIndexPath:]:CarparkListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedCarpark.availableSpaces">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DisabledSpacesViewController viewDidLoad]:DisabledSpacesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.disabledSpacesD1">
+            </PersistentString>
+            <PersistentString
+               value = "self.disabledSpacesD2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate persistentStoreCoordinator]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "storeURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DCDMasterViewController tableView:cellForRowAtIndexPath:]:DCDMasterViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "availableSpacesLabel.text">
+            </PersistentString>
+            <PersistentString
+               value = "info.availableSpaces">
+            </PersistentString>
+            <PersistentString
+               value = "info.address">
+            </PersistentString>
+            <PersistentString
+               value = "carparkAddressLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CarparkMapViewController viewDidLoad]:CarparkMapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedCarparkInfo.code">
+            </PersistentString>
+            <PersistentString
+               value = "self.selectedCarparkCode">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CarparkMapViewController plotCarparkPosition]:CarparkMapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedCarparkDetails.latitude">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DCDMasterViewController prepareForSegue:sender:]:DCDMasterViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "getTextView.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CarparkDetailsViewController viewDidLoad]:CarparkDetailsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedCarparkDetails.totalSpaces">
+            </PersistentString>
+            <PersistentString
+               value = "selectedCarparkDetails.region">
+            </PersistentString>
+            <PersistentString
+               value = "selectedCarparkDetails.otherRate1">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[XMLParser parser:didStartElement:namespaceURI:qualifiedName:attributes:]:XMLParser.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cgCarpark.code">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

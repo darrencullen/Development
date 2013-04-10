@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[DCDMasterViewController prepareForSegue:sender:]:DCDMasterViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "getTextView.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DCDMasterViewController tableView:cellForRowAtIndexPath:]:DCDMasterViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "availableSpacesLabel.text">
+            </PersistentString>
+            <PersistentString
+               value = "info.availableSpaces">
+            </PersistentString>
+            <PersistentString
+               value = "info.address">
+            </PersistentString>
+            <PersistentString
+               value = "carparkAddressLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CarparkMapViewController viewDidLoad]:CarparkMapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedCarparkCode">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CarparkMapViewController plotCarparkPosition]:CarparkMapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedCarparkDetails.latitude">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
