@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		491A0DCD16DC2AA20017DEFE /* Carpark.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A0DCA16DC2AA20017DEFE /* Carpark.m */; };
+		491A0DCE16DC2AA20017DEFE /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A0DCC16DC2AA20017DEFE /* XMLParser.m */; };
+		496776EF16DD6D00009E7E22 /* parking30.ico in Resources */ = {isa = PBXBuildFile; fileRef = 496776EE16DD6D00009E7E22 /* parking30.ico */; };
+		496776F216DD81D5009E7E22 /* CarparkMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496776F116DD81D5009E7E22 /* CarparkMapViewController.m */; };
+		496776F916DD968A009E7E22 /* CarparkDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496776F816DD968A009E7E22 /* CarparkDetailsViewController.m */; };
+		49A9E6C816DEA1BE00F54513 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A9E6C716DEA1BE00F54513 /* MapKit.framework */; };
+		49A9E6D116DEADF700F54513 /* CarparkMapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A9E6D016DEADF700F54513 /* CarparkMapOverlay.m */; };
+		49A9E6D316DEB9F700F54513 /* mappointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A9E6D216DEB9F700F54513 /* mappointer.png */; };
+		49A9E6D716DED6B700F54513 /* parking57.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A9E6D616DED6B700F54513 /* parking57.png */; };
+		49F5F1B616E97DF2001CD6D8 /* DublinCityParkingCoreData.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 49F5F1B516E97DF2001CD6D8 /* DublinCityParkingCoreData.xcdatamodel */; };
+		49F6DCAA16E772BD00043CFC /* strip.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCA916E772BD00043CFC /* strip.png */; };
+		49F6DCAC16E7743100043CFC /* carparks1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCAB16E7743100043CFC /* carparks1.png */; };
+		49F6DCAE16E774C800043CFC /* strip3.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCAD16E774C800043CFC /* strip3.png */; };
+		49F6DCB116E775E700043CFC /* carparks.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCAF16E775E700043CFC /* carparks.png */; };
+		49F6DCB216E775E700043CFC /* strip4.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCB016E775E700043CFC /* strip4.png */; };
+		49F6DCB416E776D300043CFC /* strip5.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCB316E776D300043CFC /* strip5.png */; };
+		49F6DCB816E782C200043CFC /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCB716E782C200043CFC /* button.png */; };
+		49F6DCBC16E78A9300043CFC /* testicon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCBB16E78A9300043CFC /* testicon1.png */; };
+		49F6DCBF16E7A5C000043CFC /* parking1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCBD16E7A5C000043CFC /* parking1.png */; };
+		49F6DCC016E7A5C000043CFC /* parking2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCBE16E7A5C000043CFC /* parking2.png */; };
+		49F6DCC216E7A86400043CFC /* parking3.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCC116E7A86400043CFC /* parking3.png */; };
+		49F6DCC416E7AAE400043CFC /* wheelchair1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCC316E7AAE400043CFC /* wheelchair1.png */; };
+		49F6DCC716E7AF7800043CFC /* camera1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCC516E7AF7800043CFC /* camera1.png */; };
+		49F6DCC816E7AF7800043CFC /* wheelchair2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCC616E7AF7800043CFC /* wheelchair2.png */; };
+		49F6DCCB16E7B48000043CFC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F6DCCA16E7B48000043CFC /* MoreViewController.m */; };
+		49F7E27916E6BB1E004CA8B5 /* NavigationBarStrip.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F7E27816E6BB1E004CA8B5 /* NavigationBarStrip.png */; };
+		49F7E28116E6C4E4004CA8B5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F7E28016E6C4E4004CA8B5 /* Default.png */; };
+		49F888DB16D6D18700AB3377 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DA16D6D18700AB3377 /* UIKit.framework */; };
+		49F888DD16D6D18700AB3377 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DC16D6D18700AB3377 /* Foundation.framework */; };
+		49F888DF16D6D18700AB3377 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DE16D6D18700AB3377 /* CoreGraphics.framework */; };
+		49F888E116D6D18700AB3377 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888E016D6D18700AB3377 /* CoreData.framework */; };
+		49F888E716D6D18700AB3377 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49F888E516D6D18700AB3377 /* InfoPlist.strings */; };
+		49F888E916D6D18700AB3377 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F888E816D6D18700AB3377 /* main.m */; };
+		49F888ED16D6D18700AB3377 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F888EC16D6D18700AB3377 /* AppDelegate.m */; };
+		49F888F116D6D18700AB3377 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F888F016D6D18700AB3377 /* Default@2x.png */; };
+		49F888F316D6D18700AB3377 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F888F216D6D18700AB3377 /* Default-568h@2x.png */; };
+		49F888F616D6D18700AB3377 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F888F416D6D18700AB3377 /* MainStoryboard.storyboard */; };
+		49F8890716D6D3B700AB3377 /* CarparkListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890616D6D3B700AB3377 /* CarparkListViewController.m */; };
+		49F8890D16D6DD5300AB3377 /* CarparkDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890C16D6DD5300AB3377 /* CarparkDetails.m */; };
+		49F8891016D6DD9000AB3377 /* CarparkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890F16D6DD9000AB3377 /* CarparkInfo.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		491A0DC916DC2AA20017DEFE /* Carpark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Carpark.h; sourceTree = "<group>"; };
+		491A0DCA16DC2AA20017DEFE /* Carpark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Carpark.m; sourceTree = "<group>"; };
+		491A0DCB16DC2AA20017DEFE /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		491A0DCC16DC2AA20017DEFE /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		496776EE16DD6D00009E7E22 /* parking30.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = parking30.ico; sourceTree = "<group>"; };
+		496776F016DD81D5009E7E22 /* CarparkMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkMapViewController.h; sourceTree = "<group>"; };
+		496776F116DD81D5009E7E22 /* CarparkMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkMapViewController.m; sourceTree = "<group>"; };
+		496776F716DD968A009E7E22 /* CarparkDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarparkDetailsViewController.h; path = ../CarparkDetailsViewController.h; sourceTree = "<group>"; };
+		496776F816DD968A009E7E22 /* CarparkDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarparkDetailsViewController.m; path = ../CarparkDetailsViewController.m; sourceTree = "<group>"; };
+		49A9E6C716DEA1BE00F54513 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		49A9E6CF16DEADF700F54513 /* CarparkMapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarparkMapOverlay.h; path = ../CarparkMapOverlay.h; sourceTree = "<group>"; };
+		49A9E6D016DEADF700F54513 /* CarparkMapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarparkMapOverlay.m; path = ../CarparkMapOverlay.m; sourceTree = "<group>"; };
+		49A9E6D216DEB9F700F54513 /* mappointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mappointer.png; sourceTree = "<group>"; };
+		49A9E6D616DED6B700F54513 /* parking57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parking57.png; path = ../parking57.png; sourceTree = "<group>"; };
+		49F5F1B516E97DF2001CD6D8 /* DublinCityParkingCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DublinCityParkingCoreData.xcdatamodel; sourceTree = "<group>"; };
+		49F5F1B916E97E43001CD6D8 /* DublinCityParkingCoreData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DublinCityParkingCoreData.sqlite; sourceTree = "<group>"; };
+		49F6DCA916E772BD00043CFC /* strip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip.png; sourceTree = "<group>"; };
+		49F6DCAB16E7743100043CFC /* carparks1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carparks1.png; sourceTree = "<group>"; };
+		49F6DCAD16E774C800043CFC /* strip3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip3.png; sourceTree = "<group>"; };
+		49F6DCAF16E775E700043CFC /* carparks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carparks.png; sourceTree = "<group>"; };
+		49F6DCB016E775E700043CFC /* strip4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip4.png; sourceTree = "<group>"; };
+		49F6DCB316E776D300043CFC /* strip5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip5.png; sourceTree = "<group>"; };
+		49F6DCB716E782C200043CFC /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		49F6DCBB16E78A9300043CFC /* testicon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testicon1.png; sourceTree = "<group>"; };
+		49F6DCBD16E7A5C000043CFC /* parking1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parking1.png; sourceTree = "<group>"; };
+		49F6DCBE16E7A5C000043CFC /* parking2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parking2.png; sourceTree = "<group>"; };
+		49F6DCC116E7A86400043CFC /* parking3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parking3.png; sourceTree = "<group>"; };
+		49F6DCC316E7AAE400043CFC /* wheelchair1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheelchair1.png; sourceTree = "<group>"; };
+		49F6DCC516E7AF7800043CFC /* camera1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera1.png; sourceTree = "<group>"; };
+		49F6DCC616E7AF7800043CFC /* wheelchair2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheelchair2.png; sourceTree = "<group>"; };
+		49F6DCC916E7B48000043CFC /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		49F6DCCA16E7B48000043CFC /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		49F7E27816E6BB1E004CA8B5 /* NavigationBarStrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBarStrip.png; sourceTree = "<group>"; };
+		49F7E28016E6C4E4004CA8B5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		49F888D716D6D18700AB3377 /* DubPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49F888DA16D6D18700AB3377 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		49F888DC16D6D18700AB3377 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		49F888DE16D6D18700AB3377 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		49F888E016D6D18700AB3377 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		49F888E416D6D18700AB3377 /* DublinCityParkingCoreDataNSOperation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DublinCityParkingCoreDataNSOperation-Info.plist"; sourceTree = "<group>"; };
+		49F888E616D6D18700AB3377 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49F888E816D6D18700AB3377 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49F888EA16D6D18700AB3377 /* DublinCityParkingCoreDataNSOperation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DublinCityParkingCoreDataNSOperation-Prefix.pch"; sourceTree = "<group>"; };
+		49F888EB16D6D18700AB3377 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		49F888EC16D6D18700AB3377 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		49F888F016D6D18700AB3377 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		49F888F216D6D18700AB3377 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		49F888F516D6D18700AB3377 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		49F8890516D6D3B700AB3377 /* CarparkListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarparkListViewController.h; path = ../CarparkListViewController.h; sourceTree = "<group>"; };
+		49F8890616D6D3B700AB3377 /* CarparkListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarparkListViewController.m; path = ../CarparkListViewController.m; sourceTree = "<group>"; };
+		49F8890B16D6DD5300AB3377 /* CarparkDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkDetails.h; sourceTree = "<group>"; };
+		49F8890C16D6DD5300AB3377 /* CarparkDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkDetails.m; sourceTree = "<group>"; };
+		49F8890E16D6DD9000AB3377 /* CarparkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkInfo.h; sourceTree = "<group>"; };
+		49F8890F16D6DD9000AB3377 /* CarparkInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkInfo.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49F888D416D6D18700AB3377 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A9E6C816DEA1BE00F54513 /* MapKit.framework in Frameworks */,
+				49F888DB16D6D18700AB3377 /* UIKit.framework in Frameworks */,
+				49F888DD16D6D18700AB3377 /* Foundation.framework in Frameworks */,
+				49F888DF16D6D18700AB3377 /* CoreGraphics.framework in Frameworks */,
+				49F888E116D6D18700AB3377 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4907CAD516E00C8A00C6BA03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49F5F1B916E97E43001CD6D8 /* DublinCityParkingCoreData.sqlite */,
+				49F5F1B516E97DF2001CD6D8 /* DublinCityParkingCoreData.xcdatamodel */,
+				491A0DC916DC2AA20017DEFE /* Carpark.h */,
+				491A0DCA16DC2AA20017DEFE /* Carpark.m */,
+				49F8890E16D6DD9000AB3377 /* CarparkInfo.h */,
+				49F8890F16D6DD9000AB3377 /* CarparkInfo.m */,
+				49F8890B16D6DD5300AB3377 /* CarparkDetails.h */,
+				49F8890C16D6DD5300AB3377 /* CarparkDetails.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4907CB3816E14ECE00C6BA03 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				49F888EB16D6D18700AB3377 /* AppDelegate.h */,
+				49F888EC16D6D18700AB3377 /* AppDelegate.m */,
+				491A0DCB16DC2AA20017DEFE /* XMLParser.h */,
+				491A0DCC16DC2AA20017DEFE /* XMLParser.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		4907CB3916E14F6100C6BA03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49F888F416D6D18700AB3377 /* MainStoryboard.storyboard */,
+				49A9E6CF16DEADF700F54513 /* CarparkMapOverlay.h */,
+				49A9E6D016DEADF700F54513 /* CarparkMapOverlay.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		496776EB16DD6251009E7E22 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49F6DCC516E7AF7800043CFC /* camera1.png */,
+				49F6DCC616E7AF7800043CFC /* wheelchair2.png */,
+				49F6DCC316E7AAE400043CFC /* wheelchair1.png */,
+				49F6DCC116E7A86400043CFC /* parking3.png */,
+				49F6DCBD16E7A5C000043CFC /* parking1.png */,
+				49F6DCBE16E7A5C000043CFC /* parking2.png */,
+				49F6DCBB16E78A9300043CFC /* testicon1.png */,
+				49F6DCB716E782C200043CFC /* button.png */,
+				49F6DCB316E776D300043CFC /* strip5.png */,
+				49F6DCAF16E775E700043CFC /* carparks.png */,
+				49F6DCB016E775E700043CFC /* strip4.png */,
+				49F6DCAD16E774C800043CFC /* strip3.png */,
+				49F6DCAB16E7743100043CFC /* carparks1.png */,
+				49F6DCA916E772BD00043CFC /* strip.png */,
+				49F7E28016E6C4E4004CA8B5 /* Default.png */,
+				49F888F016D6D18700AB3377 /* Default@2x.png */,
+				49F888F216D6D18700AB3377 /* Default-568h@2x.png */,
+				49F7E27816E6BB1E004CA8B5 /* NavigationBarStrip.png */,
+				49A9E6D616DED6B700F54513 /* parking57.png */,
+				49A9E6D216DEB9F700F54513 /* mappointer.png */,
+				496776EE16DD6D00009E7E22 /* parking30.ico */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		496776F616DD9648009E7E22 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49F8890516D6D3B700AB3377 /* CarparkListViewController.h */,
+				49F8890616D6D3B700AB3377 /* CarparkListViewController.m */,
+				49F6DCC916E7B48000043CFC /* MoreViewController.h */,
+				49F6DCCA16E7B48000043CFC /* MoreViewController.m */,
+				496776F016DD81D5009E7E22 /* CarparkMapViewController.h */,
+				496776F116DD81D5009E7E22 /* CarparkMapViewController.m */,
+				496776F716DD968A009E7E22 /* CarparkDetailsViewController.h */,
+				496776F816DD968A009E7E22 /* CarparkDetailsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		49F888CE16D6D18700AB3377 = {
+			isa = PBXGroup;
+			children = (
+				49F888E216D6D18700AB3377 /* DublinCityParkingCoreDataNSOperation */,
+				49F888D916D6D18700AB3377 /* Frameworks */,
+				49F888D816D6D18700AB3377 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49F888D816D6D18700AB3377 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49F888D716D6D18700AB3377 /* DubPark.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49F888D916D6D18700AB3377 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49A9E6C716DEA1BE00F54513 /* MapKit.framework */,
+				49F888DA16D6D18700AB3377 /* UIKit.framework */,
+				49F888DC16D6D18700AB3377 /* Foundation.framework */,
+				49F888DE16D6D18700AB3377 /* CoreGraphics.framework */,
+				49F888E016D6D18700AB3377 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49F888E216D6D18700AB3377 /* DublinCityParkingCoreDataNSOperation */ = {
+			isa = PBXGroup;
+			children = (
+				4907CAD516E00C8A00C6BA03 /* Model */,
+				4907CB3916E14F6100C6BA03 /* View */,
+				496776F616DD9648009E7E22 /* Controller */,
+				4907CB3816E14ECE00C6BA03 /* Classes */,
+				49F888E316D6D18700AB3377 /* Supporting Files */,
+			);
+			name = DublinCityParkingCoreDataNSOperation;
+			path = DublinCityParkingCoreData;
+			sourceTree = "<group>";
+		};
+		49F888E316D6D18700AB3377 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				496776EB16DD6251009E7E22 /* Resources */,
+				49F888E416D6D18700AB3377 /* DublinCityParkingCoreDataNSOperation-Info.plist */,
+				49F888E516D6D18700AB3377 /* InfoPlist.strings */,
+				49F888E816D6D18700AB3377 /* main.m */,
+				49F888EA16D6D18700AB3377 /* DublinCityParkingCoreDataNSOperation-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49F888D616D6D18700AB3377 /* DubPark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49F8890216D6D18700AB3377 /* Build configuration list for PBXNativeTarget "DubPark" */;
+			buildPhases = (
+				49F888D316D6D18700AB3377 /* Sources */,
+				49F888D416D6D18700AB3377 /* Frameworks */,
+				49F888D516D6D18700AB3377 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DubPark;
+			productName = DublinCityParkingCoreData;
+			productReference = 49F888D716D6D18700AB3377 /* DubPark.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49F888CF16D6D18700AB3377 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DCDS;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = dcdevstudios;
+			};
+			buildConfigurationList = 49F888D216D6D18700AB3377 /* Build configuration list for PBXProject "DublinCityParkingCoreDataNSOperation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 49F888CE16D6D18700AB3377;
+			productRefGroup = 49F888D816D6D18700AB3377 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49F888D616D6D18700AB3377 /* DubPark */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49F888D516D6D18700AB3377 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49F888E716D6D18700AB3377 /* InfoPlist.strings in Resources */,
+				49F888F116D6D18700AB3377 /* Default@2x.png in Resources */,
+				49F888F316D6D18700AB3377 /* Default-568h@2x.png in Resources */,
+				49F888F616D6D18700AB3377 /* MainStoryboard.storyboard in Resources */,
+				496776EF16DD6D00009E7E22 /* parking30.ico in Resources */,
+				49A9E6D316DEB9F700F54513 /* mappointer.png in Resources */,
+				49A9E6D716DED6B700F54513 /* parking57.png in Resources */,
+				49F7E27916E6BB1E004CA8B5 /* NavigationBarStrip.png in Resources */,
+				49F7E28116E6C4E4004CA8B5 /* Default.png in Resources */,
+				49F6DCAA16E772BD00043CFC /* strip.png in Resources */,
+				49F6DCAC16E7743100043CFC /* carparks1.png in Resources */,
+				49F6DCAE16E774C800043CFC /* strip3.png in Resources */,
+				49F6DCB116E775E700043CFC /* carparks.png in Resources */,
+				49F6DCB216E775E700043CFC /* strip4.png in Resources */,
+				49F6DCB416E776D300043CFC /* strip5.png in Resources */,
+				49F6DCB816E782C200043CFC /* button.png in Resources */,
+				49F6DCBC16E78A9300043CFC /* testicon1.png in Resources */,
+				49F6DCBF16E7A5C000043CFC /* parking1.png in Resources */,
+				49F6DCC016E7A5C000043CFC /* parking2.png in Resources */,
+				49F6DCC216E7A86400043CFC /* parking3.png in Resources */,
+				49F6DCC416E7AAE400043CFC /* wheelchair1.png in Resources */,
+				49F6DCC716E7AF7800043CFC /* camera1.png in Resources */,
+				49F6DCC816E7AF7800043CFC /* wheelchair2.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49F888D316D6D18700AB3377 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49F888E916D6D18700AB3377 /* main.m in Sources */,
+				49F888ED16D6D18700AB3377 /* AppDelegate.m in Sources */,
+				49F8890716D6D3B700AB3377 /* CarparkListViewController.m in Sources */,
+				49F8890D16D6DD5300AB3377 /* CarparkDetails.m in Sources */,
+				49F8891016D6DD9000AB3377 /* CarparkInfo.m in Sources */,
+				491A0DCD16DC2AA20017DEFE /* Carpark.m in Sources */,
+				491A0DCE16DC2AA20017DEFE /* XMLParser.m in Sources */,
+				496776F216DD81D5009E7E22 /* CarparkMapViewController.m in Sources */,
+				496776F916DD968A009E7E22 /* CarparkDetailsViewController.m in Sources */,
+				49A9E6D116DEADF700F54513 /* CarparkMapOverlay.m in Sources */,
+				49F6DCCB16E7B48000043CFC /* MoreViewController.m in Sources */,
+				49F5F1B616E97DF2001CD6D8 /* DublinCityParkingCoreData.xcdatamodel in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		49F888E516D6D18700AB3377 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49F888E616D6D18700AB3377 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		49F888F416D6D18700AB3377 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49F888F516D6D18700AB3377 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49F8890016D6D18700AB3377 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		49F8890116D6D18700AB3377 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49F8890316D6D18700AB3377 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DublinCityParkingCoreData/DublinCityParkingCoreDataNSOperation-Prefix.pch";
+				INFOPLIST_FILE = "DublinCityParkingCoreData/DublinCityParkingCoreDataNSOperation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		49F8890416D6D18700AB3377 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DublinCityParkingCoreData/DublinCityParkingCoreDataNSOperation-Prefix.pch";
+				INFOPLIST_FILE = "DublinCityParkingCoreData/DublinCityParkingCoreDataNSOperation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49F888D216D6D18700AB3377 /* Build configuration list for PBXProject "DublinCityParkingCoreDataNSOperation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49F8890016D6D18700AB3377 /* Debug */,
+				49F8890116D6D18700AB3377 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49F8890216D6D18700AB3377 /* Build configuration list for PBXNativeTarget "DubPark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49F8890316D6D18700AB3377 /* Debug */,
+				49F8890416D6D18700AB3377 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49F888CF16D6D18700AB3377 /* Project object */;
+}

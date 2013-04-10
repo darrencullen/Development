@@ -8,6 +8,7 @@
 
 #import "CarparkInfo.h"
 #import "CarparkDetails.h"
+#import "DisabledParkingSpaceInfo.h"
 
 static NSManagedObjectModel *managedObjectModel()
 {
@@ -51,11 +52,80 @@ static NSManagedObjectContext *managedObjectContext()
             NSLog(@"Store Configuration Failure %@", ([error localizedDescription] != nil) ? [error localizedDescription] : @"Unknown Error");
         }
         
+        
+        //===================================================================================================
+        
         NSError* err = nil;
-        NSString* dataPath = [[NSBundle mainBundle] pathForResource:@"CarparksImport" ofType:@"json"];
-        NSArray* Carparks = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
+        NSString* dataPath = [[NSBundle mainBundle] pathForResource:@"DisabledSpacesImport" ofType:@"json"];
+        NSArray* DisabledSpaces = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
+                                                                  options:kNilOptions
+                                                                    error:&err];
+        
+        
+        
+        NSLog(@"Imported DisabledSpaces: %@", DisabledSpaces);
+        NSLog(@"SQL Database location: %@", url);
+        
+        for (id disabledSpace in DisabledSpaces) {
+            NSLog(@"%@", disabledSpace);
+            
+            DisabledParkingSpaceInfo *disableSpaceInfo = [NSEntityDescription
+                                                          insertNewObjectForEntityForName:@"DisabledParkingSpaceInfo"
+                                                          inManagedObjectContext:context];
+            
+            disableSpaceInfo.street = [disabledSpace objectForKey:@"street"];
+            disableSpaceInfo.postCode = [disabledSpace objectForKey:@"postCode"];
+           // disableSpaceInfo.latitude = [[disabledSpace objectForKey:@"latitude"] doubleValue];
+           // disableSpaceInfo.longitude = [[disabledSpace objectForKey:@"longitude"] doubleValue];
+            disableSpaceInfo.spaces = [disabledSpace objectForKey:@"spaces"];
+            
+            
+            NSError *error;
+            if (![context save:&error]) {
+                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+            }
+        }
+//        
+//        [DisabledSpaces enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//            DisabledParkingSpaceInfo *disableSpaceInfo = [NSEntityDescription
+//                                                          insertNewObjectForEntityForName:@"DisabledParkingSpaceInfo"
+//                                                          inManagedObjectContext:context];
+//            
+//            disableSpaceInfo.street = [obj objectForKey:@"street"];
+//            disableSpaceInfo.postCode = [obj objectForKey:@"postCode"];
+//            disableSpaceInfo.latitude = [[obj objectForKey:@"latitude"] doubleValue];
+//            disableSpaceInfo.longitude = [[obj objectForKey:@"longitude"] doubleValue];
+//            disableSpaceInfo.spaces = [obj objectForKey:@"spaces"];
+//            
+//            
+//            NSError *error;
+//            if (![context save:&error]) {
+//                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+//            }
+//        }];
+        //
+        //
+        //        // Test listing all FailedBankInfos from the store
+        //        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        //        NSEntityDescription *entity = [NSEntityDescription entityForName:@"DisabledParkingSpaceInfo"
+        //                                                  inManagedObjectContext:context];
+        //        [fetchRequest setEntity:entity];
+        //        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        //        for (DisabledParkingSpaceInfo *info in fetchedObjects) {
+        //            NSLog(@"Region: %@", info.street);
+        //            NSLog(@"Rate: %@", info.spaces);
+        //            NSLog(@"Hours: %@", info.postCode);
+        //        }
+
+        
+        //===================================================================================================
+        
+        
+        NSError* err2 = nil;
+        NSString* dataPath2 = [[NSBundle mainBundle] pathForResource:@"CarparksImport" ofType:@"json"];
+        NSArray* Carparks = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath2]
                                                          options:kNilOptions
-                                                           error:&err];
+                                                           error:&err2];
         NSLog(@"Imported Carparks: %@", Carparks);
         NSLog(@"SQL Database location: %@", url);
         
@@ -106,7 +176,13 @@ static NSManagedObjectContext *managedObjectContext()
             NSLog(@"Name: %@", info.name);
             CarparkDetails *details = info.details;
             NSLog(@"Region: %@", details.region);
+            NSLog(@"Rate: %@", details.otherRate1);
+            NSLog(@"Hours: %@", details.openingHours);
+            NSLog(@"TotalSpaces: %@", details.totalSpaces);
         }
+        
+        //===================================================================================================
+        
     }
     return context;
 }
