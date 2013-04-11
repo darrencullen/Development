@@ -411,28 +411,51 @@
             </objects>
             <point key="canvasLocation" x="1125" y="-567"/>
         </scene>
-        <!--Table View Controller - Traffic Cameras-->
+        <!--Traffic Cameras View Controller - Traffic Cameras-->
         <scene sceneID="Pvl-bs-Uev">
             <objects>
-                <tableViewController id="xZk-i3-915" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2YP-Tt-Idd">
+                <tableViewController id="xZk-i3-915" customClass="TrafficCamerasViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="qb5-3a-rt8">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
-                        <color key="separatorColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrafficCameraCell" id="3PW-ea-HYT">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrafficCameraCell" rowHeight="46" id="hxh-jL-794">
+                                <rect key="frame" x="0.0" y="46" width="320" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="280" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" text="Traffic Camera Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEW-0X-7dg">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="265" id="J4T-9o-KR1"/>
+                                                <constraint firstAttribute="height" constant="21" id="ddL-dP-rEW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wEW-0X-7dg" firstAttribute="top" secondItem="hxh-jL-794" secondAttribute="top" constant="13" id="8DT-RY-pix"/>
+                                    <constraint firstItem="wEW-0X-7dg" firstAttribute="leading" secondItem="hxh-jL-794" secondAttribute="leading" constant="15" id="rFI-7j-kq9"/>
+                                </constraints>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="xZk-i3-915" id="hvD-MN-hgA"/>
+                            <outlet property="delegate" destination="xZk-i3-915" id="SqC-Vw-53u"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Traffic Cameras" id="lcb-yx-dH3"/>
+                    <connections>
+                        <outlet property="disabledSpacesList" destination="qb5-3a-rt8" id="5mU-qc-K40"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxf-tj-7p9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -729,6 +752,53 @@
         <image name="testicon1.png" width="25" height="25"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
+    <classes>
+        <class className="CarparkDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="address" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="availableSpaces" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="directions" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="disabledSpaces" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hourlyRate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="maxHeight" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="openingHours" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="otherRate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="phone" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="region" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="services" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalSpaces" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CarparkListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="carparkList" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CarparkMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkMapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showCarparkDetails:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="DisabledSpacesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="disabledSpacesList" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="TrafficCamerasViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCamerasViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="disabledSpacesList" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

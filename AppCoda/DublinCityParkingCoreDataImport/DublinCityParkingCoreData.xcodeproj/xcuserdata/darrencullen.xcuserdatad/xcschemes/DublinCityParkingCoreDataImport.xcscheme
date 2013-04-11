@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "49F8891916D6E6AC00AB3377"
-               BuildableName = "DublinCityParkingCoreDataImport"
+               BuildableName = "DublinCityParkingCoreData"
                BlueprintName = "DublinCityParkingCoreData"
                ReferencedContainer = "container:DublinCityParkingCoreData.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "49F8891916D6E6AC00AB3377"
-            BuildableName = "DublinCityParkingCoreDataImport"
+            BuildableName = "DublinCityParkingCoreData"
             BlueprintName = "DublinCityParkingCoreData"
             ReferencedContainer = "container:DublinCityParkingCoreData.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "49F8891916D6E6AC00AB3377"
-            BuildableName = "DublinCityParkingCoreDataImport"
+            BuildableName = "DublinCityParkingCoreData"
             BlueprintName = "DublinCityParkingCoreData"
             ReferencedContainer = "container:DublinCityParkingCoreData.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "49F8891916D6E6AC00AB3377"
-            BuildableName = "DublinCityParkingCoreDataImport"
+            BuildableName = "DublinCityParkingCoreData"
             BlueprintName = "DublinCityParkingCoreData"
             ReferencedContainer = "container:DublinCityParkingCoreData.xcodeproj">
          </BuildableReference>

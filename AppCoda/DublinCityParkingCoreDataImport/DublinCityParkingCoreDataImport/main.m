@@ -56,7 +56,7 @@ static NSManagedObjectContext *managedObjectContext()
         //===================================================================================================
         
         NSError* err = nil;
-        NSString* dataPath = [[NSBundle mainBundle] pathForResource:@"DisabledSpacesImport" ofType:@"json"];
+        NSString* dataPath = [[NSBundle mainBundle] pathForResource:@"DisabledSpaces" ofType:@"json"];
         NSArray* DisabledSpaces = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
                                                                   options:kNilOptions
                                                                     error:&err];

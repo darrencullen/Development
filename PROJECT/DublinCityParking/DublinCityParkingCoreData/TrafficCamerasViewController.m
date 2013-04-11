@@ -1,45 +1,45 @@
 //
-//  DisabledSpacesViewController.m
-//  DublinCityParkingCoreDataNSOperation
+//  TrafficCamerasViewController.m
+//  DublinCityParking
 //
-//  Created by darren cullen on 10/04/2013.
+//  Created by darren cullen on 12/04/2013.
 //  Copyright (c) 2013 dcdevstudios. All rights reserved.
 //
 
-#import "DisabledSpacesViewController.h"
-#import "DisabledParkingSpaceInfo.h"
+#import "TrafficCamerasViewController.h"
+#import "TrafficCameraInfo.h"
 
-@interface DisabledSpacesViewController ()
+@interface TrafficCamerasViewController ()
 
-@property (nonatomic, strong) DisabledParkingSpaceInfo *selectedSpace;
-@property (nonatomic, strong) NSMutableArray *disabledSpacesD1;
-@property (nonatomic, strong) NSMutableArray *disabledSpacesD2;
-@property (nonatomic, strong) NSMutableArray *disabledSpaceLocations;
+@property (nonatomic, strong) TrafficCameraInfo *selectedCamera;
+@property (nonatomic, strong) NSMutableArray *trafficCamerasD1;
+@property (nonatomic, strong) NSMutableArray *trafficCamerasD2;
+@property (nonatomic, strong) NSMutableArray *trafficCameraLocations;
 
 @end
 
-@implementation DisabledSpacesViewController
+@implementation TrafficCamerasViewController
 
 
 // TODO: optimisation on initialisation required????
-- (void) setDisabledSpaces:(NSArray *)disabledSpaces
+- (void) setTrafficCameras:(NSArray *)trafficCameras
 {
-    if (_disabledSpaces != disabledSpaces)
-        _disabledSpaces = disabledSpaces;
+    if (_trafficCameras != trafficCameras)
+        _trafficCameras = trafficCameras;
 }
 
-- (NSMutableArray *)disabledSpacesD1
+- (NSMutableArray *)trafficCamerasD1
 {
-    if (!_disabledSpacesD1) {
-        _disabledSpacesD1 = [[NSMutableArray alloc] init];
-    } return _disabledSpacesD1;
+    if (!_trafficCamerasD1) {
+        _trafficCamerasD1 = [[NSMutableArray alloc] init];
+    } return _trafficCamerasD1;
 }
 
-- (NSMutableArray *)disabledSpacesD2
+- (NSMutableArray *)trafficCamerasD2
 {
-    if (!_disabledSpacesD2) {
-        _disabledSpacesD2 = [[NSMutableArray alloc] init];
-    } return _disabledSpacesD2;
+    if (!_trafficCamerasD2) {
+        _trafficCamerasD2 = [[NSMutableArray alloc] init];
+    } return _trafficCamerasD2;
 }
 
 - (void)viewDidLoad
@@ -48,28 +48,28 @@
     [super viewDidLoad];
     
     // TODO: MOVE ARRAYS TO MODEL NSOBJECT
-    self.disabledSpacesD1 = [[NSMutableArray alloc] init];
-    self.disabledSpacesD2 = [[NSMutableArray alloc] init];
-    self.disabledSpaceLocations = [[NSMutableArray alloc] initWithObjects:self.disabledSpacesD1, self.disabledSpacesD2, nil];
+    self.trafficCamerasD1 = [[NSMutableArray alloc] init];
+    self.trafficCamerasD2 = [[NSMutableArray alloc] init];
+    self.trafficCameraLocations = [[NSMutableArray alloc] initWithObjects:self.trafficCamerasD1, self.trafficCamerasD2, nil];
     
     // set up the managedObjectContext to read data from CoreData
     id delegate = [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [delegate managedObjectContext];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"DisabledParkingSpaceInfo"
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"TrafficCameraInfo"
                                               inManagedObjectContext:self.managedObjectContext];
     
     
     [fetchRequest setEntity:entity];
     NSError *error;
-    self.disabledSpaces = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    self.trafficCameras = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
-    for (DisabledParkingSpaceInfo *space in self.disabledSpaces){
-        if ([space.postCode isEqualToString:@"D1"]){
-            [self.disabledSpacesD1 addObject:space];
-        } else if ([space.postCode isEqualToString:@"D2"]){
-            [self.disabledSpacesD2 addObject:space];
+    for (TrafficCameraInfo *camera in self.trafficCameras){
+        if ([camera.postCode isEqualToString:@"D1"]){
+            [self.trafficCamerasD1 addObject:camera];
+        } else if ([camera.postCode isEqualToString:@"D2"]){
+            [self.trafficCamerasD2 addObject:camera];
         }
     }
 }
@@ -83,13 +83,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return self.disabledSpaceLocations.count;
+    return self.trafficCameraLocations.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.   
-    NSArray *sectionContents = [self.disabledSpaceLocations objectAtIndex:section];
+    // Return the number of rows in the section.    
+    NSArray *sectionContents = [self.trafficCameraLocations objectAtIndex:section];
     NSInteger rows = [sectionContents count];
     
     return rows;
@@ -98,18 +98,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // TODO: maybe use region as a cell identifier
-    static NSString *CellIdentifier = @"DisabledSpaceCell";
+    static NSString *CellIdentifier = @"TrafficCameraCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    NSArray *selectedSection = self.disabledSpaceLocations[indexPath.section];
-    self.selectedSpace = [selectedSection objectAtIndex:[indexPath row]];
+    NSArray *selectedSection = self.trafficCameraLocations[indexPath.section];
+    self.selectedCamera = [selectedSection objectAtIndex:[indexPath row]];
     
-    UILabel *disabledSpaceStreetLabel = (UILabel *)[cell viewWithTag:200];
-    disabledSpaceStreetLabel.text = self.selectedSpace.street;
-    
-    UILabel *spacesLabel = (UILabel *)[cell viewWithTag:201];
-    spacesLabel.text = self.selectedSpace.spaces;
+    UILabel *trafficCameraStreetLabel = (UILabel *)[cell viewWithTag:300];
+    trafficCameraStreetLabel.text = self.selectedCamera.name;
     
     return cell;
 }
@@ -131,7 +128,7 @@
         headerLabel.text = @"Dublin 2";
     
     [headerView addSubview:headerLabel];
-    return headerView;    
+    return headerView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -145,11 +142,11 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *selectedSection = self.disabledSpaces[indexPath.section];
-    self.selectedSpace = [selectedSection objectAtIndex:[indexPath row]];
+    NSArray *selectedSection = self.trafficCameras[indexPath.section];
+    self.selectedCamera = [selectedSection objectAtIndex:[indexPath row]];
     
     // do a segue based on the indexPath or do any setup later in prepareForSegue
-    [self performSegueWithIdentifier:@"showDisabledSpaceMap" sender:self];
+    [self performSegueWithIdentifier:@"showTrafficCameraMap" sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -166,11 +163,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if([segue.identifier isEqualToString:@"showCarparkMap"]){
+    if([segue.identifier isEqualToString:@"showTrafficCameraMap"]){
         
-//        DisabledSpaceMapViewController *destViewController = segue.destinationViewController;
-//        destViewController.selectedDisabledSpaceInfo = self.selectedSpace;
-//        
+        //        DisabledSpaceMapViewController *destViewController = segue.destinationViewController;
+        //        destViewController.selectedDisabledSpaceInfo = self.selectedSpace;
+        //
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"List" style: UIBarButtonItemStyleBordered target: nil action: nil];
         

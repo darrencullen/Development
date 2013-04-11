@@ -3,28 +3,28 @@
 	<cameraInfo 
 		code="6" 
 		name="O'Connell Bridge" 
-		url="http://www.dublincity.ie/dublintraffic/Site0Camera6.jpg"
+		url="http://www.dublincity.ie/dublintraffic/site16Camera6.jpg"
 		latitude="53.347231" 
 		longitude="-6.259292">
 	</cameraInfo>
 	<cameraInfo 
 		code="21" 
 		name="Dame St from Civic Offices" 
-		url="http://www.dublincity.ie/dublintraffic/Site0Camera21.jpg"
+		url="http://www.dublincity.ie/dublintraffic/site16Camera21.jpg"
 		latitude="53.347231" 
 		longitude="-6.259292">
 	</cameraInfo>	
 	<cameraInfo 
-		code="21" 
+		code="23" 
 		name="Pearse Street" 
-		url="http://www.dublincity.ie/dublintraffic/Site0Camera23.jpg"
+		url="http://www.dublincity.ie/dublintraffic/site16Camera23.jpg"
 		latitude="53.347231" 
 		longitude="-6.259292">
 	</cameraInfo>	
 	<cameraInfo 
-		code="35" 
+		code="95" 
 		name="Dublin Port Tunnel" 
-		url="http://www.dublincity.ie/dublintraffic/Site0Camera35.jpg"
+		url="http://www.dublincity.ie/dublintraffic/site16Camera95.jpg"
 		latitude="53.347231" 
 		longitude="-6.259292">
 	</cameraInfo>	

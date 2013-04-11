@@ -12,6 +12,7 @@
 #import "CarparkListViewController.h"
 #import "CarparkMapViewController.h"
 #import "DisabledParkingSpaceInfo.h"
+#import "TrafficCameraInfo.h"
 
 @implementation AppDelegate
 
@@ -26,11 +27,11 @@
     NSError *error;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"DisabledParkingSpaceInfo" inManagedObjectContext:context];
+                                   entityForName:@"TrafficCameraInfo" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (DisabledParkingSpaceInfo *info in fetchedObjects) {
-        NSLog(@"Street: %@", [info valueForKey:@"street"]);       
+    for (TrafficCameraInfo *info in fetchedObjects) {
+        NSLog(@"Name: %@", [info valueForKey:@"name"]);       
     }
     
     // set the tab controller as the root controller and allow it to use managed objects

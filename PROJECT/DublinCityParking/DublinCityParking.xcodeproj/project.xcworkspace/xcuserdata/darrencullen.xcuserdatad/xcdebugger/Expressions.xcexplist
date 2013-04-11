@@ -3,14 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "GLOBAL">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.disabledSpaceLocations">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[CarparkListViewController tableView:cellForRowAtIndexPath:]:CarparkListViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -22,10 +14,10 @@
          contextName = "-[DisabledSpacesViewController viewDidLoad]:DisabledSpacesViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.disabledSpacesD1">
+               value = "self.disabledSpacesD2">
             </PersistentString>
             <PersistentString
-               value = "self.disabledSpacesD2">
+               value = "self.disabledSpacesD1">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -88,10 +80,10 @@
                value = "selectedCarparkDetails.totalSpaces">
             </PersistentString>
             <PersistentString
-               value = "selectedCarparkDetails.region">
+               value = "selectedCarparkDetails.otherRate1">
             </PersistentString>
             <PersistentString
-               value = "selectedCarparkDetails.otherRate1">
+               value = "selectedCarparkDetails.region">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -100,6 +92,23 @@
          <PersistentStrings>
             <PersistentString
                value = "cgCarpark.code">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TrafficCamerasViewController tableView:cellForRowAtIndexPath:]:TrafficCamerasViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.trafficCameraLocations">
+            </PersistentString>
+            <PersistentString
+               value = "self.selectedCamera">
+            </PersistentString>
+            <PersistentString
+               value = "selectedSection">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

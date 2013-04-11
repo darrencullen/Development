@@ -9,6 +9,7 @@
 #import "CarparkInfo.h"
 #import "CarparkDetails.h"
 #import "DisabledParkingSpaceInfo.h"
+#import "TrafficCameraInfo.h"
 
 static NSManagedObjectModel *managedObjectModel()
 {
@@ -52,6 +53,39 @@ static NSManagedObjectContext *managedObjectContext()
             NSLog(@"Store Configuration Failure %@", ([error localizedDescription] != nil) ? [error localizedDescription] : @"Unknown Error");
         }
         
+        //===================================================================================================
+        
+        NSError* err3 = nil;
+        NSString* dataPath3 = [[NSBundle mainBundle] pathForResource:@"TrafficCamerasImport" ofType:@"json"];
+        NSArray* trafficCameras = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath3]
+                                                                  options:kNilOptions
+                                                                    error:&err3];
+        
+        
+        
+        NSLog(@"Imported DisabledSpaces: %@", trafficCameras);
+        NSLog(@"SQL Database location: %@", url);
+        
+        for (id trafficCamera in trafficCameras) {
+            NSLog(@"%@", trafficCamera);
+            
+            TrafficCameraInfo *trafficCameraInfo = [NSEntityDescription
+                                                          insertNewObjectForEntityForName:@"TrafficCameraInfo"
+                                                          inManagedObjectContext:context];
+            
+            trafficCameraInfo.name = [trafficCamera objectForKey:@"name"];
+            trafficCameraInfo.postCode = [trafficCamera objectForKey:@"postCode"];
+            trafficCameraInfo.latitude = [trafficCamera objectForKey:@"latitude"];
+            trafficCameraInfo.longitude = [trafficCamera objectForKey:@"longitude"];
+            trafficCameraInfo.code = [trafficCamera objectForKey:@"code"];
+            trafficCameraInfo.url = [trafficCamera objectForKey:@"url"];
+            
+            NSError *error;
+            if (![context save:&error]) {
+                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+            }
+        }
+        
         
         //===================================================================================================
         
@@ -85,37 +119,6 @@ static NSManagedObjectContext *managedObjectContext()
                 NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
             }
         }
-        //
-        //        [DisabledSpaces enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        //            DisabledParkingSpaceInfo *disableSpaceInfo = [NSEntityDescription
-        //                                                          insertNewObjectForEntityForName:@"DisabledParkingSpaceInfo"
-        //                                                          inManagedObjectContext:context];
-        //
-        //            disableSpaceInfo.street = [obj objectForKey:@"street"];
-        //            disableSpaceInfo.postCode = [obj objectForKey:@"postCode"];
-        //            disableSpaceInfo.latitude = [[obj objectForKey:@"latitude"] doubleValue];
-        //            disableSpaceInfo.longitude = [[obj objectForKey:@"longitude"] doubleValue];
-        //            disableSpaceInfo.spaces = [obj objectForKey:@"spaces"];
-        //
-        //
-        //            NSError *error;
-        //            if (![context save:&error]) {
-        //                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-        //            }
-        //        }];
-        //
-        //
-        //        // Test listing all FailedBankInfos from the store
-        //        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        //        NSEntityDescription *entity = [NSEntityDescription entityForName:@"DisabledParkingSpaceInfo"
-        //                                                  inManagedObjectContext:context];
-        //        [fetchRequest setEntity:entity];
-        //        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        //        for (DisabledParkingSpaceInfo *info in fetchedObjects) {
-        //            NSLog(@"Region: %@", info.street);
-        //            NSLog(@"Rate: %@", info.spaces);
-        //            NSLog(@"Hours: %@", info.postCode);
-        //        }
         
         
         //===================================================================================================

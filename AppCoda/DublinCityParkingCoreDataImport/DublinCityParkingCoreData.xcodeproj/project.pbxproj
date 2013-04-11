@@ -16,7 +16,7 @@
 		49F8894016D6E7D900AB3377 /* CarparkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8893C16D6E7D900AB3377 /* CarparkInfo.m */; };
 		49F8894116D6E7D900AB3377 /* DublinCityParkingCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49F8893D16D6E7D900AB3377 /* DublinCityParkingCoreData.xcdatamodeld */; };
 		49F8894416D6E95B00AB3377 /* CarparksImport.json in Copy Files */ = {isa = PBXBuildFile; fileRef = 49F8894216D6E8A800AB3377 /* CarparksImport.json */; };
-		49F982EF1714DA1400630BD3 /* DisabledSpacesImport.json in Copy Files */ = {isa = PBXBuildFile; fileRef = 49F982EE1714D9AD00630BD3 /* DisabledSpacesImport.json */; };
+		49FCD00817175C3900BBF2F7 /* DisabledSpaces.json in Copy Files */ = {isa = PBXBuildFile; fileRef = 49FCD00717175C2400BBF2F7 /* DisabledSpaces.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,7 +37,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				49F8894416D6E95B00AB3377 /* CarparksImport.json in Copy Files */,
-				49F982EF1714DA1400630BD3 /* DisabledSpacesImport.json in Copy Files */,
+				49FCD00817175C3900BBF2F7 /* DisabledSpaces.json in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +64,8 @@
 		49F982EA1714D58600630BD3 /* carparks.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = carparks.xml; sourceTree = "<group>"; };
 		49F982EB1714D5EA00630BD3 /* DisabledSpacesImport.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DisabledSpacesImport.json; sourceTree = "<group>"; };
 		49F982EE1714D9AD00630BD3 /* DisabledSpacesImport.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = DisabledSpacesImport.json; path = ../DisabledSpacesImport.json; sourceTree = "<group>"; };
+		49FCD00617175C2400BBF2F7 /* trafficcameras.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = trafficcameras.xml; sourceTree = "<group>"; };
+		49FCD00717175C2400BBF2F7 /* DisabledSpaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DisabledSpaces.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,8 @@
 		49F8892416D6E6AC00AB3377 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49FCD00617175C2400BBF2F7 /* trafficcameras.xml */,
+				49FCD00717175C2400BBF2F7 /* DisabledSpaces.json */,
 				49F8894216D6E8A800AB3377 /* CarparksImport.json */,
 				49F982EE1714D9AD00630BD3 /* DisabledSpacesImport.json */,
 				49F982E81714D57C00630BD3 /* disabled_spaces.xml */,

@@ -33,9 +33,7 @@
 		49F6DCCB16E7B48000043CFC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F6DCCA16E7B48000043CFC /* MoreViewController.m */; };
 		49F7E27916E6BB1E004CA8B5 /* NavigationBarStrip.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F7E27816E6BB1E004CA8B5 /* NavigationBarStrip.png */; };
 		49F7E28116E6C4E4004CA8B5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F7E28016E6C4E4004CA8B5 /* Default.png */; };
-		49F7EE0817162ACD00BE44F0 /* DublinCityParkingCoreData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 49F7EE0317162ACD00BE44F0 /* DublinCityParkingCoreData.sqlite */; };
 		49F7EE0917162ACD00BE44F0 /* DisabledParkingSpaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F7EE0517162ACD00BE44F0 /* DisabledParkingSpaceInfo.m */; };
-		49F7EE0A17162ACD00BE44F0 /* DublinCityParkingCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49F7EE0617162ACD00BE44F0 /* DublinCityParkingCoreData.xcdatamodeld */; };
 		49F7EE0D17162F4700BE44F0 /* DisabledSpacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F7EE0C17162F4700BE44F0 /* DisabledSpacesViewController.m */; };
 		49F888DB16D6D18700AB3377 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DA16D6D18700AB3377 /* UIKit.framework */; };
 		49F888DD16D6D18700AB3377 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F888DC16D6D18700AB3377 /* Foundation.framework */; };
@@ -50,6 +48,10 @@
 		49F8890716D6D3B700AB3377 /* CarparkListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890616D6D3B700AB3377 /* CarparkListViewController.m */; };
 		49F8890D16D6DD5300AB3377 /* CarparkDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890C16D6DD5300AB3377 /* CarparkDetails.m */; };
 		49F8891016D6DD9000AB3377 /* CarparkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890F16D6DD9000AB3377 /* CarparkInfo.m */; };
+		49FCD0191717740100BBF2F7 /* DublinCityParkingCoreData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 49FCD0141717740100BBF2F7 /* DublinCityParkingCoreData.sqlite */; };
+		49FCD01A1717740100BBF2F7 /* TrafficCameraInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FCD0161717740100BBF2F7 /* TrafficCameraInfo.m */; };
+		49FCD01B1717740100BBF2F7 /* DublinCityParkingCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49FCD0171717740100BBF2F7 /* DublinCityParkingCoreData.xcdatamodeld */; };
+		49FCD01E17177BDB00BBF2F7 /* TrafficCamerasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FCD01D17177BDB00BBF2F7 /* TrafficCamerasViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,10 +87,8 @@
 		49F6DCCA16E7B48000043CFC /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		49F7E27816E6BB1E004CA8B5 /* NavigationBarStrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBarStrip.png; sourceTree = "<group>"; };
 		49F7E28016E6C4E4004CA8B5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		49F7EE0317162ACD00BE44F0 /* DublinCityParkingCoreData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DublinCityParkingCoreData.sqlite; sourceTree = "<group>"; };
 		49F7EE0417162ACD00BE44F0 /* DisabledParkingSpaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisabledParkingSpaceInfo.h; sourceTree = "<group>"; };
 		49F7EE0517162ACD00BE44F0 /* DisabledParkingSpaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisabledParkingSpaceInfo.m; sourceTree = "<group>"; };
-		49F7EE0717162ACD00BE44F0 /* DublinCityParkingCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DublinCityParkingCoreData.xcdatamodel; sourceTree = "<group>"; };
 		49F7EE0B17162F4700BE44F0 /* DisabledSpacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisabledSpacesViewController.h; sourceTree = "<group>"; };
 		49F7EE0C17162F4700BE44F0 /* DisabledSpacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisabledSpacesViewController.m; sourceTree = "<group>"; };
 		49F888D716D6D18700AB3377 /* DubPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +111,12 @@
 		49F8890C16D6DD5300AB3377 /* CarparkDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkDetails.m; sourceTree = "<group>"; };
 		49F8890E16D6DD9000AB3377 /* CarparkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkInfo.h; sourceTree = "<group>"; };
 		49F8890F16D6DD9000AB3377 /* CarparkInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkInfo.m; sourceTree = "<group>"; };
+		49FCD0141717740100BBF2F7 /* DublinCityParkingCoreData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DublinCityParkingCoreData.sqlite; sourceTree = "<group>"; };
+		49FCD0151717740100BBF2F7 /* TrafficCameraInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficCameraInfo.h; sourceTree = "<group>"; };
+		49FCD0161717740100BBF2F7 /* TrafficCameraInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficCameraInfo.m; sourceTree = "<group>"; };
+		49FCD0181717740100BBF2F7 /* DublinCityParkingCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DublinCityParkingCoreData.xcdatamodel; sourceTree = "<group>"; };
+		49FCD01C17177BDB00BBF2F7 /* TrafficCamerasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficCamerasViewController.h; sourceTree = "<group>"; };
+		49FCD01D17177BDB00BBF2F7 /* TrafficCamerasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficCamerasViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,8 @@
 				49F8890F16D6DD9000AB3377 /* CarparkInfo.m */,
 				49F8890B16D6DD5300AB3377 /* CarparkDetails.h */,
 				49F8890C16D6DD5300AB3377 /* CarparkDetails.m */,
+				49FCD0151717740100BBF2F7 /* TrafficCameraInfo.h */,
+				49FCD0161717740100BBF2F7 /* TrafficCameraInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -206,6 +214,8 @@
 				496776F816DD968A009E7E22 /* CarparkDetailsViewController.m */,
 				49F7EE0B17162F4700BE44F0 /* DisabledSpacesViewController.h */,
 				49F7EE0C17162F4700BE44F0 /* DisabledSpacesViewController.m */,
+				49FCD01C17177BDB00BBF2F7 /* TrafficCamerasViewController.h */,
+				49FCD01D17177BDB00BBF2F7 /* TrafficCamerasViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -255,8 +265,8 @@
 		49F888E316D6D18700AB3377 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				49F7EE0317162ACD00BE44F0 /* DublinCityParkingCoreData.sqlite */,
-				49F7EE0617162ACD00BE44F0 /* DublinCityParkingCoreData.xcdatamodeld */,
+				49FCD0141717740100BBF2F7 /* DublinCityParkingCoreData.sqlite */,
+				49FCD0171717740100BBF2F7 /* DublinCityParkingCoreData.xcdatamodeld */,
 				496776EB16DD6251009E7E22 /* Resources */,
 				49F888E416D6D18700AB3377 /* DublinCityParking-Info.plist */,
 				49F888E516D6D18700AB3377 /* InfoPlist.strings */,
@@ -341,7 +351,7 @@
 				49F6DCC416E7AAE400043CFC /* wheelchair1.png in Resources */,
 				49F6DCC716E7AF7800043CFC /* camera1.png in Resources */,
 				49F6DCC816E7AF7800043CFC /* wheelchair2.png in Resources */,
-				49F7EE0817162ACD00BE44F0 /* DublinCityParkingCoreData.sqlite in Resources */,
+				49FCD0191717740100BBF2F7 /* DublinCityParkingCoreData.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,8 +374,10 @@
 				49A9E6D116DEADF700F54513 /* CarparkMapOverlay.m in Sources */,
 				49F6DCCB16E7B48000043CFC /* MoreViewController.m in Sources */,
 				49F7EE0917162ACD00BE44F0 /* DisabledParkingSpaceInfo.m in Sources */,
-				49F7EE0A17162ACD00BE44F0 /* DublinCityParkingCoreData.xcdatamodeld in Sources */,
 				49F7EE0D17162F4700BE44F0 /* DisabledSpacesViewController.m in Sources */,
+				49FCD01A1717740100BBF2F7 /* TrafficCameraInfo.m in Sources */,
+				49FCD01B1717740100BBF2F7 /* DublinCityParkingCoreData.xcdatamodeld in Sources */,
+				49FCD01E17177BDB00BBF2F7 /* TrafficCamerasViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,12 +505,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		49F7EE0617162ACD00BE44F0 /* DublinCityParkingCoreData.xcdatamodeld */ = {
+		49FCD0171717740100BBF2F7 /* DublinCityParkingCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				49F7EE0717162ACD00BE44F0 /* DublinCityParkingCoreData.xcdatamodel */,
+				49FCD0181717740100BBF2F7 /* DublinCityParkingCoreData.xcdatamodel */,
 			);
-			currentVersion = 49F7EE0717162ACD00BE44F0 /* DublinCityParkingCoreData.xcdatamodel */;
+			currentVersion = 49FCD0181717740100BBF2F7 /* DublinCityParkingCoreData.xcdatamodel */;
 			path = DublinCityParkingCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
