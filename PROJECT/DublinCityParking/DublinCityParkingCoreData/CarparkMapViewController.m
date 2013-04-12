@@ -8,13 +8,10 @@
 
 #import "CarparkMapViewController.h"
 #import "CarparkDetailsViewController.h"
-#import "CarparkMapOverlay.h"
+#import "MapOverlay.h"
 #import "CarparkInfo.h"
 #import "CarparkDetails.h"
 
-@interface CarparkMapViewController ()
-
-@end
 
 @implementation CarparkMapViewController{
     CarparkDetails *selectedCarparkDetails;
@@ -110,7 +107,9 @@
     CLLocationCoordinate2D coordinate;
     coordinate.latitude = selectedCarparkDetails.latitude;
     coordinate.longitude = selectedCarparkDetails.longitude;
-    CarparkMapOverlay *annotation = [[CarparkMapOverlay alloc] initWithName:self.selectedCarparkInfo.name spaces:self.selectedCarparkInfo.availableSpaces address:self.selectedCarparkInfo.address coordinate:coordinate];
+    NSString *numbersOfSpaces = [NSString stringWithFormat:@"Spaces: %@",self.selectedCarparkInfo.availableSpaces];
+    
+    MapOverlay *annotation = [[MapOverlay alloc] initWithName:self.selectedCarparkInfo.name subTitle:self.selectedCarparkInfo.address titleAddendum:numbersOfSpaces coordinate:coordinate];
     [_mapView addAnnotation:annotation];
 }
 
@@ -123,7 +122,7 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     
     static NSString *identifier = @"CarparkMapOverlay";
-    if ([annotation isKindOfClass:[CarparkMapOverlay class]]) {
+    if ([annotation isKindOfClass:[MapOverlay class]]) {
         
         MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         if (annotationView == nil) {

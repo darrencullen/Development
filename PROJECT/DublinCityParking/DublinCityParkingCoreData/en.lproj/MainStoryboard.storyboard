@@ -24,17 +24,17 @@
         <scene sceneID="18">
             <objects>
                 <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="CarparkListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="13">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="13">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.074509806931018829" green="0.086274512112140656" blue="0.30588236451148987" alpha="1" colorSpace="deviceRGB"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarparkCell" rowHeight="46" id="ab7-DP-plN">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarparkCell" rowHeight="46" id="ab7-DP-plN">
                                 <rect key="frame" x="0.0" y="46" width="320" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="267" height="45"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Carpark Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVa-qK-uyS">
@@ -61,17 +61,25 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pointer1.png" translatesAutoresizingMaskIntoConstraints="NO" id="kXh-a7-zrm">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="21" id="YXe-Yj-u7O"/>
+                                                <constraint firstAttribute="height" constant="17" id="cM7-FF-Uzk"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="16" id="0m1-ha-d8d"/>
                                     <constraint firstAttribute="bottom" secondItem="LVa-qK-uyS" secondAttribute="bottom" constant="20" type="default" id="5gn-Ig-7EO"/>
+                                    <constraint firstItem="kXh-a7-zrm" firstAttribute="centerY" secondItem="ab7-DP-plN" secondAttribute="centerY" type="default" id="CpE-wp-haa"/>
+                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="top" secondItem="ab7-DP-plN" secondAttribute="top" constant="15" id="JfX-Ho-Qtm"/>
                                     <constraint firstAttribute="bottom" secondItem="erM-sh-X5i" secondAttribute="bottom" constant="3" id="RGL-ng-1nP"/>
-                                    <constraint firstAttribute="trailing" secondItem="zTf-xc-LWa" secondAttribute="trailing" constant="47" id="a6P-Ya-n1F"/>
+                                    <constraint firstAttribute="trailing" secondItem="zTf-xc-LWa" secondAttribute="trailing" constant="34" id="XdL-rL-gys"/>
                                     <constraint firstItem="LVa-qK-uyS" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="15" id="hbE-lK-Zmd"/>
                                     <constraint firstItem="erM-sh-X5i" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="16" id="oPb-zJ-PoC"/>
+                                    <constraint firstAttribute="trailing" secondItem="kXh-a7-zrm" secondAttribute="trailing" constant="14" id="rdi-vS-HyS"/>
                                 </constraints>
                             </tableViewCell>
                         </prototypes>
@@ -89,7 +97,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256" y="-567"/>
+            <point key="canvasLocation" x="291" y="-572"/>
         </scene>
         <!--Carpark Map View Controller - Carpark Map-->
         <scene sceneID="R6O-ll-ZuE">
@@ -124,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAA-da-rbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="-567"/>
+            <point key="canvasLocation" x="718" y="-572"/>
         </scene>
         <!--Carpark Details View Controller - Carpark Details-->
         <scene sceneID="Zc0-aR-Ear">
@@ -415,17 +423,17 @@
         <scene sceneID="Pvl-bs-Uev">
             <objects>
                 <tableViewController id="xZk-i3-915" customClass="TrafficCamerasViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="qb5-3a-rt8">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="qb5-3a-rt8">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrafficCameraCell" rowHeight="46" id="hxh-jL-794">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrafficCameraCell" rowHeight="46" id="hxh-jL-794">
                                 <rect key="frame" x="0.0" y="46" width="320" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="280" height="45"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" text="Traffic Camera Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEW-0X-7dg">
@@ -436,12 +444,20 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pointer1.png" translatesAutoresizingMaskIntoConstraints="NO" id="HKC-Zm-FuA">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="21" id="Zth-vV-gfg"/>
+                                                <constraint firstAttribute="height" constant="17" id="ymw-xJ-qa1"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="wEW-0X-7dg" firstAttribute="top" secondItem="hxh-jL-794" secondAttribute="top" constant="13" id="8DT-RY-pix"/>
+                                    <constraint firstItem="HKC-Zm-FuA" firstAttribute="centerY" secondItem="hxh-jL-794" secondAttribute="centerY" type="default" id="U2S-uN-KAc"/>
+                                    <constraint firstAttribute="trailing" secondItem="HKC-Zm-FuA" secondAttribute="trailing" constant="14" id="b0h-0B-xjD"/>
+                                    <constraint firstItem="wEW-0X-7dg" firstAttribute="centerY" secondItem="HKC-Zm-FuA" secondAttribute="centerY" type="default" id="qNI-uR-V6x"/>
                                     <constraint firstItem="wEW-0X-7dg" firstAttribute="leading" secondItem="hxh-jL-794" secondAttribute="leading" constant="15" id="rFI-7j-kq9"/>
                                 </constraints>
                             </tableViewCell>
@@ -619,17 +635,17 @@
         <scene sceneID="3vC-dy-JLJ">
             <objects>
                 <tableViewController id="5ef-65-b6o" customClass="DisabledSpacesViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="eQu-BJ-XLD">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="eQu-BJ-XLD">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DisabledSpaceCell" rowHeight="46" id="hr4-a3-QKS">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DisabledSpaceCell" rowHeight="46" id="hr4-a3-QKS">
                                 <rect key="frame" x="0.0" y="46" width="320" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="280" height="45"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="200" contentMode="left" text="Disabled Parking Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh2-ct-HKd">
@@ -647,17 +663,28 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pointer1.png" translatesAutoresizingMaskIntoConstraints="NO" id="rmh-wb-IJ8">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="D24-up-xLB"/>
+                                                <constraint firstAttribute="width" constant="21" id="OhT-4W-kAf"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Bh2-ct-HKd" firstAttribute="baseline" secondItem="7gp-Wj-eFo" secondAttribute="baseline" type="default" id="Isg-7G-7nT"/>
-                                    <constraint firstItem="Bh2-ct-HKd" firstAttribute="top" secondItem="hr4-a3-QKS" secondAttribute="top" constant="16" id="p5y-8a-nJg"/>
+                                    <constraint firstItem="Bh2-ct-HKd" firstAttribute="top" secondItem="hr4-a3-QKS" secondAttribute="top" constant="15" id="03R-bR-r47"/>
+                                    <constraint firstAttribute="trailing" secondItem="rmh-wb-IJ8" secondAttribute="trailing" constant="14" id="7H8-eR-grt"/>
+                                    <constraint firstItem="rmh-wb-IJ8" firstAttribute="centerY" secondItem="hr4-a3-QKS" secondAttribute="centerY" type="default" id="Jd4-wG-WhC"/>
+                                    <constraint firstItem="Bh2-ct-HKd" firstAttribute="top" secondItem="7gp-Wj-eFo" secondAttribute="top" type="default" id="pwl-ns-wIx"/>
                                     <constraint firstItem="Bh2-ct-HKd" firstAttribute="leading" secondItem="hr4-a3-QKS" secondAttribute="leading" constant="15" id="ql7-M2-N6u"/>
                                     <constraint firstAttribute="trailing" secondItem="7gp-Wj-eFo" secondAttribute="trailing" constant="30" id="rQd-5w-Hd2"/>
-                                    <constraint firstItem="Bh2-ct-HKd" firstAttribute="top" secondItem="7gp-Wj-eFo" secondAttribute="top" type="default" id="vWM-En-Wv2"/>
+                                    <constraint firstItem="Bh2-ct-HKd" firstAttribute="baseline" secondItem="7gp-Wj-eFo" secondAttribute="baseline" type="default" id="v50-uR-2qU"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="CF9-Pg-Inm" kind="push" identifier="showDisabledSpaceMap" trigger="accessoryAction" id="jhq-Xq-8Av"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -673,7 +700,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHu-K8-bb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="829"/>
+            <point key="canvasLocation" x="291" y="848"/>
         </scene>
         <!--Navigation Controller - Parking-->
         <scene sceneID="YhS-lE-70R">
@@ -745,10 +772,39 @@
             </objects>
             <point key="canvasLocation" x="-1339" y="-544"/>
         </scene>
+        <!--Disabled Spaces Map View Controller - Disabled Space Map-->
+        <scene sceneID="M2K-vy-DUM">
+            <objects>
+                <viewController id="CF9-Pg-Inm" customClass="DisabledSpacesMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x8J-hp-cDv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QWo-FN-Ndk"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QWo-FN-Ndk" firstAttribute="bottom" secondItem="x8J-hp-cDv" secondAttribute="bottom" type="default" id="50c-4Y-qV5"/>
+                            <constraint firstItem="QWo-FN-Ndk" firstAttribute="top" secondItem="x8J-hp-cDv" secondAttribute="top" type="default" id="9pc-tv-mAM"/>
+                            <constraint firstItem="QWo-FN-Ndk" firstAttribute="leading" secondItem="x8J-hp-cDv" secondAttribute="leading" type="default" id="Afw-lZ-84A"/>
+                            <constraint firstItem="QWo-FN-Ndk" firstAttribute="trailing" secondItem="x8J-hp-cDv" secondAttribute="trailing" type="default" id="NaX-MQ-2gP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Disabled Space Map" id="Yn3-QZ-dB9"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="QWo-FN-Ndk" id="XT9-la-ugQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLS-6a-bdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="848"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera1.png" width="25" height="25"/>
         <image name="parking3.png" width="25" height="25"/>
+        <image name="pointer1.png" width="16" height="16"/>
         <image name="testicon1.png" width="25" height="25"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
@@ -778,6 +834,13 @@
         </class>
         <class className="CarparkMapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkMapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showCarparkDetails:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="DisabledSpacesMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesMapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="showCarparkDetails:"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>

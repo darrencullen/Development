@@ -11,10 +11,10 @@
 
 @interface DisabledParkingSpaceInfo : NSManagedObject
 
-@property (nonatomic, retain) NSString * street;
-@property (nonatomic, retain) NSString * postCode;
+@property (nonatomic, retain) NSString *street;
+@property (nonatomic, retain) NSString *postCode;
 @property (nonatomic, retain) NSNumber *latitude;
 @property (nonatomic, retain) NSNumber *longitude;
-@property (nonatomic, retain) NSString * spaces;
+@property (nonatomic, retain) NSString *spaces;
 
 @end

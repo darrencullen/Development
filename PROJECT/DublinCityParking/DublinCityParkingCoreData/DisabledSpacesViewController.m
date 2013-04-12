@@ -8,6 +8,7 @@
 
 #import "DisabledSpacesViewController.h"
 #import "DisabledParkingSpaceInfo.h"
+#import "DisabledSpacesMapViewController.h"
 
 @interface DisabledSpacesViewController ()
 
@@ -145,32 +146,30 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *selectedSection = self.disabledSpaces[indexPath.section];
+//    NSArray *selectedSection = self.disabledSpaces[indexPath.section];
+//    self.selectedSpace = [selectedSection objectAtIndex:[indexPath row]];
+//    
+//    // do a segue based on the indexPath or do any setup later in prepareForSegue
+//    [self performSegueWithIdentifier:@"showDisabledSpaceMap" sender:self];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *selectedSection = self.disabledSpaceLocations[indexPath.section];
     self.selectedSpace = [selectedSection objectAtIndex:[indexPath row]];
     
     // do a segue based on the indexPath or do any setup later in prepareForSegue
     [self performSegueWithIdentifier:@"showDisabledSpaceMap" sender:self];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if([segue.identifier isEqualToString:@"showCarparkMap"]){
+    if([segue.identifier isEqualToString:@"showDisabledSpaceMap"]){
         
-//        DisabledSpaceMapViewController *destViewController = segue.destinationViewController;
-//        destViewController.selectedDisabledSpaceInfo = self.selectedSpace;
-//        
+        DisabledSpacesMapViewController *destViewController = segue.destinationViewController;
+        destViewController.selectedDisabledSpace = self.selectedSpace;
+        
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"List" style: UIBarButtonItemStyleBordered target: nil action: nil];
         

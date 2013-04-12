@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "CarparkInfo.h"
-#import "carparkDetails.h"
+#import "CarparkDetails.h"
 
 @interface CarparkMapViewController : UIViewController <MKMapViewDelegate>
 

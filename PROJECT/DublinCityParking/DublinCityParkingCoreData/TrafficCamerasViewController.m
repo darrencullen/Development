@@ -142,7 +142,7 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *selectedSection = self.trafficCameras[indexPath.section];
+    NSArray *selectedSection = self.trafficCameraLocations[indexPath.section];
     self.selectedCamera = [selectedSection objectAtIndex:[indexPath row]];
     
     // do a segue based on the indexPath or do any setup later in prepareForSegue
@@ -151,13 +151,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    NSArray *selectedSection = self.trafficCameraLocations[indexPath.section];
+    self.selectedCamera = [selectedSection objectAtIndex:[indexPath row]];
+    
+    // do a segue based on the indexPath or do any setup later in prepareForSegue
+    [self performSegueWithIdentifier:@"showTrafficCameraMap" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

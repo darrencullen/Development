@@ -22,17 +22,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSManagedObjectContext *context = [self managedObjectContext];
-    
-    NSError *error;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"TrafficCameraInfo" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (TrafficCameraInfo *info in fetchedObjects) {
-        NSLog(@"Name: %@", [info valueForKey:@"name"]);       
-    }
+//    NSManagedObjectContext *context = [self managedObjectContext];
+//    
+//    NSError *error;
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entity = [NSEntityDescription
+//                                   entityForName:@"TrafficCameraInfo" inManagedObjectContext:context];
+//    [fetchRequest setEntity:entity];
+//    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+//    for (TrafficCameraInfo *info in fetchedObjects) {
+//        NSLog(@"Name: %@", [info valueForKey:@"name"]);       
+//    }
     
     // set the tab controller as the root controller and allow it to use managed objects
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
@@ -62,7 +62,7 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     
-    NSLog(@"applicationDidEnterBackground");
+   // NSLog(@"applicationDidEnterBackground");
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -80,7 +80,7 @@
 {
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
-    NSLog(@"applicationWillTerminate");
+    //NSLog(@"applicationWillTerminate");
 }
 
 - (void)saveContext

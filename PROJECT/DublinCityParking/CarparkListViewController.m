@@ -46,7 +46,7 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"viewDidLoad");
+    //NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
     // TODO: MOVE ARRAYS TO MODEL NSOBJECT
@@ -109,12 +109,12 @@
 - (void) viewDidAppear:(BOOL)animated
 {
     [self loadXMLData];
-    NSLog(@"viewDidAppear");
+   // NSLog(@"viewDidAppear");
 }
 
 
 - (void) loadXMLData {
-	NSLog(@"loadXMLData");
+	//NSLog(@"loadXMLData");
     
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
@@ -297,12 +297,12 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *selectedSection = self.carparkLocations[indexPath.section];
-    self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
-    
-    //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
-    // do a segue based on the indexPath or do any setup later in prepareForSegue
-    [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
+//    NSArray *selectedSection = self.carparkLocations[indexPath.section];
+//    self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
+//    
+//    //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
+//    // do a segue based on the indexPath or do any setup later in prepareForSegue
+//    [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -314,6 +314,13 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    
+    NSArray *selectedSection = self.carparkLocations[indexPath.section];
+    self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
+    
+    //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
+    // do a segue based on the indexPath or do any setup later in prepareForSegue
+    [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
