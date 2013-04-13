@@ -7,6 +7,7 @@
 //
 
 #import "TrafficCameraImageViewController.h"
+#import "TrafficCameraMapViewController.h"
 
 @interface TrafficCameraImageViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -52,6 +53,21 @@
     
     [self loadImage];
 
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if([segue.identifier isEqualToString:@"showTrafficCameraMap"]){
+        
+        TrafficCameraMapViewController *destViewController = segue.destinationViewController;
+        destViewController.selectedTrafficCamera = self.selectedTrafficCamera;
+        
+        
+        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Camera" style: UIBarButtonItemStyleBordered target: nil action: nil];
+        
+        [[self navigationItem] setBackBarButtonItem: newBackButton];
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CarparkInfo.h"
-#import "carparkDetails.h"
+#import "CarparkDetails.h"
 
 @interface CarparkDetailsViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *region;

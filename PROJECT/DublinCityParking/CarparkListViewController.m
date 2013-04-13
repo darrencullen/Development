@@ -11,6 +11,7 @@
 #import "CarparkDetails.h"
 #import "XMLParser.h"
 #import "CarparkMapViewController.h"
+#import "NetworkStatus.h"
 
 @interface CarparkListViewController ()
 // @property (nonatomic, strong) CarParkLots *carParkLots;
@@ -64,8 +65,21 @@
 
 - (void)viewDidLoad
 {
-    //NSLog(@"viewDidLoad");
     [super viewDidLoad];
+    
+    if ([NetworkStatus hasConnectivity])
+        NSLog(@"NETWORK");
+    else{
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:NSLocalizedString(@"No network available", @"AlertView")
+                                  message:NSLocalizedString(@"A network connection is required for up to the minute parking information.", @"AlertView")
+                                  delegate:self
+                                  cancelButtonTitle:NSLocalizedString(@"Cancel", @"AlertView")
+                                  otherButtonTitles:NSLocalizedString(@"Open settings", @"AlertView"), nil];
+        [alertView show];
+
+    }
+        NSLog(@"NO NETWORK");
     
     // TODO: MOVE ARRAYS TO MODEL NSOBJECT
     self.southwestCarparks = [[NSMutableArray alloc] init];

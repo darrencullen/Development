@@ -1,20 +1,19 @@
 //
-//  DisabledSpacesMapViewController.m
+//  TrafficCameraMapViewController.m
 //  DublinCityParking
 //
-//  Created by darren cullen on 12/04/2013.
+//  Created by darren cullen on 13/04/2013.
 //  Copyright (c) 2013 dcdevstudios. All rights reserved.
 //
 
-#import "DisabledSpacesMapViewController.h"
+#import "TrafficCameraMapViewController.h"
 #import "MapOverlay.h"
 
-@interface DisabledSpacesMapViewController ()
+@interface TrafficCameraMapViewController ()
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @end
 
-
-@implementation DisabledSpacesMapViewController
+@implementation TrafficCameraMapViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,27 +27,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = [self.selectedDisabledSpace.latitude doubleValue];
-    zoomLocation.longitude= [self.selectedDisabledSpace.longitude doubleValue];
-     
+    zoomLocation.latitude = [self.selectedTrafficCamera.latitude doubleValue];
+    zoomLocation.longitude= [self.selectedTrafficCamera.longitude doubleValue];
+    
     MKCoordinateRegion region;
-    region.center=zoomLocation;   
+    region.center=zoomLocation;
     MKCoordinateSpan span;
-    span.latitudeDelta=0.008;              
+    span.latitudeDelta=0.008;
     span.longitudeDelta=0.008;
     region.span=span;
     [self.mapView setRegion:region animated:YES];
-    self.title = self.selectedDisabledSpace.street;    
+    self.title = self.selectedTrafficCamera.name;
 }
-
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [self plotDisabledSpacePosition];
+    [self plotTrafficCameraPosition];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -56,21 +53,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (void)plotDisabledSpacePosition{
+- (void)plotTrafficCameraPosition{
     
     for (id<MKAnnotation> annotation in _mapView.annotations) {
         [_mapView removeAnnotation:annotation];
     }
     
     CLLocationCoordinate2D coordinate;
-    coordinate.latitude = [self.selectedDisabledSpace.latitude doubleValue];
-    coordinate.longitude= [self.selectedDisabledSpace.longitude doubleValue];
-    NSString *numbersOfSpaces = [NSString stringWithFormat:@"Disabled Spaces: %@",self.selectedDisabledSpace.spaces];
+    coordinate.latitude = [self.selectedTrafficCamera.latitude doubleValue];
+    coordinate.longitude= [self.selectedTrafficCamera.longitude doubleValue];
     
-    MapOverlay *annotation = [[MapOverlay alloc] initWithName:self.selectedDisabledSpace.street subTitle:numbersOfSpaces titleAddendum:nil coordinate:coordinate];
+    MapOverlay *annotation = [[MapOverlay alloc] initWithName:self.selectedTrafficCamera.name subTitle:nil titleAddendum:nil coordinate:coordinate];
     [_mapView addAnnotation:annotation];
 }
-
 
 @end
