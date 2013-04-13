@@ -12,6 +12,9 @@
 #import "CarparkInfo.h"
 #import "CarparkDetails.h"
 
+@interface CarparkMapViewController()
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@end
 
 @implementation CarparkMapViewController{
     CarparkDetails *selectedCarparkDetails;
@@ -84,6 +87,15 @@
     
 }
 
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    // this delegate fonction is called when the userlocation is updated
+    // try to move your code here
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:YES];

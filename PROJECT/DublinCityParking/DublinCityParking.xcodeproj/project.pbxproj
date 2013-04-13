@@ -31,6 +31,8 @@
 		49F6DCC716E7AF7800043CFC /* camera1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCC516E7AF7800043CFC /* camera1.png */; };
 		49F6DCC816E7AF7800043CFC /* wheelchair2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCC616E7AF7800043CFC /* wheelchair2.png */; };
 		49F6DCCB16E7B48000043CFC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F6DCCA16E7B48000043CFC /* MoreViewController.m */; };
+		49F70EE31719739A008B81BE /* TaskList.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 49F70EE21719739A008B81BE /* TaskList.rtf */; };
+		49F70EE6171993AC008B81BE /* TrafficCameraImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F70EE5171993AC008B81BE /* TrafficCameraImageViewController.m */; };
 		49F7E27916E6BB1E004CA8B5 /* NavigationBarStrip.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F7E27816E6BB1E004CA8B5 /* NavigationBarStrip.png */; };
 		49F7E28116E6C4E4004CA8B5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F7E28016E6C4E4004CA8B5 /* Default.png */; };
 		49F7EE0917162ACD00BE44F0 /* DisabledParkingSpaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F7EE0517162ACD00BE44F0 /* DisabledParkingSpaceInfo.m */; };
@@ -89,6 +91,9 @@
 		49F6DCC616E7AF7800043CFC /* wheelchair2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheelchair2.png; sourceTree = "<group>"; };
 		49F6DCC916E7B48000043CFC /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		49F6DCCA16E7B48000043CFC /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		49F70EE21719739A008B81BE /* TaskList.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = TaskList.rtf; path = ../TaskList.rtf; sourceTree = "<group>"; };
+		49F70EE4171993AC008B81BE /* TrafficCameraImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficCameraImageViewController.h; sourceTree = "<group>"; };
+		49F70EE5171993AC008B81BE /* TrafficCameraImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficCameraImageViewController.m; sourceTree = "<group>"; };
 		49F7E27816E6BB1E004CA8B5 /* NavigationBarStrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationBarStrip.png; sourceTree = "<group>"; };
 		49F7E28016E6C4E4004CA8B5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		49F7EE0417162ACD00BE44F0 /* DisabledParkingSpaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisabledParkingSpaceInfo.h; sourceTree = "<group>"; };
@@ -230,6 +235,8 @@
 				49F7EE0C17162F4700BE44F0 /* DisabledSpacesViewController.m */,
 				49FCD01C17177BDB00BBF2F7 /* TrafficCamerasViewController.h */,
 				49FCD01D17177BDB00BBF2F7 /* TrafficCamerasViewController.m */,
+				49F70EE4171993AC008B81BE /* TrafficCameraImageViewController.h */,
+				49F70EE5171993AC008B81BE /* TrafficCameraImageViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -279,6 +286,7 @@
 		49F888E316D6D18700AB3377 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49F70EE21719739A008B81BE /* TaskList.rtf */,
 				49FCD0141717740100BBF2F7 /* DublinCityParkingCoreData.sqlite */,
 				49FCD0171717740100BBF2F7 /* DublinCityParkingCoreData.xcdatamodeld */,
 				496776EB16DD6251009E7E22 /* Resources */,
@@ -369,6 +377,7 @@
 				49F8D8D7171898090015F14C /* map.png in Resources */,
 				49F8D8D8171898090015F14C /* mapgrey.png in Resources */,
 				49F8D8D9171898090015F14C /* pointer1.png in Resources */,
+				49F70EE31719739A008B81BE /* TaskList.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +405,7 @@
 				49FCD01B1717740100BBF2F7 /* DublinCityParkingCoreData.xcdatamodeld in Sources */,
 				49FCD01E17177BDB00BBF2F7 /* TrafficCamerasViewController.m in Sources */,
 				49F8D8DC1718A68F0015F14C /* DisabledSpacesMapViewController.m in Sources */,
+				49F70EE6171993AC008B81BE /* TrafficCameraImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +456,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -470,7 +480,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

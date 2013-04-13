@@ -13,7 +13,6 @@
 
 @interface DisabledSpacesMapViewController : UIViewController <MKMapViewDelegate>
 
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) DisabledParkingSpaceInfo *selectedDisabledSpace;
 
 @end

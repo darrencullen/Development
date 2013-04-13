@@ -10,6 +10,11 @@
 #import "MapOverlay.h"
 #import "DisabledParkingSpaceInfo.h"
 
+@interface DisabledSpacesMapViewController ()
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@end
+
+
 @implementation DisabledSpacesMapViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -71,30 +76,5 @@
     [_mapView addAnnotation:annotation];
 }
 
-
-- (IBAction)showCarparkDetails:(id)sender {
-    [self performSegueWithIdentifier:@"showCarparkDetails" sender:self];
-}
-
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
-    
-//    static NSString *identifier = @"DisabledSpaceMapOverlay";
-//    if ([annotation isKindOfClass:[DisabledSpaceMapOverlay class]]) {
-//        
-//        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-//        if (annotationView == nil) {
-//            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-//        } else {
-//            annotationView.annotation = annotation;
-//        }
-//        
-//        annotationView.enabled = YES;
-//        annotationView.canShowCallout = YES;
-//        return annotationView;
-//    }
-    
-    return nil;
-}
 
 @end

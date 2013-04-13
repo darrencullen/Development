@@ -8,6 +8,7 @@
 
 #import "TrafficCamerasViewController.h"
 #import "TrafficCameraInfo.h"
+#import "TrafficCameraImageViewController.h"
 
 @interface TrafficCamerasViewController ()
 
@@ -44,7 +45,6 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
     // TODO: MOVE ARRAYS TO MODEL NSOBJECT
@@ -142,11 +142,11 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *selectedSection = self.trafficCameraLocations[indexPath.section];
-    self.selectedCamera = [selectedSection objectAtIndex:[indexPath row]];
-    
-    // do a segue based on the indexPath or do any setup later in prepareForSegue
-    [self performSegueWithIdentifier:@"showTrafficCameraMap" sender:self];
+//    NSArray *selectedSection = self.trafficCameraLocations[indexPath.section];
+//    self.selectedCamera = [selectedSection objectAtIndex:[indexPath row]];
+//    
+//    // do a segue based on the indexPath or do any setup later in prepareForSegue
+//    [self performSegueWithIdentifier:@"showTrafficCameraMap" sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -155,17 +155,16 @@
     self.selectedCamera = [selectedSection objectAtIndex:[indexPath row]];
     
     // do a segue based on the indexPath or do any setup later in prepareForSegue
-    [self performSegueWithIdentifier:@"showTrafficCameraMap" sender:self];
+    [self performSegueWithIdentifier:@"showTrafficCameraImage" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if([segue.identifier isEqualToString:@"showTrafficCameraMap"]){
+    if([segue.identifier isEqualToString:@"showTrafficCameraImage"]){
         
-        //        DisabledSpaceMapViewController *destViewController = segue.destinationViewController;
-        //        destViewController.selectedDisabledSpaceInfo = self.selectedSpace;
-        //
+        TrafficCameraImageViewController *destViewController = segue.destinationViewController;
+        destViewController.selectedTrafficCamera = self.selectedCamera;
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"List" style: UIBarButtonItemStyleBordered target: nil action: nil];
         

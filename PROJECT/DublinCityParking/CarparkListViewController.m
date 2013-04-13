@@ -27,8 +27,6 @@
 
 @implementation CarparkListViewController
 
-
-// TODO: optimisation on initialisation required????
 - (void) setCarparkInfos:(NSArray *)carparkInfos
 {
     if (_carparkInfos != carparkInfos)
@@ -36,12 +34,32 @@
 }
 
 
-// TODO: iniialise other arrays
 - (NSMutableArray *)southeastCarparks
 {
     if (!_southeastCarparks) {
         _southeastCarparks = [[NSMutableArray alloc] init];
     } return _southeastCarparks;
+}
+
+- (NSMutableArray *)southwestCarparks
+{
+    if (!_southwestCarparks) {
+        _southwestCarparks = [[NSMutableArray alloc] init];
+    } return _southwestCarparks;
+}
+
+- (NSMutableArray *)northeastCarparks
+{
+    if (!_northeastCarparks) {
+        _northeastCarparks = [[NSMutableArray alloc] init];
+    } return _northeastCarparks;
+}
+
+- (NSMutableArray *)northwestCarparks
+{
+    if (!_northwestCarparks) {
+        _northwestCarparks = [[NSMutableArray alloc] init];
+    } return _northwestCarparks;
 }
 
 - (void)viewDidLoad
@@ -191,7 +209,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: maybe use region as a cell identifier
     static NSString *CellIdentifier = @"CarparkCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
@@ -328,29 +345,10 @@
     
     if([segue.identifier isEqualToString:@"showCarparkMap"]){
         
-        // NSIndexPath *indexPath =  selectedRow;
-        // do some prep based on indexPath, if needed
-        
-        //        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedRow];
-        //        UITextField *getTextView = (UITextField*)[cell.contentView viewWithTag:100];
-        
         CarparkMapViewController *destViewController = segue.destinationViewController;
         destViewController.selectedCarparkInfo = self.selectedCarpark;
         
-        //        NSLog(@"Code: %@", selectedCarpark.code);
-        //        NSLog(@"AvailableSpaces: %@", selectedCarpark.availableSpaces);
-        
-        //        destViewController.selectedCarparkDetails = selectedCarpark.details;
-        //        destViewController.managedObjectContext = self.managedObjectContext;
-        
-        
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"List" style: UIBarButtonItemStyleBordered target: nil action: nil];
-        
-        //        UIImage *barBackBtnImg = [[UIImage imageNamed:@"button.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 30, 0, 0)];
-        //
-        //        [newBackButton setBackButtonBackgroundImage:barBackBtnImg
-        //                                                          forState:UIControlStateNormal
-        //                                                        barMetrics:UIBarMetricsDefault];
         
         [[self navigationItem] setBackBarButtonItem: newBackButton];
     }

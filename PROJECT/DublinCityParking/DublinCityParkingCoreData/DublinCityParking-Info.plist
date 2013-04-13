@@ -19,7 +19,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>ie.ucd.csi.dcdev.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>ie.dcdevelopmentstudios.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

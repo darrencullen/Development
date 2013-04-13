@@ -13,11 +13,7 @@
 
 @interface CarparkMapViewController : UIViewController <MKMapViewDelegate>
 
-//@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
-
 @property (nonatomic, strong) CarparkInfo *selectedCarparkInfo;
-//@property (nonatomic, strong) CarparkDetails *selectedCarparkDetails;
 
 - (IBAction)showCarparkDetails:(id)sender;
 
