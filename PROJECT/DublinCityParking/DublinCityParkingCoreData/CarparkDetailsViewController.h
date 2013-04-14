@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CarparkInfo.h"
 
 @interface CarparkDetailsViewController : UITableViewController
-
+@property (nonatomic, strong) CarparkInfo *selectedCarparkInfo;
 @end

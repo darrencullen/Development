@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49017DC0171AD6F2003293E3 /* CarparkDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49017DBF171AD6F2003293E3 /* CarparkDetailsViewController.m */; };
 		49175CA91719DFE6000DEED1 /* TrafficCameraMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49175CA81719DFE6000DEED1 /* TrafficCameraMapViewController.m */; };
 		49175CAC1719EACA000DEED1 /* NetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 49175CAB1719EACA000DEED1 /* NetworkStatus.m */; };
 		49175CAF1719EB82000DEED1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49175CAE1719EB82000DEED1 /* SystemConfiguration.framework */; };
@@ -14,7 +15,6 @@
 		491A0DCE16DC2AA20017DEFE /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A0DCC16DC2AA20017DEFE /* XMLParser.m */; };
 		496776EF16DD6D00009E7E22 /* parking30.ico in Resources */ = {isa = PBXBuildFile; fileRef = 496776EE16DD6D00009E7E22 /* parking30.ico */; };
 		496776F216DD81D5009E7E22 /* CarparkMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496776F116DD81D5009E7E22 /* CarparkMapViewController.m */; };
-		496776F916DD968A009E7E22 /* CarparkDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496776F816DD968A009E7E22 /* CarparkDetailsViewController.m */; };
 		49A9E6C816DEA1BE00F54513 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A9E6C716DEA1BE00F54513 /* MapKit.framework */; };
 		49A9E6D116DEADF700F54513 /* MapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A9E6D016DEADF700F54513 /* MapOverlay.m */; };
 		49A9E6D316DEB9F700F54513 /* mappointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A9E6D216DEB9F700F54513 /* mappointer.png */; };
@@ -64,6 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49017DBE171AD6F1003293E3 /* CarparkDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkDetailsViewController.h; sourceTree = "<group>"; };
+		49017DBF171AD6F2003293E3 /* CarparkDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkDetailsViewController.m; sourceTree = "<group>"; };
 		49175CA71719DFE6000DEED1 /* TrafficCameraMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficCameraMapViewController.h; sourceTree = "<group>"; };
 		49175CA81719DFE6000DEED1 /* TrafficCameraMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficCameraMapViewController.m; sourceTree = "<group>"; };
 		49175CAA1719EACA000DEED1 /* NetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkStatus.h; sourceTree = "<group>"; };
@@ -76,8 +78,6 @@
 		496776EE16DD6D00009E7E22 /* parking30.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = parking30.ico; sourceTree = "<group>"; };
 		496776F016DD81D5009E7E22 /* CarparkMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkMapViewController.h; sourceTree = "<group>"; };
 		496776F116DD81D5009E7E22 /* CarparkMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkMapViewController.m; sourceTree = "<group>"; };
-		496776F716DD968A009E7E22 /* CarparkDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarparkDetailsViewController.h; path = ../CarparkDetailsViewController.h; sourceTree = "<group>"; };
-		496776F816DD968A009E7E22 /* CarparkDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarparkDetailsViewController.m; path = ../CarparkDetailsViewController.m; sourceTree = "<group>"; };
 		49A9E6C716DEA1BE00F54513 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		49A9E6CF16DEADF700F54513 /* MapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapOverlay.h; path = ../MapOverlay.h; sourceTree = "<group>"; };
 		49A9E6D016DEADF700F54513 /* MapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapOverlay.m; path = ../MapOverlay.m; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 				49F8890616D6D3B700AB3377 /* CarparkListViewController.m */,
 				496776F016DD81D5009E7E22 /* CarparkMapViewController.h */,
 				496776F116DD81D5009E7E22 /* CarparkMapViewController.m */,
-				496776F716DD968A009E7E22 /* CarparkDetailsViewController.h */,
-				496776F816DD968A009E7E22 /* CarparkDetailsViewController.m */,
+				49017DBE171AD6F1003293E3 /* CarparkDetailsViewController.h */,
+				49017DBF171AD6F2003293E3 /* CarparkDetailsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -358,7 +358,6 @@
 		49F888CE16D6D18700AB3377 = {
 			isa = PBXGroup;
 			children = (
-				49175CAE1719EB82000DEED1 /* SystemConfiguration.framework */,
 				49F888E216D6D18700AB3377 /* DublinCityParking */,
 				49F888D916D6D18700AB3377 /* Frameworks */,
 				49F888D816D6D18700AB3377 /* Products */,
@@ -376,6 +375,7 @@
 		49F888D916D6D18700AB3377 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49175CAE1719EB82000DEED1 /* SystemConfiguration.framework */,
 				49A9E6C716DEA1BE00F54513 /* MapKit.framework */,
 				49F888DA16D6D18700AB3377 /* UIKit.framework */,
 				49F888DC16D6D18700AB3377 /* Foundation.framework */,
@@ -514,7 +514,6 @@
 				491A0DCD16DC2AA20017DEFE /* Carpark.m in Sources */,
 				491A0DCE16DC2AA20017DEFE /* XMLParser.m in Sources */,
 				496776F216DD81D5009E7E22 /* CarparkMapViewController.m in Sources */,
-				496776F916DD968A009E7E22 /* CarparkDetailsViewController.m in Sources */,
 				49A9E6D116DEADF700F54513 /* MapOverlay.m in Sources */,
 				49F6DCCB16E7B48000043CFC /* MoreViewController.m in Sources */,
 				49F7EE0917162ACD00BE44F0 /* DisabledParkingSpaceInfo.m in Sources */,
@@ -526,6 +525,7 @@
 				49F70EE6171993AC008B81BE /* TrafficCameraImageViewController.m in Sources */,
 				49175CA91719DFE6000DEED1 /* TrafficCameraMapViewController.m in Sources */,
 				49175CAC1719EACA000DEED1 /* NetworkStatus.m in Sources */,
+				49017DC0171AD6F2003293E3 /* CarparkDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

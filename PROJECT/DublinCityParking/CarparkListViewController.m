@@ -34,7 +34,6 @@
         _carparkInfos = carparkInfos;
 }
 
-
 - (NSMutableArray *)southeastCarparks
 {
     if (!_southeastCarparks) {
@@ -79,12 +78,11 @@
         [alertView show];
 
     }
-        NSLog(@"NO NETWORK");
     
     // TODO: MOVE ARRAYS TO MODEL NSOBJECT
-    self.southwestCarparks = [[NSMutableArray alloc] init];
-    self.northeastCarparks = [[NSMutableArray alloc] init];
-    self.northwestCarparks = [[NSMutableArray alloc] init];
+//    self.southwestCarparks = [[NSMutableArray alloc] init];
+//    self.northeastCarparks = [[NSMutableArray alloc] init];
+//    self.northwestCarparks = [[NSMutableArray alloc] init];
     self.carparkLocations = [[NSMutableArray alloc] initWithObjects:self.southeastCarparks, self.southwestCarparks, self.northeastCarparks, self.northwestCarparks, nil];
     
     
@@ -241,6 +239,9 @@
     
     UILabel *availableSpacesLabel = (UILabel *)[cell viewWithTag:102];
     availableSpacesLabel.text = self.selectedCarpark.availableSpaces;
+    
+    UILabel *hourlyRateLabel = (UILabel *)[cell viewWithTag:103];
+    hourlyRateLabel.text = self.selectedCarpark.details.hourlyRate;
     
     //    CarparkDetails *details;
     //    details = selectedCarpark.details;
