@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *carparkDetailSpaces;
 @property (nonatomic, strong) NSMutableArray *carparkDetailRates;
 @property (nonatomic, strong) NSMutableArray *carparkDetailOther;
+@property (nonatomic, strong) NSMutableArray *carparkDetailContact;
 
 @end
 
@@ -57,11 +58,18 @@
     } return _carparkDetailOther;
 }
 
+- (NSMutableArray *)carparkDetailContact
+{
+    if (!_carparkDetailContact) {
+        _carparkDetailContact = [[NSMutableArray alloc] init];
+    } return _carparkDetailContact;
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.carparkDetailSections = [[NSMutableArray alloc] initWithObjects:self.carparkDetailLocation, self.carparkDetailSpaces, self.carparkDetailRates, self.carparkDetailOther, nil];
+    self.carparkDetailSections = [[NSMutableArray alloc] initWithObjects:self.carparkDetailLocation, self.carparkDetailSpaces, self.carparkDetailRates, self.carparkDetailOther, self.carparkDetailContact, nil];
     
     [self populateDetailArrays];
 }
@@ -116,7 +124,29 @@
     }
     
     // Other Details
+    if (self.selectedCarparkInfo.details.heightRestrictions){
+        NSDictionary *detailDescriptionValue;
+        detailDescriptionValue = [NSDictionary dictionaryWithObjectsAndKeys:self.selectedCarparkInfo.details.heightRestrictions, @"Max height", nil];
+        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:detailDescriptionValue, [NSNumber numberWithInt:14], nil];
+        [self.carparkDetailOther addObject:detailItem];
+    }
+    if (self.selectedCarparkInfo.details.openingHours){
+        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:@"Opening hours", [NSNumber numberWithInt:22], nil];
+        [self.carparkDetailOther addObject:detailItem];
+    }
+    if (self.selectedCarparkInfo.details.openingHours){
+        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:@"Services available", [NSNumber numberWithInt:23], nil];
+        [self.carparkDetailOther addObject:detailItem];
+    }
+
     
+    // Contact Details
+    if (self.selectedCarparkInfo.details.phoneNumber){
+        NSDictionary *detailDescriptionValue;
+        detailDescriptionValue = [NSDictionary dictionaryWithObjectsAndKeys:self.selectedCarparkInfo.details.phoneNumber, @"Phone", nil];
+        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:detailDescriptionValue, [NSNumber numberWithInt:15], nil];
+        [self.carparkDetailContact addObject:detailItem];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -235,7 +265,12 @@
             [headerView addSubview:headerLabel];
         }
     }
-    
+    else if(section == 4){
+        if ([_carparkDetailContact count] > 0){
+            headerLabel.text = @"Contact Details";
+            [headerView addSubview:headerLabel];
+        }
+    }
     return headerView;
     
 }

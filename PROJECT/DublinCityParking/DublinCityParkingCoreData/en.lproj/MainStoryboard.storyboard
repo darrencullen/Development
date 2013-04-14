@@ -232,7 +232,7 @@
                                                 <constraint firstAttribute="width" constant="289" id="ZtU-7u-7h2"/>
                                                 <constraint firstAttribute="height" constant="21" id="u1s-xj-hLi"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
@@ -256,117 +256,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1I-3V-TTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-327" y="-596"/>
-        </scene>
-        <!--Carpark Details View Controller - Carpark Details-->
-        <scene sceneID="Zc0-aR-Ear">
-            <objects>
-                <viewController id="PDM-0K-awj" customClass="CarparkDetailsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="l1m-UO-mef">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Open:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS7-bi-q70">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="9IH-ms-Vit"/>
-                                    <constraint firstAttribute="width" constant="100" id="GyW-eL-c80"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Max Height:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9L-a8-05f">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="bln-pn-0sV"/>
-                                    <constraint firstAttribute="width" constant="100" id="d0T-bC-9dj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phone:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvi-lg-gxy">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="1ls-ow-gYx"/>
-                                    <constraint firstAttribute="width" constant="50" id="zY7-w4-KOg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Services:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyD-T9-Phe">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="MWC-Ib-HNE"/>
-                                    <constraint firstAttribute="width" constant="69" id="ZSA-ro-nDp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Opening Hours" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="212" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-Sf-2Vl">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="SPH-Xz-Xg9"/>
-                                    <constraint firstAttribute="width" constant="212" id="T6L-fk-PRq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Max Height" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P9-fn-0ln">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="212" id="hrg-9K-2Xx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWQ-x5-Epb">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Services" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="212" translatesAutoresizingMaskIntoConstraints="NO" id="vD1-ZS-r21">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="X0w-Bc-aBG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
-                        <constraints>
-                            <constraint firstItem="a6g-Sf-2Vl" firstAttribute="top" secondItem="l1m-UO-mef" secondAttribute="top" constant="126" id="5tR-qu-kIi"/>
-                            <constraint firstItem="7P9-fn-0ln" firstAttribute="top" secondItem="X9L-a8-05f" secondAttribute="top" type="default" id="6Hx-jl-YvV"/>
-                            <constraint firstAttribute="bottom" secondItem="UyD-T9-Phe" secondAttribute="bottom" constant="106" id="6YL-XE-S95"/>
-                            <constraint firstItem="WWQ-x5-Epb" firstAttribute="leading" secondItem="vD1-ZS-r21" secondAttribute="leading" type="default" id="6zq-1J-r4A"/>
-                            <constraint firstItem="a6g-Sf-2Vl" firstAttribute="leading" secondItem="l1m-UO-mef" secondAttribute="leading" constant="99" id="9tG-tg-b0Y"/>
-                            <constraint firstItem="UyD-T9-Phe" firstAttribute="leading" secondItem="xS7-bi-q70" secondAttribute="leading" type="default" id="EOk-TZ-r8Q"/>
-                            <constraint firstItem="xS7-bi-q70" firstAttribute="top" secondItem="l1m-UO-mef" secondAttribute="top" constant="136" id="P8g-1Q-3nd"/>
-                            <constraint firstAttribute="trailing" secondItem="X9L-a8-05f" secondAttribute="trailing" constant="51" id="RhQ-Zu-DWi"/>
-                            <constraint firstItem="WWQ-x5-Epb" firstAttribute="top" secondItem="Zvi-lg-gxy" secondAttribute="top" type="default" id="S3W-ih-iaI"/>
-                            <constraint firstItem="7P9-fn-0ln" firstAttribute="baseline" secondItem="X9L-a8-05f" secondAttribute="baseline" type="default" id="Stn-8y-IKI"/>
-                            <constraint firstItem="WWQ-x5-Epb" firstAttribute="trailing" secondItem="vD1-ZS-r21" secondAttribute="trailing" type="default" id="b2h-fM-cpX"/>
-                            <constraint firstItem="X9L-a8-05f" firstAttribute="top" secondItem="l1m-UO-mef" secondAttribute="top" constant="103" id="dt5-uL-vjm"/>
-                            <constraint firstItem="xS7-bi-q70" firstAttribute="leading" secondItem="l1m-UO-mef" secondAttribute="leading" constant="9" id="fMY-Fi-RI4"/>
-                            <constraint firstItem="7P9-fn-0ln" firstAttribute="leading" secondItem="l1m-UO-mef" secondAttribute="leading" constant="249" id="fkm-Rq-6wZ"/>
-                            <constraint firstAttribute="bottom" secondItem="Zvi-lg-gxy" secondAttribute="bottom" constant="12" id="oO6-mY-sOz"/>
-                            <constraint firstItem="vD1-ZS-r21" firstAttribute="leading" secondItem="a6g-Sf-2Vl" secondAttribute="leading" type="default" id="ojA-OD-iMd"/>
-                            <constraint firstItem="Zvi-lg-gxy" firstAttribute="leading" secondItem="UyD-T9-Phe" secondAttribute="leading" type="default" id="tlx-KD-EIi"/>
-                            <constraint firstItem="vD1-ZS-r21" firstAttribute="trailing" secondItem="a6g-Sf-2Vl" secondAttribute="trailing" type="default" id="uCD-MX-3U6"/>
-                            <constraint firstItem="WWQ-x5-Epb" firstAttribute="baseline" secondItem="Zvi-lg-gxy" secondAttribute="baseline" type="default" id="wUh-50-dS5"/>
-                            <constraint firstAttribute="bottom" secondItem="vD1-ZS-r21" secondAttribute="bottom" constant="95" id="wtd-Mn-Zue"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Carpark Details" id="J5O-RZ-UYw"/>
-                    <connections>
-                        <outlet property="maxHeight" destination="7P9-fn-0ln" id="WKh-f3-wuH"/>
-                        <outlet property="openingHours" destination="a6g-Sf-2Vl" id="3ZG-mu-fad"/>
-                        <outlet property="phone" destination="WWQ-x5-Epb" id="HJT-cF-evd"/>
-                        <outlet property="services" destination="vD1-ZS-r21" id="0dS-K4-CFj"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G9p-LR-5QU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="58" y="-596"/>
         </scene>
         <!--Traffic Cameras View Controller - Traffic Cameras-->
         <scene sceneID="Pvl-bs-Uev">

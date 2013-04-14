@@ -346,11 +346,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DublinCityParkingCoreData/CarparkDetailsViewController.m"
-         timestampString = "387661962.915074"
+         timestampString = "387663078.991272"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "149"
-         endingLineNumber = "149"
+         startingLineNumber = "182"
+         endingLineNumber = "182"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -359,11 +359,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DublinCityParkingCoreData/CarparkDetailsViewController.m"
-         timestampString = "387661962.915074"
+         timestampString = "387663078.991272"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "150"
-         endingLineNumber = "150"
+         startingLineNumber = "183"
+         endingLineNumber = "183"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -372,11 +372,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DublinCityParkingCoreData/CarparkDetailsViewController.m"
-         timestampString = "387661962.915074"
+         timestampString = "387663078.991272"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "165"
-         endingLineNumber = "165"
+         startingLineNumber = "198"
+         endingLineNumber = "198"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -385,11 +385,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DublinCityParkingCoreData/CarparkDetailsViewController.m"
-         timestampString = "387661962.915074"
+         timestampString = "387663078.991272"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "171"
-         endingLineNumber = "171"
+         startingLineNumber = "204"
+         endingLineNumber = "204"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -398,11 +398,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DublinCityParkingCoreData/CarparkDetailsViewController.m"
-         timestampString = "387661962.915074"
+         timestampString = "387663078.991272"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "148"
-         endingLineNumber = "148"
+         startingLineNumber = "181"
+         endingLineNumber = "181"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
