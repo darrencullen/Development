@@ -185,6 +185,9 @@
                                     <constraint firstItem="LzY-Tf-RQX" firstAttribute="top" secondItem="h9t-P0-4Is" secondAttribute="top" constant="14" id="k9X-Pi-itq"/>
                                     <constraint firstItem="LzY-Tf-RQX" firstAttribute="centerY" secondItem="7ss-Z0-Vm6" secondAttribute="centerY" type="default" id="nNE-me-hoI"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="EPp-gY-4vS" kind="push" identifier="showFurtherDetails" trigger="accessoryAction" id="S9Y-If-6n8"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DescriptionValueCell" rowHeight="46" id="aNJ-Oq-7Zf">
                                 <rect key="frame" x="0.0" y="93" width="320" height="46"/>
@@ -257,6 +260,59 @@
             </objects>
             <point key="canvasLocation" x="-327" y="-596"/>
         </scene>
+        <!--Carpark Detals Description View Controller - Further Details-->
+        <scene sceneID="ZW5-5f-8Z7">
+            <objects>
+                <tableViewController id="EPp-gY-4vS" customClass="CarparkDetalsDescriptionViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="Xoj-KJ-YJk">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="aDP-Mz-Tda">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="341" id="mwc-lc-c5J">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="342"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="340"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7L-Hf-4X5">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="333" id="GWA-nK-Gge"/>
+                                                        <constraint firstAttribute="width" constant="288" id="nqx-xY-3ZC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="M7L-Hf-4X5" firstAttribute="leading" secondItem="mwc-lc-c5J" secondAttribute="leading" constant="17" id="DR8-N8-3ug"/>
+                                            <constraint firstItem="M7L-Hf-4X5" firstAttribute="top" secondItem="mwc-lc-c5J" secondAttribute="top" constant="6" id="Na7-iH-d7p"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="EPp-gY-4vS" id="bkI-6u-vL7"/>
+                            <outlet property="delegate" destination="EPp-gY-4vS" id="y40-Ii-ill"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Further Details" id="Q8W-Xl-Rt5"/>
+                    <connections>
+                        <outlet property="textView" destination="M7L-Hf-4X5" id="I5o-DU-SmU"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ew0-HQ-FQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="-596"/>
+        </scene>
         <!--Traffic Cameras View Controller - Traffic Cameras-->
         <scene sceneID="Pvl-bs-Uev">
             <objects>
@@ -268,7 +324,7 @@
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrafficCameraCell" rowHeight="46" id="hxh-jL-794">
-                                <rect key="frame" x="0.0" y="46" width="320" height="48"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="45"/>
@@ -386,7 +442,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" textLabel="ocx-2D-LgX" style="IBUITableViewCellStyleDefault" id="viw-Cf-mYp">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="267" height="43"/>
@@ -442,7 +498,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" textLabel="JIR-s2-caO" style="IBUITableViewCellStyleDefault" id="mkJ-eT-9lv">
-                                        <rect key="frame" x="0.0" y="208" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="208" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="267" height="43"/>
@@ -480,7 +536,7 @@
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DisabledSpaceCell" rowHeight="46" id="hr4-a3-QKS">
-                                <rect key="frame" x="0.0" y="46" width="320" height="48"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="45"/>
@@ -712,6 +768,12 @@
     <classes>
         <class className="CarparkDetailsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetailsViewController.h"/>
+        </class>
+        <class className="CarparkDetalsDescriptionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetalsDescriptionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
         </class>
         <class className="CarparkListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkListViewController.h"/>

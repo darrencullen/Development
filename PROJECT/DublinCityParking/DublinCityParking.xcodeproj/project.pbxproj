@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49017DC0171AD6F2003293E3 /* CarparkDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49017DBF171AD6F2003293E3 /* CarparkDetailsViewController.m */; };
+		49017DC3171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49017DC2171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.m */; };
 		49175CA91719DFE6000DEED1 /* TrafficCameraMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49175CA81719DFE6000DEED1 /* TrafficCameraMapViewController.m */; };
 		49175CAC1719EACA000DEED1 /* NetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 49175CAB1719EACA000DEED1 /* NetworkStatus.m */; };
 		49175CAF1719EB82000DEED1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49175CAE1719EB82000DEED1 /* SystemConfiguration.framework */; };
@@ -66,6 +67,8 @@
 /* Begin PBXFileReference section */
 		49017DBE171AD6F1003293E3 /* CarparkDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkDetailsViewController.h; sourceTree = "<group>"; };
 		49017DBF171AD6F2003293E3 /* CarparkDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkDetailsViewController.m; sourceTree = "<group>"; };
+		49017DC1171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkDetalsDescriptionViewController.h; sourceTree = "<group>"; };
+		49017DC2171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkDetalsDescriptionViewController.m; sourceTree = "<group>"; };
 		49175CA71719DFE6000DEED1 /* TrafficCameraMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficCameraMapViewController.h; sourceTree = "<group>"; };
 		49175CA81719DFE6000DEED1 /* TrafficCameraMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficCameraMapViewController.m; sourceTree = "<group>"; };
 		49175CAA1719EACA000DEED1 /* NetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkStatus.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				496776F116DD81D5009E7E22 /* CarparkMapViewController.m */,
 				49017DBE171AD6F1003293E3 /* CarparkDetailsViewController.h */,
 				49017DBF171AD6F2003293E3 /* CarparkDetailsViewController.m */,
+				49017DC1171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.h */,
+				49017DC2171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				49175CA91719DFE6000DEED1 /* TrafficCameraMapViewController.m in Sources */,
 				49175CAC1719EACA000DEED1 /* NetworkStatus.m in Sources */,
 				49017DC0171AD6F2003293E3 /* CarparkDetailsViewController.m in Sources */,
+				49017DC3171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
