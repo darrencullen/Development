@@ -416,7 +416,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" textLabel="ocx-2D-LgX" style="IBUITableViewCellStyleDefault" id="viw-Cf-mYp">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="267" height="43"/>
@@ -472,7 +472,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" textLabel="JIR-s2-caO" style="IBUITableViewCellStyleDefault" id="mkJ-eT-9lv">
-                                        <rect key="frame" x="0.0" y="208" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="208" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="267" height="43"/>
@@ -731,10 +731,9 @@
             </objects>
             <point key="canvasLocation" x="-327" y="780"/>
         </scene>
-        <!--Combined Map View Controller - Carpark Locations-->
+        <!--Combined Map View Controller - Locations-->
         <scene sceneID="RnL-Ua-j7L">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7bl-hy-Siw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Cx8-eo-sck" customClass="CombinedMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3u7-NY-a50">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
@@ -757,7 +756,7 @@
                                     <segment title="Cameras" width="94.666666666666671"/>
                                 </segments>
                                 <connections>
-                                    <action selector="selectOverlayType:" destination="Cx8-eo-sck" eventType="valueChanged" id="xfP-Cw-ezg"/>
+                                    <action selector="selectOverlayType:" destination="Cx8-eo-sck" eventType="valueChanged" id="vLQ-ko-k6k"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -770,13 +769,14 @@
                             <constraint firstItem="Pqq-7W-3fi" firstAttribute="centerX" secondItem="Fcl-6u-yOU" secondAttribute="centerX" type="default" id="rae-mx-MHt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Carpark Locations" id="J8v-0u-tpI"/>
+                    <navigationItem key="navigationItem" title="Locations" id="J8v-0u-tpI"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
                         <outlet property="mapView" destination="Fcl-6u-yOU" id="ss9-2U-s2S"/>
-                        <outlet property="selectOverlayType" destination="Pqq-7W-3fi" id="4Xb-QQ-3Df"/>
+                        <outlet property="navigationBar" destination="J8v-0u-tpI" id="B4l-M4-vse"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bl-hy-Siw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1161" y="1406"/>
         </scene>

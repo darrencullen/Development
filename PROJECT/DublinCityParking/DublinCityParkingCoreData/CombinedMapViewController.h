@@ -12,5 +12,7 @@
 @interface CombinedMapViewController : UIViewController <MKMapViewDelegate>
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 - (IBAction)selectOverlayType:(UISegmentedControl *)sender;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
+
 
 @end

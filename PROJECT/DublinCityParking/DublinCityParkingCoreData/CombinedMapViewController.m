@@ -11,6 +11,7 @@
 #import "CarparkInfo.h"
 #import "CarparkDetails.h"
 #import "DisabledParkingSpaceInfo.h"
+#import "TrafficCameraInfo.h"
 
 @interface CombinedMapViewController ()
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
@@ -33,16 +34,13 @@
     
     [self getDisabledParkingDetails];
     [self getTrafficCameraDetails];
-
 }
-
-
 
 - (void)initialiseMap
 {
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 53.345704;
-    zoomLocation.longitude = -6.266396;
+    zoomLocation.latitude = 53.34719;
+    zoomLocation.longitude = -6.2591;
     
     MKCoordinateRegion region;
     region.center=zoomLocation;
@@ -60,10 +58,8 @@
 }
 
 - (void)clearOverlays
-{
-    for (id<MKAnnotation> annotation in _mapView.annotations) {
-        [_mapView removeAnnotation:annotation];
-    }
+{ 
+    [self.mapView removeAnnotations:[self.mapView annotations]];
 }
 
 - (void)getCarparkDetails
@@ -75,7 +71,6 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"CarparkInfo"
                                               inManagedObjectContext:self.managedObjectContext];
-    
     
     [fetchRequest setEntity:entity];
     NSError *error;
@@ -120,6 +115,7 @@
     for (CarparkInfo *carpark in self.carparkLocations){
         [self createCarparkOverlay:carpark];
     }
+    self.navigationBar.title = @"Carpark Locations";
 }
 
 - (void)createCarparkOverlay:(CarparkInfo *)carpark
@@ -135,9 +131,56 @@
 
 }
 
+- (void)createDisabledSpaceOverlays
+{
+    [self clearOverlays];
+    for (DisabledParkingSpaceInfo *disabledSpace in self.disabledParkingLocations){
+        [self createDisabledSpaceOverlay:disabledSpace];
+    }
+    self.navigationBar.title = @"Disabled Parking Locations";
+}
+
+- (void)createDisabledSpaceOverlay:(DisabledParkingSpaceInfo *)disabledSpace
+{
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = [disabledSpace.latitude doubleValue];
+    coordinate.longitude = [disabledSpace.longitude doubleValue];
+    
+    NSString *numbersOfSpaces = [NSString stringWithFormat:@"Disabled Spaces: %@",disabledSpace.spaces];
+    
+    MapOverlay *annotation = [[MapOverlay alloc] initWithName:disabledSpace.street subTitle:numbersOfSpaces titleAddendum:nil coordinate:coordinate];
+    [_mapView addAnnotation:annotation];
+    
+}
+
+- (void)createTrafficCameraOverlays
+{
+    [self clearOverlays];
+    for (TrafficCameraInfo *trafficCamera in self.trafficCameraLocations){
+        [self createTraficCameraOverlay:trafficCamera];
+    }
+    self.navigationBar.title = @"Traffic Camera Locations";
+}
+
+- (void)createTraficCameraOverlay:(TrafficCameraInfo *)camera
+{
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = [camera.latitude doubleValue];
+    coordinate.longitude = [camera.longitude doubleValue];
+    
+    MapOverlay *annotation = [[MapOverlay alloc] initWithName:camera.name subTitle:nil titleAddendum:nil coordinate:coordinate];
+    [_mapView addAnnotation:annotation];
+    
+}
+
 - (IBAction)selectOverlayType:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0){
+        [self getCarparkDetails];
         [self createCarparkOverlays];
+    } else if (sender.selectedSegmentIndex == 1){
+        [self createDisabledSpaceOverlays];
+    } else if (sender.selectedSegmentIndex == 2){
+        [self createTrafficCameraOverlays];
     }
 }
 @end
