@@ -10,5 +10,7 @@
 #import <MapKit/MapKit.h>
 
 @interface CombinedMapViewController : UIViewController <MKMapViewDelegate>
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+- (IBAction)selectOverlayType:(UISegmentedControl *)sender;
 
 @end

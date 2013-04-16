@@ -510,7 +510,7 @@
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DisabledSpaceCell" rowHeight="46" id="hr4-a3-QKS">
-                                <rect key="frame" x="0.0" y="46" width="320" height="48"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="45"/>
@@ -731,51 +731,52 @@
             </objects>
             <point key="canvasLocation" x="-327" y="780"/>
         </scene>
-        <!--Combined Map View Controller - TEST-->
+        <!--Combined Map View Controller - Carpark Locations-->
         <scene sceneID="RnL-Ua-j7L">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bl-hy-Siw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Cx8-eo-sck" customClass="CombinedMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3u7-NY-a50">
-                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fcl-6u-yOU"/>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="CQ2-H6-iOh">
-                                <items>
-                                    <barButtonItem style="plain" id="prE-dH-Afd">
-                                        <segmentedControl key="customView" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="HT0-xb-fFP">
-                                            <rect key="frame" x="6" y="8" width="308" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <segments>
-                                                <segment title="Carparks"/>
-                                                <segment title="Disabled Spaces" width="110.33333333333333"/>
-                                                <segment title="Cameras"/>
-                                            </segments>
-                                        </segmentedControl>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fcl-6u-yOU">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="Ft2-yt-hcf"/>
+                                </constraints>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pqq-7W-3fi">
+                                <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="4sV-5T-lfa"/>
+                                    <constraint firstAttribute="width" constant="307" id="zN9-wW-WPC"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Carparks" width="94.666666666666671"/>
+                                    <segment title="Disabled Spaces"/>
+                                    <segment title="Cameras" width="94.666666666666671"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectOverlayType:" destination="Cx8-eo-sck" eventType="valueChanged" id="xfP-Cw-ezg"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="CQ2-H6-iOh" firstAttribute="trailing" secondItem="3u7-NY-a50" secondAttribute="trailing" type="default" id="4wH-Ut-tdf"/>
-                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="bottom" secondItem="3u7-NY-a50" secondAttribute="bottom" type="default" id="DMF-gU-QIl"/>
-                            <constraint firstItem="CQ2-H6-iOh" firstAttribute="top" secondItem="3u7-NY-a50" secondAttribute="top" type="default" id="J3y-we-OIU"/>
+                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="bottom" secondItem="3u7-NY-a50" secondAttribute="bottom" type="default" id="6bj-af-vxe"/>
                             <constraint firstItem="Fcl-6u-yOU" firstAttribute="leading" secondItem="3u7-NY-a50" secondAttribute="leading" type="default" id="KLJ-jZ-aW3"/>
+                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="top" secondItem="Pqq-7W-3fi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Vwt-Cq-aS3"/>
                             <constraint firstItem="Fcl-6u-yOU" firstAttribute="trailing" secondItem="3u7-NY-a50" secondAttribute="trailing" type="default" id="dmY-gj-B6I"/>
-                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="top" secondItem="CQ2-H6-iOh" secondAttribute="bottom" type="default" id="m5s-lt-q2i"/>
-                            <constraint firstItem="CQ2-H6-iOh" firstAttribute="leading" secondItem="3u7-NY-a50" secondAttribute="leading" type="default" id="ypK-tw-s2b"/>
+                            <constraint firstItem="Pqq-7W-3fi" firstAttribute="centerX" secondItem="Fcl-6u-yOU" secondAttribute="centerX" type="default" id="rae-mx-MHt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TEST" id="J8v-0u-tpI"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Carpark Locations" id="J8v-0u-tpI"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
                         <outlet property="mapView" destination="Fcl-6u-yOU" id="ss9-2U-s2S"/>
+                        <outlet property="selectOverlayType" destination="Pqq-7W-3fi" id="4Xb-QQ-3Df"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7bl-hy-Siw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1161" y="1406"/>
         </scene>
@@ -787,67 +788,6 @@
         <image name="testicon1.png" width="25" height="25"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
-    <classes>
-        <class className="CarparkDetailsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetailsViewController.h"/>
-        </class>
-        <class className="CarparkDetalsDescriptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetalsDescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="CarparkListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carparkList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CarparkMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showCarparkDetails:"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="CombinedMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CombinedMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="DisabledSpacesMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="DisabledSpacesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="disabledSpacesList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="TrafficCameraImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activitySpinner" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="TrafficCameraMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="TrafficCamerasViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCamerasViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
