@@ -17,5 +17,6 @@
 @dynamic name;
 @dynamic code;
 @dynamic details;
+@dynamic favourite;
 
 @end

@@ -31,7 +31,7 @@
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarparkCell" rowHeight="46" id="ab7-DP-plN">
-                                <rect key="frame" x="0.0" y="46" width="320" height="47"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="45"/>
@@ -256,7 +256,16 @@
                             <outlet property="delegate" destination="ed9-JH-aWy" id="eq9-MQ-cVf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Carpark Details" id="m6C-H0-39E"/>
+                    <navigationItem key="navigationItem" title="Carpark Details" id="m6C-H0-39E">
+                        <barButtonItem key="rightBarButtonItem" image="StarEmpty24.png" id="UJk-ML-nUM">
+                            <connections>
+                                <action selector="setFavouriteCarpark:" destination="ed9-JH-aWy" id="5CN-JU-NQA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="buttonFavs" destination="UJk-ML-nUM" id="uzh-yv-mff"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1I-3V-TTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -433,7 +442,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell tag="502" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" id="jEf-OR-3md">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -500,7 +509,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell tag="504" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" id="kjw-VO-Q0B">
-                                        <rect key="frame" x="0.0" y="164" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="164" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -857,6 +866,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="StarEmpty24.png" width="24" height="24"/>
         <image name="camera1.png" width="25" height="25"/>
         <image name="parking3.png" width="25" height="25"/>
         <image name="pointer1.png" width="16" height="16"/>

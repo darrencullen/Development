@@ -18,6 +18,7 @@
 // TODO: construct arrays in separate nsobject
 @property (nonatomic, strong) XMLParser *xmlParser;
 @property (nonatomic, strong) CarparkInfo *selectedCarpark;
+@property (nonatomic, strong) NSMutableArray *favouriteCarparks;
 @property (nonatomic, strong) NSMutableArray *southeastCarparks;
 @property (nonatomic, strong) NSMutableArray *southwestCarparks;
 @property (nonatomic, strong) NSMutableArray *northeastCarparks;
@@ -32,6 +33,13 @@
 {
     if (_carparkInfos != carparkInfos)
         _carparkInfos = carparkInfos;
+}
+
+- (NSMutableArray *)favouriteCarparks
+{
+    if (!_favouriteCarparks) {
+        _favouriteCarparks = [[NSMutableArray alloc] init];
+    } return _favouriteCarparks;
 }
 
 - (NSMutableArray *)southeastCarparks
@@ -76,34 +84,6 @@
         [alertView show];
     }
     
-    // TODO: MOVE ARRAYS TO MODEL NSOBJECT
-//    self.southwestCarparks = [[NSMutableArray alloc] init];
-//    self.northeastCarparks = [[NSMutableArray alloc] init];
-//    self.northwestCarparks = [[NSMutableArray alloc] init];
-    self.carparkLocations = [[NSMutableArray alloc] initWithObjects:self.southeastCarparks, self.southwestCarparks, self.northeastCarparks, self.northwestCarparks, nil];
-    
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CarparkInfo"
-                                              inManagedObjectContext:self.managedObjectContext];
-    
-    
-    [fetchRequest setEntity:entity];
-    NSError *error;
-    self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    for (CarparkInfo *carpark in self.carparkInfos){
-        if ([carpark.details.region isEqualToString:@"Southeast"]){
-            [self.southeastCarparks addObject:carpark];
-        } else if ([carpark.details.region isEqualToString:@"Southwest"]){
-            [self.southwestCarparks addObject:carpark];
-        } else if ([carpark.details.region isEqualToString:@"Northeast"]){
-            [self.northeastCarparks addObject:carpark];
-        } else if ([carpark.details.region isEqualToString:@"Northwest"]){
-            [self.northwestCarparks addObject:carpark];
-        }
-    }
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadXMLData)
                                                  name:@"appDidBecomeActive"
@@ -128,14 +108,50 @@
     [[self managedObjectContext] mergeChangesFromContextDidSaveNotification:notification];
 }
 
+- (void) resetArrays
+{
+    self.favouriteCarparks = nil;
+    self.southeastCarparks = nil;
+    self.southwestCarparks = nil;
+    self.northeastCarparks = nil;
+    self.northwestCarparks = nil;
+}
+
 - (void) viewWillAppear:(BOOL)animated
 {
-    //  [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self resetArrays];
+    self.carparkLocations = [[NSMutableArray alloc] initWithObjects:self.favouriteCarparks, self.northwestCarparks, self.northeastCarparks, self.southwestCarparks, self.southeastCarparks, nil];
+    
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CarparkInfo"
+                                              inManagedObjectContext:self.managedObjectContext];
+    
+    
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (CarparkInfo *carpark in self.carparkInfos){
+        if (carpark.favourite == YES){
+            [self.favouriteCarparks addObject:carpark];
+        }else if ([carpark.details.region isEqualToString:@"Northwest"]){
+            [self.northwestCarparks addObject:carpark];
+        } else if ([carpark.details.region isEqualToString:@"Northeast"]){
+            [self.northeastCarparks addObject:carpark];
+        } else if ([carpark.details.region isEqualToString:@"Southwest"]){
+            [self.southwestCarparks addObject:carpark];
+        } else if ([carpark.details.region isEqualToString:@"Southeast"]){
+            [self.southeastCarparks addObject:carpark];
+        }
+    }
+    
+    [self loadXMLData];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    [self loadXMLData];
+//    [self loadXMLData];
    // NSLog(@"viewDidAppear");
 }
 
@@ -162,7 +178,7 @@
 
 - (void) reloadUpdatedData
 {
-    //  [self updateSpaces];
+    //  [self ];
     [self.carparkList reloadData];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
@@ -240,15 +256,6 @@
     UILabel *hourlyRateLabel = (UILabel *)[cell viewWithTag:103];
     hourlyRateLabel.text = self.selectedCarpark.details.hourlyRate;
     
-    //    CarparkDetails *details;
-    //    details = selectedCarpark.details;
-    //    NSLog(@"Code: %@", [selectedCarpark valueForKey:@"code"]);
-    //    NSLog(@"Region: %@", [details valueForKey:@"region"]);
-    //    NSLog(@"Rate1: %@", [details valueForKey:@"otherRate1"]);
-    //    NSLog(@"Directions: %@", [details valueForKey:@"directions"]);
-    //    NSLog(@"Services: %@", [details valueForKey:@"services"]);
-    //    NSLog(@"TotalSpaces: %@", [details valueForKey:@"totalSpaces"]);
-    
     return cell;
 }
 
@@ -263,23 +270,124 @@
     headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
     headerLabel.font = [UIFont boldSystemFontOfSize:18];
     
-    if(section == 0)
-        headerLabel.text = @"Southeast";
-    else if(section == 1)
-        headerLabel.text = @"Southwest";
-    else if(section == 2)
-        headerLabel.text = @"Northeast";
-    else
-        headerLabel.text = @"Northwest";
+    if(section == 0){
+        if ([_favouriteCarparks count] > 0){
+            headerLabel.text = @"Favourites";
+            [headerView addSubview:headerLabel];
+            
+            return headerView;
+            
+        } else return [[UIView alloc] initWithFrame:CGRectZero];
+
+    }
+    else if(section == 1){
+        if ([_northwestCarparks count] > 0){
+            headerLabel.text = @"Dublin 1 - Northwest";
+            [headerView addSubview:headerLabel];
+            
+            return headerView;
+            
+        } else return [[UIView alloc] initWithFrame:CGRectZero];
+
+    }
+    else if(section == 2){
+        if ([_northeastCarparks count] > 0){
+            headerLabel.text = @"Dublin 1 - Northeast";
+            [headerView addSubview:headerLabel];
+            
+            return headerView;
+            
+        } else return [[UIView alloc] initWithFrame:CGRectZero];
+
+    }
+    else if(section == 3){
+        if ([_southwestCarparks count] > 0){
+            headerLabel.text = @"Dublin 2 - Southwest";
+            [headerView addSubview:headerLabel];
+            
+            return headerView;
+            
+        } else return [[UIView alloc] initWithFrame:CGRectZero];
+
+    }
+    else if(section == 4){
+        if ([_southeastCarparks count] > 0){
+            headerLabel.text = @"Dublin 2 - Southeast";
+            [headerView addSubview:headerLabel];
+            
+            return headerView;
+            
+        } else return [[UIView alloc] initWithFrame:CGRectZero];
+    }
     
-    [headerView addSubview:headerLabel];
-    return headerView;
-    
+    return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 44.0f;
+    if(section == 0){
+        if ([_favouriteCarparks count] > 0){
+            return 44.0f;
+        } else return 0.0f;
+    }
+    else if(section == 1){
+        if ([_northwestCarparks count] > 0){
+            return 44.0f;
+        } else return 0.0f;
+    }
+    else if(section == 2){
+        if ([_northeastCarparks count] > 0){
+            return 44.0f;
+        } else return 0.0f;
+    }
+    else if(section == 3){
+        if ([_southwestCarparks count] > 0){
+            return 44.0f;
+        } else return 0.0f;
+    }
+    else if(section == 4){
+        if ([_southeastCarparks count] > 0){
+            return 44.0f;
+        } else return 0.0f;
+    }
+    
+    return 0.0f;
+}
+
+-(UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectZero];
+}
+
+-(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
+{
+    if(section == 0){
+        if ([_favouriteCarparks count] > 0){
+            return 10.0f;
+        } else return 0.0f;
+    }
+    else if(section == 1){
+        if ([_northwestCarparks count] > 0){
+            return 10.0f;
+        } else return 0.0f;
+    }
+    else if(section == 2){
+        if ([_northeastCarparks count] > 0){
+            return 10.0f;
+        } else return 0.0f;
+    }
+    else if(section == 3){
+        if ([_southwestCarparks count] > 0){
+            return 10.0f;
+        } else return 0.0f;
+    }
+    else if(section == 4){
+        if ([_southeastCarparks count] > 0){
+            return 10.0f;
+        } else return 0.0f;
+    }
+    
+    return 0.0f;
 }
 
 /*

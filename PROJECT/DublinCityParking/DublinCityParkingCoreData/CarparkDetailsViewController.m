@@ -73,6 +73,12 @@
     self.carparkDetailSections = [[NSMutableArray alloc] initWithObjects:self.carparkDetailLocation, self.carparkDetailSpaces, self.carparkDetailRates, self.carparkDetailOther, self.carparkDetailContact, nil];
     
     self.title = self.selectedCarparkInfo.name;
+    if (self.selectedCarparkInfo.favourite == YES){
+         self.buttonFavs.image = [UIImage imageNamed:@"StarFull24.png"];
+    } else {
+         self.buttonFavs.image = [UIImage imageNamed:@"StarEmpty24.png"];
+    }
+    
     [self populateDetailArrays];
 }
 
@@ -359,6 +365,44 @@
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Details" style: UIBarButtonItemStyleBordered target: nil action: nil];
         
         [[self navigationItem] setBackBarButtonItem: newBackButton];
+    }
+}
+
+- (IBAction)setFavouriteCarpark:(id)sender {
+    // set up the managedObjectContext to read data from CoreData
+    id delegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = [delegate managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CarparkInfo"
+                                              inManagedObjectContext:self.managedObjectContext];
+    
+    
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"code=%@",self.selectedCarparkInfo.code]];
+
+    NSError *error;
+    CarparkInfo *cgCarpark;
+    
+    UIImage *newFavImage;
+    
+    cgCarpark = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] lastObject];
+    
+    
+    if (cgCarpark.favourite == NO){
+        cgCarpark.favourite = 1;
+        newFavImage = [UIImage imageNamed:@"StarFull24.png"]; 
+    } else {
+        cgCarpark.favourite = 0;
+        newFavImage = [UIImage imageNamed:@"StarEmpty24.png"]; 
+    }
+
+    error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        //Handle any error with the saving of the context
+        NSLog(@"Error saving");
+    } else {
+        self.buttonFavs.image = newFavImage;
     }
 }
 @end

@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * availableSpaces;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * code;
+@property (nonatomic) Boolean favourite;
 @property (nonatomic, retain) CarparkDetails *details;
 
 @end

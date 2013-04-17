@@ -27,4 +27,5 @@
 @dynamic otherRate2;
 @dynamic info;
 
+
 @end

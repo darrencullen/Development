@@ -10,5 +10,10 @@
 #import "CarparkInfo.h"
 
 @interface CarparkDetailsViewController : UITableViewController
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) CarparkInfo *selectedCarparkInfo;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonFavs;
+- (IBAction)setFavouriteCarpark:(id)sender;
+
 @end

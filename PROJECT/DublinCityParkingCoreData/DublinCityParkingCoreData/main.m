@@ -141,6 +141,7 @@ static NSManagedObjectContext *managedObjectContext()
             carparkInfo.availableSpaces = [obj objectForKey:@"availableSpaces"];
             carparkInfo.code = [obj objectForKey:@"code"];
             carparkInfo.name = [obj objectForKey:@"name"];
+            carparkInfo.favourite = NO;
             
             CarparkDetails *carparkDetails = [NSEntityDescription
                                               insertNewObjectForEntityForName:@"CarparkDetails"
