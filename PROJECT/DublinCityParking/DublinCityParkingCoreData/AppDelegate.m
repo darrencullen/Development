@@ -22,18 +22,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSManagedObjectContext *context = [self managedObjectContext];
-    
-    NSError *error;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"CarparkInfo" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (CarparkInfo *info in fetchedObjects) {
-        NSLog(@"Name: %@", [info valueForKey:@"name"]);
-        NSLog(@"Fav: %@", [info valueForKey:@"favourite"]);   
-    }
+//    NSManagedObjectContext *context = [self managedObjectContext];
+//    
+//    NSError *error;
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entity = [NSEntityDescription
+//                                   entityForName:@"CarparkInfo" inManagedObjectContext:context];
+//    [fetchRequest setEntity:entity];
+//    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+//    for (CarparkInfo *info in fetchedObjects) {
+//        NSLog(@"Name: %@", [info valueForKey:@"name"]);
+//        NSLog(@"Fav: %@", [info valueForKey:@"favourite"]);   
+//    }
     
     // set the tab controller as the root controller and allow it to use managed objects
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;

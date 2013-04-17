@@ -15,35 +15,21 @@
 		491A0DCD16DC2AA20017DEFE /* Carpark.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A0DCA16DC2AA20017DEFE /* Carpark.m */; };
 		491A0DCE16DC2AA20017DEFE /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A0DCC16DC2AA20017DEFE /* XMLParser.m */; };
 		491FD220171DF720003F2995 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491FD21F171DF720003F2995 /* WebViewController.m */; };
-		496776EF16DD6D00009E7E22 /* parking30.ico in Resources */ = {isa = PBXBuildFile; fileRef = 496776EE16DD6D00009E7E22 /* parking30.ico */; };
 		496776F216DD81D5009E7E22 /* CarparkMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496776F116DD81D5009E7E22 /* CarparkMapViewController.m */; };
 		49863085171CB17200019427 /* CombinedMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49863084171CB17200019427 /* CombinedMapViewController.m */; };
 		49A9E6C816DEA1BE00F54513 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A9E6C716DEA1BE00F54513 /* MapKit.framework */; };
 		49A9E6D116DEADF700F54513 /* MapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A9E6D016DEADF700F54513 /* MapOverlay.m */; };
-		49A9E6D316DEB9F700F54513 /* mappointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A9E6D216DEB9F700F54513 /* mappointer.png */; };
 		49A9E6D716DED6B700F54513 /* parking57.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A9E6D616DED6B700F54513 /* parking57.png */; };
 		49C10690171DFF610002361E /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C1068F171DFF610002361E /* MoreViewController.m */; };
 		49C10693171E1A0E0002361E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C10692171E1A0E0002361E /* MessageUI.framework */; };
 		49F59FA7171F32FC00C8C2EE /* StarFull24.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F59FA5171F32FC00C8C2EE /* StarFull24.png */; };
-		49F59FA8171F32FC00C8C2EE /* StarEmpty32.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F59FA6171F32FC00C8C2EE /* StarEmpty32.png */; };
-		49F59FAB171F335000C8C2EE /* StarFull32.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F59FA9171F335000C8C2EE /* StarFull32.png */; };
 		49F59FAC171F335000C8C2EE /* StarEmpty24.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F59FAA171F335000C8C2EE /* StarEmpty24.png */; };
-		49F59FAF171F33B800C8C2EE /* StarEmpty48.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F59FAD171F33B800C8C2EE /* StarEmpty48.png */; };
-		49F59FB0171F33B800C8C2EE /* StarFull48.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F59FAE171F33B800C8C2EE /* StarFull48.png */; };
 		49F59FB4171F491500C8C2EE /* DublinCityParkingCoreData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 49F59FB1171F491500C8C2EE /* DublinCityParkingCoreData.sqlite */; };
 		49F59FB5171F491500C8C2EE /* DublinCityParkingCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49F59FB2171F491500C8C2EE /* DublinCityParkingCoreData.xcdatamodeld */; };
-		49F6DCAA16E772BD00043CFC /* strip.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCA916E772BD00043CFC /* strip.png */; };
-		49F6DCAC16E7743100043CFC /* carparks1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCAB16E7743100043CFC /* carparks1.png */; };
-		49F6DCAE16E774C800043CFC /* strip3.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCAD16E774C800043CFC /* strip3.png */; };
-		49F6DCB116E775E700043CFC /* carparks.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCAF16E775E700043CFC /* carparks.png */; };
-		49F6DCB216E775E700043CFC /* strip4.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCB016E775E700043CFC /* strip4.png */; };
 		49F6DCB416E776D300043CFC /* strip5.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCB316E776D300043CFC /* strip5.png */; };
 		49F6DCB816E782C200043CFC /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCB716E782C200043CFC /* button.png */; };
 		49F6DCBC16E78A9300043CFC /* testicon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCBB16E78A9300043CFC /* testicon1.png */; };
-		49F6DCBF16E7A5C000043CFC /* parking1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCBD16E7A5C000043CFC /* parking1.png */; };
-		49F6DCC016E7A5C000043CFC /* parking2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCBE16E7A5C000043CFC /* parking2.png */; };
 		49F6DCC216E7A86400043CFC /* parking3.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCC116E7A86400043CFC /* parking3.png */; };
-		49F6DCC416E7AAE400043CFC /* wheelchair1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCC316E7AAE400043CFC /* wheelchair1.png */; };
 		49F6DCC716E7AF7800043CFC /* camera1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCC516E7AF7800043CFC /* camera1.png */; };
 		49F6DCC816E7AF7800043CFC /* wheelchair2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCC616E7AF7800043CFC /* wheelchair2.png */; };
 		49F70EE31719739A008B81BE /* TaskList.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 49F70EE21719739A008B81BE /* TaskList.rtf */; };
@@ -88,7 +74,6 @@
 		491A0DCC16DC2AA20017DEFE /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		491FD21E171DF720003F2995 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		491FD21F171DF720003F2995 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		496776EE16DD6D00009E7E22 /* parking30.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = parking30.ico; sourceTree = "<group>"; };
 		496776F016DD81D5009E7E22 /* CarparkMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkMapViewController.h; sourceTree = "<group>"; };
 		496776F116DD81D5009E7E22 /* CarparkMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkMapViewController.m; sourceTree = "<group>"; };
 		49863083171CB17200019427 /* CombinedMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinedMapViewController.h; sourceTree = "<group>"; };
@@ -96,31 +81,18 @@
 		49A9E6C716DEA1BE00F54513 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		49A9E6CF16DEADF700F54513 /* MapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapOverlay.h; path = ../MapOverlay.h; sourceTree = "<group>"; };
 		49A9E6D016DEADF700F54513 /* MapOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapOverlay.m; path = ../MapOverlay.m; sourceTree = "<group>"; };
-		49A9E6D216DEB9F700F54513 /* mappointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mappointer.png; sourceTree = "<group>"; };
 		49A9E6D616DED6B700F54513 /* parking57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parking57.png; path = ../parking57.png; sourceTree = "<group>"; };
 		49C1068E171DFF610002361E /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		49C1068F171DFF610002361E /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		49C10692171E1A0E0002361E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		49F59FA5171F32FC00C8C2EE /* StarFull24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarFull24.png; sourceTree = "<group>"; };
-		49F59FA6171F32FC00C8C2EE /* StarEmpty32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarEmpty32.png; sourceTree = "<group>"; };
-		49F59FA9171F335000C8C2EE /* StarFull32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarFull32.png; sourceTree = "<group>"; };
 		49F59FAA171F335000C8C2EE /* StarEmpty24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarEmpty24.png; sourceTree = "<group>"; };
-		49F59FAD171F33B800C8C2EE /* StarEmpty48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarEmpty48.png; sourceTree = "<group>"; };
-		49F59FAE171F33B800C8C2EE /* StarFull48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarFull48.png; sourceTree = "<group>"; };
 		49F59FB1171F491500C8C2EE /* DublinCityParkingCoreData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DublinCityParkingCoreData.sqlite; sourceTree = "<group>"; };
 		49F59FB3171F491500C8C2EE /* DublinCityParkingCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DublinCityParkingCoreData.xcdatamodel; sourceTree = "<group>"; };
-		49F6DCA916E772BD00043CFC /* strip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip.png; sourceTree = "<group>"; };
-		49F6DCAB16E7743100043CFC /* carparks1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carparks1.png; sourceTree = "<group>"; };
-		49F6DCAD16E774C800043CFC /* strip3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip3.png; sourceTree = "<group>"; };
-		49F6DCAF16E775E700043CFC /* carparks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carparks.png; sourceTree = "<group>"; };
-		49F6DCB016E775E700043CFC /* strip4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip4.png; sourceTree = "<group>"; };
 		49F6DCB316E776D300043CFC /* strip5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip5.png; sourceTree = "<group>"; };
 		49F6DCB716E782C200043CFC /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		49F6DCBB16E78A9300043CFC /* testicon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testicon1.png; sourceTree = "<group>"; };
-		49F6DCBD16E7A5C000043CFC /* parking1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parking1.png; sourceTree = "<group>"; };
-		49F6DCBE16E7A5C000043CFC /* parking2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parking2.png; sourceTree = "<group>"; };
 		49F6DCC116E7A86400043CFC /* parking3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parking3.png; sourceTree = "<group>"; };
-		49F6DCC316E7AAE400043CFC /* wheelchair1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheelchair1.png; sourceTree = "<group>"; };
 		49F6DCC516E7AF7800043CFC /* camera1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera1.png; sourceTree = "<group>"; };
 		49F6DCC616E7AF7800043CFC /* wheelchair2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheelchair2.png; sourceTree = "<group>"; };
 		49F70EE21719739A008B81BE /* TaskList.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = TaskList.rtf; path = ../TaskList.rtf; sourceTree = "<group>"; };
@@ -344,35 +316,21 @@
 		496776EB16DD6251009E7E22 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				49F59FAD171F33B800C8C2EE /* StarEmpty48.png */,
-				49F59FAE171F33B800C8C2EE /* StarFull48.png */,
-				49F59FA9171F335000C8C2EE /* StarFull32.png */,
 				49F59FAA171F335000C8C2EE /* StarEmpty24.png */,
 				49F59FA5171F32FC00C8C2EE /* StarFull24.png */,
-				49F59FA6171F32FC00C8C2EE /* StarEmpty32.png */,
 				49F8D8D4171898090015F14C /* map.png */,
 				49F8D8D5171898090015F14C /* mapgrey.png */,
 				49F8D8D6171898090015F14C /* pointer1.png */,
 				49F6DCC516E7AF7800043CFC /* camera1.png */,
 				49F6DCC616E7AF7800043CFC /* wheelchair2.png */,
-				49F6DCC316E7AAE400043CFC /* wheelchair1.png */,
 				49F6DCC116E7A86400043CFC /* parking3.png */,
-				49F6DCBD16E7A5C000043CFC /* parking1.png */,
-				49F6DCBE16E7A5C000043CFC /* parking2.png */,
 				49F6DCBB16E78A9300043CFC /* testicon1.png */,
 				49F6DCB716E782C200043CFC /* button.png */,
 				49F6DCB316E776D300043CFC /* strip5.png */,
-				49F6DCAF16E775E700043CFC /* carparks.png */,
-				49F6DCB016E775E700043CFC /* strip4.png */,
-				49F6DCAD16E774C800043CFC /* strip3.png */,
-				49F6DCAB16E7743100043CFC /* carparks1.png */,
-				49F6DCA916E772BD00043CFC /* strip.png */,
 				49F888F016D6D18700AB3377 /* Default@2x.png */,
 				49F888F216D6D18700AB3377 /* Default-568h@2x.png */,
 				49F7E27816E6BB1E004CA8B5 /* NavigationBarStrip.png */,
 				49A9E6D616DED6B700F54513 /* parking57.png */,
-				49A9E6D216DEB9F700F54513 /* mappointer.png */,
-				496776EE16DD6D00009E7E22 /* parking30.ico */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -522,22 +480,12 @@
 				49F888F116D6D18700AB3377 /* Default@2x.png in Resources */,
 				49F888F316D6D18700AB3377 /* Default-568h@2x.png in Resources */,
 				49F888F616D6D18700AB3377 /* MainStoryboard.storyboard in Resources */,
-				496776EF16DD6D00009E7E22 /* parking30.ico in Resources */,
-				49A9E6D316DEB9F700F54513 /* mappointer.png in Resources */,
 				49A9E6D716DED6B700F54513 /* parking57.png in Resources */,
 				49F7E27916E6BB1E004CA8B5 /* NavigationBarStrip.png in Resources */,
-				49F6DCAA16E772BD00043CFC /* strip.png in Resources */,
-				49F6DCAC16E7743100043CFC /* carparks1.png in Resources */,
-				49F6DCAE16E774C800043CFC /* strip3.png in Resources */,
-				49F6DCB116E775E700043CFC /* carparks.png in Resources */,
-				49F6DCB216E775E700043CFC /* strip4.png in Resources */,
 				49F6DCB416E776D300043CFC /* strip5.png in Resources */,
 				49F6DCB816E782C200043CFC /* button.png in Resources */,
 				49F6DCBC16E78A9300043CFC /* testicon1.png in Resources */,
-				49F6DCBF16E7A5C000043CFC /* parking1.png in Resources */,
-				49F6DCC016E7A5C000043CFC /* parking2.png in Resources */,
 				49F6DCC216E7A86400043CFC /* parking3.png in Resources */,
-				49F6DCC416E7AAE400043CFC /* wheelchair1.png in Resources */,
 				49F6DCC716E7AF7800043CFC /* camera1.png in Resources */,
 				49F6DCC816E7AF7800043CFC /* wheelchair2.png in Resources */,
 				49F8D8D7171898090015F14C /* map.png in Resources */,
@@ -545,11 +493,7 @@
 				49F8D8D9171898090015F14C /* pointer1.png in Resources */,
 				49F70EE31719739A008B81BE /* TaskList.rtf in Resources */,
 				49F59FA7171F32FC00C8C2EE /* StarFull24.png in Resources */,
-				49F59FA8171F32FC00C8C2EE /* StarEmpty32.png in Resources */,
-				49F59FAB171F335000C8C2EE /* StarFull32.png in Resources */,
 				49F59FAC171F335000C8C2EE /* StarEmpty24.png in Resources */,
-				49F59FAF171F33B800C8C2EE /* StarEmpty48.png in Resources */,
-				49F59FB0171F33B800C8C2EE /* StarFull48.png in Resources */,
 				49F59FB4171F491500C8C2EE /* DublinCityParkingCoreData.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

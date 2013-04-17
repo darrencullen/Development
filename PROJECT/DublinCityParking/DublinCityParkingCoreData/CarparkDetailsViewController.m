@@ -388,13 +388,15 @@
     
     cgCarpark = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] lastObject];
     
-    
+    NSString *alertMessage;
     if (cgCarpark.favourite == NO){
         cgCarpark.favourite = 1;
-        newFavImage = [UIImage imageNamed:@"StarFull24.png"]; 
+        newFavImage = [UIImage imageNamed:@"StarFull24.png"];
+        alertMessage = @"Added to favourites list";
     } else {
         cgCarpark.favourite = 0;
-        newFavImage = [UIImage imageNamed:@"StarEmpty24.png"]; 
+        newFavImage = [UIImage imageNamed:@"StarEmpty24.png"];
+        alertMessage = @"Removed from favourites list";
     }
 
     error = nil;
@@ -403,6 +405,21 @@
         NSLog(@"Error saving");
     } else {
         self.buttonFavs.image = newFavImage;
+        
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:NSLocalizedString(self.selectedCarparkInfo.name, @"AlertView")
+                                  message:NSLocalizedString(alertMessage, @"AlertView")
+                                  delegate:self
+                                  cancelButtonTitle:NSLocalizedString(@"OK", @"AlertView")
+                                  otherButtonTitles:nil, nil];
+        [alertView show];
+        
+        [self performSelector:@selector(dismissAlertView:) withObject:alertView afterDelay:2];
     }
+}
+
+-(void)dismissAlertView:(UIAlertView*)favouritesUpdateAlert
+{
+	[favouritesUpdateAlert dismissWithClickedButtonIndex:-1 animated:YES];
 }
 @end
