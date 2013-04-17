@@ -151,8 +151,8 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-//    [self loadXMLData];
-   // NSLog(@"viewDidAppear");
+    //    [self loadXMLData];
+    // NSLog(@"viewDidAppear");
 }
 
 
@@ -278,7 +278,7 @@
             return headerView;
             
         } else return [[UIView alloc] initWithFrame:CGRectZero];
-
+        
     }
     else if(section == 1){
         if ([_northwestCarparks count] > 0){
@@ -288,7 +288,7 @@
             return headerView;
             
         } else return [[UIView alloc] initWithFrame:CGRectZero];
-
+        
     }
     else if(section == 2){
         if ([_northeastCarparks count] > 0){
@@ -298,7 +298,7 @@
             return headerView;
             
         } else return [[UIView alloc] initWithFrame:CGRectZero];
-
+        
     }
     else if(section == 3){
         if ([_southwestCarparks count] > 0){
@@ -308,7 +308,7 @@
             return headerView;
             
         } else return [[UIView alloc] initWithFrame:CGRectZero];
-
+        
     }
     else if(section == 4){
         if ([_southeastCarparks count] > 0){
@@ -328,30 +328,30 @@
     if(section == 0){
         if ([_favouriteCarparks count] > 0){
             return 44.0f;
-        } else return 0.0f;
+        } else return 0.000001f;
     }
     else if(section == 1){
         if ([_northwestCarparks count] > 0){
             return 44.0f;
-        } else return 0.0f;
+        } else return 0.000001f;
     }
     else if(section == 2){
         if ([_northeastCarparks count] > 0){
             return 44.0f;
-        } else return 0.0f;
+        } else return 0.000001f;
     }
     else if(section == 3){
         if ([_southwestCarparks count] > 0){
             return 44.0f;
-        } else return 0.0f;
+        } else return 0.000001f;
     }
     else if(section == 4){
         if ([_southeastCarparks count] > 0){
             return 44.0f;
-        } else return 0.0f;
+        } else return 0.000001f;
     }
     
-    return 0.0f;
+    return 0.000001f;
 }
 
 -(UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
@@ -364,30 +364,30 @@
     if(section == 0){
         if ([_favouriteCarparks count] > 0){
             return 10.0f;
-        } else return 0.0f;
+        } else return 0.000001f;
     }
     else if(section == 1){
         if ([_northwestCarparks count] > 0){
             return 10.0f;
-        } else return 0.0f;
+        } else return 0.000001f;
     }
     else if(section == 2){
         if ([_northeastCarparks count] > 0){
             return 10.0f;
-        } else return 0.0f;
+        } else return 0.000001f;
     }
     else if(section == 3){
         if ([_southwestCarparks count] > 0){
             return 10.0f;
-        } else return 0.0f;
+        } else return 0.000001f;
     }
     else if(section == 4){
         if ([_southeastCarparks count] > 0){
             return 10.0f;
-        } else return 0.0f;
+        } else return 0.000001f;
     }
     
-    return 0.0f;
+    return 0.000001f;
 }
 
 /*
@@ -434,12 +434,12 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-//    NSArray *selectedSection = self.carparkLocations[indexPath.section];
-//    self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
-//    
-//    //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
-//    // do a segue based on the indexPath or do any setup later in prepareForSegue
-//    [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
+    //    NSArray *selectedSection = self.carparkLocations[indexPath.section];
+    //    self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
+    //
+    //    //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
+    //    // do a segue based on the indexPath or do any setup later in prepareForSegue
+    //    [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
