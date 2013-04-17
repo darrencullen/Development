@@ -1,5 +1,5 @@
 //
-//  MoreViewController.h
+//  LiveDriveViewController.h
 //  DublinCityParking
 //
 //  Created by darren cullen on 16/04/2013.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoreViewController : UITableViewController
+@interface LiveDriveViewController : UIViewController
 
 @end
