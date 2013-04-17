@@ -66,17 +66,14 @@
 {
     [super viewDidLoad];
     
-    if ([NetworkStatus hasConnectivity])
-        NSLog(@"NETWORK");
-    else{
+    if (![NetworkStatus hasConnectivity]){
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:NSLocalizedString(@"No network available", @"AlertView")
                                   message:NSLocalizedString(@"A network connection is required for up to the minute parking information.", @"AlertView")
                                   delegate:self
-                                  cancelButtonTitle:NSLocalizedString(@"Cancel", @"AlertView")
-                                  otherButtonTitles:NSLocalizedString(@"Open settings", @"AlertView"), nil];
+                                  cancelButtonTitle:NSLocalizedString(@"OK", @"AlertView")
+                                  otherButtonTitles:nil, nil];
         [alertView show];
-
     }
     
     // TODO: MOVE ARRAYS TO MODEL NSOBJECT

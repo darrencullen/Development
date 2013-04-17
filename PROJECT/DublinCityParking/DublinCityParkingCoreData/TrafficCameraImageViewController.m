@@ -8,6 +8,7 @@
 
 #import "TrafficCameraImageViewController.h"
 #import "TrafficCameraMapViewController.h"
+#import "NetworkStatus.h"
 
 @interface TrafficCameraImageViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -51,8 +52,18 @@
     self.title = self.selectedTrafficCamera.name;
     self.imageURL = [[NSURL alloc] initWithString:self.selectedTrafficCamera.url];
     
-    [self loadImage];
-
+    if ([NetworkStatus hasConnectivity])
+        [self loadImage];
+    else{
+        NSString *message = [NSString stringWithFormat:@"A network connection is required to access traffic camera images"];
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:NSLocalizedString(@"No network available", @"AlertView")
+                                  message:NSLocalizedString(message, @"AlertView")
+                                  delegate:self
+                                  cancelButtonTitle:NSLocalizedString(@"OK", @"AlertView")
+                                  otherButtonTitles:nil, nil];
+        [alertView show];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

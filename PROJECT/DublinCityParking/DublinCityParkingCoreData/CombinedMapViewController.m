@@ -29,11 +29,19 @@
     
     [self initialiseMap];
     
-    [self getCarparkDetails];
-    [self createCarparkOverlays];
+//    [self getCarparkDetails];
+//    [self createCarparkOverlays];
     
     [self getDisabledParkingDetails];
     [self getTrafficCameraDetails];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (self.segmentedControlOverlayTypes.selectedSegmentIndex == 0){
+        [self getCarparkDetails];
+        [self createCarparkOverlays];
+    }
 }
 
 - (void)initialiseMap

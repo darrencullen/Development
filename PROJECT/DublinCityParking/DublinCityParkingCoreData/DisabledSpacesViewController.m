@@ -21,8 +21,6 @@
 
 @implementation DisabledSpacesViewController
 
-
-// TODO: optimisation on initialisation required????
 - (void) setDisabledSpaces:(NSArray *)disabledSpaces
 {
     if (_disabledSpaces != disabledSpaces)
@@ -45,7 +43,6 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
     // TODO: MOVE ARRAYS TO MODEL NSOBJECT

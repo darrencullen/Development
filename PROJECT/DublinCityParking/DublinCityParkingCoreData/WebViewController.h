@@ -1,5 +1,5 @@
 //
-//  LiveDriveViewController.h
+//  WebViewController.h
 //  DublinCityParking
 //
 //  Created by darren cullen on 16/04/2013.
@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LiveDriveViewController : UIViewController
+@interface WebViewController : UIViewController <UIWebViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) NSString *webViewTitle;
 
 @end

@@ -14,5 +14,6 @@
 - (IBAction)selectOverlayType:(UISegmentedControl *)sender;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlOverlayTypes;
 
 @end
