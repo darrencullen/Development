@@ -63,6 +63,9 @@
                                   cancelButtonTitle:NSLocalizedString(@"OK", @"AlertView")
                                   otherButtonTitles:nil, nil];
         [alertView show];
+        
+        self.activitySpinner.hidden = YES;
+        self.imageView.image = [UIImage imageNamed:@"imagenotavailable.jpg"];
     }
 }
 

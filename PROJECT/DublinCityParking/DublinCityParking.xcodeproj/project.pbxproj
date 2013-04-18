@@ -17,6 +17,7 @@
 		491CB5241720801C0089FB08 /* newpin.png in Resources */ = {isa = PBXBuildFile; fileRef = 491CB5211720801C0089FB08 /* newpin.png */; };
 		491CB5251720801C0089FB08 /* StarEmpty24-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 491CB5221720801C0089FB08 /* StarEmpty24-3.png */; };
 		491CB5261720801C0089FB08 /* StarFull24-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 491CB5231720801C0089FB08 /* StarFull24-3.png */; };
+		491CB5281720A4F90089FB08 /* imagenotavailable.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 491CB5271720A4F90089FB08 /* imagenotavailable.jpg */; };
 		491FD220171DF720003F2995 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491FD21F171DF720003F2995 /* WebViewController.m */; };
 		496776F216DD81D5009E7E22 /* CarparkMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496776F116DD81D5009E7E22 /* CarparkMapViewController.m */; };
 		49863085171CB17200019427 /* CombinedMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49863084171CB17200019427 /* CombinedMapViewController.m */; };
@@ -75,6 +76,7 @@
 		491CB5211720801C0089FB08 /* newpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newpin.png; sourceTree = "<group>"; };
 		491CB5221720801C0089FB08 /* StarEmpty24-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarEmpty24-3.png"; sourceTree = "<group>"; };
 		491CB5231720801C0089FB08 /* StarFull24-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarFull24-3.png"; sourceTree = "<group>"; };
+		491CB5271720A4F90089FB08 /* imagenotavailable.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imagenotavailable.jpg; sourceTree = "<group>"; };
 		491FD21E171DF720003F2995 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		491FD21F171DF720003F2995 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		496776F016DD81D5009E7E22 /* CarparkMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkMapViewController.h; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 		496776EB16DD6251009E7E22 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				491CB5271720A4F90089FB08 /* imagenotavailable.jpg */,
 				491CB5211720801C0089FB08 /* newpin.png */,
 				491CB5221720801C0089FB08 /* StarEmpty24-3.png */,
 				491CB5231720801C0089FB08 /* StarFull24-3.png */,
@@ -495,6 +498,7 @@
 				491CB5241720801C0089FB08 /* newpin.png in Resources */,
 				491CB5251720801C0089FB08 /* StarEmpty24-3.png in Resources */,
 				491CB5261720801C0089FB08 /* StarFull24-3.png in Resources */,
+				491CB5281720A4F90089FB08 /* imagenotavailable.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

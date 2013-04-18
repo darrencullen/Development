@@ -282,7 +282,7 @@
     }
     else if(section == 1){
         if ([_northwestCarparks count] > 0){
-            headerLabel.text = @"Dublin 1 - Northwest";
+            headerLabel.text = @"Northwest";
             [headerView addSubview:headerLabel];
             
             return headerView;
@@ -292,7 +292,7 @@
     }
     else if(section == 2){
         if ([_northeastCarparks count] > 0){
-            headerLabel.text = @"Dublin 1 - Northeast";
+            headerLabel.text = @"Northeast";
             [headerView addSubview:headerLabel];
             
             return headerView;
@@ -302,7 +302,7 @@
     }
     else if(section == 3){
         if ([_southwestCarparks count] > 0){
-            headerLabel.text = @"Dublin 2 - Southwest";
+            headerLabel.text = @"Southwest";
             [headerView addSubview:headerLabel];
             
             return headerView;
@@ -312,7 +312,7 @@
     }
     else if(section == 4){
         if ([_southeastCarparks count] > 0){
-            headerLabel.text = @"Dublin 2 - Southeast";
+            headerLabel.text = @"Southeast";
             [headerView addSubview:headerLabel];
             
             return headerView;
