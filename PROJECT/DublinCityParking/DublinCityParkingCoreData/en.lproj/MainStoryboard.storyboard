@@ -24,17 +24,17 @@
         <scene sceneID="18">
             <objects>
                 <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="CarparkListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="13">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="13">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.074509806931018829" green="0.086274512112140656" blue="0.30588236451148987" alpha="1" colorSpace="deviceRGB"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarparkCell" rowHeight="46" id="ab7-DP-plN">
-                                <rect key="frame" x="0.0" y="46" width="320" height="47"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarparkCell" rowHeight="44" id="ab7-DP-plN">
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="45"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Carpark Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVa-qK-uyS">
@@ -47,8 +47,8 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Carpark Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erM-sh-X5i">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="197" id="U1r-Xu-mYm"/>
                                                 <constraint firstAttribute="height" constant="21" id="bhE-f1-LEj"/>
+                                                <constraint firstAttribute="width" constant="197" id="qDR-qG-c1n"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,18 +78,18 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="erM-sh-X5i" secondAttribute="bottom" constant="3" id="2mG-k3-oJd"/>
-                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="top" secondItem="LVa-qK-uyS" secondAttribute="top" type="default" id="3wH-6t-lzU"/>
-                                    <constraint firstAttribute="bottom" secondItem="LVa-qK-uyS" secondAttribute="bottom" constant="20" type="default" id="5gn-Ig-7EO"/>
+                                    <constraint firstItem="erM-sh-X5i" firstAttribute="baseline" secondItem="bE0-rq-dXe" secondAttribute="baseline" type="default" id="C2G-sz-m8p"/>
                                     <constraint firstItem="kXh-a7-zrm" firstAttribute="centerY" secondItem="ab7-DP-plN" secondAttribute="centerY" type="default" id="C8F-dI-KIs"/>
                                     <constraint firstItem="bE0-rq-dXe" firstAttribute="trailing" secondItem="zTf-xc-LWa" secondAttribute="trailing" type="default" id="CYf-oX-5JD"/>
-                                    <constraint firstAttribute="bottom" secondItem="zTf-xc-LWa" secondAttribute="bottom" constant="20" type="default" id="OB0-XT-wvl"/>
-                                    <constraint firstItem="bE0-rq-dXe" firstAttribute="baseline" secondItem="erM-sh-X5i" secondAttribute="baseline" type="default" id="Oyn-9Z-hK8"/>
-                                    <constraint firstItem="erM-sh-X5i" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="21" id="oWI-fp-bH7"/>
+                                    <constraint firstItem="erM-sh-X5i" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="21" id="EaX-5p-Ly9"/>
+                                    <constraint firstAttribute="bottom" secondItem="LVa-qK-uyS" secondAttribute="bottom" constant="20" type="default" id="F40-jI-kdG"/>
+                                    <constraint firstItem="erM-sh-X5i" firstAttribute="top" secondItem="bE0-rq-dXe" secondAttribute="top" type="default" id="YpS-GX-Dlz"/>
+                                    <constraint firstAttribute="bottom" secondItem="zTf-xc-LWa" secondAttribute="bottom" constant="20" type="default" id="hZv-gl-C78"/>
+                                    <constraint firstAttribute="bottom" secondItem="erM-sh-X5i" secondAttribute="bottom" constant="2" id="meZ-xf-bQ1"/>
                                     <constraint firstItem="bE0-rq-dXe" firstAttribute="leading" secondItem="erM-sh-X5i" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="peR-fU-Asy"/>
-                                    <constraint firstItem="bE0-rq-dXe" firstAttribute="top" secondItem="erM-sh-X5i" secondAttribute="top" type="default" id="r5c-dR-8GJ"/>
+                                    <constraint firstItem="LVa-qK-uyS" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="20" type="default" id="qKG-Jv-XCg"/>
                                     <constraint firstAttribute="trailing" secondItem="kXh-a7-zrm" secondAttribute="trailing" constant="14" id="rdi-vS-HyS"/>
-                                    <constraint firstItem="LVa-qK-uyS" firstAttribute="leading" secondItem="ab7-DP-plN" secondAttribute="leading" constant="20" type="default" id="ytb-jK-iw3"/>
+                                    <constraint firstItem="zTf-xc-LWa" firstAttribute="top" secondItem="LVa-qK-uyS" secondAttribute="top" type="default" id="yoi-Pj-nB6"/>
                                 </constraints>
                             </tableViewCell>
                         </prototypes>
@@ -150,17 +150,17 @@
         <scene sceneID="1ro-xy-dJ9">
             <objects>
                 <tableViewController id="ed9-JH-aWy" customClass="CarparkDetailsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="lIw-1c-eoJ">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="lIw-1c-eoJ">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DrilldownCell" rowHeight="46" id="h9t-P0-4Is">
-                                <rect key="frame" x="0.0" y="46" width="320" height="47"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DrilldownCell" rowHeight="44" id="h9t-P0-4Is">
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="45"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Heading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzY-Tf-RQX">
@@ -184,18 +184,18 @@
                                 <constraints>
                                     <constraint firstItem="LzY-Tf-RQX" firstAttribute="leading" secondItem="h9t-P0-4Is" secondAttribute="leading" constant="20" type="default" id="Og6-xF-Ll9"/>
                                     <constraint firstAttribute="trailing" secondItem="7ss-Z0-Vm6" secondAttribute="trailing" constant="14" id="aAZ-Zu-3fe"/>
-                                    <constraint firstItem="LzY-Tf-RQX" firstAttribute="top" secondItem="h9t-P0-4Is" secondAttribute="top" constant="14" id="k9X-Pi-itq"/>
-                                    <constraint firstItem="LzY-Tf-RQX" firstAttribute="centerY" secondItem="7ss-Z0-Vm6" secondAttribute="centerY" type="default" id="nNE-me-hoI"/>
+                                    <constraint firstItem="LzY-Tf-RQX" firstAttribute="top" secondItem="h9t-P0-4Is" secondAttribute="top" constant="13" id="cPG-Fc-W2c"/>
+                                    <constraint firstItem="7ss-Z0-Vm6" firstAttribute="centerY" secondItem="h9t-P0-4Is" secondAttribute="centerY" type="default" id="nbw-Bo-lXu"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="EPp-gY-4vS" kind="push" identifier="showFurtherDetails" trigger="accessoryAction" id="S9Y-If-6n8"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DescriptionValueCell" rowHeight="46" id="aNJ-Oq-7Zf">
-                                <rect key="frame" x="0.0" y="93" width="320" height="46"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DescriptionValueCell" rowHeight="44" id="aNJ-Oq-7Zf">
+                                <rect key="frame" x="0.0" y="91" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="0.0" width="300" height="45"/>
+                                    <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adf-Ux-JMg">
@@ -225,11 +225,11 @@
                                     <constraint firstItem="adf-Ux-JMg" firstAttribute="leading" secondItem="aNJ-Oq-7Zf" secondAttribute="leading" constant="20" type="default" id="hb8-NZ-6Fe"/>
                                 </constraints>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DescriptionCell" rowHeight="46" id="Kso-La-OGp">
-                                <rect key="frame" x="0.0" y="139" width="320" height="46"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DescriptionCell" rowHeight="44" id="Kso-La-OGp">
+                                <rect key="frame" x="0.0" y="135" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="0.0" width="300" height="45"/>
+                                    <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjR-wf-7lq">
@@ -257,7 +257,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Carpark Details" id="m6C-H0-39E">
-                        <barButtonItem key="rightBarButtonItem" image="StarEmpty24.png" id="UJk-ML-nUM">
+                        <barButtonItem key="rightBarButtonItem" image="StarEmpty24-3.png" id="UJk-ML-nUM">
                             <connections>
                                 <action selector="setFavouriteCarpark:" destination="ed9-JH-aWy" id="5CN-JU-NQA"/>
                             </connections>
@@ -328,17 +328,17 @@
         <scene sceneID="Pvl-bs-Uev">
             <objects>
                 <tableViewController id="xZk-i3-915" customClass="TrafficCamerasViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="qb5-3a-rt8">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="qb5-3a-rt8">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrafficCameraCell" rowHeight="46" id="hxh-jL-794">
-                                <rect key="frame" x="0.0" y="46" width="320" height="47"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrafficCameraCell" rowHeight="44" id="hxh-jL-794">
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="45"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" text="Traffic Camera Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEW-0X-7dg">
@@ -360,10 +360,10 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="HKC-Zm-FuA" secondAttribute="trailing" constant="14" id="b0h-0B-xjD"/>
-                                    <constraint firstItem="wEW-0X-7dg" firstAttribute="centerY" secondItem="hxh-jL-794" secondAttribute="centerY" type="default" id="obv-aB-76X"/>
-                                    <constraint firstItem="wEW-0X-7dg" firstAttribute="centerY" secondItem="HKC-Zm-FuA" secondAttribute="centerY" type="default" id="qNI-uR-V6x"/>
-                                    <constraint firstItem="wEW-0X-7dg" firstAttribute="leading" secondItem="hxh-jL-794" secondAttribute="leading" constant="20" type="default" id="sMf-lT-Uol"/>
+                                    <constraint firstAttribute="trailing" secondItem="HKC-Zm-FuA" secondAttribute="trailing" constant="14" id="AcN-yK-SA3"/>
+                                    <constraint firstItem="wEW-0X-7dg" firstAttribute="leading" secondItem="hxh-jL-794" secondAttribute="leading" constant="20" type="default" id="RmE-B6-faN"/>
+                                    <constraint firstItem="HKC-Zm-FuA" firstAttribute="top" secondItem="hxh-jL-794" secondAttribute="top" constant="14" id="oiB-pL-gxf"/>
+                                    <constraint firstItem="wEW-0X-7dg" firstAttribute="centerY" secondItem="hxh-jL-794" secondAttribute="centerY" type="default" id="u0I-WR-yBY"/>
                                 </constraints>
                             </tableViewCell>
                         </prototypes>
@@ -581,17 +581,17 @@
         <scene sceneID="3vC-dy-JLJ">
             <objects>
                 <tableViewController id="5ef-65-b6o" customClass="DisabledSpacesViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="eQu-BJ-XLD">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eQu-BJ-XLD">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DisabledSpaceCell" rowHeight="46" id="hr4-a3-QKS">
-                                <rect key="frame" x="0.0" y="46" width="320" height="47"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DisabledSpaceCell" rowHeight="44" id="hr4-a3-QKS">
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="45"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="200" contentMode="left" text="Disabled Parking Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh2-ct-HKd">
@@ -620,13 +620,13 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Bh2-ct-HKd" firstAttribute="top" secondItem="hr4-a3-QKS" secondAttribute="top" constant="15" id="03R-bR-r47"/>
                                     <constraint firstAttribute="trailing" secondItem="rmh-wb-IJ8" secondAttribute="trailing" constant="14" id="7H8-eR-grt"/>
-                                    <constraint firstItem="rmh-wb-IJ8" firstAttribute="centerY" secondItem="hr4-a3-QKS" secondAttribute="centerY" type="default" id="Jd4-wG-WhC"/>
-                                    <constraint firstItem="Bh2-ct-HKd" firstAttribute="leading" secondItem="hr4-a3-QKS" secondAttribute="leading" constant="20" type="default" id="fRj-IF-miY"/>
-                                    <constraint firstItem="Bh2-ct-HKd" firstAttribute="top" secondItem="7gp-Wj-eFo" secondAttribute="top" type="default" id="pwl-ns-wIx"/>
+                                    <constraint firstItem="Bh2-ct-HKd" firstAttribute="leading" secondItem="hr4-a3-QKS" secondAttribute="leading" constant="20" type="default" id="DqL-ZY-LdA"/>
+                                    <constraint firstItem="7gp-Wj-eFo" firstAttribute="baseline" secondItem="Bh2-ct-HKd" secondAttribute="baseline" type="default" id="VIg-oM-lRN"/>
+                                    <constraint firstItem="7gp-Wj-eFo" firstAttribute="centerY" secondItem="hr4-a3-QKS" secondAttribute="centerY" type="default" id="fbb-ff-TLp"/>
+                                    <constraint firstItem="rmh-wb-IJ8" firstAttribute="top" secondItem="hr4-a3-QKS" secondAttribute="top" constant="14" id="gIs-Ps-7wn"/>
                                     <constraint firstAttribute="trailing" secondItem="7gp-Wj-eFo" secondAttribute="trailing" constant="30" id="rQd-5w-Hd2"/>
-                                    <constraint firstItem="Bh2-ct-HKd" firstAttribute="baseline" secondItem="7gp-Wj-eFo" secondAttribute="baseline" type="default" id="v50-uR-2qU"/>
+                                    <constraint firstItem="7gp-Wj-eFo" firstAttribute="top" secondItem="Bh2-ct-HKd" secondAttribute="top" type="default" id="zFt-Nd-n0m"/>
                                 </constraints>
                             </tableViewCell>
                         </prototypes>
@@ -681,7 +681,7 @@
         <scene sceneID="VHZ-WW-n5D">
             <objects>
                 <navigationController definesPresentationContext="YES" id="uAF-Wo-LHI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="testicon1.png" id="Usc-Mk-iaP"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="newpin.png" id="Usc-Mk-iaP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uYC-q1-9Jt">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -866,13 +866,91 @@
         </scene>
     </scenes>
     <resources>
-        <image name="StarEmpty24.png" width="24" height="24"/>
+        <image name="StarEmpty24-3.png" width="24" height="24"/>
         <image name="camera1.png" width="25" height="25"/>
+        <image name="newpin.png" width="25" height="25"/>
         <image name="parking3.png" width="25" height="25"/>
         <image name="pointer1.png" width="16" height="16"/>
-        <image name="testicon1.png" width="25" height="25"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
+    <classes>
+        <class className="CarparkDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="setFavouriteCarpark:"/>
+                <relationship kind="outlet" name="buttonFavs" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="CarparkDetalsDescriptionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetalsDescriptionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="CarparkListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="carparkList" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CarparkMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkMapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showCarparkDetails:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="CombinedMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CombinedMapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="selectOverlayType:" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="segmentedControlOverlayTypes" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="DisabledSpacesMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="DisabledSpacesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="disabledSpacesList" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MoreViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="TrafficCameraImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activitySpinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="TrafficCameraMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="TrafficCamerasViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCamerasViewController.h"/>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activitySpinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -1,6 +1,6 @@
 //
 //  DisabledParkingSpaceInfo.m
-//  DublinCityParkingCoreDataImport
+//  DublinCityParking
 //
 //  Created by darren cullen on 08/03/2013.
 //  Copyright (c) 2013 dcdevstudios. All rights reserved.

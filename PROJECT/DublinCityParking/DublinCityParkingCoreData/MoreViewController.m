@@ -33,6 +33,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,6 +59,31 @@
         // Present mail view controller on screen
         [self presentViewController:mc animated:YES completion:NULL];
     }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
+    
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.shadowColor = [UIColor grayColor];
+    headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+    headerLabel.font = [UIFont boldSystemFontOfSize:18];
+    
+    if(section == 0)
+        headerLabel.text = @"Parking & Traffic";
+    else if(section == 1)
+        headerLabel.text = @"DubPark";
+    
+    [headerView addSubview:headerLabel];
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44.0f;
 }
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error

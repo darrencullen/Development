@@ -74,9 +74,9 @@
     
     self.title = self.selectedCarparkInfo.name;
     if (self.selectedCarparkInfo.favourite == YES){
-         self.buttonFavs.image = [UIImage imageNamed:@"StarFull24.png"];
+         self.buttonFavs.image = [UIImage imageNamed:@"StarFull24-3.png"];
     } else {
-         self.buttonFavs.image = [UIImage imageNamed:@"StarEmpty24.png"];
+         self.buttonFavs.image = [UIImage imageNamed:@"StarEmpty24-3.png"];
     }
     
     [self populateDetailArrays];
@@ -391,11 +391,11 @@
     NSString *alertMessage;
     if (cgCarpark.favourite == NO){
         cgCarpark.favourite = 1;
-        newFavImage = [UIImage imageNamed:@"StarFull24.png"];
+        newFavImage = [UIImage imageNamed:@"StarFull24-3.png"];
         alertMessage = @"Added to favourites list";
     } else {
         cgCarpark.favourite = 0;
-        newFavImage = [UIImage imageNamed:@"StarEmpty24.png"];
+        newFavImage = [UIImage imageNamed:@"StarEmpty24-3.png"];
         alertMessage = @"Removed from favourites list";
     }
 

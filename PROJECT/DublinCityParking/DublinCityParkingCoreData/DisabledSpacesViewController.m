@@ -1,6 +1,6 @@
 //
 //  DisabledSpacesViewController.m
-//  DublinCityParkingCoreDataNSOperation
+//  DublinCityParking
 //
 //  Created by darren cullen on 10/04/2013.
 //  Copyright (c) 2013 dcdevstudios. All rights reserved.
