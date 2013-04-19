@@ -27,12 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,7 +67,7 @@
     else if(section == 9)
         headerLabel.text = @"Zone 6 - €0.60/hour";
     else if(section == 10)
-        headerLabel.text = @"Further Info";
+        headerLabel.text = @"Useful Web Links";
     
     [headerView addSubview:headerLabel];
     return headerView;

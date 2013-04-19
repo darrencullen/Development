@@ -127,6 +127,12 @@
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"More Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
         
         [[self navigationItem] setBackBarButtonItem: newBackButton];
+
+    } else if([segue.identifier isEqualToString:@"showDubParkInformation"]){
+        
+        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"More Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
+        
+        [[self navigationItem] setBackBarButtonItem: newBackButton];
     }
 }
 

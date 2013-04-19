@@ -14,7 +14,6 @@
 		49175CAF1719EB82000DEED1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49175CAE1719EB82000DEED1 /* SystemConfiguration.framework */; };
 		491A0DCD16DC2AA20017DEFE /* Carpark.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A0DCA16DC2AA20017DEFE /* Carpark.m */; };
 		491A0DCE16DC2AA20017DEFE /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A0DCC16DC2AA20017DEFE /* XMLParser.m */; };
-		491CB5241720801C0089FB08 /* newpin.png in Resources */ = {isa = PBXBuildFile; fileRef = 491CB5211720801C0089FB08 /* newpin.png */; };
 		491CB5251720801C0089FB08 /* StarEmpty24-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 491CB5221720801C0089FB08 /* StarEmpty24-3.png */; };
 		491CB5261720801C0089FB08 /* StarFull24-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 491CB5231720801C0089FB08 /* StarFull24-3.png */; };
 		491CB5281720A4F90089FB08 /* imagenotavailable.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 491CB5271720A4F90089FB08 /* imagenotavailable.jpg */; };
@@ -29,6 +28,8 @@
 		49C10693171E1A0E0002361E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C10692171E1A0E0002361E /* MessageUI.framework */; };
 		49F59FB4171F491500C8C2EE /* DublinCityParkingCoreData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 49F59FB1171F491500C8C2EE /* DublinCityParkingCoreData.sqlite */; };
 		49F59FB5171F491500C8C2EE /* DublinCityParkingCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49F59FB2171F491500C8C2EE /* DublinCityParkingCoreData.xcdatamodeld */; };
+		49F60E571721E79C0087C2A3 /* newpin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F60E551721E79C0087C2A3 /* newpin2.png */; };
+		49F60E5A1721E9B80087C2A3 /* DubParkInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F60E591721E9B80087C2A3 /* DubParkInfoViewController.m */; };
 		49F6DCB416E776D300043CFC /* strip5.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCB316E776D300043CFC /* strip5.png */; };
 		49F6DCB816E782C200043CFC /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCB716E782C200043CFC /* button.png */; };
 		49F6DCC216E7A86400043CFC /* parking3.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6DCC116E7A86400043CFC /* parking3.png */; };
@@ -52,8 +53,6 @@
 		49F8890716D6D3B700AB3377 /* CarparkListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890616D6D3B700AB3377 /* CarparkListViewController.m */; };
 		49F8890D16D6DD5300AB3377 /* CarparkDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890C16D6DD5300AB3377 /* CarparkDetails.m */; };
 		49F8891016D6DD9000AB3377 /* CarparkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8890F16D6DD9000AB3377 /* CarparkInfo.m */; };
-		49F8D8D7171898090015F14C /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F8D8D4171898090015F14C /* map.png */; };
-		49F8D8D8171898090015F14C /* mapgrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F8D8D5171898090015F14C /* mapgrey.png */; };
 		49F8D8D9171898090015F14C /* pointer1.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F8D8D6171898090015F14C /* pointer1.png */; };
 		49F8D8DC1718A68F0015F14C /* DisabledSpacesMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F8D8DB1718A68F0015F14C /* DisabledSpacesMapViewController.m */; };
 		49FCD01A1717740100BBF2F7 /* TrafficCameraInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FCD0161717740100BBF2F7 /* TrafficCameraInfo.m */; };
@@ -74,7 +73,6 @@
 		491A0DCA16DC2AA20017DEFE /* Carpark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Carpark.m; sourceTree = "<group>"; };
 		491A0DCB16DC2AA20017DEFE /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		491A0DCC16DC2AA20017DEFE /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
-		491CB5211720801C0089FB08 /* newpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newpin.png; sourceTree = "<group>"; };
 		491CB5221720801C0089FB08 /* StarEmpty24-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarEmpty24-3.png"; sourceTree = "<group>"; };
 		491CB5231720801C0089FB08 /* StarFull24-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarFull24-3.png"; sourceTree = "<group>"; };
 		491CB5271720A4F90089FB08 /* imagenotavailable.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imagenotavailable.jpg; sourceTree = "<group>"; };
@@ -95,6 +93,9 @@
 		49C10692171E1A0E0002361E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		49F59FB1171F491500C8C2EE /* DublinCityParkingCoreData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DublinCityParkingCoreData.sqlite; sourceTree = "<group>"; };
 		49F59FB3171F491500C8C2EE /* DublinCityParkingCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DublinCityParkingCoreData.xcdatamodel; sourceTree = "<group>"; };
+		49F60E551721E79C0087C2A3 /* newpin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newpin2.png; sourceTree = "<group>"; };
+		49F60E581721E9B80087C2A3 /* DubParkInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DubParkInfoViewController.h; sourceTree = "<group>"; };
+		49F60E591721E9B80087C2A3 /* DubParkInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DubParkInfoViewController.m; sourceTree = "<group>"; };
 		49F6DCB316E776D300043CFC /* strip5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip5.png; sourceTree = "<group>"; };
 		49F6DCB716E782C200043CFC /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		49F6DCC116E7A86400043CFC /* parking3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parking3.png; sourceTree = "<group>"; };
@@ -128,8 +129,6 @@
 		49F8890C16D6DD5300AB3377 /* CarparkDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkDetails.m; sourceTree = "<group>"; };
 		49F8890E16D6DD9000AB3377 /* CarparkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkInfo.h; sourceTree = "<group>"; };
 		49F8890F16D6DD9000AB3377 /* CarparkInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkInfo.m; sourceTree = "<group>"; };
-		49F8D8D4171898090015F14C /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
-		49F8D8D5171898090015F14C /* mapgrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapgrey.png; sourceTree = "<group>"; };
 		49F8D8D6171898090015F14C /* pointer1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer1.png; sourceTree = "<group>"; };
 		49F8D8DA1718A68F0015F14C /* DisabledSpacesMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisabledSpacesMapViewController.h; sourceTree = "<group>"; };
 		49F8D8DB1718A68F0015F14C /* DisabledSpacesMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisabledSpacesMapViewController.m; sourceTree = "<group>"; };
@@ -321,12 +320,10 @@
 		496776EB16DD6251009E7E22 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49F60E551721E79C0087C2A3 /* newpin2.png */,
 				491CB5271720A4F90089FB08 /* imagenotavailable.jpg */,
-				491CB5211720801C0089FB08 /* newpin.png */,
 				491CB5221720801C0089FB08 /* StarEmpty24-3.png */,
 				491CB5231720801C0089FB08 /* StarFull24-3.png */,
-				49F8D8D4171898090015F14C /* map.png */,
-				49F8D8D5171898090015F14C /* mapgrey.png */,
 				49F8D8D6171898090015F14C /* pointer1.png */,
 				49F6DCC516E7AF7800043CFC /* camera1.png */,
 				49F6DCC616E7AF7800043CFC /* wheelchair2.png */,
@@ -350,6 +347,8 @@
 				491FD21F171DF720003F2995 /* WebViewController.m */,
 				491CB5291720BDD20089FB08 /* ParkingInfoViewController.h */,
 				491CB52A1720BDD20089FB08 /* ParkingInfoViewController.m */,
+				49F60E581721E9B80087C2A3 /* DubParkInfoViewController.h */,
+				49F60E591721E9B80087C2A3 /* DubParkInfoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -495,15 +494,13 @@
 				49F6DCC216E7A86400043CFC /* parking3.png in Resources */,
 				49F6DCC716E7AF7800043CFC /* camera1.png in Resources */,
 				49F6DCC816E7AF7800043CFC /* wheelchair2.png in Resources */,
-				49F8D8D7171898090015F14C /* map.png in Resources */,
-				49F8D8D8171898090015F14C /* mapgrey.png in Resources */,
 				49F8D8D9171898090015F14C /* pointer1.png in Resources */,
 				49F70EE31719739A008B81BE /* TaskList.rtf in Resources */,
 				49F59FB4171F491500C8C2EE /* DublinCityParkingCoreData.sqlite in Resources */,
-				491CB5241720801C0089FB08 /* newpin.png in Resources */,
 				491CB5251720801C0089FB08 /* StarEmpty24-3.png in Resources */,
 				491CB5261720801C0089FB08 /* StarFull24-3.png in Resources */,
 				491CB5281720A4F90089FB08 /* imagenotavailable.jpg in Resources */,
+				49F60E571721E79C0087C2A3 /* newpin2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +535,7 @@
 				49C10690171DFF610002361E /* MoreViewController.m in Sources */,
 				49F59FB5171F491500C8C2EE /* DublinCityParkingCoreData.xcdatamodeld in Sources */,
 				491CB52B1720BDD20089FB08 /* ParkingInfoViewController.m in Sources */,
+				49F60E5A1721E9B80087C2A3 /* DubParkInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,38 +1,4 @@
-
-	<string name="descPaymentsB">Max parking time 3 hours.</string>
-	<string name="descPaymentsC">After 8pm, 3 hours parking valid until 07:00 the following day.</string>
-	<string name="descPaymentsD">Operational hours of some Pay & Display Permit Parking Schemes extend beyond 7pm at night and on Saturdays & Sundays.</string>    
-    <string name="labelZone1">€2.90/hour:</string>  
-    <string name="descZone1A">Very high demand.</string>  
-    <string name="descZone1B">Middle of city between Fitzwilliam Place south of city to Parnell Street north of the city.</string>      
-    <string name="labelZone2">€2.40/hour:</string>
-    <string name="descZone2A">High demand.</string>
-    <string name="descZone2B">Ballsbridge, Ranelagh, Donnybrook, Thomas Street, The Coombe, Sheriff Street. North Circular to Blackhall Place.</string>            
-    <string name="labelZone3">€1.40/hour:</string>
-    <string name="descZone3A">High demand Sunday.</string>
-    <string name="descZone3B">Stephen's Green to Parnell Street. Merrion Street to Aungier Street. Capel Street to O'Connell Street.</string>            
-    <string name="labelZone4">€1.60/hour:</string> 
-    <string name="descZone4A">Medium demand.</string>
-    <string name="descZone4B">Harolds Cross, Rathmines, Phibsborough, Stoneybatter, Cork Street, Milltown. North of North Circular.</string>            
-    <string name="labelZone5">€1.00/hour:</string> 
-    <string name="descZone5A">Low demand.</string>
-    <string name="descZone5B">Suburban areas, e.g. Terenure, Rathgar, Dolphin's Barn, Crumlin, Kilmainham, Cabra & Clontarf.</string>           
-    <string name="labelZone6">€0.60/hour:</string> 
-    <string name="descZone6">Some surburban villages e.g. Sandymount & Irishtown.</string>       
-    <string name="labelExemptions">Exemptions:</string>     
-    <string name="descExemptionsA">Paid parking controls shall not apply in Pay & Display Permit Parking areas on the following days:</string>
-    <string name="descExemptionsB">New Year's Day (1st January),</string>
-    <string name="descExemptionsC">St. Patrick's Day (17th March),</string>
-    <string name="descExemptionsD">Easter Sunday & Monday (variable),</string>
-    <string name="descExemptionsE">May Public Holiday (first Monday in May),</string>
-    <string name="descExemptionsF">June Public Holiday (first Monday in June),</string>
-    <string name="descExemptionsG">August Public Holiday (first Monday in August),</string>
-    <string name="descExemptionsH">October Public Holiday (last Monday in October),</string>
-    <string name="descExemptionsI">Christmas Day (25th December),</string>
-    <string name="descExemptionsJ">St. Stephen's Day (26th December).</string>                        
-    <string name="labelFurtherInfo">Further Info:</string> 
-    <string name="descFurtherInfoA">http://www.dublincity.ie</string>
-    <string name="descFurtherInfoB">http://www.dsps.ie</string>    
+  
     <string name="labelAppDetails">App Details:</string>
     <string name="descAppDetailsA">Dublin City Parking</string>
     <string name="descAppDetailsB">Version 1.3</string>      
@@ -45,11 +11,14 @@
     <string name="labelInformation">Information:</string>
     <string name="descInformationA">http://www.dublincity.ie</string>
     <string name="descInformationB">http://www.dublinked.ie</string>     
-    <string name="labelOverlays">Overlays:</string> 
-	<string name="descOverlays">Jeff Gilfelt - readyState Software Ltd</string>    
+  
     <string name="labelIcons">Icons:</string>
     <string name="descIconsA">Paul Kieran - http://paulkieran.com</string>
-    <string name="descIconsB">http://www.iconarchive.com</string>     
+    
     <string name="labelLogging">Logging:</string> 
     <string name="descLogging">www.bugsense.com</string>        
 </resources>
+
+
+
+www.dublincity.ie
