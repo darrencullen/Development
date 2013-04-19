@@ -562,23 +562,43 @@
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-hy-smm">
                                 <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="LPC-v4-1xN">
+                                <items>
+                                    <barButtonItem title="Back" id="Xv1-Jz-2vk">
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="Jdj-tc-gdq" id="zHn-BQ-IgA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EH8-yA-RMU"/>
+                                    <barButtonItem systemItem="refresh" id="jh8-vp-uJx">
+                                        <connections>
+                                            <action selector="refreshPage:" destination="Jdj-tc-gdq" id="OXu-fW-QT7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="B5v-hy-smm" firstAttribute="trailing" secondItem="RXW-5J-c4h" secondAttribute="trailing" type="default" id="0nw-U1-Rmo"/>
-                            <constraint firstItem="B5v-hy-smm" firstAttribute="top" secondItem="RXW-5J-c4h" secondAttribute="top" type="default" id="Xik-9P-b5h"/>
-                            <constraint firstItem="B5v-hy-smm" firstAttribute="bottom" secondItem="RXW-5J-c4h" secondAttribute="bottom" type="default" id="sBk-yV-V57"/>
+                            <constraint firstItem="LPC-v4-1xN" firstAttribute="top" secondItem="B5v-hy-smm" secondAttribute="bottom" type="default" id="LMm-DI-Xqd"/>
+                            <constraint firstItem="LPC-v4-1xN" firstAttribute="trailing" secondItem="RXW-5J-c4h" secondAttribute="trailing" type="default" id="T05-TA-CMA"/>
+                            <constraint firstItem="LPC-v4-1xN" firstAttribute="leading" secondItem="RXW-5J-c4h" secondAttribute="leading" type="default" id="lKt-1y-nPl"/>
+                            <constraint firstItem="LPC-v4-1xN" firstAttribute="bottom" secondItem="RXW-5J-c4h" secondAttribute="bottom" type="default" id="vEG-a4-cuQ"/>
                             <constraint firstItem="B5v-hy-smm" firstAttribute="leading" secondItem="RXW-5J-c4h" secondAttribute="leading" type="default" id="xyj-tn-CfP"/>
+                            <constraint firstItem="B5v-hy-smm" firstAttribute="top" secondItem="RXW-5J-c4h" secondAttribute="top" type="default" id="zTg-ID-KsY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Live Drive Twitter" id="xY7-2h-obr"/>
                     <connections>
+                        <outlet property="backButton" destination="Xv1-Jz-2vk" id="tCv-b5-1it"/>
+                        <outlet property="refreshButton" destination="jh8-vp-uJx" id="dCi-gp-dhF"/>
                         <outlet property="webView" destination="B5v-hy-smm" id="ici-t1-9MG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIj-Wt-9gl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2562" y="2062"/>
+            <point key="canvasLocation" x="-2081" y="2062"/>
         </scene>
         <!--Disabled Spaces View Controller - Disabled Parking Spaces-->
         <scene sceneID="3vC-dy-JLJ">
@@ -867,10 +887,10 @@
             </objects>
             <point key="canvasLocation" x="-3153" y="1414"/>
         </scene>
-        <!--More View Controller - Parking Information-->
+        <!--Parking Info View Controller - Parking Information-->
         <scene sceneID="DpE-mQ-HWN">
             <objects>
-                <tableViewController id="8I2-cj-d5A" customClass="MoreViewController" sceneMemberID="viewController">
+                <tableViewController id="8I2-cj-d5A" customClass="ParkingInfoViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="7I1-cL-Nup">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1593,13 +1613,85 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Further Information" id="UpS-CA-Ciy">
+                                <cells>
+                                    <tableViewCell tag="502" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" id="Qcg-1W-grL">
+                                        <rect key="frame" x="0.0" y="1999" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" text="Dublin City Council" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxX-2N-hec">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="F2d-js-G6A"/>
+                                                        <constraint firstAttribute="width" constant="265" id="uBl-6D-Rts"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pointer1.png" translatesAutoresizingMaskIntoConstraints="NO" id="acm-op-oXb">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="oeb-Iz-USv"/>
+                                                        <constraint firstAttribute="width" constant="21" id="xgr-0g-RoC"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="acm-op-oXb" secondAttribute="trailing" constant="14" id="Cfl-xa-5qH"/>
+                                            <constraint firstItem="acm-op-oXb" firstAttribute="centerY" secondItem="QxX-2N-hec" secondAttribute="centerY" type="default" id="oGN-sA-kpd"/>
+                                            <constraint firstItem="QxX-2N-hec" firstAttribute="leading" secondItem="Qcg-1W-grL" secondAttribute="leading" constant="20" type="default" id="sbX-XO-TzV"/>
+                                            <constraint firstItem="QxX-2N-hec" firstAttribute="top" secondItem="Qcg-1W-grL" secondAttribute="top" constant="13" id="x0f-sq-Fla"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="Jdj-tc-gdq" kind="push" identifier="showDCCWebView" id="rDs-rX-nD1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell tag="502" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" id="Zpe-rU-hdm">
+                                        <rect key="frame" x="0.0" y="2044" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" text="Dublin Street Parking Services" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1D-mS-hYY">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="gO3-Up-ONm"/>
+                                                        <constraint firstAttribute="width" constant="265" id="kwr-Yh-vGH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pointer1.png" translatesAutoresizingMaskIntoConstraints="NO" id="CvO-6h-Nuz">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="aqb-am-M7D"/>
+                                                        <constraint firstAttribute="width" constant="21" id="vPK-wf-CXD"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="f1D-mS-hYY" firstAttribute="leading" secondItem="Zpe-rU-hdm" secondAttribute="leading" constant="20" type="default" id="0zK-eT-LuL"/>
+                                            <constraint firstItem="CvO-6h-Nuz" firstAttribute="centerY" secondItem="Zpe-rU-hdm" secondAttribute="centerY" type="default" id="8Oa-nF-twH"/>
+                                            <constraint firstItem="CvO-6h-Nuz" firstAttribute="centerY" secondItem="f1D-mS-hYY" secondAttribute="centerY" type="default" id="W3L-Qv-4sR"/>
+                                            <constraint firstAttribute="trailing" secondItem="CvO-6h-Nuz" secondAttribute="trailing" constant="14" id="c4Q-h8-IKP"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="Jdj-tc-gdq" kind="push" identifier="showDSPSWebView" id="khu-Xv-P1g"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Parking Information" id="sQe-Nf-UNM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIN-14-XVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2562" y="1485"/>
+            <point key="canvasLocation" x="-2614" y="1487"/>
         </scene>
     </scenes>
     <resources>
@@ -1664,6 +1756,9 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="ParkingInfoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ParkingInfoViewController.h"/>
+        </class>
         <class className="TrafficCameraImageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraImageViewController.h"/>
             <relationships>
@@ -1683,7 +1778,11 @@
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backButtonPressed:"/>
+                <relationship kind="action" name="refreshPage:"/>
                 <relationship kind="outlet" name="activitySpinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
@@ -1693,4 +1792,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="rDs-rX-nD1"/>
+    </inferredMetricsTieBreakers>
 </document>

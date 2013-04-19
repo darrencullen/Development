@@ -29,8 +29,10 @@
 {
     [super viewDidLoad];
     
-    if ([NetworkStatus hasConnectivity])
+    if ([NetworkStatus hasConnectivity]){
         [self loadWebsite];
+        [self.webView setDelegate:self];
+    }
     else{
         NSString *message = [NSString stringWithFormat:@"A network connection is required to connect to %@", self.webViewTitle];
         UIAlertView *alertView = [[UIAlertView alloc]
@@ -71,4 +73,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)refreshPage:(id)sender {
+    [self loadWebsite];
+}
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self.webView goBack];
+}
 @end

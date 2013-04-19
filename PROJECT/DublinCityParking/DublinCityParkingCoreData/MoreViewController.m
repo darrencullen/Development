@@ -73,27 +73,9 @@
     headerLabel.font = [UIFont boldSystemFontOfSize:18];
     
     if(section == 0)
-        headerLabel.text = @"Live Data";
+        headerLabel.text = @"Parking & Traffic";
     else if(section == 1)
-        headerLabel.text = @"Payment Details";
-    else if(section == 2)
-        headerLabel.text = @"Payment Exemptions";
-    else if(section == 3)
-        headerLabel.text = @"Parking Zones";
-    else if(section == 4)
-        headerLabel.text = @"Zone 1 - €2.90/hour";
-    else if(section == 5)
-        headerLabel.text = @"Zone 2 - €2.40/hour";
-    else if(section == 6)
-        headerLabel.text = @"Zone 3 - €1.40/hour";
-    else if(section == 7)
-        headerLabel.text = @"Zone 4 - €1.60/hour";
-    else if(section == 8)
-        headerLabel.text = @"Zone 5 - €1.00/hour";
-    else if(section == 9)
-        headerLabel.text = @"Zone 6 - €0.60/hour";
-    else if(section == 10)
-        headerLabel.text = @"Further Info";
+        headerLabel.text = @"DubPark";
     
     [headerView addSubview:headerLabel];
     return headerView;

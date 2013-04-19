@@ -13,5 +13,11 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSString *webViewTitle;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
+
+- (IBAction)refreshPage:(id)sender;
+- (IBAction)backButtonPressed:(id)sender;
+
 
 @end
