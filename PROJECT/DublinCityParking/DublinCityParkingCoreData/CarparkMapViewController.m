@@ -30,43 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    //    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    //
-    //    // set up the managedObjectContext to read data from CoreData
-    //    id delegate = [[UIApplication sharedApplication] delegate];
-    //    self.managedObjectContext = [delegate managedObjectContext];
-    //
-    //    NSEntityDescription *entity = [NSEntityDescription
-    //                                   entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
-    //
-    //    [fetchRequest setEntity:entity];
-    //    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"code=%@",self.selectedCarparkCode]];
-    //
-    //
-    //    NSError *error;
-    //   // CarparkInfo *cgCarpark;
-    //
-    //    selectedCarparkInfo = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] lastObject];
-    
-    
-    
-    
-    //    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    //    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", self.selectedCarparkCode];
-    //    NSEntityDescription *entity = [NSEntityDescription
-    //                                   entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
-    //
-    //    [fetchRequest setEntity:entity];
-    //    [fetchRequest setPredicate:predicate];
-    //
-    //    NSError *error;
-    //    NSArray *carparks = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    //selectedCarparkInfo = carparks[0];
-    //selectedCarparkDetails = selectedCarparkInfo.details;
-    
+    self.title = self.selectedCarparkInfo.name;
     selectedCarparkDetails = self.selectedCarparkInfo.details;
     
     // default to dublin city centre
@@ -74,14 +38,16 @@
     zoomLocation.latitude = selectedCarparkDetails.latitude;
     zoomLocation.longitude= selectedCarparkDetails.longitude;
     
-    MKCoordinateRegion region;
-    region.center=zoomLocation;   // location
+
     MKCoordinateSpan span;
     span.latitudeDelta=0.008;               //  0.001 to 120
     span.longitudeDelta=0.008;
+    
+    MKCoordinateRegion region;
+    region.center=zoomLocation;   // location
     region.span=span;
     [self.mapView setRegion:region animated:YES];
-    self.title = self.selectedCarparkInfo.name;
+
     
 }
 

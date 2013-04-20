@@ -12,6 +12,7 @@
 #import "XMLParser.h"
 #import "CarparkMapViewController.h"
 #import "NetworkStatus.h"
+#import <BugSense-iOS/BugSenseController.h>
 
 @interface CarparkListViewController ()
 // @property (nonatomic, strong) CarParkLots *carParkLots;
@@ -234,29 +235,38 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CarparkCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    @try{
+        
+        static NSString *CellIdentifier = @"CarparkCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-    NSArray *selectedSection = self.carparkLocations[indexPath.section];
-    self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
-    //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
+        // Configure the cell...
+        NSArray *selectedSection = self.carparkLocations[indexPath.section];
+        self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
+        //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
     
-    // NSLog(@"%ld;%ld;%@", (long)indexPath.section, (long)indexPath.row, selectedCarpark.name);
+        // NSLog(@"%ld;%ld;%@", (long)indexPath.section, (long)indexPath.row, selectedCarpark.name);
     
-    UILabel *carparkNameLabel = (UILabel *)[cell viewWithTag:100];
-    carparkNameLabel.text = self.selectedCarpark.name;
+        UILabel *carparkNameLabel = (UILabel *)[cell viewWithTag:100];
+        carparkNameLabel.text = self.selectedCarpark.name;
     
-    UILabel *carparkAddressLabel = (UILabel *)[cell viewWithTag:101];
-    carparkAddressLabel.text = [NSString stringWithFormat:@"%@", self.selectedCarpark.address];
+        UILabel *carparkAddressLabel = (UILabel *)[cell viewWithTag:101];
+        carparkAddressLabel.text = [NSString stringWithFormat:@"%@", self.selectedCarpark.address];
     
-    UILabel *availableSpacesLabel = (UILabel *)[cell viewWithTag:102];
-    availableSpacesLabel.text = self.selectedCarpark.availableSpaces;
+        UILabel *availableSpacesLabel = (UILabel *)[cell viewWithTag:102];
+        availableSpacesLabel.text = self.selectedCarpark.availableSpaces;
     
-    UILabel *hourlyRateLabel = (UILabel *)[cell viewWithTag:103];
-    hourlyRateLabel.text = self.selectedCarpark.details.hourlyRate;
+        UILabel *hourlyRateLabel = (UILabel *)[cell viewWithTag:103];
+        hourlyRateLabel.text = self.selectedCarpark.details.hourlyRate;
     
-    return cell;
+        return cell;
+    
+    } @catch (NSException *exc) {
+//        NSDictionary *data = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"sample-value", nil]
+//                                                     forKeys:[NSArray arrayWithObjects:@"sample-key", nil]];
+        
+        BUGSENSE_LOG(exc, nil);
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

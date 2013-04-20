@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49004A7B172297E40042945C /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49004A7A172297E30042945C /* BugSense-iOS.framework */; };
+		49004A7D172298000042945C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49004A7C172298000042945C /* libz.dylib */; };
 		49017DC0171AD6F2003293E3 /* CarparkDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49017DBF171AD6F2003293E3 /* CarparkDetailsViewController.m */; };
 		49017DC3171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49017DC2171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.m */; };
 		49175CA91719DFE6000DEED1 /* TrafficCameraMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49175CA81719DFE6000DEED1 /* TrafficCameraMapViewController.m */; };
@@ -60,6 +62,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49004A7A172297E30042945C /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "../../../../../../../../Downloads/BugSense-iOS.framework"; sourceTree = "<group>"; };
+		49004A7C172298000042945C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		49017DBE171AD6F1003293E3 /* CarparkDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkDetailsViewController.h; sourceTree = "<group>"; };
 		49017DBF171AD6F2003293E3 /* CarparkDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkDetailsViewController.m; sourceTree = "<group>"; };
 		49017DC1171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkDetalsDescriptionViewController.h; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49004A7D172298000042945C /* libz.dylib in Frameworks */,
+				49004A7B172297E40042945C /* BugSense-iOS.framework in Frameworks */,
 				49C10693171E1A0E0002361E /* MessageUI.framework in Frameworks */,
 				49175CAF1719EB82000DEED1 /* SystemConfiguration.framework in Frameworks */,
 				49A9E6C816DEA1BE00F54513 /* MapKit.framework in Frameworks */,
@@ -372,7 +378,7 @@
 		49F888CE16D6D18700AB3377 = {
 			isa = PBXGroup;
 			children = (
-				49C10692171E1A0E0002361E /* MessageUI.framework */,
+				49004A7C172298000042945C /* libz.dylib */,
 				49F888E216D6D18700AB3377 /* DublinCityParking */,
 				49F888D916D6D18700AB3377 /* Frameworks */,
 				49F888D816D6D18700AB3377 /* Products */,
@@ -390,6 +396,8 @@
 		49F888D916D6D18700AB3377 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49004A7A172297E30042945C /* BugSense-iOS.framework */,
+				49C10692171E1A0E0002361E /* MessageUI.framework */,
 				49175CAE1719EB82000DEED1 /* SystemConfiguration.framework */,
 				49A9E6C716DEA1BE00F54513 /* MapKit.framework */,
 				49F888DA16D6D18700AB3377 /* UIKit.framework */,
@@ -620,10 +628,16 @@
 		49F8890316D6D18700AB3377 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../../../../Downloads\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DublinCityParkingCoreData/DublinCityParking-Prefix.pch";
 				INFOPLIST_FILE = "DublinCityParkingCoreData/DublinCityParking-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -631,10 +645,15 @@
 		49F8890416D6D18700AB3377 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../../../../Downloads\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DublinCityParkingCoreData/DublinCityParking-Prefix.pch";
 				INFOPLIST_FILE = "DublinCityParkingCoreData/DublinCityParking-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

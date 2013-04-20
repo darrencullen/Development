@@ -7,12 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "CarparkDetails.h"
-#import "CarparkInfo.h"
 #import "CarparkListViewController.h"
 #import "CarparkMapViewController.h"
+#import <BugSense-iOS/BugSenseController.h>
 //#import "DisabledParkingSpaceInfo.h"
 //#import "TrafficCameraInfo.h"
+//#import "CarparkDetails.h"
+//#import "CarparkInfo.h"
 
 @implementation AppDelegate
 
@@ -35,6 +36,8 @@
 //        NSLog(@"Fav: %@", [info valueForKey:@"favourite"]);   
 //    }
     
+    [BugSenseController sharedControllerWithBugSenseAPIKey:@"fcfbb4cb"];
+    
     // set the tab controller as the root controller and allow it to use managed objects
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:0];
@@ -47,7 +50,20 @@
     [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
 
     UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
-    [[UIBarButtonItem appearance] setTintColor:backgroundColour];
+    [[UIBarButtonItem appearance] setTintColor:backgroundColour];    
+    
+    @try {
+        NSException* myException = [NSException
+                                    exceptionWithName:@"TEST Exception"
+                                    reason:@"Testing Bugsense"
+                                    userInfo:nil];
+        @throw myException;
+        
+    } @catch (NSException *exc) {
+        NSDictionary *data = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"sample-value", nil]
+                                                         forKeys:[NSArray arrayWithObjects:@"sample-key", nil]];
+        BUGSENSE_LOG(exc, data);
+    }
     
     return YES;
 }

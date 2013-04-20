@@ -7,6 +7,8 @@
 //
 
 #import "XMLParser.h"
+#import <BugSense-iOS/BugSenseController.h>
+
 
 @implementation XMLParser{
     NSXMLParser *parser;
@@ -65,7 +67,8 @@
     cgCarpark.availableSpaces = spaces;
     error = nil;
     if (![tmpContext save:&error]) {
-        NSLog(@"Error saving");
+        NSString *errorMessage = [NSString stringWithFormat:@"Error Saving: Carpark-%@; Spaces:%@",name, spaces];
+        [BugSenseController sendCustomEventWithTag:errorMessage];
     }
 }
 
