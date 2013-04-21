@@ -14,7 +14,7 @@
          contextName = "-[CarparkListViewController tableView:cellForRowAtIndexPath:]:CarparkListViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "selectedCarpark.availableSpaces">
+               value = "self.carparkLocations">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -88,10 +88,10 @@
                value = "selectedCarparkDetails.totalSpaces">
             </PersistentString>
             <PersistentString
-               value = "selectedCarparkDetails.otherRate1">
+               value = "selectedCarparkDetails.region">
             </PersistentString>
             <PersistentString
-               value = "selectedCarparkDetails.region">
+               value = "selectedCarparkDetails.otherRate1">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -107,10 +107,10 @@
          contextName = "-[DisabledSpacesViewController viewDidLoad]:DisabledSpacesViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.disabledSpacesD2">
+               value = "self.disabledSpacesD1">
             </PersistentString>
             <PersistentString
-               value = "self.disabledSpacesD1">
+               value = "self.disabledSpacesD2">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

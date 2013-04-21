@@ -44,6 +44,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     [self plotTrafficCameraPosition];
 }
 
@@ -53,9 +57,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)plotTrafficCameraPosition{
-    
-    for (id<MKAnnotation> annotation in _mapView.annotations) {
+- (void)plotTrafficCameraPosition{    
+    for (id<MKAnnotation> annotation in self.mapView.annotations) {
         [_mapView removeAnnotation:annotation];
     }
     
@@ -63,8 +66,19 @@
     coordinate.latitude = [self.selectedTrafficCamera.latitude doubleValue];
     coordinate.longitude= [self.selectedTrafficCamera.longitude doubleValue];
     
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.008;
+    span.longitudeDelta = 0.008;
+    region.span = span;
+    region.center = coordinate;
+    
     MapOverlay *annotation = [[MapOverlay alloc] initWithName:self.selectedTrafficCamera.name subTitle:nil titleAddendum:nil coordinate:coordinate];
     [_mapView addAnnotation:annotation];
+    
+    [self.mapView addAnnotation:annotation];
+    [self.mapView setRegion:region animated:YES];
+    [self.mapView regionThatFits:region];
 }
 
 @end

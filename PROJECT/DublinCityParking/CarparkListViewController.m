@@ -73,40 +73,50 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
-    if (![NetworkStatus hasConnectivity]){
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:NSLocalizedString(@"No network available", @"AlertView")
-                                  message:NSLocalizedString(@"A network connection is required for up to the minute parking information.", @"AlertView")
-                                  delegate:self
-                                  cancelButtonTitle:NSLocalizedString(@"OK", @"AlertView")
-                                  otherButtonTitles:nil, nil];
-        [alertView show];
+    @try{
+        [super viewDidLoad];
+        
+        if (![NetworkStatus hasConnectivity]){
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:NSLocalizedString(@"No network available", @"AlertView")
+                                      message:NSLocalizedString(@"A network connection is required for up to the minute parking information.", @"AlertView")
+                                      delegate:self
+                                      cancelButtonTitle:NSLocalizedString(@"OK", @"AlertView")
+                                      otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(loadXMLData)
+                                                     name:@"appDidBecomeActive"
+                                                   object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(contextChanged:)
+                                                     name:NSManagedObjectContextDidSaveNotification
+                                                   object:nil];
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
     }
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(loadXMLData)
-                                                 name:@"appDidBecomeActive"
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(contextChanged:)
-                                                 name:NSManagedObjectContextDidSaveNotification
-                                               object:nil];
 }
 
 - (void)contextChanged:(NSNotification*)notification
 {
-    // update managed object on main thread when edited on background thread
-    if ([notification object] == [self managedObjectContext]) return;
-    
-    if (![NSThread isMainThread]) {
-        [self performSelectorOnMainThread:@selector(contextChanged:) withObject:notification waitUntilDone:YES];
-        return;
+    @try{
+        // update managed object on main thread when edited on background thread
+        if ([notification object] == [self managedObjectContext]) return;
+        
+        if (![NSThread isMainThread]) {
+            [self performSelectorOnMainThread:@selector(contextChanged:) withObject:notification waitUntilDone:YES];
+            return;
+        }
+        
+        [[self managedObjectContext] mergeChangesFromContextDidSaveNotification:notification];
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
     }
-    
-    [[self managedObjectContext] mergeChangesFromContextDidSaveNotification:notification];
 }
 
 - (void) resetArrays
@@ -118,102 +128,81 @@
     self.northwestCarparks = nil;
 }
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    [self resetArrays];
-    self.carparkLocations = [[NSMutableArray alloc] initWithObjects:self.favouriteCarparks, self.northwestCarparks, self.northeastCarparks, self.southwestCarparks, self.southeastCarparks, nil];
-    
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CarparkInfo"
-                                              inManagedObjectContext:self.managedObjectContext];
-    
-    
-    [fetchRequest setEntity:entity];
-    NSError *error;
-    self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    for (CarparkInfo *carpark in self.carparkInfos){
-        if (carpark.favourite == YES){
-            [self.favouriteCarparks addObject:carpark];
-        }else if ([carpark.details.region isEqualToString:@"Northwest"]){
-            [self.northwestCarparks addObject:carpark];
-        } else if ([carpark.details.region isEqualToString:@"Northeast"]){
-            [self.northeastCarparks addObject:carpark];
-        } else if ([carpark.details.region isEqualToString:@"Southwest"]){
-            [self.southwestCarparks addObject:carpark];
-        } else if ([carpark.details.region isEqualToString:@"Southeast"]){
-            [self.southeastCarparks addObject:carpark];
-        }
-    }
-    
-    [self loadXMLData];
-}
-
 - (void) viewDidAppear:(BOOL)animated
 {
-    //    [self loadXMLData];
-    // NSLog(@"viewDidAppear");
+    @try{
+        [self resetArrays];
+        self.carparkLocations = [[NSMutableArray alloc] initWithObjects:self.favouriteCarparks, self.northwestCarparks, self.northeastCarparks, self.southwestCarparks, self.southeastCarparks, nil];
+        
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"CarparkInfo"
+                                                  inManagedObjectContext:self.managedObjectContext];
+        
+        
+        [fetchRequest setEntity:entity];
+        NSError *error;
+        self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        
+        for (CarparkInfo *carpark in self.carparkInfos){
+            if (carpark.favourite == YES){
+                [self.favouriteCarparks addObject:carpark];
+            } else if ([carpark.details.region isEqualToString:@"Northwest"]){
+                [self.northwestCarparks addObject:carpark];
+            } else if ([carpark.details.region isEqualToString:@"Northeast"]){
+                [self.northeastCarparks addObject:carpark];
+            } else if ([carpark.details.region isEqualToString:@"Southwest"]){
+                [self.southwestCarparks addObject:carpark];
+            } else if ([carpark.details.region isEqualToString:@"Southeast"]){
+                [self.southeastCarparks addObject:carpark];
+            }
+        }
+        
+        [self loadXMLData];
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
 }
+
+//- (void) viewWillAppear:(BOOL)animated
+//{
+//    //    [self loadXMLData];
+//    // NSLog(@"viewDidAppear");
+//}
 
 
 - (void) loadXMLData {
-	//NSLog(@"loadXMLData");
-    
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    
-	NSOperationQueue *queue = [NSOperationQueue new];
-	NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self
-																			selector:@selector(loadXMLDataWithOperation)
-																			  object:nil];
-	[queue addOperation:operation];
+    @try{
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        
+        NSOperationQueue *queue = [NSOperationQueue new];
+        NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self
+                                                                                selector:@selector(loadXMLDataWithOperation)
+                                                                                  object:nil];
+        [queue addOperation:operation];
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
 }
 
 - (void) loadXMLDataWithOperation {
     self.xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://www.dublincity.ie/dublintraffic/cpdata.xml"];
 	
     [self performSelectorOnMainThread:@selector(reloadUpdatedData) withObject:nil waitUntilDone:YES];
-    
-	//[self.tableView performSelectorOnMainThread:@selector(reloadUpdatedData) withObject:nil waitUntilDone:YES];
+
 }
 
 - (void) reloadUpdatedData
 {
-    //  [self ];
     [self.carparkList reloadData];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
-//- (void) updateSpaces
-//{
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//    NSEntityDescription *entity = [NSEntityDescription
-//                                   entityForName:@"CarparkInfo" inManagedObjectContext:self.managedObjectContext];
-//
-//
-//    [fetchRequest setEntity:entity];
-//    NSError *error;
-//    self.carparkInfos = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-//
-//    for (CarparkInfo *carpark in self.carparkInfos){
-////        if ([carpark.details.region isEqualToString:@"Southeast"]){
-////            [southeastCarparks addObject:carpark];
-////        } else if ([carpark.details.region isEqualToString:@"Southwest"]){
-////            [southwestCarparks addObject:carpark];
-////        } else if ([carpark.details.region isEqualToString:@"Northeast"]){
-////            [northeastCarparks addObject:carpark];
-////        } else if ([carpark.details.region isEqualToString:@"Northwest"]){
-////            [northwestCarparks addObject:carpark];
-////        }
-//        NSLog(@"Code: %@", carpark.code);
-//        NSLog(@"Spaces: %@", carpark.availableSpaces);
-//    }
-//}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -224,9 +213,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    //return [self.carparkInfos count];
-    
+    // Return the number of rows in the section.    
     NSArray *sectionContents = [self.carparkLocations objectAtIndex:section];
     NSInteger rows = [sectionContents count];
     
@@ -243,9 +230,6 @@
         // Configure the cell...
         NSArray *selectedSection = self.carparkLocations[indexPath.section];
         self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
-        //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
-    
-        // NSLog(@"%ld;%ld;%@", (long)indexPath.section, (long)indexPath.row, selectedCarpark.name);
     
         UILabel *carparkNameLabel = (UILabel *)[cell viewWithTag:100];
         carparkNameLabel.text = self.selectedCarpark.name;
@@ -261,106 +245,112 @@
     
         return cell;
     
-    } @catch (NSException *exc) {
-//        NSDictionary *data = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"sample-value", nil]
-//                                                     forKeys:[NSArray arrayWithObjects:@"sample-key", nil]];
-        
+    } @catch (NSException *exc) {       
         BUGSENSE_LOG(exc, nil);
     }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
-    
-    headerLabel.backgroundColor = [UIColor clearColor];
-    headerLabel.textColor = [UIColor whiteColor];
-    headerLabel.shadowColor = [UIColor grayColor];
-    headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-    headerLabel.font = [UIFont boldSystemFontOfSize:18];
-    
-    if(section == 0){
-        if ([_favouriteCarparks count] > 0){
-            headerLabel.text = @"Favourites";
-            [headerView addSubview:headerLabel];
-            
-            return headerView;
-            
-        } else return [[UIView alloc] initWithFrame:CGRectZero];
+    @try{
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
+        UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
         
-    }
-    else if(section == 1){
-        if ([_northwestCarparks count] > 0){
-            headerLabel.text = @"Northwest";
-            [headerView addSubview:headerLabel];
-            
-            return headerView;
-            
-        } else return [[UIView alloc] initWithFrame:CGRectZero];
+        headerLabel.backgroundColor = [UIColor clearColor];
+        headerLabel.textColor = [UIColor whiteColor];
+        headerLabel.shadowColor = [UIColor grayColor];
+        headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+        headerLabel.font = [UIFont boldSystemFontOfSize:18];
         
-    }
-    else if(section == 2){
-        if ([_northeastCarparks count] > 0){
-            headerLabel.text = @"Northeast";
-            [headerView addSubview:headerLabel];
+        if(section == 0){
+            if ([_favouriteCarparks count] > 0){
+                headerLabel.text = @"Favourites";
+                [headerView addSubview:headerLabel];
+                
+                return headerView;
+                
+            } else return [[UIView alloc] initWithFrame:CGRectZero];
             
-            return headerView;
+        }
+        else if(section == 1){
+            if ([_northwestCarparks count] > 0){
+                headerLabel.text = @"Northwest";
+                [headerView addSubview:headerLabel];
+                
+                return headerView;
+                
+            } else return [[UIView alloc] initWithFrame:CGRectZero];
             
-        } else return [[UIView alloc] initWithFrame:CGRectZero];
+        }
+        else if(section == 2){
+            if ([_northeastCarparks count] > 0){
+                headerLabel.text = @"Northeast";
+                [headerView addSubview:headerLabel];
+                
+                return headerView;
+                
+            } else return [[UIView alloc] initWithFrame:CGRectZero];
+            
+        }
+        else if(section == 3){
+            if ([_southwestCarparks count] > 0){
+                headerLabel.text = @"Southwest";
+                [headerView addSubview:headerLabel];
+                
+                return headerView;
+                
+            } else return [[UIView alloc] initWithFrame:CGRectZero];
+            
+        }
+        else if(section == 4){
+            if ([_southeastCarparks count] > 0){
+                headerLabel.text = @"Southeast";
+                [headerView addSubview:headerLabel];
+                
+                return headerView;
+                
+            } else return [[UIView alloc] initWithFrame:CGRectZero];
+        }
         
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
     }
-    else if(section == 3){
-        if ([_southwestCarparks count] > 0){
-            headerLabel.text = @"Southwest";
-            [headerView addSubview:headerLabel];
-            
-            return headerView;
-            
-        } else return [[UIView alloc] initWithFrame:CGRectZero];
-        
-    }
-    else if(section == 4){
-        if ([_southeastCarparks count] > 0){
-            headerLabel.text = @"Southeast";
-            [headerView addSubview:headerLabel];
-            
-            return headerView;
-            
-        } else return [[UIView alloc] initWithFrame:CGRectZero];
-    }
-    
+
     return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if(section == 0){
-        if ([_favouriteCarparks count] > 0){
-            return 44.0f;
-        } else return 0.000001f;
+    @try{
+        if(section == 0){
+            if ([_favouriteCarparks count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 1){
+            if ([_northwestCarparks count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 2){
+            if ([_northeastCarparks count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 3){
+            if ([_southwestCarparks count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 4){
+            if ([_southeastCarparks count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
     }
-    else if(section == 1){
-        if ([_northwestCarparks count] > 0){
-            return 44.0f;
-        } else return 0.000001f;
-    }
-    else if(section == 2){
-        if ([_northeastCarparks count] > 0){
-            return 44.0f;
-        } else return 0.000001f;
-    }
-    else if(section == 3){
-        if ([_southwestCarparks count] > 0){
-            return 44.0f;
-        } else return 0.000001f;
-    }
-    else if(section == 4){
-        if ([_southeastCarparks count] > 0){
-            return 44.0f;
-        } else return 0.000001f;
-    }
-    
     return 0.000001f;
 }
 
@@ -371,116 +361,67 @@
 
 -(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
 {
-    if(section == 0){
-        if ([_favouriteCarparks count] > 0){
-            return 10.0f;
-        } else return 0.000001f;
+    @try{
+        if(section == 0){
+            if ([_favouriteCarparks count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 1){
+            if ([_northwestCarparks count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 2){
+            if ([_northeastCarparks count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 3){
+            if ([_southwestCarparks count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 4){
+            if ([_southeastCarparks count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
     }
-    else if(section == 1){
-        if ([_northwestCarparks count] > 0){
-            return 10.0f;
-        } else return 0.000001f;
-    }
-    else if(section == 2){
-        if ([_northeastCarparks count] > 0){
-            return 10.0f;
-        } else return 0.000001f;
-    }
-    else if(section == 3){
-        if ([_southwestCarparks count] > 0){
-            return 10.0f;
-        } else return 0.000001f;
-    }
-    else if(section == 4){
-        if ([_southeastCarparks count] > 0){
-            return 10.0f;
-        } else return 0.000001f;
-    }
-    
     return 0.000001f;
-}
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-#pragma mark - Table view delegate
-
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    //    NSArray *selectedSection = self.carparkLocations[indexPath.section];
-    //    self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
-    //
-    //    //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
-    //    // do a segue based on the indexPath or do any setup later in prepareForSegue
-    //    [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
-    NSArray *selectedSection = self.carparkLocations[indexPath.section];
-    self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
-    
-    //selectedCarpark = [self.carparkInfos objectAtIndex:indexPath.row];
-    // do a segue based on the indexPath or do any setup later in prepareForSegue
-    [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
+    @try{
+        NSArray *selectedSection = self.carparkLocations[indexPath.section];
+        self.selectedCarpark = [selectedSection objectAtIndex:[indexPath row]];
+
+        [self performSegueWithIdentifier:@"showCarparkMap" sender:self];
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
-    if([segue.identifier isEqualToString:@"showCarparkMap"]){
+    @try{
+        if([segue.identifier isEqualToString:@"showCarparkMap"]){
+            
+            CarparkMapViewController *destViewController = segue.destinationViewController;
+            destViewController.selectedCarparkInfo = self.selectedCarpark;
+            
+            UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"List" style: UIBarButtonItemStyleBordered target: nil action: nil];
+            
+            [[self navigationItem] setBackBarButtonItem: newBackButton];
+        }
         
-        CarparkMapViewController *destViewController = segue.destinationViewController;
-        destViewController.selectedCarparkInfo = self.selectedCarpark;
-        
-        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"List" style: UIBarButtonItemStyleBordered target: nil action: nil];
-        
-        [[self navigationItem] setBackBarButtonItem: newBackButton];
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
     }
 }
 

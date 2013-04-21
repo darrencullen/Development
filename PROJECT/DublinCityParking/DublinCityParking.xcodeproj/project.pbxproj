@@ -64,6 +64,7 @@
 /* Begin PBXFileReference section */
 		49004A7A172297E30042945C /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "../../../../../../../../Downloads/BugSense-iOS.framework"; sourceTree = "<group>"; };
 		49004A7C172298000042945C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		49004A7E1724399E0042945C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		49017DBE171AD6F1003293E3 /* CarparkDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkDetailsViewController.h; sourceTree = "<group>"; };
 		49017DBF171AD6F2003293E3 /* CarparkDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkDetailsViewController.m; sourceTree = "<group>"; };
 		49017DC1171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkDetalsDescriptionViewController.h; sourceTree = "<group>"; };
@@ -378,6 +379,7 @@
 		49F888CE16D6D18700AB3377 = {
 			isa = PBXGroup;
 			children = (
+				49004A7E1724399E0042945C /* CoreLocation.framework */,
 				49004A7C172298000042945C /* libz.dylib */,
 				49F888E216D6D18700AB3377 /* DublinCityParking */,
 				49F888D916D6D18700AB3377 /* Frameworks */,

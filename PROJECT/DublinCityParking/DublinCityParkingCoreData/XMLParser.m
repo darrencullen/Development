@@ -67,8 +67,14 @@
     cgCarpark.availableSpaces = spaces;
     error = nil;
     if (![tmpContext save:&error]) {
-        NSString *errorMessage = [NSString stringWithFormat:@"Error Saving: Carpark-%@; Spaces:%@",name, spaces];
-        [BugSenseController sendCustomEventWithTag:errorMessage];
+        NSLog(@"XMLParser.parser - error saving");
+        NSException* xmlParseException = [NSException
+                                        exceptionWithName:@"XMLParser.parser"
+                                        reason:@"Error saving carpark spaces"
+                                        userInfo:nil];
+        NSDictionary *data = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:name, spaces, nil]
+                                                             forKeys:[NSArray arrayWithObjects:@"carpark, spaces", nil]];
+        BUGSENSE_LOG(xmlParseException, data);
     }
 }
 

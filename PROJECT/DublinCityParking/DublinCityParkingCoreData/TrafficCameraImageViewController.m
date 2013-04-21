@@ -46,7 +46,6 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"TrafficCameraImage: viewDidLoad");
     [super viewDidLoad];
 	
     self.title = self.selectedTrafficCamera.name;

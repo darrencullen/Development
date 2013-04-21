@@ -10,13 +10,11 @@
 #import "CarparkDetailsViewController.h"
 #import "MapOverlay.h"
 
-@interface CarparkMapViewController()
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
-@end
-
 @implementation CarparkMapViewController{
     CarparkDetails *selectedCarparkDetails;
 }
+//@synthesize locationManager;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,65 +31,18 @@
     self.title = self.selectedCarparkInfo.name;
     selectedCarparkDetails = self.selectedCarparkInfo.details;
     
-    // default to dublin city centre
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = selectedCarparkDetails.latitude;
     zoomLocation.longitude= selectedCarparkDetails.longitude;
     
-
     MKCoordinateSpan span;
-    span.latitudeDelta=0.008;               //  0.001 to 120
+    span.latitudeDelta=0.008;             
     span.longitudeDelta=0.008;
     
     MKCoordinateRegion region;
-    region.center=zoomLocation;   // location
+    region.center=zoomLocation;   
     region.span=span;
     [self.mapView setRegion:region animated:YES];
-
-    
-}
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    // this delegate fonction is called when the userlocation is updated
-    // try to move your code here
-}
-
-- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
-{
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [self plotCarparkPosition];
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-- (void)plotCarparkPosition{
-    
-    for (id<MKAnnotation> annotation in _mapView.annotations) {
-        [_mapView removeAnnotation:annotation];
-    }
-    
-    CLLocationCoordinate2D coordinate;
-    coordinate.latitude = selectedCarparkDetails.latitude;
-    coordinate.longitude = selectedCarparkDetails.longitude;
-    NSString *numbersOfSpaces = [NSString stringWithFormat:@"Spaces: %@",self.selectedCarparkInfo.availableSpaces];
-    
-    MapOverlay *annotation = [[MapOverlay alloc] initWithName:self.selectedCarparkInfo.name subTitle:self.selectedCarparkInfo.address titleAddendum:numbersOfSpaces coordinate:coordinate];
-    [_mapView addAnnotation:annotation];
-}
-
-
-- (IBAction)showCarparkDetails:(id)sender {
-    [self performSegueWithIdentifier:@"showCarparkDetails" sender:self];
 }
 
 
@@ -115,6 +66,54 @@
     return nil;
 }
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self plotCarparkPosition];
+}
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+- (void)plotCarparkPosition{
+    
+    for (id<MKAnnotation> annotation in self.mapView.annotations) {
+        [_mapView removeAnnotation:annotation];
+    }
+    
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = selectedCarparkDetails.latitude;
+    coordinate.longitude = selectedCarparkDetails.longitude;
+    
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.008;
+    span.longitudeDelta = 0.008;
+    region.span = span;
+    region.center = coordinate;
+    
+    NSString *numbersOfSpaces = [NSString stringWithFormat:@"Spaces: %@",self.selectedCarparkInfo.availableSpaces];
+    MapOverlay *annotation = [[MapOverlay alloc] initWithName:self.selectedCarparkInfo.name subTitle:self.selectedCarparkInfo.address titleAddendum:numbersOfSpaces coordinate:coordinate];
+    
+    [self.mapView addAnnotation:annotation];
+    [self.mapView setRegion:region animated:YES];
+    [self.mapView regionThatFits:region];
+}
+
+
+- (IBAction)showCarparkDetails:(id)sender {
+    [self performSegueWithIdentifier:@"showCarparkDetails" sender:self];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
@@ -122,8 +121,6 @@
         
         CarparkDetailsViewController *destViewController = segue.destinationViewController;
         destViewController.selectedCarparkInfo = self.selectedCarparkInfo;
-        //        destViewController.selectedCarparkDetails = self.selectedCarparkInfo.details;
-        //        destViewController.managedObjectContext = self.managedObjectContext;
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style: UIBarButtonItemStyleBordered target: nil action: nil];
         

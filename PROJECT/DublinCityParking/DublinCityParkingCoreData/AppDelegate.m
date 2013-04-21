@@ -36,7 +36,11 @@
 //        NSLog(@"Fav: %@", [info valueForKey:@"favourite"]);   
 //    }
     
-    [BugSenseController sharedControllerWithBugSenseAPIKey:@"fcfbb4cb"];
+   // [BugSenseController sharedControllerWithBugSenseAPIKey:@"fcfbb4cb"];
+    
+    [BugSenseController sharedControllerWithBugSenseAPIKey:@"fcfbb4cb"
+                                            userDictionary:nil
+                                           sendImmediately:YES];
     
     // set the tab controller as the root controller and allow it to use managed objects
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
@@ -51,19 +55,6 @@
 
     UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
     [[UIBarButtonItem appearance] setTintColor:backgroundColour];    
-    
-    @try {
-        NSException* myException = [NSException
-                                    exceptionWithName:@"TEST Exception"
-                                    reason:@"Testing Bugsense"
-                                    userInfo:nil];
-        @throw myException;
-        
-    } @catch (NSException *exc) {
-        NSDictionary *data = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"sample-value", nil]
-                                                         forKeys:[NSArray arrayWithObjects:@"sample-key", nil]];
-        BUGSENSE_LOG(exc, data);
-    }
     
     return YES;
 }
