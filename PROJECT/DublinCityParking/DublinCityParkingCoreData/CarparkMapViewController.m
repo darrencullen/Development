@@ -30,6 +30,7 @@
     [super viewDidLoad];
     self.title = self.selectedCarparkInfo.name;
     selectedCarparkDetails = self.selectedCarparkInfo.details;
+    _mapView.delegate = self;
     
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = selectedCarparkDetails.latitude;
@@ -60,12 +61,47 @@
         
         annotationView.enabled = YES;
         annotationView.canShowCallout = YES;
+        
+        UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [leftButton setImage:[UIImage imageNamed:@"StarFull24-3.png"] forState:UIControlStateNormal];
+        [leftButton setTitle:annotation.title forState:UIControlStateNormal];
+        leftButton.frame = CGRectMake(0, 0, 32, 32);
+        leftButton.tag = 1;
+        annotationView.leftCalloutAccessoryView = leftButton;
+        
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [rightButton setImage:[UIImage imageNamed:@"directions38.png"] forState:UIControlStateNormal];
+        [rightButton setTitle:annotation.title forState:UIControlStateNormal];
+        rightButton.frame = CGRectMake(0, 0, 32, 32);
+        rightButton.tag = 2;
+        annotationView.rightCalloutAccessoryView = rightButton;
+        
         return annotationView;
     }
     
     return nil;
 }
 
+- (void)mapView:(MKMapView *)mapView
+ annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    
+    if (control.tag == 1){
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:NSLocalizedString(self.selectedCarparkInfo.name, @"AlertView")
+                                  message:NSLocalizedString(@"Added to favourites list", @"AlertView")
+                                  delegate:self
+                                  cancelButtonTitle:NSLocalizedString(@"OK", @"AlertView")
+                                  otherButtonTitles:nil, nil];
+        [alertView show];
+        
+    } else if(control.tag == 2) {
+        
+        NSString *stringURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=53.303349,-6.238724",
+                               self.selectedCarparkInfo.details.latitude, self.selectedCarparkInfo.details.longitude];
+        NSURL *url = [NSURL URLWithString:stringURL];
+        [[UIApplication sharedApplication] openURL:url];
+    }
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
@@ -101,8 +137,8 @@
     region.span = span;
     region.center = coordinate;
     
-    NSString *numbersOfSpaces = [NSString stringWithFormat:@"Spaces: %@",self.selectedCarparkInfo.availableSpaces];
-    MapOverlay *annotation = [[MapOverlay alloc] initWithName:self.selectedCarparkInfo.name subTitle:self.selectedCarparkInfo.address titleAddendum:numbersOfSpaces coordinate:coordinate];
+//    NSString *numbersOfSpaces = [NSString stringWithFormat:@"Spaces: %@",self.selectedCarparkInfo.availableSpaces];
+    MapOverlay *annotation = [[MapOverlay alloc] initWithName:self.selectedCarparkInfo.name subTitle:self.selectedCarparkInfo.address titleAddendum:self.selectedCarparkInfo.availableSpaces coordinate:coordinate];
     
     [self.mapView addAnnotation:annotation];
     [self.mapView setRegion:region animated:YES];

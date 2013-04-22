@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		49004A7B172297E40042945C /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49004A7A172297E30042945C /* BugSense-iOS.framework */; };
 		49004A7D172298000042945C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49004A7C172298000042945C /* libz.dylib */; };
+		49004A8117249EE10042945C /* directions24.png in Resources */ = {isa = PBXBuildFile; fileRef = 49004A8017249EE10042945C /* directions24.png */; };
+		49004A841724B0000042945C /* directions38.png in Resources */ = {isa = PBXBuildFile; fileRef = 49004A831724B0000042945C /* directions38.png */; };
 		49017DC0171AD6F2003293E3 /* CarparkDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49017DBF171AD6F2003293E3 /* CarparkDetailsViewController.m */; };
 		49017DC3171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49017DC2171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.m */; };
 		49175CA91719DFE6000DEED1 /* TrafficCameraMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49175CA81719DFE6000DEED1 /* TrafficCameraMapViewController.m */; };
@@ -65,6 +67,8 @@
 		49004A7A172297E30042945C /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "../../../../../../../../Downloads/BugSense-iOS.framework"; sourceTree = "<group>"; };
 		49004A7C172298000042945C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		49004A7E1724399E0042945C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		49004A8017249EE10042945C /* directions24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directions24.png; sourceTree = "<group>"; };
+		49004A831724B0000042945C /* directions38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directions38.png; sourceTree = "<group>"; };
 		49017DBE171AD6F1003293E3 /* CarparkDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkDetailsViewController.h; sourceTree = "<group>"; };
 		49017DBF171AD6F2003293E3 /* CarparkDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarparkDetailsViewController.m; sourceTree = "<group>"; };
 		49017DC1171B4C5F003293E3 /* CarparkDetalsDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarparkDetalsDescriptionViewController.h; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 		496776EB16DD6251009E7E22 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49004A831724B0000042945C /* directions38.png */,
+				49004A8017249EE10042945C /* directions24.png */,
 				49F60E551721E79C0087C2A3 /* newpin2.png */,
 				491CB5271720A4F90089FB08 /* imagenotavailable.jpg */,
 				491CB5221720801C0089FB08 /* StarEmpty24-3.png */,
@@ -380,7 +386,6 @@
 			isa = PBXGroup;
 			children = (
 				49004A7E1724399E0042945C /* CoreLocation.framework */,
-				49004A7C172298000042945C /* libz.dylib */,
 				49F888E216D6D18700AB3377 /* DublinCityParking */,
 				49F888D916D6D18700AB3377 /* Frameworks */,
 				49F888D816D6D18700AB3377 /* Products */,
@@ -398,6 +403,7 @@
 		49F888D916D6D18700AB3377 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49004A7C172298000042945C /* libz.dylib */,
 				49004A7A172297E30042945C /* BugSense-iOS.framework */,
 				49C10692171E1A0E0002361E /* MessageUI.framework */,
 				49175CAE1719EB82000DEED1 /* SystemConfiguration.framework */,
@@ -511,6 +517,8 @@
 				491CB5261720801C0089FB08 /* StarFull24-3.png in Resources */,
 				491CB5281720A4F90089FB08 /* imagenotavailable.jpg in Resources */,
 				49F60E571721E79C0087C2A3 /* newpin2.png in Resources */,
+				49004A8117249EE10042945C /* directions24.png in Resources */,
+				49004A841724B0000042945C /* directions38.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
