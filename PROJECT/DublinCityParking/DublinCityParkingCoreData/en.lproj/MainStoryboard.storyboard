@@ -140,6 +140,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="mapView" destination="bvK-An-cK0" id="ZXk-if-BmS"/>
+                        <segue destination="Jdj-tc-gdq" kind="push" identifier="showCarparkDirections" id="SMj-91-8L5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAA-da-rbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -284,7 +285,7 @@
                             <tableViewSection id="aDP-Mz-Tda">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="120" id="mwc-lc-c5J">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="122"/>
+                                        <rect key="frame" x="0.0" y="10" width="320" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="119"/>
@@ -554,7 +555,7 @@
             </objects>
             <point key="canvasLocation" x="-3153" y="2062"/>
         </scene>
-        <!--Web View Controller - Live Drive Twitter-->
+        <!--Web View Controller - WebView-->
         <scene sceneID="X85-ko-ESe">
             <objects>
                 <viewController id="Jdj-tc-gdq" customClass="WebViewController" sceneMemberID="viewController">
@@ -564,8 +565,14 @@
                         <subviews>
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-hy-smm">
                                 <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="323" type="user" id="Qdg-l3-V4A"/>
+                                </constraints>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="LPC-v4-1xN">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" type="user" id="Pbs-NW-gSt"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Back" id="Xv1-Jz-2vk">
                                         <connections>
@@ -584,24 +591,25 @@
                         <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="B5v-hy-smm" firstAttribute="trailing" secondItem="RXW-5J-c4h" secondAttribute="trailing" type="default" id="0nw-U1-Rmo"/>
-                            <constraint firstItem="LPC-v4-1xN" firstAttribute="top" secondItem="B5v-hy-smm" secondAttribute="bottom" type="default" id="LMm-DI-Xqd"/>
+                            <constraint firstItem="LPC-v4-1xN" firstAttribute="bottom" secondItem="RXW-5J-c4h" secondAttribute="bottom" type="default" id="1nY-1j-2vG"/>
+                            <constraint firstItem="B5v-hy-smm" firstAttribute="top" secondItem="RXW-5J-c4h" secondAttribute="top" type="default" id="OA2-Tr-JwD"/>
                             <constraint firstItem="LPC-v4-1xN" firstAttribute="trailing" secondItem="RXW-5J-c4h" secondAttribute="trailing" type="default" id="T05-TA-CMA"/>
+                            <constraint firstItem="B5v-hy-smm" firstAttribute="bottom" secondItem="RXW-5J-c4h" secondAttribute="bottom" type="default" id="eGi-dc-v6X"/>
                             <constraint firstItem="LPC-v4-1xN" firstAttribute="leading" secondItem="RXW-5J-c4h" secondAttribute="leading" type="default" id="lKt-1y-nPl"/>
-                            <constraint firstItem="LPC-v4-1xN" firstAttribute="bottom" secondItem="RXW-5J-c4h" secondAttribute="bottom" type="default" id="vEG-a4-cuQ"/>
                             <constraint firstItem="B5v-hy-smm" firstAttribute="leading" secondItem="RXW-5J-c4h" secondAttribute="leading" type="default" id="xyj-tn-CfP"/>
-                            <constraint firstItem="B5v-hy-smm" firstAttribute="top" secondItem="RXW-5J-c4h" secondAttribute="top" type="default" id="zTg-ID-KsY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Live Drive Twitter" id="xY7-2h-obr"/>
+                    <navigationItem key="navigationItem" title="WebView" id="xY7-2h-obr"/>
                     <connections>
                         <outlet property="backButton" destination="Xv1-Jz-2vk" id="tCv-b5-1it"/>
+                        <outlet property="navigationToolbar" destination="LPC-v4-1xN" id="aAI-D8-l1b"/>
                         <outlet property="refreshButton" destination="jh8-vp-uJx" id="dCi-gp-dhF"/>
                         <outlet property="webView" destination="B5v-hy-smm" id="ici-t1-9MG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIj-Wt-9gl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2081" y="2062"/>
+            <point key="canvasLocation" x="-1447" y="788"/>
         </scene>
         <!--Disabled Spaces View Controller - Disabled Parking Spaces-->
         <scene sceneID="3vC-dy-JLJ">
@@ -784,12 +792,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="xAY-DV-QSW" secondAttribute="centerY" type="user" id="1cJ-7g-IPK"/>
                             <constraint firstItem="rIn-1e-BNl" firstAttribute="trailing" secondItem="gfd-Mv-adK" secondAttribute="trailing" type="default" id="3WU-iN-qCM"/>
                             <constraint firstItem="rIn-1e-BNl" firstAttribute="leading" secondItem="gfd-Mv-adK" secondAttribute="leading" type="default" id="44r-JP-zaT"/>
-                            <constraint firstItem="xAY-DV-QSW" firstAttribute="centerX" secondItem="rIn-1e-BNl" secondAttribute="centerX" type="default" id="RTf-1f-wng"/>
+                            <constraint firstAttribute="centerX" secondItem="xAY-DV-QSW" secondAttribute="centerX" type="user" id="Fnf-fi-EKH"/>
                             <constraint firstItem="rIn-1e-BNl" firstAttribute="top" secondItem="gfd-Mv-adK" secondAttribute="top" type="default" id="WMf-Gx-RUk"/>
                             <constraint firstItem="rIn-1e-BNl" firstAttribute="bottom" secondItem="gfd-Mv-adK" secondAttribute="bottom" type="default" id="bLr-7S-PTL"/>
-                            <constraint firstItem="xAY-DV-QSW" firstAttribute="top" secondItem="gfd-Mv-adK" secondAttribute="top" constant="174" id="iZH-RV-NiT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Traffic Camera Image" id="x0K-xu-yuO">
@@ -850,13 +858,14 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fcl-6u-yOU">
                                 <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="Ft2-yt-hcf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="320" type="user" id="6ev-ZX-7nV"/>
+                                    <constraint firstAttribute="height" constant="408" id="Xp4-Gz-kLG"/>
                                 </constraints>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pqq-7W-3fi">
                                 <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="4sV-5T-lfa"/>
+                                    <constraint firstAttribute="height" constant="32" type="user" id="4sV-5T-lfa"/>
                                     <constraint firstAttribute="width" constant="307" id="zN9-wW-WPC"/>
                                 </constraints>
                                 <segments>
@@ -871,9 +880,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="bottom" secondItem="3u7-NY-a50" secondAttribute="bottom" type="default" id="6bj-af-vxe"/>
                             <constraint firstItem="Fcl-6u-yOU" firstAttribute="leading" secondItem="3u7-NY-a50" secondAttribute="leading" type="default" id="KLJ-jZ-aW3"/>
-                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="top" secondItem="Pqq-7W-3fi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Vwt-Cq-aS3"/>
+                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="top" secondItem="Pqq-7W-3fi" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="Vwt-Cq-aS3"/>
+                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="bottom" secondItem="3u7-NY-a50" secondAttribute="bottom" type="default" id="b93-OM-FAX"/>
                             <constraint firstItem="Fcl-6u-yOU" firstAttribute="trailing" secondItem="3u7-NY-a50" secondAttribute="trailing" type="default" id="dmY-gj-B6I"/>
                             <constraint firstItem="Pqq-7W-3fi" firstAttribute="centerX" secondItem="Fcl-6u-yOU" secondAttribute="centerX" type="default" id="rae-mx-MHt"/>
                         </constraints>
@@ -1775,7 +1784,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" rowHeight="44" id="jNL-hX-LYw">
-                                        <rect key="frame" x="0.0" y="135" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="135" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -1812,7 +1821,7 @@
                             <tableViewSection headerTitle="Credits" id="2hM-5c-rif">
                                 <cells>
                                     <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" rowHeight="44" id="dVR-Cg-t29">
-                                        <rect key="frame" x="0.0" y="225" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="225" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1882,7 +1891,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" rowHeight="44" id="ElR-ow-gr1">
-                                        <rect key="frame" x="0.0" y="361" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="361" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -1933,12 +1942,101 @@
         <image name="pointer1.png" width="16" height="16"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
+    <classes>
+        <class className="CarparkDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="setFavouriteCarpark:"/>
+                <relationship kind="outlet" name="buttonFavs" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="CarparkDetalsDescriptionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetalsDescriptionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="CarparkListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="carparkList" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CarparkMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkMapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showCarparkDetails:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="CombinedMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CombinedMapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="selectOverlayType:" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="segmentedControlOverlayTypes" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="DisabledSpacesMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="DisabledSpacesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="disabledSpacesList" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="DubParkInfoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DubParkInfoViewController.h"/>
+        </class>
+        <class className="MoreViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ParkingInfoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ParkingInfoViewController.h"/>
+        </class>
+        <class className="TrafficCameraImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activitySpinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="TrafficCameraMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="TrafficCamerasViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCamerasViewController.h"/>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonPressed:"/>
+                <relationship kind="action" name="refreshPage:"/>
+                <relationship kind="outlet" name="activitySpinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="navigationToolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rDs-rX-nD1"/>
+        <segue reference="SMj-91-8L5"/>
     </inferredMetricsTieBreakers>
 </document>

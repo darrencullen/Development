@@ -11,6 +11,10 @@
 
 @interface WebViewController ()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activitySpinner;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
+@property (weak, nonatomic) IBOutlet UIToolbar *navigationToolbar;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -28,7 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.navigationToolbar.hidden = self.hideNavigationToolbar;
+
     if ([NetworkStatus hasConnectivity]){
         [self loadWebsite];
         [self.webView setDelegate:self];

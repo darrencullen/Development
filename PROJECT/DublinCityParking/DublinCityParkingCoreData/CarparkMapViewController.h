@@ -10,9 +10,11 @@
 #import <MapKit/MapKit.h>
 #import "CarparkInfo.h"
 #import "CarparkDetails.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface CarparkMapViewController : UIViewController <MKMapViewDelegate>
+@interface CarparkMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) CarparkInfo *selectedCarparkInfo;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 

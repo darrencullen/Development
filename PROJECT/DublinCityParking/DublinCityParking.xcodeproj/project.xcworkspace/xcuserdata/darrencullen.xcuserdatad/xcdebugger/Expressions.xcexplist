@@ -74,6 +74,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[CarparkMapViewController locationManager:didUpdateToLocation:fromLocation:]:CarparkMapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentLocation.latitude">
+            </PersistentString>
+            <PersistentString
+               value = "currentLocation.longitude">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[TrafficCameraImageViewController viewDidLoad]:TrafficCameraImageViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -88,10 +99,10 @@
                value = "selectedCarparkDetails.totalSpaces">
             </PersistentString>
             <PersistentString
-               value = "selectedCarparkDetails.region">
+               value = "selectedCarparkDetails.otherRate1">
             </PersistentString>
             <PersistentString
-               value = "selectedCarparkDetails.otherRate1">
+               value = "selectedCarparkDetails.region">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -107,10 +118,10 @@
          contextName = "-[DisabledSpacesViewController viewDidLoad]:DisabledSpacesViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.disabledSpacesD1">
+               value = "self.disabledSpacesD2">
             </PersistentString>
             <PersistentString
-               value = "self.disabledSpacesD2">
+               value = "self.disabledSpacesD1">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

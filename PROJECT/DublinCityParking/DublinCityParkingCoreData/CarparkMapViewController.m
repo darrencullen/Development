@@ -9,9 +9,13 @@
 #import "CarparkMapViewController.h"
 #import "CarparkDetailsViewController.h"
 #import "MapOverlay.h"
+#import "WebViewController.h"
+#import <BugSense-iOS/BugSenseController.h>
 
 @implementation CarparkMapViewController{
     CarparkDetails *selectedCarparkDetails;
+    CLLocationManager *locationManager;
+    CLLocationCoordinate2D currentLocation;
 }
 //@synthesize locationManager;
 
@@ -28,6 +32,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // start recording current location
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
     self.title = self.selectedCarparkInfo.name;
     selectedCarparkDetails = self.selectedCarparkInfo.details;
     _mapView.delegate = self;
@@ -63,7 +73,11 @@
         annotationView.canShowCallout = YES;
         
         UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [leftButton setImage:[UIImage imageNamed:@"StarFull24-3.png"] forState:UIControlStateNormal];
+        if (self.selectedCarparkInfo.favourite == 1)
+            [leftButton setImage:[UIImage imageNamed:@"StarFull24-3.png"] forState:UIControlStateNormal];
+        else
+            [leftButton setImage:[UIImage imageNamed:@"StarEmpty24-3.png"] forState:UIControlStateNormal];
+        
         [leftButton setTitle:annotation.title forState:UIControlStateNormal];
         leftButton.frame = CGRectMake(0, 0, 32, 32);
         leftButton.tag = 1;
@@ -86,25 +100,42 @@
  annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     
     if (control.tag == 1){
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:NSLocalizedString(self.selectedCarparkInfo.name, @"AlertView")
-                                  message:NSLocalizedString(@"Added to favourites list", @"AlertView")
-                                  delegate:self
-                                  cancelButtonTitle:NSLocalizedString(@"OK", @"AlertView")
-                                  otherButtonTitles:nil, nil];
-        [alertView show];
+        [self setFavouriteCarpark];
         
     } else if(control.tag == 2) {
+        [self performSegueWithIdentifier:@"showCarparkDirections" sender:self];
+    }
+    
+    [self plotCarparkPosition];
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSException* locationManagerException = [NSException
+                                      exceptionWithName:@"CarparkMapViewController.locationManager.didFailWithError"
+                                      reason:@"Failed to Get Your Location"
+                                      userInfo:nil];
+    
+    BUGSENSE_LOG(locationManagerException, nil);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{    
+    if (newLocation != nil) {
+        currentLocation.latitude = newLocation.coordinate.latitude;
+        currentLocation.longitude = newLocation.coordinate.longitude;
         
-        NSString *stringURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=53.303349,-6.238724",
-                               self.selectedCarparkInfo.details.latitude, self.selectedCarparkInfo.details.longitude];
-        NSURL *url = [NSURL URLWithString:stringURL];
-        [[UIApplication sharedApplication] openURL:url];
+        NSLog(@"Current location: latitude=%.8f; longitude=%.8f",currentLocation.latitude,currentLocation.longitude);
+        [locationManager stopUpdatingLocation];
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    [locationManager startUpdatingLocation];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -137,12 +168,60 @@
     region.span = span;
     region.center = coordinate;
     
-//    NSString *numbersOfSpaces = [NSString stringWithFormat:@"Spaces: %@",self.selectedCarparkInfo.availableSpaces];
     MapOverlay *annotation = [[MapOverlay alloc] initWithName:self.selectedCarparkInfo.name subTitle:self.selectedCarparkInfo.address titleAddendum:self.selectedCarparkInfo.availableSpaces coordinate:coordinate];
     
     [self.mapView addAnnotation:annotation];
     [self.mapView setRegion:region animated:YES];
     [self.mapView regionThatFits:region];
+}
+
+- (void)setFavouriteCarpark {
+    // set up the managedObjectContext to read data from CoreData
+    id delegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = [delegate managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CarparkInfo"
+                                              inManagedObjectContext:self.managedObjectContext];
+    
+    
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"code=%@",self.selectedCarparkInfo.code]];
+    
+    NSError *error;
+    CarparkInfo *cgCarpark;
+    
+    cgCarpark = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] lastObject];
+    
+    NSString *alertMessage;
+    if (cgCarpark.favourite == NO){
+        cgCarpark.favourite = 1;
+        alertMessage = @"Added to favourites list";
+    } else {
+        cgCarpark.favourite = 0;
+        alertMessage = @"Removed from favourites list";
+    }
+    
+    error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        //Handle any error with the saving of the context
+        NSLog(@"Error saving");
+    } else {       
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:NSLocalizedString(self.selectedCarparkInfo.name, @"AlertView")
+                                  message:NSLocalizedString(alertMessage, @"AlertView")
+                                  delegate:self
+                                  cancelButtonTitle:NSLocalizedString(@"OK", @"AlertView")
+                                  otherButtonTitles:nil, nil];
+        [alertView show];
+        
+        [self performSelector:@selector(dismissAlertView:) withObject:alertView afterDelay:2];
+    }
+}
+
+-(void)dismissAlertView:(UIAlertView*)favouritesUpdateAlert
+{
+	[favouritesUpdateAlert dismissWithClickedButtonIndex:-1 animated:YES];
 }
 
 
@@ -161,6 +240,21 @@
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style: UIBarButtonItemStyleBordered target: nil action: nil];
         
         [[self navigationItem] setBackBarButtonItem: newBackButton];
+        
+    } else if([segue.identifier isEqualToString:@"showCarparkDirections"]){
+        
+        NSString *directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",currentLocation.latitude, currentLocation.longitude, self.selectedCarparkInfo.details.latitude, self.selectedCarparkInfo.details.longitude];
+        
+        WebViewController *destViewController = segue.destinationViewController;
+        destViewController.url = directionsURL;
+        destViewController.webViewTitle = self.title;
+        destViewController.hideNavigationToolbar = YES;
+        
+        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style: UIBarButtonItemStyleBordered target: nil action: nil];
+        
+        [[self navigationItem] setBackBarButtonItem: newBackButton];
     }
 }
+
+
 @end

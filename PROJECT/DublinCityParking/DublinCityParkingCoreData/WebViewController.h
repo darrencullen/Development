@@ -10,11 +10,9 @@
 
 @interface WebViewController : UIViewController <UIWebViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSString *webViewTitle;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
+@property (nonatomic) BOOL hideNavigationToolbar;
 
 - (IBAction)refreshPage:(id)sender;
 - (IBAction)backButtonPressed:(id)sender;
