@@ -341,6 +341,8 @@
             case 20:
                 destViewController.details = self.selectedCarparkInfo.details.directions;
                 destViewController.title = @"Directions";
+                destViewController.carparkLocationLatitude = self.selectedCarparkInfo.details.latitude;
+                destViewController.carparkLocationLongitude = self.selectedCarparkInfo.details.longitude;
                 break;
                 
             case 21:

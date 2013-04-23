@@ -116,7 +116,7 @@
         
         WebViewController *destViewController = segue.destinationViewController;
         destViewController.url = @"https://twitter.com/LiveDrive";
-        destViewController.webViewTitle = @"Live Drive";
+        destViewController.title = @"Live Drive";
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"More Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
         

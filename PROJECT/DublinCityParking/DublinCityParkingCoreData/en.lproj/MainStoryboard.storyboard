@@ -316,8 +316,16 @@
                             <outlet property="delegate" destination="EPp-gY-4vS" id="y40-Ii-ill"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Further Details" id="Q8W-Xl-Rt5"/>
+                    <navigationItem key="navigationItem" title="Further Details" id="Q8W-Xl-Rt5">
+                        <barButtonItem key="rightBarButtonItem" image="directions24.png" id="UYN-ap-e28">
+                            <connections>
+                                <action selector="getDirections:" destination="EPp-gY-4vS" id="DFb-lj-XOW"/>
+                                <segue destination="Jdj-tc-gdq" kind="push" identifier="showCarparkDirections" id="sYP-0s-W4k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="directionsButton" destination="UYN-ap-e28" id="pwi-0H-oi9"/>
                         <outlet property="textView" destination="M7L-Hf-4X5" id="I5o-DU-SmU"/>
                     </connections>
                 </tableViewController>
@@ -1937,100 +1945,12 @@
     <resources>
         <image name="StarEmpty24-3.png" width="24" height="24"/>
         <image name="camera1.png" width="25" height="25"/>
+        <image name="directions24.png" width="24" height="24"/>
         <image name="newpin2.png" width="25" height="25"/>
         <image name="parking3.png" width="25" height="25"/>
         <image name="pointer1.png" width="16" height="16"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
-    <classes>
-        <class className="CarparkDetailsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="setFavouriteCarpark:"/>
-                <relationship kind="outlet" name="buttonFavs" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="CarparkDetalsDescriptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetalsDescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="CarparkListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carparkList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CarparkMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showCarparkDetails:"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="CombinedMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CombinedMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="selectOverlayType:" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="segmentedControlOverlayTypes" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="DisabledSpacesMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="DisabledSpacesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="disabledSpacesList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="DubParkInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DubParkInfoViewController.h"/>
-        </class>
-        <class className="MoreViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ParkingInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ParkingInfoViewController.h"/>
-        </class>
-        <class className="TrafficCameraImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activitySpinner" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="TrafficCameraMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="TrafficCamerasViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCamerasViewController.h"/>
-        </class>
-        <class className="WebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonPressed:"/>
-                <relationship kind="action" name="refreshPage:"/>
-                <relationship kind="outlet" name="activitySpinner" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="navigationToolbar" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

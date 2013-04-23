@@ -7,13 +7,18 @@
 //
 
 #import "CarparkDetalsDescriptionViewController.h"
+#import "WebViewController.h"
+#import <BugSense-iOS/BugSenseController.h>
 
 @interface CarparkDetalsDescriptionViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
-@implementation CarparkDetalsDescriptionViewController
+@implementation CarparkDetalsDescriptionViewController{
+    CLLocationManager *locationManager;
+    CLLocationCoordinate2D currentLocation;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -24,15 +29,65 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [locationManager startUpdatingLocation];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.title = self.title;    
+    
+    // start recording current location
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+   
     self.details = [self.details stringByReplacingOccurrencesOfString: @"&#xA;" withString: @"\n"];
-                        
+    
+    if ([self.title isEqualToString:@"Directions"]){
+        // Get the reference to the current toolbar buttons
+        NSMutableArray *toolbarButtons = [self.navigationItem.rightBarButtonItems mutableCopy];
+    
+        // This is how you add the button to the toolbar and animate it
+        if (![toolbarButtons containsObject:self.directionsButton]) {
+            [toolbarButtons addObject:self.directionsButton];
+            [self.navigationItem setRightBarButtonItems:toolbarButtons animated:YES];
+        }
+    } else {
+        // Get the reference to the current toolbar buttons
+        NSMutableArray *toolbarButtons = [self.navigationItem.rightBarButtonItems mutableCopy];
+        
+        // This is how you remove the button from the toolbar and animate it
+        [toolbarButtons removeObject:self.directionsButton];
+        [self.navigationItem setRightBarButtonItems:toolbarButtons animated:YES];
+    }
     self.textView.text = self.details;
 }
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSException* locationManagerException = [NSException
+                                             exceptionWithName:@"CarparkMapViewController.locationManager.didFailWithError"
+                                             reason:@"Failed to Get Your Location"
+                                             userInfo:nil];
+    
+    BUGSENSE_LOG(locationManagerException, nil);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    if (newLocation != nil) {
+        currentLocation.latitude = newLocation.coordinate.latitude;
+        currentLocation.longitude = newLocation.coordinate.longitude;
+        
+        NSLog(@"Current location: latitude=%.8f; longitude=%.8f",currentLocation.latitude,currentLocation.longitude);
+        [locationManager stopUpdatingLocation];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -40,4 +95,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if([segue.identifier isEqualToString:@"showCarparkDirections"]){
+        
+        NSString *directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",currentLocation.latitude, currentLocation.longitude, self.carparkLocationLatitude, self.carparkLocationLongitude];
+        
+        WebViewController *destViewController = segue.destinationViewController;
+        destViewController.url = directionsURL;
+        destViewController.title = self.title;
+        destViewController.hideNavigationToolbar = YES;
+        
+        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style: UIBarButtonItemStyleBordered target: nil action: nil];
+        
+        [[self navigationItem] setBackBarButtonItem: newBackButton];
+    }
+}
+
+- (IBAction)getDirections:(id)sender {
+    [self performSegueWithIdentifier:@"showCarparkDirections" sender:self];
+}
 @end

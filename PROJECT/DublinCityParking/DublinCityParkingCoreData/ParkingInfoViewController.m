@@ -84,7 +84,7 @@
         
         WebViewController *destViewController = segue.destinationViewController;
         destViewController.url = @"http://www.dublincity.ie/RoadsandTraffic/Pages/Roads.aspx";
-        destViewController.webViewTitle = @"Dublin City Council";
+        destViewController.title = @"Dublin City Council";
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
         
@@ -94,7 +94,7 @@
         
         WebViewController *destViewController = segue.destinationViewController;
         destViewController.url = @"http://www.dsps.ie";
-        destViewController.webViewTitle = @"DSPS";
+        destViewController.title = @"DSPS";
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
         

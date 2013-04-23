@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface CarparkDetalsDescriptionViewController : UITableViewController
+@interface CarparkDetalsDescriptionViewController : UITableViewController <CLLocationManagerDelegate>
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSString *details;
-@property (nonatomic, strong) NSString *title;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *directionsButton;
+@property (nonatomic) float carparkLocationLatitude;
+@property (nonatomic) float carparkLocationLongitude;
+
 @end

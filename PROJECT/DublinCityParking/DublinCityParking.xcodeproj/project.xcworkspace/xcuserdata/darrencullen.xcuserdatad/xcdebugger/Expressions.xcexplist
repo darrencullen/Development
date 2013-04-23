@@ -107,6 +107,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[CarparkDetailsViewController prepareForSegue:sender:]:CarparkDetailsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedCarparkInfo.details.latitude">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[CarparkDetailsViewController tableView:cellForRowAtIndexPath:]:CarparkDetailsViewController.m">
          <PersistentStrings>
             <PersistentString

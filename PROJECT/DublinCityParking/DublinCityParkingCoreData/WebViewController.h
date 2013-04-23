@@ -11,7 +11,6 @@
 @interface WebViewController : UIViewController <UIWebViewDelegate>
 
 @property (nonatomic, strong) NSString *url;
-@property (nonatomic, strong) NSString *webViewTitle;
 @property (nonatomic) BOOL hideNavigationToolbar;
 
 - (IBAction)refreshPage:(id)sender;

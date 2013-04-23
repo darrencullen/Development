@@ -247,7 +247,7 @@
         
         WebViewController *destViewController = segue.destinationViewController;
         destViewController.url = directionsURL;
-        destViewController.webViewTitle = self.title;
+        destViewController.title = self.title;
         destViewController.hideNavigationToolbar = YES;
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style: UIBarButtonItemStyleBordered target: nil action: nil];

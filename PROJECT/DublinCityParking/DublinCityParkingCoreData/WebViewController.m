@@ -39,7 +39,7 @@
         [self.webView setDelegate:self];
     }
     else{
-        NSString *message = [NSString stringWithFormat:@"A network connection is required to connect to %@", self.webViewTitle];
+        NSString *message = [NSString stringWithFormat:@"A network connection is required to connect to %@", self.title];
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:NSLocalizedString(@"No network available", @"AlertView")
                                   message:NSLocalizedString(message, @"AlertView")
@@ -48,8 +48,6 @@
                                   otherButtonTitles:nil, nil];
         [alertView show];
     }
-    
-    self.title = self.webViewTitle;
 }
 
 - (void)loadWebsite
