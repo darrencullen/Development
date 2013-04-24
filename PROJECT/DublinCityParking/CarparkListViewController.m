@@ -343,6 +343,7 @@
     } @catch (NSException *exc) {
         BUGSENSE_LOG(exc, nil);
     }
+    
     return 0.000001f;
 }
 
