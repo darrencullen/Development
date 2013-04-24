@@ -162,6 +162,9 @@
         detailDescriptionValue = [NSDictionary dictionaryWithObjectsAndKeys:self.selectedCarparkInfo.details.phoneNumber, @"Phone", nil];
         detailItem = [NSDictionary dictionaryWithObjectsAndKeys:detailDescriptionValue, [NSNumber numberWithInt:15], nil];
         [self.carparkDetailContact addObject:detailItem];
+        
+        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:@"Call carpark", [NSNumber numberWithInt:30], nil];
+        [self.carparkDetailContact addObject:detailItem];
     }
     
     // Last Updated
@@ -390,7 +393,12 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if (cell.tag >= 20){
+    if (cell.tag == 30){        
+        NSString *phoneNumberURL = [NSString stringWithFormat:@"telprompt://%@", [self.selectedCarparkInfo.details.phoneNumber
+                                                                                  stringByReplacingOccurrencesOfString:@" " withString:@""]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberURL]];
+        
+    } else if (cell.tag >= 20){
         self.selectedRowTag = cell.tag;
         [self performSegueWithIdentifier:@"showFurtherDetails" sender:self];
     }
