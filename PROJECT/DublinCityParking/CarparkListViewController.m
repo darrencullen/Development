@@ -15,8 +15,7 @@
 #import <BugSense-iOS/BugSenseController.h>
 
 @interface CarparkListViewController ()
-// @property (nonatomic, strong) CarParkLots *carParkLots;
-// TODO: construct arrays in separate nsobject
+
 @property (nonatomic, strong) XMLParser *xmlParser;
 @property (nonatomic, strong) CarparkInfo *selectedCarpark;
 @property (nonatomic, strong) NSMutableArray *favouriteCarparks;
@@ -164,13 +163,6 @@
         BUGSENSE_LOG(exc, nil);
     }
 }
-
-//- (void) viewWillAppear:(BOOL)animated
-//{
-//    //    [self loadXMLData];
-//    // NSLog(@"viewDidAppear");
-//}
-
 
 - (void) loadXMLData {
     @try{

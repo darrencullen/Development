@@ -9,6 +9,7 @@
 #import "CarparkDetailsViewController.h"
 #import "CarparkDetails.h"
 #import "CarparkDetalsDescriptionViewController.h"
+#import <BugSense-iOS/BugSenseController.h>
 
 @interface CarparkDetailsViewController ()
 @property (nonatomic, strong) NSMutableArray *carparkDetailSections;
@@ -249,7 +250,47 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 44.0f;
+    @try{
+        if(section == 0){
+            if ([_carparkDetailLocation count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 1){
+            if ([_carparkDetailSpaces count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 2){
+            if ([_carparkDetailRates count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 3){
+            if ([_carparkDetailOther count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 4){
+            if ([_carparkDetailContact count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 5){
+            if ([_carparkDetailLastUpdated count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
+    return 0.000001f;
+}
+
+-(UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 
@@ -268,37 +309,37 @@
         if ([_carparkDetailLocation count] > 0){
             headerLabel.text = @"Location";
             [headerView addSubview:headerLabel];
-        }
+        } else return [[UIView alloc] initWithFrame:CGRectZero];
     }
     else if(section == 1){
         if ([_carparkDetailSpaces count] > 0){
             headerLabel.text = @"Spaces";
             [headerView addSubview:headerLabel];
-        }
+        } else return [[UIView alloc] initWithFrame:CGRectZero];
     }
     else if(section == 2){
         if ([_carparkDetailRates count] > 0){
             headerLabel.text = @"Rates";
             [headerView addSubview:headerLabel];
-        }
+        } else return [[UIView alloc] initWithFrame:CGRectZero];
     }
     else if(section == 3){
         if ([_carparkDetailOther count] > 0){
             headerLabel.text = @"Other Details";
             [headerView addSubview:headerLabel];
-        }
+        } else return [[UIView alloc] initWithFrame:CGRectZero];
     }
     else if(section == 4){
         if ([_carparkDetailContact count] > 0){
             headerLabel.text = @"Contact Details";
             [headerView addSubview:headerLabel];
-        }
+        } else return [[UIView alloc] initWithFrame:CGRectZero];
     }
     else if(section == 5){
         if ([_carparkDetailLastUpdated count] > 0){
             headerLabel.text = @"Last Updated";
             [headerView addSubview:headerLabel];
-        }
+        } else return [[UIView alloc] initWithFrame:CGRectZero];
     }
     
     return headerView;
