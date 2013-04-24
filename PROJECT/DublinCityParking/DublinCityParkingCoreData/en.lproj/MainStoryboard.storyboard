@@ -31,7 +31,7 @@
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarparkCell" rowHeight="44" id="ab7-DP-plN">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -227,7 +227,7 @@
                                 </constraints>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DescriptionCell" rowHeight="44" id="Kso-La-OGp">
-                                <rect key="frame" x="0.0" y="135" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="135" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -285,7 +285,7 @@
                             <tableViewSection id="aDP-Mz-Tda">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="120" id="mwc-lc-c5J">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="121"/>
+                                        <rect key="frame" x="0.0" y="10" width="320" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="119"/>
@@ -852,10 +852,17 @@
                             <constraint firstItem="4dv-7q-Uxx" firstAttribute="trailing" secondItem="eLl-Xt-Grz" secondAttribute="trailing" type="default" id="gn6-VZ-HCD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Traffic Camera Map" id="LXj-PB-TKV"/>
+                    <navigationItem key="navigationItem" title="Traffic Camera Map" id="LXj-PB-TKV">
+                        <barButtonItem key="rightBarButtonItem" image="directions24.png" id="hv2-ee-7YB">
+                            <connections>
+                                <action selector="showTrafficCameraDirections:" destination="gNt-oC-HOE" id="qP6-Qd-98D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="mapView" destination="4dv-7q-Uxx" id="E7m-o3-clu"/>
+                        <segue destination="Jdj-tc-gdq" kind="push" identifier="showTrafficCameraDirections" id="M4r-a9-yOE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCC-ry-jrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1968,6 +1975,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="u0s-dS-X0a"/>
+        <segue reference="M4r-a9-yOE"/>
     </inferredMetricsTieBreakers>
 </document>
