@@ -8,12 +8,16 @@
 
 #import "TrafficCameraMapViewController.h"
 #import "MapOverlay.h"
+#import <BugSense-iOS/BugSenseController.h>
 
 @interface TrafficCameraMapViewController ()
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @end
 
-@implementation TrafficCameraMapViewController
+@implementation TrafficCameraMapViewController{
+    CLLocationManager *locationManager;
+    CLLocationCoordinate2D currentLocation;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,20 +30,32 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = [self.selectedTrafficCamera.latitude doubleValue];
-    zoomLocation.longitude= [self.selectedTrafficCamera.longitude doubleValue];
-    
-    MKCoordinateRegion region;
-    region.center=zoomLocation;
-    MKCoordinateSpan span;
-    span.latitudeDelta=0.008;
-    span.longitudeDelta=0.008;
-    region.span=span;
-    [self.mapView setRegion:region animated:YES];
-    self.title = self.selectedTrafficCamera.name;
+    @try{
+        [super viewDidLoad];
+        
+        // start recording current location
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        
+        self.title = self.selectedTrafficCamera.name;
+        _mapView.delegate = self;
+
+        CLLocationCoordinate2D zoomLocation;
+        zoomLocation.latitude = [self.selectedTrafficCamera.latitude doubleValue];
+        zoomLocation.longitude= [self.selectedTrafficCamera.longitude doubleValue];
+        
+        MKCoordinateRegion region;
+        region.center=zoomLocation;
+        MKCoordinateSpan span;
+        span.latitudeDelta=0.008;
+        span.longitudeDelta=0.008;
+        region.span=span;
+        [self.mapView setRegion:region animated:YES];
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

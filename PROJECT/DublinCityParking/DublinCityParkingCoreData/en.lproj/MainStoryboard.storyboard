@@ -31,7 +31,7 @@
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarparkCell" rowHeight="44" id="ab7-DP-plN">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -344,7 +344,7 @@
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrafficCameraCell" rowHeight="44" id="hxh-jL-794">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -630,7 +630,7 @@
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DisabledSpaceCell" rowHeight="44" id="hr4-a3-QKS">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -775,10 +775,17 @@
                             <constraint firstItem="QWo-FN-Ndk" firstAttribute="trailing" secondItem="x8J-hp-cDv" secondAttribute="trailing" type="default" id="NaX-MQ-2gP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Disabled Space Map" id="Yn3-QZ-dB9"/>
+                    <navigationItem key="navigationItem" title="Disabled Space Map" id="Yn3-QZ-dB9">
+                        <barButtonItem key="rightBarButtonItem" image="directions24.png" id="sVU-er-x8u">
+                            <connections>
+                                <action selector="showDisabledSpacesDirections:" destination="CF9-Pg-Inm" id="NJR-uL-CJQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="mapView" destination="QWo-FN-Ndk" id="XT9-la-ugQ"/>
+                        <segue destination="Jdj-tc-gdq" kind="push" identifier="showDisabledSpaceDirections" id="u0s-dS-X0a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLS-6a-bdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -866,8 +873,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fcl-6u-yOU">
                                 <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="320" type="user" id="6ev-ZX-7nV"/>
-                                    <constraint firstAttribute="height" constant="408" id="Xp4-Gz-kLG"/>
+                                    <constraint firstAttribute="height" constant="417" type="user" id="HM4-Z6-S05"/>
                                 </constraints>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pqq-7W-3fi">
@@ -888,9 +894,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="leading" secondItem="3u7-NY-a50" secondAttribute="leading" type="default" id="KLJ-jZ-aW3"/>
-                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="top" secondItem="Pqq-7W-3fi" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="Vwt-Cq-aS3"/>
-                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="bottom" secondItem="3u7-NY-a50" secondAttribute="bottom" type="default" id="b93-OM-FAX"/>
+                            <constraint firstItem="Pqq-7W-3fi" firstAttribute="top" secondItem="3u7-NY-a50" secondAttribute="top" constant="5" id="QdE-Fs-znX"/>
+                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="leading" secondItem="3u7-NY-a50" secondAttribute="leading" type="default" id="Rc6-zz-a8Y"/>
+                            <constraint firstItem="Fcl-6u-yOU" firstAttribute="top" secondItem="3u7-NY-a50" secondAttribute="top" constant="43" type="user" id="TKo-af-KbQ"/>
+                            <constraint firstItem="Pqq-7W-3fi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3u7-NY-a50" secondAttribute="top" constant="5" type="user" id="ZIo-cx-uwQ"/>
                             <constraint firstItem="Fcl-6u-yOU" firstAttribute="trailing" secondItem="3u7-NY-a50" secondAttribute="trailing" type="default" id="dmY-gj-B6I"/>
                             <constraint firstItem="Pqq-7W-3fi" firstAttribute="centerX" secondItem="Fcl-6u-yOU" secondAttribute="centerX" type="default" id="rae-mx-MHt"/>
                         </constraints>
@@ -1610,7 +1617,7 @@
                             <tableViewSection headerTitle="Zone 6" id="voz-fD-Zzd">
                                 <cells>
                                     <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" rowHeight="50" id="5ir-BL-6O5">
-                                        <rect key="frame" x="0.0" y="1902" width="320" height="52"/>
+                                        <rect key="frame" x="0.0" y="1902" width="320" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="49"/>
@@ -1796,7 +1803,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" rowHeight="44" id="jNL-hX-LYw">
-                                        <rect key="frame" x="0.0" y="135" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="135" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -1833,7 +1840,7 @@
                             <tableViewSection headerTitle="Credits" id="2hM-5c-rif">
                                 <cells>
                                     <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" rowHeight="44" id="dVR-Cg-t29">
-                                        <rect key="frame" x="0.0" y="225" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="225" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -1903,7 +1910,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" rowHeight="44" id="ElR-ow-gr1">
-                                        <rect key="frame" x="0.0" y="361" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="361" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -1955,106 +1962,12 @@
         <image name="pointer1.png" width="16" height="16"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
-    <classes>
-        <class className="CarparkDetailsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="setFavouriteCarpark:"/>
-                <relationship kind="outlet" name="buttonFavs" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="CarparkDetalsDescriptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetalsDescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="getDirections:"/>
-                <relationship kind="outlet" name="directionsButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="CarparkListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carparkList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CarparkMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showCarparkDetails:"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="CombinedMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CombinedMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="selectOverlayType:" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="segmentedControlOverlayTypes" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="DisabledSpacesMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="DisabledSpacesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="disabledSpacesList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="DubParkInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DubParkInfoViewController.h"/>
-        </class>
-        <class className="MoreViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ParkingInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ParkingInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="lastUpdatedLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TrafficCameraImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activitySpinner" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="TrafficCameraMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="TrafficCamerasViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCamerasViewController.h"/>
-        </class>
-        <class className="WebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonPressed:"/>
-                <relationship kind="action" name="refreshPage:"/>
-                <relationship kind="outlet" name="activitySpinner" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="navigationToolbar" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rDs-rX-nD1"/>
+        <segue reference="u0s-dS-X0a"/>
     </inferredMetricsTieBreakers>
 </document>

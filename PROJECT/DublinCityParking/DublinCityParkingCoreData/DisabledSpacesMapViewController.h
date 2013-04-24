@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "DisabledParkingSpaceInfo.h"
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface DisabledSpacesMapViewController : UIViewController <MKMapViewDelegate>
+@interface DisabledSpacesMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) DisabledParkingSpaceInfo *selectedDisabledSpace;
+- (IBAction)showDisabledSpacesDirections:(id)sender;
 
 @end

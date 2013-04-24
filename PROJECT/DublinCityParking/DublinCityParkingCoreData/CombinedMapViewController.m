@@ -12,6 +12,7 @@
 #import "CarparkDetails.h"
 #import "DisabledParkingSpaceInfo.h"
 #import "TrafficCameraInfo.h"
+#import <BugSense-iOS/BugSenseController.h>
 
 @interface CombinedMapViewController ()
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
@@ -20,20 +21,31 @@
 @property (nonatomic, strong) NSArray *trafficCameraLocations;
 @end
 
-@implementation CombinedMapViewController
+@implementation CombinedMapViewController{
+    CLLocationManager *locationManager;
+    CLLocationCoordinate2D currentLocation;
+}
+
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    @try{
+        [super viewDidLoad];
+        
+        // start recording current location
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        
+        _mapView.delegate = self;
     
-    [self initialiseMap];
-    
-//    [self getCarparkDetails];
-//    [self createCarparkOverlays];
-    
-    [self getDisabledParkingDetails];
-    [self getTrafficCameraDetails];
+        [self initialiseMap];    
+        [self getDisabledParkingDetails];
+        [self getTrafficCameraDetails];
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

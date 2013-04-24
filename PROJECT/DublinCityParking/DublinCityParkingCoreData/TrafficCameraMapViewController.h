@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "TrafficCameraInfo.h"
 
-@interface TrafficCameraMapViewController : UIViewController <MKMapViewDelegate>
+@interface TrafficCameraMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) TrafficCameraInfo *selectedTrafficCamera;
 

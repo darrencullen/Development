@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface CombinedMapViewController : UIViewController <MKMapViewDelegate>
+@interface CombinedMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 - (IBAction)selectOverlayType:(UISegmentedControl *)sender;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
