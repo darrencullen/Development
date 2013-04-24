@@ -88,28 +88,50 @@
     return 44.0f;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([segue.identifier isEqualToString:@"showDCCWebView"]){
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if (cell.tag == 502){
         
-        WebViewController *destViewController = segue.destinationViewController;
-        destViewController.url = @"http://www.dublincity.ie/RoadsandTraffic/Pages/Roads.aspx";
-        destViewController.title = @"Dublin City Council";
+        NSString *phoneNumberURL = [NSString stringWithFormat:@"http://www.dublincity.ie/RoadsandTraffic/Pages/Roads.aspx"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberURL]];
         
-        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
+    } else if (cell.tag >= 503){
         
-        [[self navigationItem] setBackBarButtonItem: newBackButton];
-        
-    } else if([segue.identifier isEqualToString:@"showDSPSWebView"]){
-        
-        WebViewController *destViewController = segue.destinationViewController;
-        destViewController.url = @"http://www.dsps.ie";
-        destViewController.title = @"DSPS";
-        
-        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
-        
-        [[self navigationItem] setBackBarButtonItem: newBackButton];
+        NSString *phoneNumberURL = [NSString stringWithFormat:@"http://www.dsps.ie"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberURL]];
     }
 }
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if([segue.identifier isEqualToString:@"showDCCWebView"]){
+//        
+////        WebViewController *destViewController = segue.destinationViewController;
+////        destViewController.url = @"http://www.dublincity.ie/RoadsandTraffic/Pages/Roads.aspx";
+////        destViewController.title = @"Dublin City Council";
+////        
+////        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
+////        
+////        [[self navigationItem] setBackBarButtonItem: newBackButton];
+//        
+//        NSString *phoneNumberURL = [NSString stringWithFormat:@"http://www.dublincity.ie/RoadsandTraffic/Pages/Roads.aspx"];
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberURL]];
+//        
+//    } else if([segue.identifier isEqualToString:@"showDSPSWebView"]){
+//        
+////        WebViewController *destViewController = segue.destinationViewController;
+////        destViewController.url = @"http://www.dsps.ie";
+////        destViewController.title = @"DSPS";
+////        
+////        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
+////        
+////        [[self navigationItem] setBackBarButtonItem: newBackButton];
+//        
+//        NSString *phoneNumberURL = [NSString stringWithFormat:@"http://www.dsps.ie"];
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberURL]];
+//    }
+//}
 
 @end

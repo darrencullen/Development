@@ -568,7 +568,7 @@
             <objects>
                 <viewController id="Jdj-tc-gdq" customClass="WebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RXW-5J-c4h">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-hy-smm">
@@ -1681,11 +1681,8 @@
                                             <constraint firstItem="QxX-2N-hec" firstAttribute="centerY" secondItem="Qcg-1W-grL" secondAttribute="centerY" type="default" id="GKv-Mu-FP2"/>
                                             <constraint firstItem="QxX-2N-hec" firstAttribute="leading" secondItem="Qcg-1W-grL" secondAttribute="leading" constant="19" id="JlL-43-kUp"/>
                                         </constraints>
-                                        <connections>
-                                            <segue destination="Jdj-tc-gdq" kind="push" identifier="showDCCWebView" id="rDs-rX-nD1"/>
-                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell tag="502" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" id="Zpe-rU-hdm">
+                                    <tableViewCell tag="503" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" id="Zpe-rU-hdm">
                                         <rect key="frame" x="0.0" y="2044" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1715,9 +1712,6 @@
                                             <constraint firstItem="f1D-mS-hYY" firstAttribute="leading" secondItem="Zpe-rU-hdm" secondAttribute="leading" constant="19" id="WkR-f8-mwS"/>
                                             <constraint firstAttribute="trailing" secondItem="CvO-6h-Nuz" secondAttribute="trailing" constant="14" id="c4Q-h8-IKP"/>
                                         </constraints>
-                                        <connections>
-                                            <segue destination="Jdj-tc-gdq" kind="push" identifier="showDSPSWebView" id="khu-Xv-P1g"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1730,7 +1724,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIN-14-XVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2553" y="1463"/>
+            <point key="canvasLocation" x="-2614" y="1723"/>
         </scene>
         <!--Dub Park Info View Controller - DubPark Credits-->
         <scene sceneID="d2Q-xu-MdC">
@@ -1976,6 +1970,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="v6w-YW-76L"/>
+        <segue reference="u13-r1-dRA"/>
     </inferredMetricsTieBreakers>
 </document>
