@@ -100,7 +100,13 @@
     
     if([segue.identifier isEqualToString:@"showCarparkDirections"]){
         
-        NSString *directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",currentLocation.latitude, currentLocation.longitude, self.carparkLocationLatitude, self.carparkLocationLongitude];
+        NSString *directionsURL;
+        
+        if ((currentLocation.latitude == 0) || (currentLocation.longitude == 0)){
+            directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?daddr=%1.6f,%1.6f",self.carparkLocationLatitude, self.carparkLocationLongitude];
+        } else {
+            directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",currentLocation.latitude, currentLocation.longitude, self.carparkLocationLatitude, self.carparkLocationLongitude];
+        }
         
         WebViewController *destViewController = segue.destinationViewController;
         destViewController.url = directionsURL;

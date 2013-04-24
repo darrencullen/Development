@@ -63,6 +63,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    [locationManager startUpdatingLocation];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -207,7 +209,13 @@
     @try{
         if([segue.identifier isEqualToString:@"showDisabledSpaceDirections"]){
             
-            NSString *directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",currentLocation.latitude, currentLocation.longitude, [self.selectedDisabledSpace.latitude doubleValue], [self.selectedDisabledSpace.longitude doubleValue]];
+            NSString *directionsURL;
+            
+            if ((currentLocation.latitude == 0) || (currentLocation.longitude == 0)){
+                directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?daddr=%1.6f,%1.6f",[self.selectedDisabledSpace.latitude doubleValue], [self.selectedDisabledSpace.longitude doubleValue]];
+            } else {
+                directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",currentLocation.latitude, currentLocation.longitude, [self.selectedDisabledSpace.latitude doubleValue], [self.selectedDisabledSpace.longitude doubleValue]];
+            }
             
             WebViewController *destViewController = segue.destinationViewController;
             destViewController.url = directionsURL;

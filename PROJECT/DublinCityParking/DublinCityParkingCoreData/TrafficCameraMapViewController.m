@@ -62,6 +62,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     @try{
         [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [locationManager startUpdatingLocation];
         
     } @catch (NSException *exc) {
         BUGSENSE_LOG(exc, nil);
@@ -207,7 +208,13 @@
     @try{
         if([segue.identifier isEqualToString:@"showTrafficCameraDirections"]){
             
-            NSString *directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",currentLocation.latitude, currentLocation.longitude, [self.selectedTrafficCamera.latitude doubleValue], [self.selectedTrafficCamera.longitude doubleValue]];
+            NSString *directionsURL;
+            
+            if ((currentLocation.latitude == 0) || (currentLocation.longitude == 0)){
+                directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?daddr=%1.6f,%1.6f",[self.selectedTrafficCamera.latitude doubleValue], [self.selectedTrafficCamera.longitude doubleValue]];
+            } else {
+                directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",currentLocation.latitude, currentLocation.longitude, [self.selectedTrafficCamera.latitude doubleValue], [self.selectedTrafficCamera.longitude doubleValue]];
+            }
             
             WebViewController *destViewController = segue.destinationViewController;
             destViewController.url = directionsURL;

@@ -267,7 +267,13 @@
             
         } else if([segue.identifier isEqualToString:@"showCarparkDirections"]){
             
-            NSString *directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",currentLocation.latitude, currentLocation.longitude, self.selectedCarparkInfo.details.latitude, self.selectedCarparkInfo.details.longitude];
+            NSString *directionsURL;
+            
+            if ((currentLocation.latitude == 0) || (currentLocation.longitude == 0)){
+                directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?daddr=%1.6f,%1.6f",self.selectedCarparkInfo.details.latitude, self.selectedCarparkInfo.details.longitude];
+            } else {
+                directionsURL = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%1.6f,%1.6f&daddr=%1.6f,%1.6f",currentLocation.latitude, currentLocation.longitude, self.selectedCarparkInfo.details.latitude, self.selectedCarparkInfo.details.longitude];
+            }
             
             WebViewController *destViewController = segue.destinationViewController;
             destViewController.url = directionsURL;
