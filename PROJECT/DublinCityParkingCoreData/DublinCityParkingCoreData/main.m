@@ -79,6 +79,7 @@ static NSManagedObjectContext *managedObjectContext()
             trafficCameraInfo.longitude = [trafficCamera objectForKey:@"longitude"];
             trafficCameraInfo.code = [trafficCamera objectForKey:@"code"];
             trafficCameraInfo.url = [trafficCamera objectForKey:@"url"];
+            trafficCameraInfo.favourite = NO;
             
             NSError *error;
             if (![context save:&error]) {
@@ -112,6 +113,7 @@ static NSManagedObjectContext *managedObjectContext()
             disableSpaceInfo.latitude = [disabledSpace objectForKey:@"latitude"];
             disableSpaceInfo.longitude = [disabledSpace objectForKey:@"longitude"];
             disableSpaceInfo.spaces = [disabledSpace objectForKey:@"spaces"];
+            disableSpaceInfo.favourite = NO;
             
             
             NSError *error;
@@ -142,6 +144,7 @@ static NSManagedObjectContext *managedObjectContext()
             carparkInfo.code = [obj objectForKey:@"code"];
             carparkInfo.name = [obj objectForKey:@"name"];
             carparkInfo.favourite = NO;
+            carparkInfo.lastUpdated = @"N/A";
             
             CarparkDetails *carparkDetails = [NSEntityDescription
                                               insertNewObjectForEntityForName:@"CarparkDetails"

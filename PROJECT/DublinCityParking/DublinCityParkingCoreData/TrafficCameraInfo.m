@@ -16,5 +16,6 @@
 @dynamic postCode;
 @dynamic latitude;
 @dynamic longitude;
+@dynamic favourite;
 
 @end

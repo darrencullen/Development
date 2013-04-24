@@ -13,10 +13,11 @@
 
 @interface CarparkInfo : NSManagedObject
 
-@property (nonatomic, retain) NSString * address;
-@property (nonatomic, retain) NSString * availableSpaces;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * code;
+@property (nonatomic, retain) NSString *address;
+@property (nonatomic, retain) NSString *availableSpaces;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *code;
+@property (nonatomic, retain) NSString *lastUpdated;
 @property (nonatomic) Boolean favourite;
 @property (nonatomic, retain) CarparkDetails *details;
 

@@ -21,10 +21,12 @@
         <attribute name="availableSpaces" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="details" optional="YES" minCount="1" maxCount="1" deletionRule="Deny" destinationEntity="CarparkDetails" inverseName="info" inverseEntity="CarparkDetails" syncable="YES"/>
     </entity>
     <entity name="DisabledParkingSpaceInfo" syncable="YES">
+        <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="postCode" optional="YES" attributeType="String" syncable="YES"/>
@@ -33,6 +35,7 @@
     </entity>
     <entity name="TrafficCameraInfo" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -41,8 +44,8 @@
     </entity>
     <elements>
         <element name="CarparkDetails" positionX="160" positionY="192" width="128" height="255"/>
-        <element name="CarparkInfo" positionX="-182" positionY="189" width="128" height="135"/>
-        <element name="DisabledParkingSpaceInfo" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="TrafficCameraInfo" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="CarparkInfo" positionX="-182" positionY="189" width="128" height="150"/>
+        <element name="DisabledParkingSpaceInfo" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="TrafficCameraInfo" positionX="160" positionY="192" width="128" height="150"/>
     </elements>
 </model>

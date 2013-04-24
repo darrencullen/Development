@@ -12,6 +12,7 @@
 
 @interface CarparkDetailsViewController ()
 @property (nonatomic, strong) NSMutableArray *carparkDetailSections;
+@property (nonatomic, strong) NSMutableArray *carparkDetailLastUpdated;
 @property (nonatomic, strong) NSMutableArray *carparkDetailLocation;
 @property (nonatomic, strong) NSMutableArray *carparkDetailSpaces;
 @property (nonatomic, strong) NSMutableArray *carparkDetailRates;
@@ -66,11 +67,18 @@
     } return _carparkDetailContact;
 }
 
+- (NSMutableArray *)carparkDetailLastUpdated
+{
+    if (!_carparkDetailLastUpdated) {
+        _carparkDetailLastUpdated = [[NSMutableArray alloc] init];
+    } return _carparkDetailLastUpdated;
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.carparkDetailSections = [[NSMutableArray alloc] initWithObjects:self.carparkDetailLocation, self.carparkDetailSpaces, self.carparkDetailRates, self.carparkDetailOther, self.carparkDetailContact, nil];
+    self.carparkDetailSections = [[NSMutableArray alloc] initWithObjects:self.carparkDetailLocation, self.carparkDetailSpaces, self.carparkDetailRates, self.carparkDetailOther, self.carparkDetailContact, self.carparkDetailLastUpdated, nil];
     
     self.title = self.selectedCarparkInfo.name;
     if (self.selectedCarparkInfo.favourite == YES){
@@ -84,14 +92,14 @@
 
 - (void) populateDetailArrays
 {
-    NSDictionary *detailItem;
+    NSDictionary *detailItem;  
     // Location 
     if (self.selectedCarparkInfo.details.region.length > 0){
-        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:self.selectedCarparkInfo.details.region, [NSNumber numberWithInt:1], nil];
+        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:self.selectedCarparkInfo.details.region, [NSNumber numberWithInt:2], nil];
         [self.carparkDetailLocation addObject:detailItem];
     }
     if (self.selectedCarparkInfo.address.length > 0){
-        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:self.selectedCarparkInfo.address, [NSNumber numberWithInt:2], nil];
+        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:self.selectedCarparkInfo.address, [NSNumber numberWithInt:3], nil];
         [self.carparkDetailLocation addObject:detailItem];
     }
     if (self.selectedCarparkInfo.details.directions.length > 0){
@@ -103,19 +111,19 @@
     if (self.selectedCarparkInfo.details.totalSpaces.length > 0){
         NSDictionary *detailDescriptionValue;
         detailDescriptionValue = [NSDictionary dictionaryWithObjectsAndKeys:self.selectedCarparkInfo.details.totalSpaces, @"Total", nil];
-        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:detailDescriptionValue, [NSNumber numberWithInt:10], nil];
+        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:detailDescriptionValue, [NSNumber numberWithInt:11], nil];
         [self.carparkDetailSpaces addObject:detailItem];
     }
     if (self.selectedCarparkInfo.details.disabledSpaces.length > 0){
         NSDictionary *detailDescriptionValue;
         detailDescriptionValue = [NSDictionary dictionaryWithObjectsAndKeys:self.selectedCarparkInfo.details.disabledSpaces, @"Disabled", nil];
-        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:detailDescriptionValue, [NSNumber numberWithInt:11], nil];
+        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:detailDescriptionValue, [NSNumber numberWithInt:12], nil];
         [self.carparkDetailSpaces addObject:detailItem];
     }
     if (self.selectedCarparkInfo.availableSpaces.length > 0){
         NSDictionary *detailDescriptionValue;
         detailDescriptionValue = [NSDictionary dictionaryWithObjectsAndKeys:self.selectedCarparkInfo.availableSpaces, @"Available", nil];
-        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:detailDescriptionValue, [NSNumber numberWithInt:12], nil];
+        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:detailDescriptionValue, [NSNumber numberWithInt:13], nil];
         [self.carparkDetailSpaces addObject:detailItem];
     }
     
@@ -146,7 +154,6 @@
         detailItem = [NSDictionary dictionaryWithObjectsAndKeys:@"Services available", [NSNumber numberWithInt:23], nil];
         [self.carparkDetailOther addObject:detailItem];
     }
-
     
     // Contact Details
     if (self.selectedCarparkInfo.details.phoneNumber.length > 0){
@@ -154,6 +161,17 @@
         detailDescriptionValue = [NSDictionary dictionaryWithObjectsAndKeys:self.selectedCarparkInfo.details.phoneNumber, @"Phone", nil];
         detailItem = [NSDictionary dictionaryWithObjectsAndKeys:detailDescriptionValue, [NSNumber numberWithInt:15], nil];
         [self.carparkDetailContact addObject:detailItem];
+    }
+    
+    // Last Updated
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *lastUpdated;
+    if (standardUserDefaults){
+        lastUpdated = [standardUserDefaults valueForKey:@"lastUpated"];
+    }
+    if (lastUpdated.length > 0){
+        detailItem = [NSDictionary dictionaryWithObjectsAndKeys:lastUpdated, [NSNumber numberWithInt:1], nil];
+        [self.carparkDetailLastUpdated addObject:detailItem];
     }
 }
 
@@ -276,8 +294,14 @@
             [headerView addSubview:headerLabel];
         }
     }
-    return headerView;
+    else if(section == 5){
+        if ([_carparkDetailLastUpdated count] > 0){
+            headerLabel.text = @"Last Updated";
+            [headerView addSubview:headerLabel];
+        }
+    }
     
+    return headerView;
 }
 
 /*

@@ -43,7 +43,7 @@
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
    
-    self.details = [self.details stringByReplacingOccurrencesOfString: @"&#xA;" withString: @"\n"];
+//    self.details = [self.details stringByReplacingOccurrencesOfString: @";" withString: @"\n"];
     
     if ([self.title isEqualToString:@"Directions"]){
         // Get the reference to the current toolbar buttons

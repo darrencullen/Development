@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[CarparkDetailsViewController populateDetailArrays]:CarparkDetailsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "lastUpdated">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[DCDMasterViewController prepareForSegue:sender:]:DCDMasterViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -23,6 +31,12 @@
          <PersistentStrings>
             <PersistentString
                value = "cgCarpark.code">
+            </PersistentString>
+            <PersistentString
+               value = "namespaceURI">
+            </PersistentString>
+            <PersistentString
+               value = "attributeDict">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -74,6 +88,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[CarparkDetailsViewController prepareForSegue:sender:]:CarparkDetailsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedCarparkInfo.details.latitude">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[CarparkMapViewController locationManager:didUpdateToLocation:fromLocation:]:CarparkMapViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -99,18 +121,10 @@
                value = "selectedCarparkDetails.totalSpaces">
             </PersistentString>
             <PersistentString
-               value = "selectedCarparkDetails.otherRate1">
-            </PersistentString>
-            <PersistentString
                value = "selectedCarparkDetails.region">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[CarparkDetailsViewController prepareForSegue:sender:]:CarparkDetailsViewController.m">
-         <PersistentStrings>
             <PersistentString
-               value = "self.selectedCarparkInfo.details.latitude">
+               value = "selectedCarparkDetails.otherRate1">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -126,10 +140,10 @@
          contextName = "-[DisabledSpacesViewController viewDidLoad]:DisabledSpacesViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.disabledSpacesD2">
+               value = "self.disabledSpacesD1">
             </PersistentString>
             <PersistentString
-               value = "self.disabledSpacesD1">
+               value = "self.disabledSpacesD2">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

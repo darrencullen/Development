@@ -13,6 +13,7 @@
 @implementation XMLParser{
     NSXMLParser *parser;
     Carpark *currentCarpark;
+    BOOL foundTimeStamp;
 }
 
 -(id) loadXMLByURL:(NSString *)urlString
@@ -26,8 +27,32 @@
     return self;
 }
 
+
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+{
+    if(foundTimeStamp)
+    {
+        NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        if (standardUserDefaults) {
+            // strip the day out of the timestamp
+            NSString *newStr = [NSString stringWithFormat:@"%@%@", [string substringWithRange:NSMakeRange(0, 12)], [string substringFromIndex:[string length] - 10]];
+            
+            [standardUserDefaults setObject:[NSString stringWithFormat:@"%@", newStr] forKey:@"lastUpated"];
+            [standardUserDefaults synchronize];
+        }
+
+        foundTimeStamp = FALSE;
+    }
+}
+
 - (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
+    
+    if ([elementName isEqualToString:@"Timestamp"]){
+        foundTimeStamp = true;
+    }
+    
     if (![elementName isEqualToString:@"carpark"]){
         return;
     }

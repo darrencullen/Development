@@ -16,6 +16,7 @@
 @dynamic availableSpaces;
 @dynamic name;
 @dynamic code;
+@dynamic lastUpdated;
 @dynamic details;
 @dynamic favourite;
 
