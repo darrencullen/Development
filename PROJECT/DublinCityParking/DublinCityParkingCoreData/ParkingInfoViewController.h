@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ParkingInfoViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
 
 @end

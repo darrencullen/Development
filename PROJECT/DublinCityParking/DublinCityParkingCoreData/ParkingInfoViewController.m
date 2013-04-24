@@ -27,6 +27,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Last Updated
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *lastUpdated;
+    if (standardUserDefaults){
+        lastUpdated = [standardUserDefaults valueForKey:@"lastUpated"];
+    }
+    if (lastUpdated.length > 0){
+        self.lastUpdatedLabel.text = lastUpdated;
+    }
 }
 
 - (void)didReceiveMemoryWarning
