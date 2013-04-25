@@ -66,18 +66,25 @@
     }
 }
 
+- (void) resetArrays
+{
+    self.carparkLocations = nil;
+    self.disabledParkingLocations = nil;
+    self.trafficCameraLocations = nil;
+}
+
 - (void)initialiseMap
 {
     @try{
         CLLocationCoordinate2D zoomLocation;
-        zoomLocation.latitude = 53.34719;
-        zoomLocation.longitude = -6.2591;
+        zoomLocation.latitude = 53.34326;
+        zoomLocation.longitude = -6.26413;
         
         MKCoordinateRegion region;
         region.center=zoomLocation;
         MKCoordinateSpan span;
-        span.latitudeDelta=0.017;
-        span.longitudeDelta=0.017;
+        span.latitudeDelta=0.025;
+        span.longitudeDelta=0.025;
         region.span=span;
         [self.mapView setRegion:region animated:YES];
         
@@ -85,12 +92,6 @@
     } @catch (NSException *exc) {
         BUGSENSE_LOG(exc, nil);
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)clearOverlays
@@ -418,5 +419,16 @@
     }
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if ([self isViewLoaded] && [self.view window] == nil) {
+        [self clearOverlays];
+        self.mapView = nil;
+        [self resetArrays];
+        [self setView:nil];
+    }
+}
 @end
 

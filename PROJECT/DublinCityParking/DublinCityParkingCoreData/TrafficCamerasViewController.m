@@ -130,11 +130,6 @@
     [self.cameraList reloadData];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -329,5 +324,14 @@
     }
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if ([self isViewLoaded] && [self.view window] == nil) {
+        [self resetArrays];
+        self.view = nil;
+    }
+}
 
 @end

@@ -88,13 +88,6 @@
     }
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
@@ -121,5 +114,16 @@
 
 - (IBAction)getDirections:(id)sender {
     [self performSegueWithIdentifier:@"showCarparkDirections" sender:self];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if ([self isViewLoaded] && [self.view window] == nil) {
+        self.view = nil;
+        self.managedObjectContext = nil;
+        self.textView = nil;
+    }
 }
 @end

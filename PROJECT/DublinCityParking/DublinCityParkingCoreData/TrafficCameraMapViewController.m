@@ -174,12 +174,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)plotTrafficCameraPosition{
     @try{
         for (id<MKAnnotation> annotation in self.mapView.annotations) {
@@ -311,6 +305,16 @@
 -(void)dismissAlertView:(UIAlertView*)favouritesUpdateAlert
 {
     [favouritesUpdateAlert dismissWithClickedButtonIndex:-1 animated:YES];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if ([self isViewLoaded] && [self.view window] == nil) {
+        self.mapView = nil;
+        [self setView:nil];
+    }
 }
 
 @end

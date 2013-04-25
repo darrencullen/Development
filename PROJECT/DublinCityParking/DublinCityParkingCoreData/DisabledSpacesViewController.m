@@ -45,7 +45,6 @@
 {
     [super viewDidLoad];
     
-    // TODO: MOVE ARRAYS TO MODEL NSOBJECT
     self.disabledSpacesD1 = [[NSMutableArray alloc] init];
     self.disabledSpacesD2 = [[NSMutableArray alloc] init];
     self.disabledSpaceLocations = [[NSMutableArray alloc] initWithObjects:self.disabledSpacesD1, self.disabledSpacesD2, nil];
@@ -72,10 +71,10 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
+- (void) resetArrays
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.disabledSpacesD1 = nil;
+    self.disabledSpacesD2 = nil;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -138,18 +137,6 @@
 }
 
 
-#pragma mark - Table view delegate
-
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-//    NSArray *selectedSection = self.disabledSpaces[indexPath.section];
-//    self.selectedSpace = [selectedSection objectAtIndex:[indexPath row]];
-//    
-//    // do a segue based on the indexPath or do any setup later in prepareForSegue
-//    [self performSegueWithIdentifier:@"showDisabledSpaceMap" sender:self];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSArray *selectedSection = self.disabledSpaceLocations[indexPath.section];
@@ -174,5 +161,14 @@
     }
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if ([self isViewLoaded] && [self.view window] == nil) {
+        [self resetArrays];
+        self.view = nil;
+    }
+}
 
 @end

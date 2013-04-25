@@ -162,13 +162,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 - (void)plotDisabledSpacePosition{
     @try{
         for (id<MKAnnotation> annotation in self.mapView.annotations) {
@@ -229,6 +222,16 @@
         
     } @catch (NSException *exc) {
         BUGSENSE_LOG(exc, nil);
+    }
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if ([self isViewLoaded] && [self.view window] == nil) {
+        self.view = nil;
+        self.mapView = nil;
     }
 }
 

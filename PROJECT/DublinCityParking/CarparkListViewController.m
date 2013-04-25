@@ -1,5 +1,5 @@
 //
-//  DCDMasterViewController.m
+//  CarparkListViewController.m
 //  DublinCityParking
 //
 //  Created by darren cullen on 21/02/2013.
@@ -191,11 +191,6 @@
 {
     [self.carparkList reloadData];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -418,10 +413,19 @@
     }
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if ([self isViewLoaded] && [self.view window] == nil) {
+        [self resetArrays];
+        self.view = nil;
+    }
+}
+
 - (void) dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    self.managedObjectContext = nil;
 }
 
 @end
