@@ -39,12 +39,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
@@ -101,6 +95,15 @@
         
         NSString *phoneNumberURL = [NSString stringWithFormat:@"http://www.dsps.ie"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberURL]];
+    }
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if ([self isViewLoaded] && [self.view window] == nil) {
+        self.view = nil;
     }
 }
 

@@ -8,6 +8,7 @@
 
 #import "MoreViewController.h"
 #import "WebViewController.h"
+#import <BugSense-iOS/BugSenseController.h>
 
 @interface MoreViewController ()
 
@@ -27,27 +28,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if (cell.tag == 504){
+    if (cell.tag == 502){
+        
+        NSString *phoneNumberURL = [NSString stringWithFormat:@"https://twitter.com/LiveDrive"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberURL]];
+        
+    } else if (cell.tag == 504){
         NSString *emailTitle = @"DubPark Feedback";
         NSArray *toRecipents = [NSArray arrayWithObject:@"dcdevelopmentstudios@gmail.com"];
         
@@ -56,7 +49,6 @@
         [mc setSubject:emailTitle];
         [mc setToRecipients:toRecipents];
         
-        // Present mail view controller on screen
         [self presentViewController:mc animated:YES completion:NULL];
     }
 }
@@ -88,41 +80,21 @@
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    switch (result)
-    {
-        case MFMailComposeResultCancelled:
-            NSLog(@"Mail cancelled");
-            break;
-        case MFMailComposeResultSaved:
-            NSLog(@"Mail saved");
-            break;
-        case MFMailComposeResultSent:
-            NSLog(@"Mail sent");
-            break;
-        case MFMailComposeResultFailed:
-            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
-            break;
-        default:
-            break;
+    if (result == MFMailComposeResultFailed){
+        NSException* locationManagerException = [NSException
+                                                 exceptionWithName:@"MoreViewController.mailComposeController.mailSentError"
+                                                 reason:[error localizedDescription]
+                                                 userInfo:nil];
+        
+        BUGSENSE_LOG(locationManagerException, nil);
     }
     
-    // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
-}   
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"showLiveDriveWebView"]){
-        
-        WebViewController *destViewController = segue.destinationViewController;
-        destViewController.url = @"https://twitter.com/LiveDrive";
-        destViewController.title = @"Live Drive";
-        
-        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"More Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
-        
-        [[self navigationItem] setBackBarButtonItem: newBackButton];
-        
-    } else if([segue.identifier isEqualToString:@"showParkingInformation"]){
+    if([segue.identifier isEqualToString:@"showParkingInformation"]){
         
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"More Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
         
@@ -133,6 +105,15 @@
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"More Info" style: UIBarButtonItemStyleBordered target: nil action: nil];
         
         [[self navigationItem] setBackBarButtonItem: newBackButton];
+    }
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if ([self isViewLoaded] && [self.view window] == nil) {
+        self.view = nil;
     }
 }
 

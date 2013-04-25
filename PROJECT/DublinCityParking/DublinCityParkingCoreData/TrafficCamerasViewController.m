@@ -292,15 +292,6 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-//    NSArray *selectedSection = self.trafficCameraLocations[indexPath.section];
-//    self.selectedCamera = [selectedSection objectAtIndex:[indexPath row]];
-//    
-//    // do a segue based on the indexPath or do any setup later in prepareForSegue
-//    [self performSegueWithIdentifier:@"showTrafficCameraMap" sender:self];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSArray *selectedSection = self.trafficCameraLocations[indexPath.section];

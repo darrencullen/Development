@@ -70,17 +70,22 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)refreshPage:(id)sender {
     [self loadWebsite];
 }
 
 - (IBAction)backButtonPressed:(id)sender {
     [self.webView goBack];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    if ([self isViewLoaded] && [self.view window] == nil) {
+        [self setView:nil];
+        [self setWebView:nil];
+        [self setActivitySpinner:nil];
+    }
 }
 @end
