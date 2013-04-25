@@ -224,8 +224,13 @@
         
         error = nil;
         if (![self.managedObjectContext save:&error]) {
-            //Handle any error with the saving of the context
-            NSLog(@"Error saving");
+            NSException* locationManagerException = [NSException
+                                                     exceptionWithName:@"CarparkMapViewController.setFavouriteCarpark.errorSaving"
+                                                     reason:@"Failed to save favourite setting"
+                                                     userInfo:nil];
+            
+            BUGSENSE_LOG(locationManagerException, nil);
+            
         } else {       
             UIAlertView *alertView = [[UIAlertView alloc]
                                       initWithTitle:NSLocalizedString(self.selectedCarparkInfo.name, @"AlertView")

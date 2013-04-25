@@ -131,6 +131,7 @@
 {
     @try{
         [self resetArrays];
+        
         self.carparkLocations = [[NSMutableArray alloc] initWithObjects:self.favouriteCarparks, self.northwestCarparks, self.northeastCarparks, self.southwestCarparks, self.southeastCarparks, nil];
         
         
@@ -215,7 +216,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     @try{
-        
         static NSString *CellIdentifier = @"CarparkCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
@@ -242,8 +242,8 @@
     }
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
     @try{
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
         UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];

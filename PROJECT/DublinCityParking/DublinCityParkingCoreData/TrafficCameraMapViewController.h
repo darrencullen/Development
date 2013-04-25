@@ -13,7 +13,11 @@
 @interface TrafficCameraMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) TrafficCameraInfo *selectedTrafficCamera;
-- (IBAction)showTrafficCameraDirections:(id)sender;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
+- (IBAction)setFavouriteCamera:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonFavouriteCamera;
+
 
 
 @end

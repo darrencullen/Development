@@ -296,6 +296,46 @@
     return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
+-(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
+{
+    @try{
+        if(section == 0){
+            if ([_carparkDetailLocation count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 1){
+            if ([_carparkDetailSpaces count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 2){
+            if ([_carparkDetailRates count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 3){
+            if ([_carparkDetailOther count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 4){
+            if ([_carparkDetailContact count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 5){
+            if ([_carparkDetailLastUpdated count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
+    return 0.000001f;
+}
+
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
@@ -467,17 +507,21 @@
     if (cgCarpark.favourite == NO){
         cgCarpark.favourite = 1;
         newFavImage = [UIImage imageNamed:@"StarFull24-3.png"];
-        alertMessage = @"Added to favourites list";
+        alertMessage = @"Added to favourite carparks list";
     } else {
         cgCarpark.favourite = 0;
         newFavImage = [UIImage imageNamed:@"StarEmpty24-3.png"];
-        alertMessage = @"Removed from favourites list";
+        alertMessage = @"Removed from favourite carparks list";
     }
 
     error = nil;
     if (![self.managedObjectContext save:&error]) {
-        //Handle any error with the saving of the context
-        NSLog(@"Error saving");
+        NSException* locationManagerException = [NSException
+                                                 exceptionWithName:@"CarparkDetailsViewController.setFavouriteCarpark.errorSaving"
+                                                 reason:@"Failed to save favourite setting"
+                                                 userInfo:nil];
+        
+        BUGSENSE_LOG(locationManagerException, nil);
     } else {
         self.buttonFavs.image = newFavImage;
         

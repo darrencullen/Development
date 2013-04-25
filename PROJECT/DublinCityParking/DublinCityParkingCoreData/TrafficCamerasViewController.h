@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *trafficCameras;
+@property (strong, nonatomic) IBOutlet UITableView *cameraList;
 
 @end

@@ -3,10 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[CarparkDetailsViewController populateDetailArrays]:CarparkDetailsViewController.m">
+         contextName = "-[DisabledSpacesMapViewController prepareForSegue:sender:]:DisabledSpacesMapViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate persistentStoreCoordinator]:AppDelegate.m">
          <PersistentStrings>
             <PersistentString
-               value = "lastUpdated">
+               value = "storeURL">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -37,6 +40,14 @@
             </PersistentString>
             <PersistentString
                value = "attributeDict">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TrafficCameraMapViewController viewDidLoad]:TrafficCameraMapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedTrafficCamera.favourite">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -88,14 +99,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[CarparkDetailsViewController prepareForSegue:sender:]:CarparkDetailsViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.selectedCarparkInfo.details.latitude">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[CarparkMapViewController locationManager:didUpdateToLocation:fromLocation:]:CarparkMapViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -103,14 +106,6 @@
             </PersistentString>
             <PersistentString
                value = "currentLocation.longitude">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[TrafficCameraImageViewController viewDidLoad]:TrafficCameraImageViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.imageURL">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -129,29 +124,45 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[CarparkDetailsViewController prepareForSegue:sender:]:CarparkDetailsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedCarparkInfo.details.latitude">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TrafficCameraImageViewController viewDidLoad]:TrafficCameraImageViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imageURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TrafficCameraMapViewController setFavouriteCamera:]:TrafficCameraMapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cgTrafficCamera.favourite">
+            </PersistentString>
+            <PersistentString
+               value = "cgTrafficCamera.code">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CarparkDetailsViewController populateDetailArrays]:CarparkDetailsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "lastUpdated">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[CarparkDetailsViewController tableView:cellForRowAtIndexPath:]:CarparkDetailsViewController.m">
          <PersistentStrings>
             <PersistentString
                value = "detailItem[key]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[DisabledSpacesViewController viewDidLoad]:DisabledSpacesViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.disabledSpacesD1">
-            </PersistentString>
-            <PersistentString
-               value = "self.disabledSpacesD2">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[AppDelegate persistentStoreCoordinator]:AppDelegate.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "storeURL">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -169,6 +180,17 @@
             </PersistentString>
             <PersistentString
                value = "carparkAddressLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DisabledSpacesViewController viewDidLoad]:DisabledSpacesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.disabledSpacesD1">
+            </PersistentString>
+            <PersistentString
+               value = "self.disabledSpacesD2">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

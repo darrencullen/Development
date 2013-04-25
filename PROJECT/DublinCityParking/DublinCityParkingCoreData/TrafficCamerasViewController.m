@@ -9,10 +9,12 @@
 #import "TrafficCamerasViewController.h"
 #import "TrafficCameraInfo.h"
 #import "TrafficCameraImageViewController.h"
+#import <BugSense-iOS/BugSenseController.h>
 
 @interface TrafficCamerasViewController ()
 
 @property (nonatomic, strong) TrafficCameraInfo *selectedCamera;
+@property (nonatomic, strong) NSMutableArray *favouriteCameras;
 @property (nonatomic, strong) NSMutableArray *trafficCamerasD1;
 @property (nonatomic, strong) NSMutableArray *trafficCamerasD2;
 @property (nonatomic, strong) NSMutableArray *trafficCameraLocations;
@@ -22,7 +24,6 @@
 @implementation TrafficCamerasViewController
 
 
-// TODO: optimisation on initialisation required????
 - (void) setTrafficCameras:(NSArray *)trafficCameras
 {
     if (_trafficCameras != trafficCameras)
@@ -43,14 +44,20 @@
     } return _trafficCamerasD2;
 }
 
+- (NSMutableArray *)favouriteCameras
+{
+    if (!_favouriteCameras) {
+        _favouriteCameras = [[NSMutableArray alloc] init];
+    } return _favouriteCameras;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // TODO: MOVE ARRAYS TO MODEL NSOBJECT
     self.trafficCamerasD1 = [[NSMutableArray alloc] init];
     self.trafficCamerasD2 = [[NSMutableArray alloc] init];
-    self.trafficCameraLocations = [[NSMutableArray alloc] initWithObjects:self.trafficCamerasD1, self.trafficCamerasD2, nil];
+    self.trafficCameraLocations = [[NSMutableArray alloc] initWithObjects:self.favouriteCameras, self.trafficCamerasD1, self.trafficCamerasD2, nil];
     
     // set up the managedObjectContext to read data from CoreData
     id delegate = [[UIApplication sharedApplication] delegate];
@@ -66,12 +73,61 @@
     self.trafficCameras = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
     for (TrafficCameraInfo *camera in self.trafficCameras){
-        if ([camera.postCode isEqualToString:@"D1"]){
+        if (camera.favourite == [NSNumber numberWithInt:1]){
+            [self.favouriteCameras addObject:camera];
+        } else if ([camera.postCode isEqualToString:@"D1"]){
             [self.trafficCamerasD1 addObject:camera];
         } else if ([camera.postCode isEqualToString:@"D2"]){
             [self.trafficCamerasD2 addObject:camera];
         }
     }
+}
+
+- (void) resetArrays
+{
+    self.favouriteCameras = nil;
+    self.trafficCamerasD1 = nil;
+    self.trafficCamerasD2 = nil;
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    @try{
+        [self resetArrays];
+
+        self.trafficCameraLocations = [[NSMutableArray alloc] initWithObjects:self.favouriteCameras, self.trafficCamerasD1, self.trafficCamerasD2, nil];
+        
+        // set up the managedObjectContext to read data from CoreData
+        id delegate = [[UIApplication sharedApplication] delegate];
+        self.managedObjectContext = [delegate managedObjectContext];
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"TrafficCameraInfo"
+                                                  inManagedObjectContext:self.managedObjectContext];
+        
+        
+        [fetchRequest setEntity:entity];
+        NSError *error;
+        self.trafficCameras = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        
+        for (TrafficCameraInfo *camera in self.trafficCameras){
+            if (camera.favourite == [NSNumber numberWithInt:1]){
+                [self.favouriteCameras addObject:camera];
+            } else if ([camera.postCode isEqualToString:@"D1"]){
+                [self.trafficCamerasD1 addObject:camera];
+            } else if ([camera.postCode isEqualToString:@"D2"]){
+                [self.trafficCamerasD2 addObject:camera];
+            }
+        }
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.cameraList reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,31 +169,132 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
+//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
+//    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
+//    
+//    headerLabel.backgroundColor = [UIColor clearColor];
+//    headerLabel.textColor = [UIColor whiteColor];
+//    headerLabel.shadowColor = [UIColor grayColor];
+//    headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+//    headerLabel.font = [UIFont boldSystemFontOfSize:18];
+//
+//    if(section == 0)
+//        headerLabel.text = @"Favourites";
+//    else if(section == 1)
+//        headerLabel.text = @"Dublin 1";
+//    else if(section == 2)
+//        headerLabel.text = @"Dublin 2";
+//    
+//    [headerView addSubview:headerLabel];
+//    return headerView;
+//    
     
-    headerLabel.backgroundColor = [UIColor clearColor];
-    headerLabel.textColor = [UIColor whiteColor];
-    headerLabel.shadowColor = [UIColor grayColor];
-    headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-    headerLabel.font = [UIFont boldSystemFontOfSize:18];
+    @try{
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
+        UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
+        
+        headerLabel.backgroundColor = [UIColor clearColor];
+        headerLabel.textColor = [UIColor whiteColor];
+        headerLabel.shadowColor = [UIColor grayColor];
+        headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+        headerLabel.font = [UIFont boldSystemFontOfSize:18];
+        
+        if(section == 0){
+            if ([_favouriteCameras count] > 0){
+                headerLabel.text = @"Favourites";
+                [headerView addSubview:headerLabel];
+                
+                return headerView;
+                
+            } else return [[UIView alloc] initWithFrame:CGRectZero];
+            
+        }
+        else if(section == 1){
+            if ([_trafficCamerasD1 count] > 0){
+                headerLabel.text = @"Dublin 1";
+                [headerView addSubview:headerLabel];
+                
+                return headerView;
+                
+            } else return [[UIView alloc] initWithFrame:CGRectZero];
+            
+        }
+        else if(section == 2){
+            if ([_trafficCamerasD2 count] > 0){
+                headerLabel.text = @"Dublin 2";
+                [headerView addSubview:headerLabel];
+                
+                return headerView;
+                
+            } else return [[UIView alloc] initWithFrame:CGRectZero];
+            
+        }
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
     
-    if(section == 0)
-        headerLabel.text = @"Dublin 1";
-    else if(section == 1)
-        headerLabel.text = @"Dublin 2";
-    
-    [headerView addSubview:headerLabel];
-    return headerView;
+    return [[UIView alloc] initWithFrame:CGRectZero];
 }
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 44.0f;
+    @try{
+        if(section == 0){
+            if ([_favouriteCameras count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 1){
+            if ([_trafficCamerasD1 count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 2){
+            if ([_trafficCamerasD1 count] > 0){
+                return 44.0f;
+            } else return 0.000001f;
+        }
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
+    
+    return 0.000001f;
 }
 
 
-#pragma mark - Table view delegate
+-(UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectZero];
+}
+
+-(CGFloat)tableView:(UITableView*)tableView heightForFooterInSection:(NSInteger)section
+{
+    @try{
+        if(section == 0){
+            if ([_favouriteCameras count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 1){
+            if ([_trafficCamerasD1 count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        else if(section == 2){
+            if ([_trafficCamerasD1 count] > 0){
+                return 10.0f;
+            } else return 0.000001f;
+        }
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
+    return 0.000001f;
+}
 
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath

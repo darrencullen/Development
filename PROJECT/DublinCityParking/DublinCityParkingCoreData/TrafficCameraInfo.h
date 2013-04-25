@@ -10,12 +10,12 @@
 
 @interface TrafficCameraInfo : NSManagedObject
 
-@property (nonatomic, retain) NSString * code;
-@property (nonatomic, retain) NSString * postCode;
+@property (nonatomic, retain) NSString *code;
+@property (nonatomic, retain) NSString *postCode;
 @property (nonatomic, retain) NSNumber *latitude;
 @property (nonatomic, retain) NSNumber *longitude;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * url;
-@property (nonatomic) Boolean favourite;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *url;
+@property (nonatomic, retain) NSNumber *favourite;
 
 @end

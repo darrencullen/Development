@@ -54,6 +54,12 @@
         region.span=span;
         [self.mapView setRegion:region animated:YES];
         
+        if (self.selectedTrafficCamera.favourite == [NSNumber numberWithInt:1]){
+            self.buttonFavouriteCamera.image = [UIImage imageNamed:@"StarFull24-3.png"];
+        } else {
+            self.buttonFavouriteCamera.image = [UIImage imageNamed:@"StarEmpty24-3.png"];
+        }
+        
     } @catch (NSException *exc) {
         BUGSENSE_LOG(exc, nil);
     }
@@ -94,16 +100,16 @@
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
             
-            //            UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            //            if (self.selectedCarparkInfo.favourite == 1)
-            //                [leftButton setImage:[UIImage imageNamed:@"StarFull24-3.png"] forState:UIControlStateNormal];
-            //            else
-            //                [leftButton setImage:[UIImage imageNamed:@"StarEmpty24-3.png"] forState:UIControlStateNormal];
-            //
-            //            [leftButton setTitle:annotation.title forState:UIControlStateNormal];
-            //            leftButton.frame = CGRectMake(0, 0, 32, 32);
-            //            leftButton.tag = 1;
-            //            annotationView.leftCalloutAccessoryView = leftButton;
+            UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            if (self.selectedTrafficCamera.favourite == [NSNumber numberWithInt:1])
+                [leftButton setImage:[UIImage imageNamed:@"StarFull24-3.png"] forState:UIControlStateNormal];
+            else
+                [leftButton setImage:[UIImage imageNamed:@"StarEmpty24-3.png"] forState:UIControlStateNormal];
+            
+            [leftButton setTitle:annotation.title forState:UIControlStateNormal];
+            leftButton.frame = CGRectMake(0, 0, 32, 32);
+            leftButton.tag = 1;
+            annotationView.leftCalloutAccessoryView = leftButton;
             
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [rightButton setImage:[UIImage imageNamed:@"directions38.png"] forState:UIControlStateNormal];
@@ -127,7 +133,7 @@
     
     @try{
         if (control.tag == 1){
-            //            [self setFavouriteCarpark];
+            [self setFavouriteTrafficCamera];
             
         } else if(control.tag == 2) {
             [self performSegueWithIdentifier:@"showTrafficCameraDirections" sender:self];
@@ -231,13 +237,80 @@
     }
 }
 
-
-- (IBAction)showTrafficCameraDirections:(id)sender {
+- (void)setFavouriteTrafficCamera
+{
     @try{
-        [self performSegueWithIdentifier:@"showTrafficCameraDirections" sender:self];
+        // set up the managedObjectContext to read data from CoreData
+        id delegate = [[UIApplication sharedApplication] delegate];
+        self.managedObjectContext = [delegate managedObjectContext];
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"TrafficCameraInfo"
+                                                  inManagedObjectContext:self.managedObjectContext];
+        
+        
+        [fetchRequest setEntity:entity];
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"code=%@",self.selectedTrafficCamera.code]];
+        
+        NSError *error;
+        TrafficCameraInfo *cgTrafficCamera;
+        
+        UIImage *newFavImage;
+        
+        cgTrafficCamera = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] lastObject];
+        
+        NSString *alertMessage;
+        if (cgTrafficCamera.favourite == [NSNumber numberWithInt:0]){
+            cgTrafficCamera.favourite = [NSNumber numberWithBool:YES];
+            alertMessage = @"Added to favourite cameras list";
+            newFavImage = [UIImage imageNamed:@"StarFull24-3.png"];
+        } else {
+            cgTrafficCamera.favourite = [NSNumber numberWithBool:NO];
+            alertMessage = @"Removed from favourite cameras list";
+            newFavImage = [UIImage imageNamed:@"StarEmpty24-3.png"];
+        }
+        
+        error = nil;
+        if (![self.managedObjectContext save:&error]) {
+            NSException* locationManagerException = [NSException
+                                                     exceptionWithName:@"TrafficCameraMapViewController.setFavouriteCamera.errorSaving"
+                                                     reason:@"Failed to save favourite setting"
+                                                     userInfo:nil];
+            
+            BUGSENSE_LOG(locationManagerException, nil);
+            
+        } else {
+            self.buttonFavouriteCamera.image = newFavImage;
+            
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:NSLocalizedString(self.selectedTrafficCamera.name, @"AlertView")
+                                      message:NSLocalizedString(alertMessage, @"AlertView")
+                                      delegate:self
+                                      cancelButtonTitle:NSLocalizedString(@"OK", @"AlertView")
+                                      otherButtonTitles:nil, nil];
+            [alertView show];
+            
+            [self performSelector:@selector(dismissAlertView:) withObject:alertView afterDelay:2];
+        }
         
     } @catch (NSException *exc) {
         BUGSENSE_LOG(exc, nil);
     }
 }
+
+- (IBAction)setFavouriteCamera:(id)sender
+{
+    @try{
+        [self setFavouriteTrafficCamera];
+        
+    } @catch (NSException *exc) {
+        BUGSENSE_LOG(exc, nil);
+    }
+}
+
+-(void)dismissAlertView:(UIAlertView*)favouritesUpdateAlert
+{
+    [favouritesUpdateAlert dismissWithClickedButtonIndex:-1 animated:YES];
+}
+
 @end
