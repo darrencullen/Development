@@ -566,7 +566,7 @@
             <objects>
                 <viewController id="Jdj-tc-gdq" customClass="WebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RXW-5J-c4h">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-hy-smm">
@@ -1963,110 +1963,12 @@
         <image name="pointer1.png" width="16" height="16"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
-    <classes>
-        <class className="CarparkDetailsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="setFavouriteCarpark:"/>
-                <relationship kind="outlet" name="buttonFavs" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="CarparkDetalsDescriptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkDetalsDescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="directionsButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="CarparkListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carparkList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CarparkMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarparkMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showCarparkDetails:"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="CombinedMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CombinedMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="selectOverlayType:" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="segmentedControlOverlayTypes" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="DisabledSpacesMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showDisabledSpacesDirections:"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="DisabledSpacesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DisabledSpacesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="disabledSpacesList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="DubParkInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DubParkInfoViewController.h"/>
-        </class>
-        <class className="MoreViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ParkingInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ParkingInfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="lastUpdatedLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TrafficCameraImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activitySpinner" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="TrafficCameraMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCameraMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="setFavouriteCamera:"/>
-                <relationship kind="outlet" name="buttonFavouriteCamera" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="TrafficCamerasViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrafficCamerasViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cameraList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="WebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonPressed:"/>
-                <relationship kind="action" name="refreshPage:"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="navigationToolbar" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="v6w-YW-76L"/>
+        <segue reference="SMj-91-8L5"/>
     </inferredMetricsTieBreakers>
 </document>
