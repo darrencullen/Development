@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49EB940B17E7AE5A00C3D2AB /* CarparksImport.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49F7EDF817161D8400BE44F0 /* CarparksImport.json */; };
 		49F7EDDC17161A4400BE44F0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F7EDDB17161A4400BE44F0 /* CoreData.framework */; };
 		49F7EDDE17161A4400BE44F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F7EDDD17161A4400BE44F0 /* Foundation.framework */; };
 		49F7EDE117161A4400BE44F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F7EDE017161A4400BE44F0 /* main.m */; };
@@ -14,7 +15,6 @@
 		49F7EDF417161CD400BE44F0 /* CarparkDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F7EDEF17161CD400BE44F0 /* CarparkDetails.m */; };
 		49F7EDF517161CD400BE44F0 /* CarparkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F7EDF117161CD400BE44F0 /* CarparkInfo.m */; };
 		49F7EDF617161CD400BE44F0 /* DisabledParkingSpaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F7EDF317161CD400BE44F0 /* DisabledParkingSpaceInfo.m */; };
-		49F7EDFF17161E5900BE44F0 /* CarparksImport.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49F7EDF817161D8400BE44F0 /* CarparksImport.json */; };
 		49FCD00B17175CD900BBF2F7 /* DublinCityParkingCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49FCD00917175CD900BBF2F7 /* DublinCityParkingCoreData.xcdatamodeld */; };
 		49FCD00E1717620D00BBF2F7 /* DisabledSpacesImport.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49F7EDFA17161D8400BE44F0 /* DisabledSpacesImport.json */; };
 		49FCD0121717687900BBF2F7 /* TrafficCameraInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FCD0111717687900BBF2F7 /* TrafficCameraInfo.m */; };
@@ -38,8 +38,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				49F7EDFF17161E5900BE44F0 /* CarparksImport.json in CopyFiles */,
 				49FCD00E1717620D00BBF2F7 /* DisabledSpacesImport.json in CopyFiles */,
+				49EB940B17E7AE5A00C3D2AB /* CarparksImport.json in CopyFiles */,
 				49FCD0131717696300BBF2F7 /* TrafficCamerasImport.json in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

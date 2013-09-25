@@ -4,7 +4,7 @@
  "name":"Parnell Street",
  "address":"Parnell Street, Dublin 1",
  "region":"Northwest",
- "totalSpaces":"501",
+ "totalSpaces":"500",
  "disabledSpaces":"4",
  "availableSpaces":"N/A",
  "heightRestrictions":"2m",
@@ -15,8 +15,8 @@
  "longitude":-6.268366,
  "openingHours":"Mon-Thur 06:30-00:30;Fri 06:30-01:30;Sat 07:00-01:30;Sun 11:00-00:30",
  "hourlyRate":"€2.70",
- "otherRate1":"Max 24hr charge €13.50;Overnight rate (17:30 - 08:30): €6.00;Student Rate €5.00 per day;Sunday Rate €7.00",
- "otherRate2":"5 entry pass for €43.;7 entry pass for €58"
+ "otherRate1":"Max 24hr charge €13.50;Overnight rate (17:30 - 08:30): €6.00;Student Rate €6.00 per day;Sunday Rate €7.00",
+ "otherRate2":"5 entry pass for €43;7 entry pass for €58"
  },
  {
  "code":"DRURY",
@@ -32,9 +32,9 @@
  "services":"Valet service",
  "latitude":53.342872,
  "longitude":-6.262993,
- "openingHours":"Mon-Sat 07:30-01:00\n;Sun 11:00-19:00",
+ "openingHours":"Mon-Sat 07:30-01:00\nSun 11:00-19:00",
  "hourlyRate":"€2.90",
- "otherRate1":"Evening rate €5.00\n;Night Rate €8.00\n;€8.50 all day Sunday",
+ "otherRate1":"Evening rate €5.00\nNight Rate €8.00\n€8.50 all day Sunday",
  "otherRate2":""
  },
  {
@@ -51,9 +51,9 @@
  "services":"",
  "latitude":53.348808,
  "longitude":-6.261934,
- "openingHours":"Mon-Wed 07:00-19:30\n;Thur 07:30-22:00\n;Fri-Sat 07:30-19:30\n;Sun 11:00-19:00" ,
+ "openingHours":"Mon-Wed 07:00-19:30\nThur 07:30-22:00\nFri-Sat 07:30-19:30\nSun 11:00-19:00" ,
  "hourlyRate":"***" ,
- "otherRate1":"€4 for 1st 3 hours parking on presentation of a valid Arnotts receipt" ,
+ "otherRate1":"€5 for 1st 3 hours parking on presentation of a valid Arnotts receipt" ,
  "otherRate2":""
  },
  {
@@ -70,10 +70,10 @@
  "services":"",
  "latitude":53.342755 ,
  "longitude":-6.269916,
- "openingHours":"Mon-Sat 07:00-00:00\n;Sun 10:00-00:00",
+ "openingHours":"Mon-Sat 07:00-00:00\nSun 10:00-00:00",
  "hourlyRate":"€3.20" ,
  "otherRate1":"€9 Evening/Overnight Rate 6pm-9am Monday to Saturday and 6pm to 10am Sunday and Bank Holiday's" ,
- "otherRate2":"Weekly, monthly and yearly rates available.\n;Weekend Shopper Rate (11.00am - 6.00pm): €2 per hour - max €10"
+ "otherRate2":"Weekly, monthly and yearly rates available.\nWeekend Shopper Rate (11.00am - 6.00pm): €2 per hour - max €10"
  },
  {
  "code":"ABBEY" ,
@@ -89,9 +89,9 @@
  "services":"Valet Service, Lifts for wheelchairs/buggies to the Irish Life Mall",
  "latitude":53.349285 ,
  "longitude":-6.256159,
- "openingHours":"Mon-Fri 07:00-00:00\n;Sat 08:00-00:00\n;Sun 10:00-19:00",
+ "openingHours":"Mon-Fri 07:00-00:00\nSat 08:00-00:00\nSun 10:00-19:00",
  "hourlyRate":"€2.70" ,
- "otherRate1":"Maximum Charge for Saturday: €10.00\n;Maximum Charge for Sunday: €5.00\n; Evening Charge (17:30 – 00:00): €5.00" ,
+ "otherRate1":"Maximum Charge for Saturday: €10.00\nMaximum Charge for Sunday: €5.00\n Evening Charge (17:30 – 00:00): €5.00" ,
  "otherRate2":"Overnight Charge (17:30 – 10:00 next morning): €5.00 (Note: Customers must pay at the office to avail of this offer)"
  },
  {
@@ -109,9 +109,9 @@
  "latitude":53.352457 ,
  "longitude":-6.258297,
  "openingHours":"Mon-Sun 24 hours a day",
- "hourlyRate":"€3.60" ,
- "otherRate1":"Maximum Charge for Saturday: €10.00\n;Maximum Charge for Sunday: €5.00\n;Evening Charge (17:30 – 00:00): €5.00" ,
- "otherRate2":"Evening/overnight (4pm to 9am next day): €5.00\n;Day parking (9am to 7pm): €10.00\n;24 hours: €12.00"
+ "hourlyRate":"€3.00" ,
+ "otherRate1":"Mon-Sun 08:00-19:00 €3.00 per hour for first 3 hours\n€3.50 additional hours\n€25.00 for 24 hours" ,
+ "otherRate2":"Mon-Sun 19:00-08:00 €2.00 per hour\n€8.00 max"
  },
  {
  "code":"JERVIS" ,
@@ -127,17 +127,17 @@
  "services":"",
  "latitude":53.347876 ,
  "longitude":-6.266322,
- "openingHours":"Mon-Wed 07:00-19:30\n;Thur-Fri 07:00-21:30\n;Sat 07:30-19:30\n;Sun 10:30-19:30" ,
+ "openingHours":"Mon-Wed 07:00-19:30\nThur-Fri 07:00-21:30\nSat 07:30-19:30\nSun 10:30-19:30" ,
  "hourlyRate":"€2.80" ,
- "otherRate1":"Maximum charge €12\n;Overnight rate €5." ,
- "otherRate2":"Overnight - cars must exit by 10am the next day.\n;€40 for 5 visits"
+ "otherRate1":"Maximum charge €12\nOvernight rate €5." ,
+ "otherRate2":"Overnight - cars must exit by 10am the next day.\n€40 for 5 visits"
  },
  {
  "code":"TRINITY" ,
  "name":"Trinity Street" ,
  "address":"Trinity Street, Dublin 2" ,
  "region":"Southeast" ,
- "totalSpaces":"320" ,
+ "totalSpaces":"500" ,
  "disabledSpaces":"" ,
  "availableSpaces":"N/A" ,
  "heightRestrictions":"1.9m" ,
@@ -146,10 +146,10 @@
  "services":"",
  "latitude":53.343042 ,
  "longitude":-6.262696,
- "openingHours":"Mon-Sat 08:00-00:00\n;Sun 11:00-19:00" ,
+ "openingHours":"Mon-Sat 08:00-00:00\nSun 11:00-19:00" ,
  "hourlyRate":"€3.50" ,
- "otherRate1":"€50 a day\n;€13 overnight" ,
- "otherRate2":"€40 for 5 visits\n;Overnight - cars must exit by 10am the next day"
+ "otherRate1":"€50 a day\n€13 overnight" ,
+ "otherRate2":"€40 for 5 visits\n€10 max overnight - cars must exit by 10am the next day"
  },
  {
  "code":"B/THOMAS" ,
@@ -157,17 +157,17 @@
  "address":"Clarendon Street, Dublin 2" ,
  "region":"Southeast" ,
  "totalSpaces":"380" ,
- "disabledSpaces":"" ,
+ "disabledSpaces":"12" ,
  "availableSpaces":"N/A" ,
  "heightRestrictions":"" ,
  "phoneNumber":"" ,
  "directions":"Take right off Wicklow Street onto Clarendon Street." ,
- "services":"CCTV, Disabled Spaces, Parent and child spaces",
+ "services":"CCTV, Disabled Spaces, Parent and child spaces, Lift",
  "latitude":53.342294 ,
  "longitude":-6.261119,
- "openingHours":"Mon-Sat 07:00-01:00\n;Sun 09:00-22:00",
- "hourlyRate":"€3.10" ,
- "otherRate1":"€8 evening (6pm - 1am)\n;€8 overnight (6pm - 9am)" ,
+ "openingHours":"Mon-Sat 07:00-01:00\nSun 09:00-22:00",
+ "hourlyRate":"€3.20" ,
+ "otherRate1":"€8 evening (6pm - 1am)\n€8 overnight (6pm - 9am)" ,
  "otherRate2":""
  },
  {
@@ -181,13 +181,13 @@
  "heightRestrictions":"1.9m" ,
  "phoneNumber":"(01) 6779768" ,
  "directions":"From Nassau Street, turn right onto Frederick Street and turn left onto Setanta Place." ,
- "services":"24 Hours. Toilets, Parent and Child Spaces, Car Wash, Lift",
+ "services":"24 Hours. Electric Car Charging. Toilets, Parent and Child Spaces, Car Wash, Lift",
  "latitude":53.341762 ,
  "longitude":-6.256269,
  "openingHours":"Mon-Sun 24 hours a day",
  "hourlyRate":"€4.00" ,
- "otherRate1":"Evening/Overnight: 7pm to 9am 50c per 15 mins (max €8.00).\n;Special Evening/Overnight: Pay on arrival fixed rate: 5pm to 9am €6.50" ,
- "otherRate2":"PRE-BOOK: Evening/overnight (4pm to 9am next day): €5.\n;Day parking (9am to 7pm): €12.\n;24 hours: €15. https://bookings.parkmagic.net/cpreservations/booking.aspx"
+ "otherRate1":"08:00-19:00 €2 per 30 mins.\n19:00-08:00 €2 per hour" ,
+ "otherRate2":"PRE-BOOK: Day parking (9am to 6pm): €15.50.\n24 hours: €20.\nEvening parking (6pm to 12am): €7.\n https://bookings.parkmagic.net/cpreservations/booking.aspx"
  },
  {
  "code":"ILAC" ,
@@ -203,36 +203,36 @@
  "services":"Disabled Spaces, Toilets, Car Wash, Lift",
  "latitude":53.350878 ,
  "longitude":-6.265501,
- "openingHours":"Mon-Fri 07:30-21:00\n;Sat 07:30-19:00\n;Sun 11:00-19:00",
+ "openingHours":"Mon-Wed 07:30-21:00\nThur 07:30-22:00\nSat 07:30-19:30\nSun 11:00-19:00",
  "hourlyRate":"€2.00" ,
- "otherRate1":"Monday to Friday: €2 per hour, 10am to 4pm.\n;Saturday and Sunday: €2 per hour all day.\n;Max daily charge €10." ,
- "otherRate2":"Pay in advance: PrePay cards €30, €50 and €100"
+ "otherRate1":"Monday to Friday: €2 per hour, 10am to 4pm.\nSaturday and Sunday: €2 per hour all day.\nMax daily charge €10." ,
+ "otherRate2":"Pay in advance: PrePay cards €30, €50 and €100\nDiscounted parking for DIT students. Maximum daily charge €5. (7am to 6pm)"
  },
  {
  "code":"GREENRCS" ,
  "name":"Stephens Green" ,
  "address":"Stephen's Green/Royal College of Surgeons, Glovers Alley, Dublin 2" ,
  "region":"Southeast" ,
- "totalSpaces":"1127" ,
+ "totalSpaces":"1200" ,
  "disabledSpaces":"" ,
  "availableSpaces":"N/A" ,
  "heightRestrictions":"1.95m" ,
  "phoneNumber":"" ,
  "directions":"From Saint Stephen's Green, turn right onto Glovers Alley just after Stephen's Green shopping centre" ,
- "services":"Disabled Spaces, Car Wash, Lift. Entrance and exit hours: 24/7.",
+ "services":"Disabled Spaces, Car Wash, Lift. Electric car charging. Entrance and exit hours: 24/7.",
  "latitude":53.33966 ,
  "longitude":-6.263487,
  "openingHours":"Mon-Sun 24 hours a day",
- "hourlyRate":"€3.60" ,
- "otherRate1":"Special PrePay Evening and Overnight Offer (pay on arrival fixed rate, 5pm to 10am): €6.00.",
- "otherRate2":"Evening/overnight (5pm to 9am next day): €5.\n;Full day's parking (9am to 7pm): €10."
+ "hourlyRate":"€3.50" ,
+ "otherRate1":"08:00-19:00 €1 per 15 mins. €3.5 per hour\n19:00-08:00 €2 per hour. €10 max",
+ "otherRate2":"€35 for 24 hours."
  },
  {
  "code":"THOMASST" ,
  "name":"Thomas Street" ,
  "address":"Oliver Bond St, Dublin 8" ,
  "region":"Southwest" ,
- "totalSpaces":"220" ,
+ "totalSpaces":"225" ,
  "disabledSpaces":"" ,
  "availableSpaces":"N/A" ,
  "heightRestrictions":"" ,
@@ -242,9 +242,9 @@
  "latitude":53.343878 ,
  "longitude":-6.280154,
  "openingHours":"Mon-Sat 07:00-19:00",
- "hourlyRate":"€2.70" ,
- "otherRate1":"Max charge of €14.20",
- "otherRate2":""
+ "hourlyRate":"€3.20" ,
+ "otherRate1":"€3.20 for 1 hour\n€5.90 for 2 hours\n€8.60 for 3 hours\n€12.00 for 4 hours",
+ "otherRate2":"Overnight charge €8.50\nMax charge of €14.20"
  },
  {
  "code":"DAWSON" ,
@@ -260,9 +260,9 @@
  "services":"",
  "latitude":53.340284,
  "longitude":-6.256245,
- "openingHours":"Mon-Sat 07:00-01:00\n;Sun 07:00-19:00",
+ "openingHours":"Mon-Sat 07:00-01:00\nSun 07:00-19:00",
  "hourlyRate":"€3.00" ,
- "otherRate1":"Maximum daily rate: €33.80.\n;Special evening and overnight rate: €6.40 (5.00pm to 10.00am).\n;Sunday daily rate: maximum €10.00",
- "otherRate2":"DIT student discount: Maximum daily charge €5. (7am to 6pm).\n;Present student card at customer service desk."
+ "otherRate1":"Maximum daily rate: €33.80.\nSpecial evening and overnight rate: €6.40 (5.00pm to 10.00am).\nSunday daily rate: maximum €10.00",
+ "otherRate2":"DIT student discount: Maximum daily charge €5. (7am to 6pm).\nPresent student card at customer service desk."
  }
  ]
