@@ -34,6 +34,11 @@
     @try{
         [super viewDidLoad];
         
+        if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+        
         // start recording current location
         locationManager = [[CLLocationManager alloc] init];
         locationManager.delegate = self;

@@ -478,11 +478,6 @@
 				CLASSPREFIX = DCDS;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = dcdevstudios;
-				TargetAttributes = {
-					49F888D616D6D18700AB3377 = {
-						DevelopmentTeam = G6NM4ZGLNA;
-					};
-				};
 			};
 			buildConfigurationList = 49F888D216D6D18700AB3377 /* Build configuration list for PBXProject "DublinCityParking" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -645,7 +640,6 @@
 		49F8890316D6D18700AB3377 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -664,7 +658,6 @@
 		49F8890416D6D18700AB3377 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../../../../../Downloads\"",

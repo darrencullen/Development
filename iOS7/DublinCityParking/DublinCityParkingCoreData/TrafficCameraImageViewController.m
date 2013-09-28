@@ -55,6 +55,11 @@
     @try{
         [super viewDidLoad];
         
+        if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+        
         self.title = self.selectedTrafficCamera.name;
         self.imageURL = [[NSURL alloc] initWithString:self.selectedTrafficCamera.url];
         

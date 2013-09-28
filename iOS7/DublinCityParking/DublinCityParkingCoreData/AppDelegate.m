@@ -34,12 +34,14 @@
     CarparkListViewController *carparkListController = [[navigationController viewControllers] objectAtIndex:0];
     carparkListController.managedObjectContext = self.managedObjectContext;
     
-    // customise the navigation bar
-    UIImage *navBackgroundImage = [UIImage imageNamed:@"strip5.png"];
-    [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
-
-    UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
-    [[UIBarButtonItem appearance] setTintColor:backgroundColour];    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        // customise the navigation bar
+        UIImage *navBackgroundImage = [UIImage imageNamed:@"strip5.png"];
+        [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
+        
+        UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
+        [[UIBarButtonItem appearance] setTintColor:backgroundColour];
+    }
     
     return YES;
 }

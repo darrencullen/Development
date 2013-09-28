@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>43A5FF42-D598-4CEF-8B7E-47F6A948A8F3</string>
+	<string>48175164-869F-4DC1-A211-EEB6643EB40B</string>
 	<key>IDESourceControlProjectName</key>
 	<string>DublinCityParking</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,7 +14,7 @@
 		<string>https://github.com/darrencullen/Development.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS7/DublinCityParking/DublinCityParking.xcodeproj/project.xcworkspace</string>
+	<string>PROJECT/DublinCityParking/DublinCityParking.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D4FE1B97-9C06-46FD-9993-4C3A5EB13039</key>
