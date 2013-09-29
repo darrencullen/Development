@@ -590,18 +590,18 @@
                         <viewControllerLayoutGuide type="bottom" id="XNe-TZ-mBm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RXW-5J-c4h">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-hy-smm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="323" id="Qdg-l3-V4A"/>
                                 </constraints>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="LPC-v4-1xN">
-                                <rect key="frame" x="0.0" y="475" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="Back" id="Xv1-Jz-2vk">
                                         <connections>
@@ -926,14 +926,12 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fcl-6u-yOU">
                                 <rect key="frame" x="0.0" y="43" width="320" height="417"/>
-                                <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="417" id="HM4-Z6-S05"/>
                                 </constraints>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pqq-7W-3fi">
                                 <rect key="frame" x="7" y="5" width="307" height="33"/>
-                                <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="4sV-5T-lfa"/>
                                     <constraint firstAttribute="width" constant="307" id="zN9-wW-WPC"/>
@@ -948,7 +946,6 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Pqq-7W-3fi" firstAttribute="top" secondItem="3u7-NY-a50" secondAttribute="top" constant="5" id="QdE-Fs-znX"/>
                             <constraint firstItem="Fcl-6u-yOU" firstAttribute="leading" secondItem="3u7-NY-a50" secondAttribute="leading" id="Rc6-zz-a8Y"/>
@@ -964,6 +961,7 @@
                         <outlet property="mapView" destination="Fcl-6u-yOU" id="ss9-2U-s2S"/>
                         <outlet property="navigationBar" destination="J8v-0u-tpI" id="B4l-M4-vse"/>
                         <outlet property="segmentedControlOverlayTypes" destination="Pqq-7W-3fi" id="5Xf-li-yea"/>
+                        <outlet property="vieMapView" destination="3u7-NY-a50" id="2DZ-jb-0K0"/>
                         <segue destination="Jdj-tc-gdq" kind="push" identifier="showDirections" id="v6w-YW-76L"/>
                     </connections>
                 </viewController>
@@ -2019,21 +2017,10 @@
     </scenes>
     <resources>
         <image name="StarEmpty24-3.png" width="24" height="24"/>
-        <image name="StarEmpty24-3.png" width="24" height="24"/>
         <image name="camera1.png" width="25" height="25"/>
-        <image name="directions24.png" width="24" height="24"/>
         <image name="directions24.png" width="24" height="24"/>
         <image name="newpin2.png" width="25" height="25"/>
         <image name="parking3.png" width="25" height="25"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
         <image name="pointer1.png" width="16" height="16"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
@@ -2043,6 +2030,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="M4r-a9-yOE"/>
+        <segue reference="v6w-YW-76L"/>
     </inferredMetricsTieBreakers>
 </document>

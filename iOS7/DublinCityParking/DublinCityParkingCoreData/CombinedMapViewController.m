@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSArray *trafficCameraLocations;
 @property (nonatomic) CLLocationCoordinate2D selectedAnnotationCoordinate;
 @property (nonatomic, strong) NSString *selectedAnnotationTitle;
+@property (strong, nonatomic) IBOutlet UIView *vieMapView;
 @end
 
 @implementation CombinedMapViewController{
@@ -35,7 +36,12 @@
     @try{
         [super viewDidLoad];
         
-        if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
+            
+            [self.vieMapView setBackgroundColor:backgroundColour];
+            
+        } else {
             self.edgesForExtendedLayout = UIRectEdgeNone;
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
