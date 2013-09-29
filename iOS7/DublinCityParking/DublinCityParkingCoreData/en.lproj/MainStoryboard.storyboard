@@ -594,18 +594,18 @@
                         <viewControllerLayoutGuide type="bottom" id="XNe-TZ-mBm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RXW-5J-c4h">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-hy-smm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="323" id="Qdg-l3-V4A"/>
                                 </constraints>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="LPC-v4-1xN">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="475" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="Back" id="Xv1-Jz-2vk">
                                         <connections>
@@ -2023,10 +2023,21 @@
     </scenes>
     <resources>
         <image name="StarEmpty24-3.png" width="24" height="24"/>
+        <image name="StarEmpty24-3.png" width="24" height="24"/>
         <image name="camera1.png" width="25" height="25"/>
+        <image name="directions24.png" width="24" height="24"/>
         <image name="directions24.png" width="24" height="24"/>
         <image name="newpin2.png" width="25" height="25"/>
         <image name="parking3.png" width="25" height="25"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
         <image name="pointer1.png" width="16" height="16"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
@@ -2036,6 +2047,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="v6w-YW-76L"/>
+        <segue reference="u0s-dS-X0a"/>
     </inferredMetricsTieBreakers>
 </document>

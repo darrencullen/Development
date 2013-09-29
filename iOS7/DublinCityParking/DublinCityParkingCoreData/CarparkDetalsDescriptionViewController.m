@@ -54,10 +54,8 @@
             
             [self.tableViewFurtherCarparkDetails setBackgroundView:backView];
         } else {
-        
-            UIImage *navbarButton = [[UIImage imageNamed:@"directionsbutton.png"]
-                                 resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
-            self.navigationItem.rightBarButtonItem.image = navbarButton;
+            self.directionsButton.image = [[UIImage imageNamed:@"directionsbutton.png"]
+                                     resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
         }
     
         if ([self.title isEqualToString:@"Directions"]){
