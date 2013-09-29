@@ -428,7 +428,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="EAr-aa-mfy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
                         <sections>
                             <tableViewSection id="MRR-CA-Pvv">
@@ -573,6 +573,9 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="More Information" id="QzG-ke-w7X"/>
+                    <connections>
+                        <outlet property="tableViewMoreInfo" destination="EAr-aa-mfy" id="Wka-cE-RsZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6M-5Q-Lxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -968,14 +971,14 @@
             </objects>
             <point key="canvasLocation" x="-2905" y="1430"/>
         </scene>
-        <!--Parking Info View Controller - Parking Information-->
+        <!--Parking Info View Controller - Parking Info-->
         <scene sceneID="DpE-mQ-HWN">
             <objects>
                 <tableViewController id="8I2-cj-d5A" customClass="ParkingInfoViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="7I1-cL-Nup">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Live Data" id="hYm-f8-H2d">
@@ -1766,9 +1769,10 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Parking Information" id="sQe-Nf-UNM"/>
+                    <navigationItem key="navigationItem" title="Parking Info" id="sQe-Nf-UNM"/>
                     <connections>
                         <outlet property="lastUpdatedLabel" destination="ByE-ff-3rK" id="KBX-ND-gqa"/>
+                        <outlet property="tableViewParkingInfo" destination="7I1-cL-Nup" id="syb-re-BTh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIN-14-XVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
