@@ -256,7 +256,7 @@
         cgTrafficCamera = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] lastObject];
         
         NSString *alertMessage;
-        if (cgTrafficCamera.favourite == [NSNumber numberWithInt:0]){
+        if ((cgTrafficCamera.favourite == [NSNumber numberWithInt:0]) || (cgTrafficCamera.favourite == nil)){
             cgTrafficCamera.favourite = [NSNumber numberWithBool:YES];
             alertMessage = @"Added to favourite cameras list";
             newFavImage = [UIImage imageNamed:@"StarFull24-3.png"];

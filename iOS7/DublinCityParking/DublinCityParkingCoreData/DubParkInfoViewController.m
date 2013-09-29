@@ -11,6 +11,7 @@
 #import <BugSense-iOS/BugSenseController.h>
 
 @interface DubParkInfoViewController ()
+@property (strong, nonatomic) IBOutlet UITableView *tableViewDubParkInfo;
 
 @end
 
@@ -30,6 +31,17 @@
     @try{
         [super viewDidLoad];
         
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            self.tableViewDubParkInfo.backgroundView = nil;
+            
+            UIView *backView = [[UIView alloc] init];
+            UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
+            [backView setBackgroundColor:backgroundColour];
+            
+            [self.tableViewDubParkInfo setBackgroundView:backView];
+        }
+
+        
     } @catch (NSException *exc) {
         BUGSENSE_LOG(exc, nil);
     }
@@ -41,11 +53,13 @@
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
         UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
         
-        headerLabel.backgroundColor = [UIColor clearColor];
-        headerLabel.textColor = [UIColor whiteColor];
-        headerLabel.shadowColor = [UIColor grayColor];
-        headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-        headerLabel.font = [UIFont boldSystemFontOfSize:18];
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            headerLabel.backgroundColor = [UIColor clearColor];
+            headerLabel.textColor = [UIColor whiteColor];
+            headerLabel.shadowColor = [UIColor grayColor];
+            headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+            headerLabel.font = [UIFont boldSystemFontOfSize:18];
+        }
         
         if(section == 0)
             headerLabel.text = @"App Details";
