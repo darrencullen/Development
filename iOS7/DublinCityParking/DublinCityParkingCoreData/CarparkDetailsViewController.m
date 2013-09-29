@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSMutableArray *carparkDetailOther;
 @property (nonatomic, strong) NSMutableArray *carparkDetailContact;
 @property (nonatomic) int selectedRowTag;
+@property (strong, nonatomic) IBOutlet UITableView *tableViewCarparkDetails;
 @end
 
 @implementation CarparkDetailsViewController
@@ -81,6 +82,16 @@
     @try{
         [super viewDidLoad];
         self.carparkDetailSections = [[NSMutableArray alloc] initWithObjects:self.carparkDetailLocation, self.carparkDetailSpaces, self.carparkDetailRates, self.carparkDetailOther, self.carparkDetailContact, self.carparkDetailLastUpdated, nil];
+        
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            self.tableViewCarparkDetails.backgroundView = nil;
+            
+            UIView *backView = [[UIView alloc] init];
+            UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
+            [backView setBackgroundColor:backgroundColour];
+            
+            [self.tableViewCarparkDetails setBackgroundView:backView];
+        }
         
         self.title = self.selectedCarparkInfo.name;
         if (self.selectedCarparkInfo.favourite == YES){
@@ -368,11 +379,13 @@
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
         UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
         
-        headerLabel.backgroundColor = [UIColor clearColor];
-        headerLabel.textColor = [UIColor whiteColor];
-        headerLabel.shadowColor = [UIColor grayColor];
-        headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-        headerLabel.font = [UIFont boldSystemFontOfSize:18];
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            headerLabel.backgroundColor = [UIColor clearColor];
+            headerLabel.textColor = [UIColor whiteColor];
+            headerLabel.shadowColor = [UIColor grayColor];
+            headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+            headerLabel.font = [UIFont boldSystemFontOfSize:18];
+        }
         
         if(section == 0){
             if ([_carparkDetailLocation count] > 0){

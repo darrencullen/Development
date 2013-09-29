@@ -28,7 +28,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="13">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.074509806931018829" green="0.086274512112140656" blue="0.30588236451148987" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarparkCell" rowHeight="44" id="ab7-DP-plN">
@@ -107,6 +107,7 @@
                     <navigationItem key="navigationItem" title="Carpark Spaces" id="36"/>
                     <connections>
                         <outlet property="carparkList" destination="13" id="HcR-i9-b1p"/>
+                        <outlet property="tableViewCarparks" destination="13" id="SMU-gD-gLX"/>
                         <segue destination="Y7Y-5T-hS6" kind="push" identifier="showCarparkMap" id="Ap5-BQ-nc6"/>
                     </connections>
                 </tableViewController>
@@ -164,7 +165,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="lIw-1c-eoJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DrilldownCell" rowHeight="44" id="h9t-P0-4Is">
@@ -278,6 +279,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="buttonFavs" destination="UJk-ML-nUM" id="uzh-yv-mff"/>
+                        <outlet property="tableViewCarparkDetails" destination="lIw-1c-eoJ" id="ppz-kO-zZl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1I-3V-TTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -291,7 +293,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="Xoj-KJ-YJk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="aDP-Mz-Tda">
@@ -338,6 +340,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="directionsButton" destination="UYN-ap-e28" id="pwi-0H-oi9"/>
+                        <outlet property="tableViewFurtherCarparkDetails" destination="Xoj-KJ-YJk" id="BPX-hO-TRE"/>
                         <outlet property="textView" destination="M7L-Hf-4X5" id="I5o-DU-SmU"/>
                     </connections>
                 </tableViewController>
@@ -352,7 +355,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="qb5-3a-rt8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrafficCameraCell" rowHeight="44" id="hxh-jL-794">
@@ -398,6 +401,7 @@
                     <navigationItem key="navigationItem" title="Traffic Cameras" id="lcb-yx-dH3"/>
                     <connections>
                         <outlet property="cameraList" destination="qb5-3a-rt8" id="BAq-pZ-oYC"/>
+                        <outlet property="tableViewTrafficCameras" destination="qb5-3a-rt8" id="HzF-2i-vJX"/>
                         <segue destination="ITm-qa-pma" kind="push" identifier="showTrafficCameraImage" id="K7M-FE-gUd"/>
                     </connections>
                 </tableViewController>
@@ -647,7 +651,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eQu-BJ-XLD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.074509806930000005" green="0.086274512110000007" blue="0.3058823645" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DisabledSpaceCell" rowHeight="44" id="hr4-a3-QKS">
@@ -703,6 +707,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Disabled Parking Spaces" id="6vA-dE-7HQ"/>
                     <connections>
+                        <outlet property="tableViewDisabledSpaces" destination="eQu-BJ-XLD" id="qhJ-7s-jS5"/>
                         <segue destination="CF9-Pg-Inm" kind="push" identifier="showDisabledSpaceMap" id="rX8-Ng-NNz"/>
                     </connections>
                 </tableViewController>
@@ -931,9 +936,9 @@
                                 </constraints>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pqq-7W-3fi">
-                                <rect key="frame" x="7" y="5" width="307" height="33"/>
+                                <rect key="frame" x="7" y="5" width="307" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="4sV-5T-lfa"/>
+                                    <constraint firstAttribute="height" constant="28" id="4sV-5T-lfa"/>
                                     <constraint firstAttribute="width" constant="307" id="zN9-wW-WPC"/>
                                 </constraints>
                                 <segments>
@@ -941,6 +946,7 @@
                                     <segment title="Disabled Spaces"/>
                                     <segment title="Cameras" width="94.666666666666671"/>
                                 </segments>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="selectOverlayType:" destination="Cx8-eo-sck" eventType="valueChanged" id="vLQ-ko-k6k"/>
                                 </connections>
@@ -2017,10 +2023,21 @@
     </scenes>
     <resources>
         <image name="StarEmpty24-3.png" width="24" height="24"/>
+        <image name="StarEmpty24-3.png" width="24" height="24"/>
         <image name="camera1.png" width="25" height="25"/>
+        <image name="directions24.png" width="24" height="24"/>
         <image name="directions24.png" width="24" height="24"/>
         <image name="newpin2.png" width="25" height="25"/>
         <image name="parking3.png" width="25" height="25"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
+        <image name="pointer1.png" width="16" height="16"/>
         <image name="pointer1.png" width="16" height="16"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>

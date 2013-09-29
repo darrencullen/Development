@@ -12,6 +12,7 @@
 
 @interface CarparkDetalsDescriptionViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) IBOutlet UITableView *tableViewFurtherCarparkDetails;
 
 @end
 
@@ -43,6 +44,16 @@
         locationManager = [[CLLocationManager alloc] init];
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            self.tableViewFurtherCarparkDetails.backgroundView = nil;
+            
+            UIView *backView = [[UIView alloc] init];
+            UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
+            [backView setBackgroundColor:backgroundColour];
+            
+            [self.tableViewFurtherCarparkDetails setBackgroundView:backView];
+        }
         
         if ([self.title isEqualToString:@"Directions"]){
             NSMutableArray *toolbarButtons = [self.navigationItem.rightBarButtonItems mutableCopy];

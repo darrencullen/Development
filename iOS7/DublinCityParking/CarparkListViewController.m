@@ -24,6 +24,7 @@
 @property (nonatomic, strong) NSMutableArray *northeastCarparks;
 @property (nonatomic, strong) NSMutableArray *northwestCarparks;
 @property (nonatomic, strong) NSMutableArray *carparkLocations;
+@property (strong, nonatomic) IBOutlet UITableView *tableViewCarparks;
 
 @end
 
@@ -74,6 +75,16 @@
 {
     @try{
         [super viewDidLoad];
+        
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            self.tableViewCarparks.backgroundView = nil;
+            
+            UIView *backView = [[UIView alloc] init];
+            UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
+            [backView setBackgroundColor:backgroundColour];
+            
+            [self.tableViewCarparks setBackgroundView:backView];
+        }
         
         if (![NetworkStatus hasConnectivity]){
             UIAlertView *alertView = [[UIAlertView alloc]
@@ -259,11 +270,13 @@
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
         UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
         
-        headerLabel.backgroundColor = [UIColor clearColor];
-        headerLabel.textColor = [UIColor whiteColor];
-        headerLabel.shadowColor = [UIColor grayColor];
-        headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-        headerLabel.font = [UIFont boldSystemFontOfSize:18];
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            headerLabel.backgroundColor = [UIColor clearColor];
+            headerLabel.textColor = [UIColor whiteColor];
+            headerLabel.shadowColor = [UIColor grayColor];
+            headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+            headerLabel.font = [UIFont boldSystemFontOfSize:18];
+        }
         
         if(section == 0){
             if ([_favouriteCarparks count] > 0){

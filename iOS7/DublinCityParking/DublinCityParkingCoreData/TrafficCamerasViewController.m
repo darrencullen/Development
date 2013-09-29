@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSMutableArray *trafficCamerasD1;
 @property (nonatomic, strong) NSMutableArray *trafficCamerasD2;
 @property (nonatomic, strong) NSMutableArray *trafficCameraLocations;
+@property (strong, nonatomic) IBOutlet UITableView *tableViewTrafficCameras;
 
 @end
 
@@ -81,6 +82,16 @@
             } else if ([camera.postCode isEqualToString:@"D2"]){
                 [self.trafficCamerasD2 addObject:camera];
             }
+        }
+        
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            self.tableViewTrafficCameras.backgroundView = nil;
+            
+            UIView *backView = [[UIView alloc] init];
+            UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
+            [backView setBackgroundColor:backgroundColour];
+            
+            [self.tableViewTrafficCameras setBackgroundView:backView];
         }
         
     } @catch (NSException *exc) {
@@ -191,11 +202,13 @@
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
         UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
         
-        headerLabel.backgroundColor = [UIColor clearColor];
-        headerLabel.textColor = [UIColor whiteColor];
-        headerLabel.shadowColor = [UIColor grayColor];
-        headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-        headerLabel.font = [UIFont boldSystemFontOfSize:18];
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            headerLabel.backgroundColor = [UIColor clearColor];
+            headerLabel.textColor = [UIColor whiteColor];
+            headerLabel.shadowColor = [UIColor grayColor];
+            headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+            headerLabel.font = [UIFont boldSystemFontOfSize:18];
+        }
         
         if(section == 0){
             if ([_favouriteCameras count] > 0){

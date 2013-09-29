@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *disabledSpacesD1;
 @property (nonatomic, strong) NSMutableArray *disabledSpacesD2;
 @property (nonatomic, strong) NSMutableArray *disabledSpaceLocations;
+@property (strong, nonatomic) IBOutlet UITableView *tableViewDisabledSpaces;
 
 @end
 
@@ -69,6 +70,16 @@
             [self.disabledSpacesD2 addObject:space];
         }
     }
+    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        self.tableViewDisabledSpaces.backgroundView = nil;
+        
+        UIView *backView = [[UIView alloc] init];
+        UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
+        [backView setBackgroundColor:backgroundColour];
+        
+        [self.tableViewDisabledSpaces setBackgroundView:backView];
+    }
 }
 
 - (void) resetArrays
@@ -116,11 +127,13 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,30)];
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,10, headerView.frame.size.width, 30)];
     
-    headerLabel.backgroundColor = [UIColor clearColor];
-    headerLabel.textColor = [UIColor whiteColor];
-    headerLabel.shadowColor = [UIColor grayColor];
-    headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-    headerLabel.font = [UIFont boldSystemFontOfSize:18];
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        headerLabel.backgroundColor = [UIColor clearColor];
+        headerLabel.textColor = [UIColor whiteColor];
+        headerLabel.shadowColor = [UIColor grayColor];
+        headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+        headerLabel.font = [UIFont boldSystemFontOfSize:18];
+    }
     
     if(section == 0)
         headerLabel.text = @"Dublin 1";
