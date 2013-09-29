@@ -2023,21 +2023,10 @@
     </scenes>
     <resources>
         <image name="StarEmpty24-3.png" width="24" height="24"/>
-        <image name="StarEmpty24-3.png" width="24" height="24"/>
         <image name="camera1.png" width="25" height="25"/>
-        <image name="directions24.png" width="24" height="24"/>
         <image name="directions24.png" width="24" height="24"/>
         <image name="newpin2.png" width="25" height="25"/>
         <image name="parking3.png" width="25" height="25"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
         <image name="pointer1.png" width="16" height="16"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
