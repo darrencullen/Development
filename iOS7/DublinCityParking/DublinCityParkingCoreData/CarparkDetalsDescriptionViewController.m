@@ -53,8 +53,13 @@
             [backView setBackgroundColor:backgroundColour];
             
             [self.tableViewFurtherCarparkDetails setBackgroundView:backView];
-        }
+        } else {
         
+            UIImage *navbarButton = [[UIImage imageNamed:@"directionsbutton.png"]
+                                 resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+            self.navigationItem.rightBarButtonItem.image = navbarButton;
+        }
+    
         if ([self.title isEqualToString:@"Directions"]){
             NSMutableArray *toolbarButtons = [self.navigationItem.rightBarButtonItems mutableCopy];
 

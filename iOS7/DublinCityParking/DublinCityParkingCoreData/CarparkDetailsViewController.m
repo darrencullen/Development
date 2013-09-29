@@ -91,14 +91,23 @@
             [backView setBackgroundColor:backgroundColour];
             
             [self.tableViewCarparkDetails setBackgroundView:backView];
+            
+            if (self.selectedCarparkInfo.favourite == YES){
+                self.buttonFavs.image = [UIImage imageNamed:@"StarFull24-3.png"];
+            } else {
+                self.buttonFavs.image = [UIImage imageNamed:@"StarEmpty24-3.png"];
+            }
+        } else {
+            if (self.selectedCarparkInfo.favourite == YES){
+                self.buttonFavs.image = [[UIImage imageNamed:@"favouritesbuttonon.png"]
+                                         resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+            } else {
+                self.buttonFavs.image = [[UIImage imageNamed:@"favouritesbuttonoff.png"]
+                                         resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+            }
         }
         
         self.title = self.selectedCarparkInfo.name;
-        if (self.selectedCarparkInfo.favourite == YES){
-             self.buttonFavs.image = [UIImage imageNamed:@"StarFull24-3.png"];
-        } else {
-             self.buttonFavs.image = [UIImage imageNamed:@"StarEmpty24-3.png"];
-        }
         
         [self populateDetailArrays];
         
@@ -537,11 +546,22 @@
         NSString *alertMessage;
         if (cgCarpark.favourite == NO){
             cgCarpark.favourite = 1;
-            newFavImage = [UIImage imageNamed:@"StarFull24-3.png"];
+            if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+                newFavImage = [UIImage imageNamed:@"StarFull24-3.png"];
+            } else {
+                newFavImage = [[UIImage imageNamed:@"favouritesbuttonon.png"]
+                                         resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+            }
+            
             alertMessage = @"Added to favourite carparks list";
         } else {
             cgCarpark.favourite = 0;
-            newFavImage = [UIImage imageNamed:@"StarEmpty24-3.png"];
+            if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+                newFavImage = [UIImage imageNamed:@"StarEmpty24-3.png"];
+            } else {
+                newFavImage = [[UIImage imageNamed:@"favouritesbuttonoff.png"]
+                               resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+            }
             alertMessage = @"Removed from favourite carparks list";
         }
 

@@ -14,6 +14,11 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>parking80</string>
+				<string>parking58</string>
+				<string>parking29</string>
+				<string>parking120</string>
+				<string>parking114</string>
 				<string>parking57.png</string>
 			</array>
 		</dict>

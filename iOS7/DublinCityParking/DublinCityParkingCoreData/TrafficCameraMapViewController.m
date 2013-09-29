@@ -37,6 +37,26 @@
         if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
             self.edgesForExtendedLayout = UIRectEdgeNone;
             self.automaticallyAdjustsScrollViewInsets = NO;
+            
+            UIImage *navbarButton = [[UIImage imageNamed:@"directionsbutton.png"]
+                                     resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+            self.navigationItem.rightBarButtonItem.image = navbarButton;
+            
+            if (self.selectedTrafficCamera.favourite == [NSNumber numberWithInt:1]){
+                self.buttonFavouriteCamera.image = [UIImage imageNamed:@"StarFull24-3.png"];
+            } else {
+                self.buttonFavouriteCamera.image = [UIImage imageNamed:@"StarEmpty24-3.png"];
+            }
+        } else {
+            if (self.selectedTrafficCamera.favourite == [NSNumber numberWithInt:1]){
+                UIImage *navbarButton = [[UIImage imageNamed:@"favouritesbuttonon.png"]
+                                         resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+                self.navigationItem.rightBarButtonItem.image = navbarButton;
+            } else {
+                UIImage *navbarButton = [[UIImage imageNamed:@"favouritesbuttonoff.png"]
+                                         resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+                self.navigationItem.rightBarButtonItem.image = navbarButton;
+            }
         }
         
         // start recording current location
@@ -58,12 +78,6 @@
         span.longitudeDelta=0.008;
         region.span=span;
         [self.mapView setRegion:region animated:YES];
-        
-        if (self.selectedTrafficCamera.favourite == [NSNumber numberWithInt:1]){
-            self.buttonFavouriteCamera.image = [UIImage imageNamed:@"StarFull24-3.png"];
-        } else {
-            self.buttonFavouriteCamera.image = [UIImage imageNamed:@"StarEmpty24-3.png"];
-        }
         
     } @catch (NSException *exc) {
         BUGSENSE_LOG(exc, nil);

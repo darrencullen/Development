@@ -38,6 +38,10 @@
         if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
             self.edgesForExtendedLayout = UIRectEdgeNone;
             self.automaticallyAdjustsScrollViewInsets = NO;
+            
+            UIImage *navbarButton = [[UIImage imageNamed:@"directionsbutton.png"]
+                                     resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+            self.navigationItem.rightBarButtonItem.image = navbarButton;
         }
 
         // start recording current location

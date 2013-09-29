@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D618378F-6006-4AB4-A6E0-50B847A77C8E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DublinCityParking</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DBD93701-21FE-46C5-B794-01E9F8FE8A77</key>
+		<string>https://github.com/darrencullen/Development.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iOS7/DublinCityParking/DublinCityParking.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DBD93701-21FE-46C5-B794-01E9F8FE8A77</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/darrencullen/Development.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DBD93701-21FE-46C5-B794-01E9F8FE8A77</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DBD93701-21FE-46C5-B794-01E9F8FE8A77</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Development</string>
+		</dict>
+	</array>
+</dict>
+</plist>
