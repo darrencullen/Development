@@ -99,10 +99,10 @@
             }
         } else {
             if (self.selectedCarparkInfo.favourite == YES){
-                self.buttonFavs.image = [[UIImage imageNamed:@"favouritesbuttonon.png"]
+                self.buttonFavs.image = [[UIImage imageNamed:@"starfav.png"]
                                          resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
             } else {
-                self.buttonFavs.image = [[UIImage imageNamed:@"favouritesbuttonoff.png"]
+                self.buttonFavs.image = [[UIImage imageNamed:@"starnotfav.png"]
                                          resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
             }
         }
@@ -549,7 +549,7 @@
             if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
                 newFavImage = [UIImage imageNamed:@"StarFull24-3.png"];
             } else {
-                newFavImage = [[UIImage imageNamed:@"favouritesbuttonon.png"]
+                newFavImage = [[UIImage imageNamed:@"starfav.png"]
                                          resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
             }
             
@@ -559,7 +559,7 @@
             if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
                 newFavImage = [UIImage imageNamed:@"StarEmpty24-3.png"];
             } else {
-                newFavImage = [[UIImage imageNamed:@"favouritesbuttonoff.png"]
+                newFavImage = [[UIImage imageNamed:@"starnotfav.png"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
             }
             alertMessage = @"Removed from favourite carparks list";

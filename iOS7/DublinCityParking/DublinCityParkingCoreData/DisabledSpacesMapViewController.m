@@ -13,6 +13,7 @@
 
 @interface DisabledSpacesMapViewController ()
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *directionsButton;
 @end
 
 
@@ -39,9 +40,12 @@
             self.edgesForExtendedLayout = UIRectEdgeNone;
             self.automaticallyAdjustsScrollViewInsets = NO;
             
-            UIImage *navbarButton = [[UIImage imageNamed:@"directionsbutton.png"]
+            UIImage *navbarButton = [[UIImage imageNamed:@"directions.png"]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
             self.navigationItem.rightBarButtonItem.image = navbarButton;
+        } else {
+            self.directionsButton.image = [[UIImage imageNamed:@"directions24.png"]
+                                           resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
         }
 
         // start recording current location

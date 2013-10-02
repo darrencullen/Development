@@ -51,10 +51,12 @@
             UIView *backView = [[UIView alloc] init];
             UIColor *backgroundColour = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:78.0/255.0 alpha:1];
             [backView setBackgroundColor:backgroundColour];
-            
             [self.tableViewFurtherCarparkDetails setBackgroundView:backView];
+            
+            self.directionsButton.image = [[UIImage imageNamed:@"directions24.png"]
+                               resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
         } else {
-            self.directionsButton.image = [[UIImage imageNamed:@"directionsbutton.png"]
+            self.directionsButton.image = [[UIImage imageNamed:@"directions.png"]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
         }
     

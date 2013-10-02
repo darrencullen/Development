@@ -271,7 +271,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Carpark Details" id="m6C-H0-39E">
-                        <barButtonItem key="rightBarButtonItem" image="StarEmpty24-3.png" id="UJk-ML-nUM">
+                        <barButtonItem key="rightBarButtonItem" image="starnotfav.png" id="UJk-ML-nUM">
                             <connections>
                                 <action selector="setFavouriteCarpark:" destination="ed9-JH-aWy" id="5CN-JU-NQA"/>
                             </connections>
@@ -331,7 +331,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Further Details" id="Q8W-Xl-Rt5">
-                        <barButtonItem key="rightBarButtonItem" image="directions24.png" id="UYN-ap-e28">
+                        <barButtonItem key="rightBarButtonItem" image="directions.png" id="UYN-ap-e28">
                             <connections>
                                 <action selector="getDirections:" destination="EPp-gY-4vS" id="DFb-lj-XOW"/>
                                 <segue destination="Jdj-tc-gdq" kind="push" identifier="showCarparkDirections" id="sYP-0s-W4k"/>
@@ -811,7 +811,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Disabled Space Map" id="Yn3-QZ-dB9">
-                        <barButtonItem key="rightBarButtonItem" image="directions24.png" id="sVU-er-x8u">
+                        <barButtonItem key="rightBarButtonItem" image="directions.png" id="sVU-er-x8u">
                             <connections>
                                 <action selector="showDisabledSpacesDirections:" destination="CF9-Pg-Inm" id="NJR-uL-CJQ"/>
                             </connections>
@@ -819,6 +819,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="directionsButton" destination="sVU-er-x8u" id="JC7-ue-Q9q"/>
                         <outlet property="mapView" destination="QWo-FN-Ndk" id="XT9-la-ugQ"/>
                         <segue destination="Jdj-tc-gdq" kind="push" identifier="showDisabledSpaceDirections" id="u0s-dS-X0a"/>
                     </connections>
@@ -841,13 +842,13 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIn-1e-BNl">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="520"/>
-                                <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xAY-DV-QSW">
                                 <rect key="frame" x="150" y="250" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.030923979470000001" green="0.035297404820000003" blue="0.30651324730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="xAY-DV-QSW" secondAttribute="centerY" id="1cJ-7g-IPK"/>
                             <constraint firstItem="rIn-1e-BNl" firstAttribute="leading" secondItem="gfd-Mv-adK" secondAttribute="leading" id="4wx-XL-2PH"/>
@@ -900,7 +901,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Traffic Camera Map" id="LXj-PB-TKV">
-                        <barButtonItem key="rightBarButtonItem" image="StarEmpty24-3.png" id="hv2-ee-7YB">
+                        <barButtonItem key="rightBarButtonItem" image="starnotfav.png" id="hv2-ee-7YB">
                             <connections>
                                 <action selector="setFavouriteCamera:" destination="gNt-oC-HOE" id="pAh-Mj-aOl"/>
                             </connections>
@@ -2022,23 +2023,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="StarEmpty24-3.png" width="24" height="24"/>
-        <image name="StarEmpty24-3.png" width="24" height="24"/>
         <image name="camera1.png" width="25" height="25"/>
-        <image name="directions24.png" width="24" height="24"/>
-        <image name="directions24.png" width="24" height="24"/>
+        <image name="directions.png" width="25" height="25"/>
         <image name="newpin2.png" width="25" height="25"/>
         <image name="parking3.png" width="25" height="25"/>
         <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
-        <image name="pointer1.png" width="16" height="16"/>
+        <image name="starnotfav.png" width="25" height="25"/>
         <image name="wheelchair2.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -2047,6 +2037,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="u0s-dS-X0a"/>
+        <segue reference="M4r-a9-yOE"/>
     </inferredMetricsTieBreakers>
 </document>

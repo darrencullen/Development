@@ -102,9 +102,19 @@
             
             UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
             if (self.selectedCarparkInfo.favourite == 1)
-                [leftButton setImage:[UIImage imageNamed:@"StarFull24-3.png"] forState:UIControlStateNormal];
+                if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+                    [leftButton setImage:[UIImage imageNamed:@"StarFull24-3.png"] forState:UIControlStateNormal];
+                } else {
+                    [leftButton setImage:[UIImage imageNamed:@"starfav32.png"] forState:UIControlStateNormal];
+                }
+            
             else
-                [leftButton setImage:[UIImage imageNamed:@"StarEmpty24-3.png"] forState:UIControlStateNormal];
+                if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+                    [leftButton setImage:[UIImage imageNamed:@"StarEmpty24-3.png"] forState:UIControlStateNormal];
+                } else {
+                    [leftButton setImage:[UIImage imageNamed:@"starnotfav32.png"] forState:UIControlStateNormal];
+                }
+
             
             [leftButton setTitle:annotation.title forState:UIControlStateNormal];
             leftButton.frame = CGRectMake(0, 0, 32, 32);
@@ -112,7 +122,11 @@
             annotationView.leftCalloutAccessoryView = leftButton;
             
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            [rightButton setImage:[UIImage imageNamed:@"directions38.png"] forState:UIControlStateNormal];
+            if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+                [rightButton setImage:[UIImage imageNamed:@"directions38.png"] forState:UIControlStateNormal];
+            } else {
+                [rightButton setImage:[UIImage imageNamed:@"directions32.png"] forState:UIControlStateNormal];
+            }
             [rightButton setTitle:annotation.title forState:UIControlStateNormal];
             rightButton.frame = CGRectMake(0, 0, 32, 32);
             rightButton.tag = 2;

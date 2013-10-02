@@ -38,22 +38,22 @@
             self.edgesForExtendedLayout = UIRectEdgeNone;
             self.automaticallyAdjustsScrollViewInsets = NO;
             
-            UIImage *navbarButton = [[UIImage imageNamed:@"directionsbutton.png"]
-                                     resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
-            self.navigationItem.rightBarButtonItem.image = navbarButton;
+//            UIImage *navbarButton = [[UIImage imageNamed:@"directionsbutton.png"]
+//                                     resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+//            self.navigationItem.rightBarButtonItem.image = navbarButton;
             
             if (self.selectedTrafficCamera.favourite == [NSNumber numberWithInt:1]){
-                self.buttonFavouriteCamera.image = [UIImage imageNamed:@"StarFull24-3.png"];
+                self.buttonFavouriteCamera.image = [UIImage imageNamed:@"starfav.png"];
             } else {
-                self.buttonFavouriteCamera.image = [UIImage imageNamed:@"StarEmpty24-3.png"];
+                self.buttonFavouriteCamera.image = [UIImage imageNamed:@"starnotfav.png"];
             }
         } else {
             if (self.selectedTrafficCamera.favourite == [NSNumber numberWithInt:1]){
-                UIImage *navbarButton = [[UIImage imageNamed:@"favouritesbuttonon.png"]
+                UIImage *navbarButton = [[UIImage imageNamed:@"StarFull24-3.png"]
                                          resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
                 self.navigationItem.rightBarButtonItem.image = navbarButton;
             } else {
-                UIImage *navbarButton = [[UIImage imageNamed:@"favouritesbuttonoff.png"]
+                UIImage *navbarButton = [[UIImage imageNamed:@"StarEmpty24-3.png"]
                                          resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
                 self.navigationItem.rightBarButtonItem.image = navbarButton;
             }
@@ -273,11 +273,21 @@
         if ((cgTrafficCamera.favourite == [NSNumber numberWithInt:0]) || (cgTrafficCamera.favourite == nil)){
             cgTrafficCamera.favourite = [NSNumber numberWithBool:YES];
             alertMessage = @"Added to favourite cameras list";
-            newFavImage = [UIImage imageNamed:@"StarFull24-3.png"];
+            if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+                newFavImage = [UIImage imageNamed:@"StarFull24-3.png"];
+            } else {
+                newFavImage = [[UIImage imageNamed:@"starfav.png"]
+                               resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+            }
         } else {
             cgTrafficCamera.favourite = [NSNumber numberWithBool:NO];
             alertMessage = @"Removed from favourite cameras list";
-            newFavImage = [UIImage imageNamed:@"StarEmpty24-3.png"];
+            if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+                newFavImage = [UIImage imageNamed:@"StarEmpty24-3.png"];
+            } else {
+                newFavImage = [[UIImage imageNamed:@"starnotfav.png"]
+                               resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+            }
         }
         
         error = nil;
