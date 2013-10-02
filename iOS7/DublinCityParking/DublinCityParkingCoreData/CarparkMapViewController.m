@@ -114,7 +114,6 @@
                 } else {
                     [leftButton setImage:[UIImage imageNamed:@"starnotfav32.png"] forState:UIControlStateNormal];
                 }
-
             
             [leftButton setTitle:annotation.title forState:UIControlStateNormal];
             leftButton.frame = CGRectMake(0, 0, 32, 32);

@@ -94,8 +94,15 @@
         MKCoordinateRegion region;
         region.center=zoomLocation;
         MKCoordinateSpan span;
-        span.latitudeDelta=0.025;
-        span.longitudeDelta=0.025;
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+            span.latitudeDelta=0.025;
+            span.longitudeDelta=0.025;
+        } else {
+            span.latitudeDelta=0.045;
+            span.longitudeDelta=0.045;
+        }
+        
+        
         region.span=span;
         [self.mapView setRegion:region animated:YES];
         
@@ -310,7 +317,11 @@
             annotationView.canShowCallout = YES;
             
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            [rightButton setImage:[UIImage imageNamed:@"directions38.png"] forState:UIControlStateNormal];
+            if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+                [rightButton setImage:[UIImage imageNamed:@"directions38.png"] forState:UIControlStateNormal];
+            } else {
+                [rightButton setImage:[UIImage imageNamed:@"directions32.png"] forState:UIControlStateNormal];
+            }
             [rightButton setTitle:annotation.title forState:UIControlStateNormal];
             rightButton.frame = CGRectMake(0, 0, 32, 32);
             rightButton.tag = 2;
