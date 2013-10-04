@@ -517,6 +517,11 @@
 				CLASSPREFIX = DCDS;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = dcdevstudios;
+				TargetAttributes = {
+					49F888D616D6D18700AB3377 = {
+						DevelopmentTeam = G6NM4ZGLNA;
+					};
+				};
 			};
 			buildConfigurationList = 49F888D216D6D18700AB3377 /* Build configuration list for PBXProject "DublinCityParking" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -645,7 +650,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -676,7 +682,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -692,6 +699,8 @@
 		49F8890316D6D18700AB3377 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -710,6 +719,8 @@
 		49F8890416D6D18700AB3377 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../../../../../Downloads\"",
