@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49004A7B172297E40042945C /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49004A7A172297E30042945C /* BugSense-iOS.framework */; };
 		49004A7D172298000042945C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49004A7C172298000042945C /* libz.dylib */; };
 		49004A8117249EE10042945C /* directions24.png in Resources */ = {isa = PBXBuildFile; fileRef = 49004A8017249EE10042945C /* directions24.png */; };
 		49004A841724B0000042945C /* directions38.png in Resources */ = {isa = PBXBuildFile; fileRef = 49004A831724B0000042945C /* directions38.png */; };
@@ -75,10 +74,10 @@
 		49FCCDF51725E7EF00CE676D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49004A7E1724399E0042945C /* CoreLocation.framework */; };
 		49FCD01A1717740100BBF2F7 /* TrafficCameraInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FCD0161717740100BBF2F7 /* TrafficCameraInfo.m */; };
 		49FCD01E17177BDB00BBF2F7 /* TrafficCamerasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FCD01D17177BDB00BBF2F7 /* TrafficCamerasViewController.m */; };
+		49FCD574180061090037B858 /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FCD56F180060BF0037B858 /* BugSense-iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49004A7A172297E30042945C /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "../../../../../../../../Downloads/BugSense-iOS.framework"; sourceTree = "<group>"; };
 		49004A7C172298000042945C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		49004A7E1724399E0042945C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		49004A8017249EE10042945C /* directions24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directions24.png; sourceTree = "<group>"; };
@@ -172,6 +171,8 @@
 		49FCD0161717740100BBF2F7 /* TrafficCameraInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficCameraInfo.m; sourceTree = "<group>"; };
 		49FCD01C17177BDB00BBF2F7 /* TrafficCamerasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficCamerasViewController.h; sourceTree = "<group>"; };
 		49FCD01D17177BDB00BBF2F7 /* TrafficCamerasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficCamerasViewController.m; sourceTree = "<group>"; };
+		49FCD56F180060BF0037B858 /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BugSense-iOS.framework"; sourceTree = "<group>"; };
+		49FCD570180060BF0037B858 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +181,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49004A7D172298000042945C /* libz.dylib in Frameworks */,
-				49004A7B172297E40042945C /* BugSense-iOS.framework in Frameworks */,
 				49C10693171E1A0E0002361E /* MessageUI.framework in Frameworks */,
 				49175CAF1719EB82000DEED1 /* SystemConfiguration.framework in Frameworks */,
 				49A9E6C816DEA1BE00F54513 /* MapKit.framework in Frameworks */,
@@ -189,6 +189,7 @@
 				49FCCDF51725E7EF00CE676D /* CoreLocation.framework in Frameworks */,
 				49F888DF16D6D18700AB3377 /* CoreGraphics.framework in Frameworks */,
 				49F888E116D6D18700AB3377 /* CoreData.framework in Frameworks */,
+				49FCD574180061090037B858 /* BugSense-iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,9 +444,9 @@
 		49F888D916D6D18700AB3377 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49FCD56E180060BF0037B858 /* BugSense 3.5.1 */,
 				49004A7E1724399E0042945C /* CoreLocation.framework */,
 				49004A7C172298000042945C /* libz.dylib */,
-				49004A7A172297E30042945C /* BugSense-iOS.framework */,
 				49C10692171E1A0E0002361E /* MessageUI.framework */,
 				49175CAE1719EB82000DEED1 /* SystemConfiguration.framework */,
 				49A9E6C716DEA1BE00F54513 /* MapKit.framework */,
@@ -486,6 +487,16 @@
 				493AF79A17F7C401009AC29D /* TODO.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49FCD56E180060BF0037B858 /* BugSense 3.5.1 */ = {
+			isa = PBXGroup;
+			children = (
+				49FCD56F180060BF0037B858 /* BugSense-iOS.framework */,
+				49FCD570180060BF0037B858 /* LICENSE */,
+			);
+			name = "BugSense 3.5.1";
+			path = "../../../../../../../../Downloads/BugSense 3.5.1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -699,12 +710,13 @@
 		49F8890316D6D18700AB3377 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../../../../Downloads\"",
+					"/Users/darrencullen/Downloads/BugSense\\ 3.5.1",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DublinCityParkingCoreData/DublinCityParking-Prefix.pch";
@@ -719,11 +731,12 @@
 		49F8890416D6D18700AB3377 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Darren Cullen (G6NM4ZGLNA)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../../../../Downloads\"",
+					"/Users/darrencullen/Downloads/BugSense\\ 3.5.1",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DublinCityParkingCoreData/DublinCityParking-Prefix.pch";
