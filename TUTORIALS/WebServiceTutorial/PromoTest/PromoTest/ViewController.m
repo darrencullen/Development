@@ -58,8 +58,8 @@
     
     
     // Create the request.
-//    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost/~darrencullen/promos/"]];
-    NSURL *url = [NSURL URLWithString:@"http://localhost/~darrencullen/promos/"];
+//    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost/~darrencullen/webservices/promos/"]];
+    NSURL *url = [NSURL URLWithString:@"http://localhost/~darrencullen/webservices/promos/"];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
     
     // Specify that it will be a POST request
